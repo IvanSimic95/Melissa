@@ -280,9 +280,10 @@ background: -webkit-linear-gradient(#d130eb,#4a30eb 80%,#2b216c);
 }
 
 .meta_part .price_box {
-    width: 66%;
+    width: 100%;
     float: left;
     margin-bottom: 0;
+margin-bottom:15px;
 }
 
 .meta_part a.btn {
@@ -1380,7 +1381,6 @@ margin-right:15px;
 }
 
 .upsale_page {
-    max-width: 500px;
     margin: 0 auto
 }
 
@@ -1391,17 +1391,19 @@ margin-right:15px;
 
 .upsale_page img {
     margin: 20px 0;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgb(0 0 0 / 30%);
 }
 
-.upsale_page .readings {
-    border: solid 1px;
-    padding: 30px;
+.upsale_page .white-wrapper {
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgb(0 0 0 / 30%);
 }
 
 .upsale_page .readings input {
     display: inline-block;
     width: auto;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .upsale_page .meta_part {
@@ -1410,36 +1412,39 @@ margin-right:15px;
 }
 
 .upsale_page input[type="submit"] {
-    padding: 8px 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    box-sizing: border-box;
-    border-radius: 0;
-    border: solid 1px #682A77;
-    cursor: pointer;
-    text-align: center;
-    background: #fc00ff;
-    color: #fff;
-    font-weight: bold;
-    transition: all 0.5s ease;
-    margin-bottom: 20px
+background: linear-gradient( 270deg,#d130eb,#4a30eb 80%,#2b216c)!important;
+width: 100%;
+border: 0!important;
+padding: 15px 10px 15px 10px!important;
+cursor: pointer;
+text-align: center;
+color: #fff;
+transition: all 0.5s ease;
+font-weight: bold;
+border-radius: 10px;
+height: 60px;
+margin-top:10px;
+font-family: Nunito,sans-serif;
+font-style: normal;
+font-weight: 700;
 }
 .nothanks {
-     padding: 8px 20px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    border: 2px solid #4a30eb;
     box-sizing: border-box;
-    border-radius: 0;
-    border: solid 1px #682A77;
-    cursor: pointer;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    font-size: 18px;
+    line-height: 31px;
     text-align: center;
-    background: #fc00ff;
-    color: #fff;
-    font-weight: bold;
-    transition: all 0.5s ease;
-    margin-bottom: 0px;
-    display:block;
-    width:100%
+    color: #4a30eb;
+    margin-top:5px;
+    font-family: Nunito,sans-serif;
+    font-style: normal;
+    font-weight: 700;
 }
 .nothanks:hover {
      background: #682A77;
@@ -1760,7 +1765,6 @@ margin-bottom:0!important;
         width: 100% !important;
         float: none !important;
         text-align: center !important;
-        margin: 0 !important;
     }
 
     .about h2 {

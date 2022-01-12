@@ -95,7 +95,7 @@ $domain = $_SERVER['SERVER_NAME'];
           <div class="radio_box">
           <div class="row" style="display:flex;flex-wrap: wrap;">
           <div class='col-6 text-center'>
-        <input type="radio" name="match" id="match_1" value="guy" checked> 
+        <input type="radio" name="pick_sex" id="match_1" value="male" checked> 
 				<label class="imgbgchk label-man" for="match_1" style="position: relative;">
         <div class="labbel-wrapper">
         <img src="assets/img/man.png">
@@ -106,7 +106,7 @@ $domain = $_SERVER['SERVER_NAME'];
 				</label> 
   </div>
   <div class='col-6 text-center'>
-           	<input type="radio" name="match" id="match_2" value="girl"> 
+           	<input type="radio" name="pick_sex" id="match_2" value="female"> 
 				<label class="imgbgchk label-woman" for="match_2" style="position: relative;">
         <div class="labbel-wrapper">
         <img src="assets/img/woman.png">
@@ -196,11 +196,6 @@ if($result->num_rows == 0 || $order_email == "") {
     if ($conn->connect_error) {
       die("Connection failed: " . $conn->connect_error);
     }
-
-$sql = "UPDATE `orders` SET `chatID`='$convoID' WHERE cookie_id='$cookie_id'" ;
-    // $sql = "INSERT INTO orders (order_id, cookie_id, user_age, user_name, order_status, order_date, order_email, order_product, order_priority, order_price, buygoods_order_id)
-    //                       VALUES (NULL, '$cookie_id', '$user_age', '$user_name', 'pending', '$order_date', '', '$order_product', '$order_priority', '', '')";
-
 
     if ($conn->query($sql) === TRUE) {
       // echo "Update successfully";

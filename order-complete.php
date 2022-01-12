@@ -11,8 +11,8 @@
 <div class="container">
 
 <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-   <div class="white-wrapper">
+      <div class="col-md-8 col-md-offset-2">
+   <div class="white-wrapper" style="padding:30px;">
 
 
 
@@ -23,8 +23,8 @@
     
   </div>
 
-     <img class="checkmark" src="/assets/img/checkmark.svg">
-     <h3>Your order is now complete & you will receive an email with your order details and dashboard.</h3>
+    
+     <h3>Your order is now complete & you will receive an email with your order details and dashboard login link.</h3>
 </div>
 
 
@@ -41,6 +41,8 @@ margin-bottom:150px;
   .login-form
   {
    text-align:center;
+   min-height: 200px;
+    padding-top: 100px;
   }
   .checkmark{
     max-width:100px;
@@ -94,13 +96,14 @@ font-size:28px;
 
 }
 .gradient-top{
-background: linear-gradient( 90deg,#d130eb,#4a30eb 80%,#2b216c);
-margin-top: -25px;
-margin-left: -25px;
-margin-right: -25px;
-border-top-left-radius: 8px;
-border-top-right-radius: 8px;
-padding: 7px;
+  background: linear-gradient( 
+90deg,#d130eb,#4a30eb 80%,#2b216c);
+    margin-top: -130px;
+    margin-left: -30px;
+    margin-right: -30px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 7px;
   }
 h1 {
 font-size: 26px;
@@ -114,8 +117,12 @@ margin-bottom:0!important;
 	text-transform:uppercase;
 }
 h3{
+  font-size: 20px;
 margin-bottom:0px;
 text-align: center;
+margin-top:40px;
+padding-left:50px;
+padding-right:50px;
 }
 .check_user input{
 max-width:100%;

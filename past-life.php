@@ -150,7 +150,72 @@ $sql = "UPDATE `orders` SET `chatID`='$convoID' WHERE cookie_id='$cookie_id'" ;
 <?php $menu_order="men_0_0"; ?>
 <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php'; ?>
 <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
+<style>
+h1 {
+font-size: 36px;
+    font-weight: bold;
+    background: linear-gradient( 90deg,#d130eb,#4a30eb 80%,#2b216c);
+    color: #fff!important;
+    margin-top: -25px;
+    margin-left: -25px;
+    margin-right: -25px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-align: center;
+    padding: 15px;
+	text-transform:uppercase;
+  font-family: Nunito,sans-serif;
+    font-style: normal;
+    font-weight: 800;
+}
+h2 {
+  font-size: 28px!important;
+    font-weight: bold;
+    background: -webkit-linear-gradient(#d130eb,#4a30eb 80%,#2b216c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-family: Nunito,sans-serif;
+    font-style: normal;
+    font-weight: 800;
+}
+h3 {
+  font-size: 20px!important;
+    font-weight: bold;
+    background: -webkit-linear-gradient(#d130eb,#4a30eb 80%,#2b216c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+.fill-control-description {
+  font-size: 24px!important;
+    font-weight: bold;
+    background: -webkit-linear-gradient(#d130eb,#4a30eb 80%,#2b216c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+.col-6 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
 
+.price_box{
+text-align:center;
+}
+.gradient{
+  font-size: 18px!important;
+    font-weight: bold;
+    background: -webkit-linear-gradient(#d130eb,#4a30eb 80%,#2b216c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom:15px;
+}
+
+</style>
 <div class="breadcrumbs">
   <div class="container">
     <a href="/index.php">Melissa</a> > Past Life
@@ -160,8 +225,7 @@ $sql = "UPDATE `orders` SET `chatID`='$convoID' WHERE cookie_id='$cookie_id'" ;
 
 <div class="general_section upsale_page">
   <div class="container">
-    <h1>Final Chance</h1>
-    <h4>You will get this offer only once</h4>
+  <div class="white-wrapper col-md-10 offset-md-2"> <h1>Final Chance!</h1>
     <img src="/assets/img/psychic.jpg" alt="upsell">
     <form class="readings" action="/order3.php" method="get">
       <h2>Past Life Reading + Portrait</h2>
@@ -172,11 +236,12 @@ $sql = "UPDATE `orders` SET `chatID`='$convoID' WHERE cookie_id='$cookie_id'" ;
           <div class="price_box">
             <span class="new_prce">$14.99</span>
           </div>
+          <div class="gradient">Woudn't it be great to just know the truth instead of cunsumming yourself with constant thoughts?</div>
           <input type="submit" name="past_life" value="Yes i want my past life reading">
 
         </div>
       </div>
-      <span>Woudn't it be great to just know the truth instead of cunsumming yourself with constant thoughts?</span>
+      
       <a class="nothanks" href="/order-complete.php">No thanks</a>
     </form>
   </div>
