@@ -107,7 +107,7 @@ foreach ($r as $row) {
         }else{
             $loop .= '"0", ';
         }
-    }
+    } 
 
     $iii++;
 }
