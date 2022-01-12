@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'pretty_version' => '1.0.0+no-version-set',
+        'version' => '1.0.0.0',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'reference' => NULL,
+        'name' => '__root__',
+        'dev' => true,
+    ),
+    'versions' => array(
+        '__root__' => array(
+            'pretty_version' => '1.0.0+no-version-set',
+            'version' => '1.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => NULL,
+            'dev_requirement' => false,
+        ),
+        'carlosio/opcache-dashboard' => array(
+            'pretty_version' => '1.0.0',
+            'version' => '1.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../carlosio/opcache-dashboard',
+            'aliases' => array(),
+            'reference' => '0bb0bd28ef46460c96c8890e2ae817da492577dc',
+            'dev_requirement' => false,
+        ),
+        'melbahja/seo' => array(
+            'pretty_version' => 'v2.0.0',
+            'version' => '2.0.0.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../melbahja/seo',
+            'aliases' => array(),
+            'reference' => 'a42500223cb532d4069e85097cc5b5e6ee402de1',
+            'dev_requirement' => false,
+        ),
+    ),
+);

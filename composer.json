@@ -1,0 +1,6 @@
+{
+    "require": {
+        "carlosio/opcache-dashboard": "^1.0",
+        "melbahja/seo": "^2.0"
+    }
+}

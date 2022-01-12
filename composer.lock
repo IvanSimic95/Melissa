@@ -1,0 +1,115 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "31e87ea7193086a0a5457ce1fb753f3a",
+    "packages": [
+        {
+            "name": "carlosio/opcache-dashboard",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/carlosbuenosvinos/opcache-dashboard.git",
+                "reference": "0bb0bd28ef46460c96c8890e2ae817da492577dc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/carlosbuenosvinos/opcache-dashboard/zipball/0bb0bd28ef46460c96c8890e2ae817da492577dc",
+                "reference": "0bb0bd28ef46460c96c8890e2ae817da492577dc",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Carlos Buenosvinos",
+                    "email": "hi@carlos.io",
+                    "homepage": "http://carlosbuenosvinos.com"
+                }
+            ],
+            "description": "Set up properly and monitor your Zend OPcache with this dashboard that will help you checking memory, hits and status, configuring for optimal performance (warning you when cache full, validation, etc.) and reseting one or all scripts with one click.",
+            "keywords": [
+                "Opcache"
+            ],
+            "support": {
+                "issues": "https://github.com/carlosbuenosvinos/opcache-dashboard/issues",
+                "source": "https://github.com/carlosbuenosvinos/opcache-dashboard/tree/master"
+            },
+            "time": "2014-05-29T16:39:54+00:00"
+        },
+        {
+            "name": "melbahja/seo",
+            "version": "v2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/melbahja/seo.git",
+                "reference": "a42500223cb532d4069e85097cc5b5e6ee402de1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/melbahja/seo/zipball/a42500223cb532d4069e85097cc5b5e6ee402de1",
+                "reference": "a42500223cb532d4069e85097cc5b5e6ee402de1",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-xml": "*",
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Melbahja\\Seo\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mohamed ELbahja",
+                    "email": "mohamed@elbahja.me",
+                    "homepage": "https://elbahja.me",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Simple PHP library to help developers 🍻 do better on-page SEO optimization",
+            "keywords": [
+                "PHP7",
+                "meta tags",
+                "open graph",
+                "php7.1",
+                "schema.org",
+                "search engine optimization",
+                "seo",
+                "sitemap index",
+                "sitemap.xml",
+                "sitemaps",
+                "twitter tags"
+            ],
+            "support": {
+                "issues": "https://github.com/melbahja/seo/issues",
+                "source": "https://github.com/melbahja/seo/tree/v2.0.0"
+            },
+            "time": "2021-10-26T00:36:49+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.2.0"
+}
