@@ -1,9 +1,7 @@
 <?php
-session_start();
-
 // set parameters and execute
 $cookie_id = $_SESSION['user_cookie_id'];
-$pick_sex = $_POST['pick_sex'];
+if(isset($_POST['pick_sex']))$pick_sex = $_POST['pick_sex'];
 $genderAcc = $_SESSION['genderAcc'];
 
 if ($pick_sex) {
