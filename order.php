@@ -52,9 +52,9 @@ if($user_name ) {
 
     $lastRowInsert = mysqli_insert_id($conn);
     if ($conn->query($sql) === TRUE) {
-      echo "New record created successfully";
+      //echo "New record created successfully";
     } else {
-      echo "Error: " . $sql . "<br>" . $conn->error;
+      //echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
     $conn->close();
@@ -98,7 +98,7 @@ var getUrlParameter = function getUrlParameter(sParam) {
 var prio = getUrlParameter('priority');
 var product = getUrlParameter('product');
 
-//window.location.href = "https://www.buygoods.com/secure/checkout.html?account_id=6274&product_codename=" + product + prio + "&subid=<?php echo $cookie_id; ?>&subid2=<?php echo $lastRowInsert; ?>&redirect=<?php echo $returnEncoded; ?>";
+window.location.href = "https://www.buygoods.com/secure/checkout.html?account_id=6274&product_codename=" + product + prio + "&subid=<?php echo $cookie_id; ?>&subid2=<?php echo $lastRowInsert; ?>&redirect=<?php echo $returnEncoded; ?>";
 </script>
 
 
