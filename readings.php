@@ -54,6 +54,9 @@ if ($sex_picked==1) {
 <?php $description = "Readings"; ?>
 <?php $menu_order="men_0_0"; ?>
 <?php  ?>
+<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php';
+$cookie_id = $_SESSION['user_cookie_id'];
+ ?>
 <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
 <link rel="stylesheet" href="assets/css/upsell.css">
 <style>
@@ -191,7 +194,7 @@ text-align:center;
         </div>
       </div>
      
-      <a class="nothanks" href="/order-complete.php">No thanks</a>
+      <a class="nothanks" href="/future-baby.php">No thanks</a>
       </div></div>
     </form>
    
