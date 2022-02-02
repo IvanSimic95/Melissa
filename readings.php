@@ -3,10 +3,19 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php';
 include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 // set parameters and execute
 $cookie_id = $_SESSION['user_cookie_id'];
-if(isset($_POST['pick_sex']))$pick_sex = $_POST['pick_sex'];
-$genderAcc = $_SESSION['genderAcc'];
 
-if ($pick_sex) {
+$genderAcc = $_SESSION['genderAcc'];
+$userGender = $_SESSION['userGender'];
+$partnerGender = $_SESSION['partnerGender'];
+
+$sex_picked = "";
+if(isset($_POST['pick_sex'])){
+  $pick_sex = $_POST['pick_sex'];
+  $sex_picked = "1";
+}
+
+
+if ($sex_picked==1) {
   
 
     $sql = "UPDATE `orders` SET `pick_sex`='$pick_sex' WHERE cookie_id='$cookie_id'" ;
