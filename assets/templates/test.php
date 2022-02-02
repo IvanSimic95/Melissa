@@ -29,10 +29,10 @@
             name: "MSebastian PPPAD",
             email: "tudor@tmdigi.com",
             photoUrl: "/assets/img/avatars/client.png",
-            role: "client"
+            role: "customer"
         });
         window.talkSession = new Talk.Session({
-            appId: "tMXnCHK2",
+            appId: "t2X08S4H",
             me: other
         });
         var conversation = talkSession.getOrCreateConversation("test_21");

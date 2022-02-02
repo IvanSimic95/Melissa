@@ -155,13 +155,13 @@ $sql = "UPDATE `orders` SET `chatID`='$convoID' WHERE cookie_id='$cookie_id'" ;
          name: "<?php echo $user_name; ?>",
          email: "<?php echo $order_email; ?>",
          photoUrl: "/assets/img/avatars/client.png",
-         role: "client"
+         role: "customer"
      });
      console.log(other);
      var me = new Talk.User(654321252);
      console.log(me);
      window.talkSession = new Talk.Session({
-         appId: "tMXnCHK2",
+         appId: "t2X08S4H",
          me: other
      });
      var conversation = talkSession.getOrCreateConversation("<?php echo $order_id; ?>");

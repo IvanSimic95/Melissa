@@ -100,7 +100,7 @@
             var me = new Talk.User(654321252);
             var other = new Talk.User(<?php echo $row["order_id"]; ?>);
             window.talkSession = new Talk.Session({
-                appId: "tMXnCHK2",
+                appId: "t2X08S4H",
                 me: other
             });
             var conversation = talkSession.getOrCreateConversation("<?php echo $row["order_id"]; ?>");

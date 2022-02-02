@@ -32,6 +32,10 @@
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 Orders
                             </a>
+                            <a class="nav-link" href="inbox.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-envelope"></i></div>
+                               Inbox
+                            </a>
                             <a class="nav-link" href="reviews.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-user-edit"></i></div>
                                 Reviews

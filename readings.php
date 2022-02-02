@@ -6,29 +6,7 @@ $cookie_id = $_SESSION['user_cookie_id'];
 $pick_sex = $_POST['pick_sex'];
 
 if ($pick_sex) {
-    ?>
-
-<?php
-$domain = $_SERVER['SERVER_NAME'];
-    if ($domain == "melissa.test") {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "melissap_melissa";
-    } else {
-        $servername = "localhost";
-        $username = "melissap_melissapsychic";
-        $password = ";w[#i&[zcrm?";
-        $dbname = "melissap_melissa";
-    }
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
+  include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
     $sql = "UPDATE `orders` SET `pick_sex`='$pick_sex' WHERE cookie_id='$cookie_id'" ;
 
@@ -38,7 +16,7 @@ $domain = $_SERVER['SERVER_NAME'];
 
         $result = $conn->query($sql);
 
-        if ($result->num_rows == 0 || $order_email == "") {
+        if ($result->num_rows == 0) {
         } else {
             while ($row = $result->fetch_assoc()) {
                 $order_id =  $row["order_id"];
@@ -122,6 +100,14 @@ text-align:center;
     -webkit-text-fill-color: transparent;
     text-align: center;
     margin-bottom:15px;
+}
+@media only screen and (min-width: 768px) {
+  .offset-md-2 {
+    margin-left: 8.333333%;
+}
+.offset-md-4 {
+    margin-left: 16.666666%;
+}
 }
 
 </style>

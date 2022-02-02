@@ -9,31 +9,7 @@ $cookie_id = $_SESSION['user_cookie_id'];
 // echo $cookie_id;
 if($order_email) {
 
-
-?>
-
-<?php
-$domain = $_SERVER['SERVER_NAME'];
-	if($domain == "melissa.test"){
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "melissap_melissa";
-}else{
-    $servername = "localhost";
-    $username = "melissap_melissapsychic";
-    $password = ";w[#i&[zcrm?";
-    $dbname = "melissap_melissa";
-}
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-    }
-
+  include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
     $sql = "UPDATE `orders` SET `order_status`='paid',`order_email`='$order_email',`order_price`='$order_price',`buygoods_order_id`='$order_buygoods' WHERE cookie_id='$cookie_id'" ;
     // $sql = "INSERT INTO orders (order_id, cookie_id, user_age, user_name, order_status, order_date, order_email, order_product, order_priority, order_price, buygoods_order_id)
@@ -67,28 +43,24 @@ $domain = $_SERVER['SERVER_NAME'];
   </div>
 </div>
 
+<?php if($_GET['item'] == "baby12" OR $_GET['item'] == "baby24" OR $_GET['item'] == "baby48"){ ?>
+  <div class="general_section">
+  <div class="container" >
+  <div class="white-wrapper col-md-8 offset-md-4"style="min-height:300px;padding:20px 30px 20px 30px;"> <h1>Thank you for your order!</h1>
+  <br><br>
+  <h2 style="text-align:center;">Your order is now complete & you will receive an email with your order details and dashboard login link.</h2>
 
+
+  </div>
+
+  </div>
+</div>
+
+
+<?php }else{ ?>
 <div class="general_section">
   <div class="container">
   <div class="white-wrapper col-md-10 offset-md-2"> <h1>Choose your Sexual Orientation!</h1>
-  <!-- <form>
-		<fieldset class="form__options">
-			<legend class="form__question">What is your ideal match?</legend>
-      <div class="form_box">
-			<p class="form__answer"> 
-			
-			</p>
-			
-			<p class="form__answer"> 
-			
-			</p>
-  </div>
-			
-			
-		</fieldset>
-		<button class="form__button" type="submit">Submit your info</button>
-	</form>
-   -->
     <form class="pick_sex" action="/readings.php" method="post">
       <div class="form_box">
           <span>I would like to recieve a drawing of a:</span>
@@ -129,6 +101,7 @@ $domain = $_SERVER['SERVER_NAME'];
 
   </div>
 </div>
+
 <script>
 $(".label-man").click(function(){
   $(this).find('.tick_container').css('opacity', '1');
@@ -150,6 +123,8 @@ $(".label-woman").click(function(){
   $("#submit-button").removeAttr('disabled');
 });
   </script>
+
+<?php } ?>
 
 <?php
 $domain = $_SERVER['SERVER_NAME'];
@@ -227,13 +202,13 @@ if($result->num_rows == 0 || $order_email == "") {
           name: "<?php echo $user_name; ?>",
           email: "<?php echo $order_email; ?>",
           photoUrl: "/assets/img/avatars/client.png",
-          role: "client"
+          role: "customer"
       });
       console.log(other);
       var me = new Talk.User(654321252);
       console.log(me);
       window.talkSession = new Talk.Session({
-          appId: "tMXnCHK2",
+          appId: "t2X08S4H",
           me: other
       });
       var conversation = talkSession.getOrCreateConversation("<?php echo $order_id; ?>");
@@ -275,6 +250,9 @@ border-radius:15px;
 @media only screen and (min-width: 768px) {
   .offset-md-2 {
     margin-left: 8.333333%;
+}
+.offset-md-4 {
+    margin-left: 16.666666%;
 }
 }
 .greenshadow{

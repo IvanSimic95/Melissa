@@ -10,11 +10,6 @@ $cookie_id = $_SESSION['user_cookie_id'];
 
 if($order_email) {
 
-
-?>
-
-
-<?php
 // fetch email from past order
 $domain = $_SERVER['SERVER_NAME'];
 	if($domain == "melissa.test"){
@@ -50,29 +45,10 @@ if($result->num_rows == 0 || $order_email == "") {
     }
 
 }
-
-
-
-
-
 $conn->close();
 // end of fetch email from past order
- ?>
 
 
-<?php
-$domain = $_SERVER['SERVER_NAME'];
-	if($domain == "melissa.test"){
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "melissap_melissa";
-}else{
-    $servername = "localhost";
-    $username = "melissap_melissapsychic";
-    $password = ";w[#i&[zcrm?";
-    $dbname = "melissap_melissa";
-}
     // Create connection
     $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -83,8 +59,6 @@ $domain = $_SERVER['SERVER_NAME'];
 
 
     $sql = "UPDATE `orders` SET `user_name` = '$retained_username', `order_status`='paid',`order_email`='$order_email',`order_price`='$order_price',`buygoods_order_id`='$order_buygoods' WHERE cookie_id='$cookie_id'" ;
-    // $sql = "INSERT INTO orders (order_id, cookie_id, user_age, user_name, order_status, order_date, order_email, order_product, order_priority, order_price, buygoods_order_id)
-    //                       VALUES (NULL, '$cookie_id', '$user_age', '$user_name', 'pending', '$order_date', '', '$order_product', '$order_priority', '', '')";
 
 
     if ($conn->query($sql) === TRUE) {
@@ -95,44 +69,21 @@ $domain = $_SERVER['SERVER_NAME'];
       if($result->num_rows == 0 || $order_email == "") {
 
 
-      } else {
+    } else {
           while($row = $result->fetch_assoc()) {
             $order_id =  $row["order_id"];
             $user_name =  $row["user_name"];
             $order_email =  $row["order_email"];
             $order_product = 'Readings';
           }
-		  
 
-	// Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-    }
-
-$sql = "UPDATE `orders` SET `chatID`='$convoID' WHERE cookie_id='$cookie_id'" ;
-    // $sql = "INSERT INTO orders (order_id, cookie_id, user_age, user_name, order_status, order_date, order_email, order_product, order_priority, order_price, buygoods_order_id)
-    //                       VALUES (NULL, '$cookie_id', '$user_age', '$user_name', 'pending', '$order_date', '', '$order_product', '$order_priority', '', '')";
-
-
-    if ($conn->query($sql) === TRUE) {
-      // echo "Update successfully";
-
-      //unset($_COOKIE['user_cookie_id']);
-    } else {
-      // echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-
-    $conn->close();
-      }
+          }
 
 
        // echo "Update successfully";
-      session_unset();
-      session_destroy();
-      //unset($_COOKIE['user_cookie_id']);
+       session_unset();
+       session_destroy();
+       //unset($_COOKIE['user_cookie_id']);
     } else {
        echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -265,13 +216,13 @@ text-align:center;
          name: "<?php echo $user_name; ?>",
          email: "<?php echo $order_email; ?>",
          photoUrl: "/assets/img/avatars/client.png",
-         role: "client"
+         role: "customer"
      });
      console.log(other);
      var me = new Talk.User(654321252);
      console.log(me);
      window.talkSession = new Talk.Session({
-         appId: "tMXnCHK2",
+         appId: "t2X08S4H",
          me: other
      });
      var conversation = talkSession.getOrCreateConversation("<?php echo $order_id; ?>");
@@ -286,6 +237,138 @@ text-align:center;
    })
 
 </script>
+
+
+<style>
+  .labbel-wrapper {
+height:100%;
+border-radius:15px;
+
+} 
+  .disabled {
+
+    cursor: not-allowed!important;
+} 
+  .col-6 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+@media only screen and (min-width: 768px) {
+  .offset-md-2 {
+    margin-left: 8.333333%;
+}
+.offset-md-4 {
+    margin-left: 16.666666%;
+}
+}
+.greenshadow{
+  box-shadow: 1px -1px 18px 11px rgba(76,175,80,0.74);
+-webkit-box-shadow: 1px -1px 18px 11px rgba(76,175,80,0.74);
+-moz-box-shadow: 1px -1px 18px 11px rgba(76,175,80,0.74);
+        }
+   .imgbgchk:checked + label>.tick_container{
+            opacity: 1;
+        }
+/*         aNIMATION */
+        .imgbgchk:checked + label>img{
+            transform: scale(1.25);
+            opacity: 0.3;
+        }
+        .tick_container {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            cursor: pointer;
+            text-align: center;
+        }
+        .tick {
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            padding: 6px 12px;
+            height: 35px;
+            width: 40px;
+            border-radius: 100%;
+        }
+  .pick_sex {
+    width:100%;
+    max-width:initial;
+  }
+  h1 {
+font-size: 36px;
+    font-weight: bold;
+    background: linear-gradient( 90deg,#d130eb,#4a30eb 80%,#2b216c);
+    color: #fff!important;
+    margin-top: -25px;
+    margin-left: -25px;
+    margin-right: -25px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-align: center;
+    padding: 15px;
+	text-transform:uppercase;
+}
+.labbel-wrapper > img{
+  width:250px;
+}
+label {
+  border: 1px solid rgba(250, 250, 250, 0.15);
+  box-sizing: border-box;
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 10px 10px 30px 10px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: all 0.5s ease-in-out;
+}
+label:hover, label:focus, label:active {
+  border: 1px solid rgba(250, 250, 250, 0.5);
+}
+
+.form__button {
+  height: 40px;
+  border: none;
+  background-color: #00703f;
+  color: #FAFAFA;
+  text-transform: uppercase;
+  font-family: "Source Sans Pro", sans-serif;
+  padding: 0 20px;
+  border-radius: 20px;
+  font-weight: 900;
+  cursor: pointer;
+  margin: 40px 0;
+  transition: all 0.25s ease-in-out;
+}
+.form__button:hover, .form__button:focus {
+  background-color: #00824A;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.25);
+  outline: none;
+}
+
+/* Input style */
+input[type=radio] {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+input[type=radio]:active ~ label {
+  opacity: 1;
+}
+
+input[type=radio]:checked ~ label {
+  opacity: 1;
+  border: 1px solid #FAFAFA;
+}
+    </style>
+
 <?php
 }else{
   header('Location: /');

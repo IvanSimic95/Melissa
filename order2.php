@@ -10,42 +10,12 @@ $user_name = 'Addon';
 $order_product = $general . " " .  $love . " " . $career . " " . $health;
 $order_date = date('Y-m-d H:i:s');
 
-?>
-
-<?php
-
 if($cookie_id) {
 
+  include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
-?>
-
-
-<?php
-$domain = $_SERVER['SERVER_NAME'];
-	if($domain == "melissa.test"){
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "melissap_melissa";
-}else{
-    $servername = "localhost";
-    $username = "melissap_melissapsychic";
-    $password = ";w[#i&[zcrm?";
-    $dbname = "melissap_melissa";
-}
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-    }
-
-
-
-    $sql = "INSERT INTO orders (order_id, cookie_id, user_age, user_name, order_status, order_date, order_email, order_product, order_priority, order_price, buygoods_order_id, pick_sex)
-                          VALUES (NULL, '$cookie_id', 'N/A', '$user_name', 'pending', '$order_date', '', '$order_product', '24', '', '', 'N/A')";
+    $sql = "INSERT INTO orders (order_id, cookie_id, user_age, user_name, order_status, order_date, order_email, order_product, order_priority, order_price, pick_sex)
+                          VALUES (NULL, '$cookie_id', '00', '$user_name', 'pending', '$order_date', '', '$order_product', '24', '', 'N/A')";
 
 
     if ($conn->query($sql) === TRUE) {

@@ -84,7 +84,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
                         var me = new Talk.User(654321252);
                         var other = conversationId;
                         window.talkSession = new Talk.Session({
-                            appId: "tMXnCHK2",
+                            appId: "t2X08S4H",
                             me: me,
                             other: other
                         });

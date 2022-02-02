@@ -39,7 +39,7 @@
 			]];
 			$data1 = json_encode($data);
 
-			curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/tMXnCHK2/conversations/' . $row["order_id"] . '/messages');
+			curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/t2X08S4H/conversations/' . $row["order_id"] . '/messages');
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
 
@@ -47,7 +47,7 @@
 
 			$headers = array();
 			$headers[] = 'Content-Type: application/json';
-			$headers[] = 'Authorization: Bearer sk_test_746YBfJdxRemkyUEJEcYYBlDDsyGpsJz';
+			$headers[] = 'Authorization: Bearer sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL';
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
 			$result = curl_exec($ch);
