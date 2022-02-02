@@ -30,7 +30,7 @@ $ContinueConvoMsg = "If you want to chat with Melissa, simply reply to this conv
 
 
 //START Database Configuration
-$domain = $_SERVER['SERVER_NAME'];
+$domain = $_SERVER['HTTP_HOST'];
 if($domain == "melissa.test"){
     $servername = "localhost";
     $username = "root";

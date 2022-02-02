@@ -163,7 +163,7 @@ echo "Starting complete-orders.php...<br><br>";
 					if($sql_text_res->num_rows == 0) {
 					} else {
 						while($rowText = $sql_text_res->fetch_assoc()) {
-							$email_text .= $rowText["reading_text"] . "\n\n";
+							$email_text .= $rowText["text"] . "\n\n";
 						}
 					}
 				}
@@ -173,7 +173,7 @@ echo "Starting complete-orders.php...<br><br>";
 					if($sql_text_res->num_rows == 0) {
 					} else {
 						while($rowText = $sql_text_res->fetch_assoc()) {
-							$email_text .= $rowText["reading_text"] . "\n\n";
+							$email_text .= $rowText["text"] . "\n\n";
 						}
 					}
 				}
@@ -183,7 +183,7 @@ echo "Starting complete-orders.php...<br><br>";
 					if($sql_text_res->num_rows == 0) {
 					} else {
 						while($rowText = $sql_text_res->fetch_assoc()) {
-							$email_text .= $rowText["reading_text"] . "\n\n";
+							$email_text .= $rowText["text"] . "\n\n";
 						}
 					}
 				}
@@ -193,7 +193,7 @@ echo "Starting complete-orders.php...<br><br>";
 					if($sql_text_res->num_rows == 0) {
 					} else {
 						while($rowText = $sql_text_res->fetch_assoc()) {
-							$email_text .= $rowText["reading_text"] . "\n\n";
+							$email_text .= $rowText["text"] . "\n\n";
 						}
 					}
 				}
