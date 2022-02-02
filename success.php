@@ -6,7 +6,7 @@ $order_email = $_GET['emailaddress'];
 $order_price = $_GET['total'];
 $order_buygoods = $_GET['order_id'];
 $cookie_id = $_SESSION['user_cookie_id'];
-$createChat = "";
+$createChat = $genderAcc = "";
 // echo $cookie_id;
 if($order_email) {
 include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
@@ -17,11 +17,11 @@ include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
     if($result->num_rows != 0) {
       $row = $result->fetch_assoc();
 
-    echo $row['genderAcc'];
-     
-   
+    $genderAcc = $row['genderAcc'];
+    $userGender = $row['user_sex'];
+    $partnerGender = $row['pick_sex'];
   }
-
+if($genderAcc>89){header('Location: /readings.php');}
 
 ?>
 
