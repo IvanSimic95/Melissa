@@ -1,5 +1,5 @@
 <?php
-session_start();
+include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php';
 include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 // set parameters and execute
 $cookie_id = $_SESSION['user_cookie_id'];
@@ -44,7 +44,7 @@ if ($pick_sex) {
 <?php $title = "Readings | Melissa Psychic"; ?>
 <?php $description = "Readings"; ?>
 <?php $menu_order="men_0_0"; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php'; ?>
+<?php  ?>
 <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
 <link rel="stylesheet" href="assets/css/upsell.css">
 <style>
