@@ -3,7 +3,7 @@
 	$servername = "localhost";
 	$username = "melissap_melissapsychic";
 	$password = ";w[#i&[zcrm?";
-	$dbname = "melissap_melissa";
+	$dbname = "melissap_website";
 	$base_url = "https://www.melissa-psychic.com";
 
 	// Create connection

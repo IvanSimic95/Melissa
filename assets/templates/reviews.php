@@ -14,12 +14,12 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "melissap_melissa";
+    $dbname = "melissap_website";
 }else{
     $servername = "localhost";
     $username = "melissap_melissapsychic";
     $password = ";w[#i&[zcrm?";
-    $dbname = "melissap_melissa";
+    $dbname = "melissap_website";
 }
 include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/time.php';
 $variant = rand(1,3);

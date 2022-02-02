@@ -8,7 +8,7 @@ if ($domain == "melissa.test") {
     //Define your database password here.
     $password = "";
     //Define your database name here.
-    $dbname = "melissap_melissa";
+    $dbname = "melissap_website";
 } else {
     //Define your host here.
     $servername = "localhost";
@@ -17,7 +17,7 @@ if ($domain == "melissa.test") {
     //Define your database password here.
     $password = ";w[#i&[zcrm?";
     //Define your database name here.
-    $dbname = "melissap_melissa";
+    $dbname = "melissap_website";
 }
 
 

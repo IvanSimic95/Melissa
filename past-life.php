@@ -16,12 +16,12 @@ $domain = $_SERVER['SERVER_NAME'];
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "melissap_melissa";
+    $dbname = "melissap_website";
 }else{
     $servername = "localhost";
     $username = "melissap_melissapsychic";
     $password = ";w[#i&[zcrm?";
-    $dbname = "melissap_melissa";
+    $dbname = "melissap_website";
 }
 
 // Create connection
