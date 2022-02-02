@@ -17,7 +17,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
     if($result->num_rows != 0) {
       $row = $result->fetch_assoc();
 
-    echo $row['0']['genderAcc'];
+    echo $row['genderAcc'];
      
    
   }
