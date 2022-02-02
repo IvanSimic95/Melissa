@@ -21,7 +21,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
     $userGender = $row['user_sex'];
     $partnerGender = $row['pick_sex'];
   }
-if($genderAcc>89){header('Location: /readings.php');}
+if($genderAcc>89){$_SESSION['genderAcc'] = $genderAcc; header('Location: /readings.php');}
 
 ?>
 

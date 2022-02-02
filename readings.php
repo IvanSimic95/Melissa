@@ -4,6 +4,7 @@ session_start();
 // set parameters and execute
 $cookie_id = $_SESSION['user_cookie_id'];
 $pick_sex = $_POST['pick_sex'];
+$genderAcc = $_SESSION['genderAcc'];
 
 if ($pick_sex) {
   include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
@@ -33,7 +34,10 @@ if ($pick_sex) {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
-    $conn->close(); ?>
+    $conn->close();
+  
+} 
+?>
 
 
 
@@ -217,8 +221,5 @@ text-align:center;
     </script>
 <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php';
 
-} else {
-  header('Location: /');
-}
 
 ?>
