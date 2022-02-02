@@ -87,7 +87,7 @@ text-align:center;
 </style>
 <div class="breadcrumbs">
   <div class="container">
-    <a href="/index.php">Melissa</a> > Past Life
+    <a href="/index.php">Melissa</a> > Future Baby Drawing
   </div>
 </div>
 
@@ -97,7 +97,18 @@ text-align:center;
   <div class="white-wrapper col-md-10 offset-md-2"> <h1>Final Chance!</h1>
     <img src="/assets/img/psychic.jpg" alt="upsell">
     <form class="readings" action="/order3.php" method="get">
-      <h2>Past Life Reading + Portrait</h2>
+      <h2>Future Baby Reading + Portrait</h2>
+      <div class="form_box input-group">
+  
+        <input id="prio12" type="radio" name="priority" value="12">
+        <label for="prio12"><span><i class="fas fa-bolt" aria-hidden="true"></i>12 Hours</span></label>
+        
+		<input id="prio24" type="radio" name="priority" value="24">
+        <label for="prio24"> <span><i class="fas fa-stopwatch" aria-hidden="true"></i>24 Hours</span></label>
+		
+		<input id="prio48" type="radio" name="priority" value="48" checked="true">
+        <label for="prio48"> <span><i class="fas fa-clock" aria-hidden="true"></i>48 Hours</span></label>
+      </div>
       <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['user_cookie_id']; ?>">
       <div class="meta_part">
 
