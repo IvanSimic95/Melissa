@@ -99,17 +99,7 @@ text-align:center;
     <img src="/assets/img/psychic.jpg" alt="upsell">
     <form class="readings" action="/order3.php" method="get">
       <h2>Future Baby Reading + Portrait</h2>
-      <div class="form_box input-group">
-  
-        <input id="prio12" type="radio" name="priority" value="12">
-        <label for="prio12"><span><i class="fas fa-bolt" aria-hidden="true"></i>12 Hours</span></label>
-        
-		<input id="prio24" type="radio" name="priority" value="24">
-        <label for="prio24"> <span><i class="fas fa-stopwatch" aria-hidden="true"></i>24 Hours</span></label>
-		
-		<input id="prio48" type="radio" name="priority" value="48" checked="true">
-        <label for="prio48"> <span><i class="fas fa-clock" aria-hidden="true"></i>48 Hours</span></label>
-      </div>
+    
       <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['user_cookie_id']; ?>">
       <div class="meta_part">
 
@@ -117,6 +107,19 @@ text-align:center;
           <div class="price_box">
             <span class="new_prce">$14.99</span>
           </div>
+
+          <div class="form_box input-group">
+  
+  <input id="prio12" type="radio" name="priority" value="12">
+  <label for="prio12"><span><i class="fas fa-bolt" aria-hidden="true"></i>12 Hours</span></label>
+  
+<input id="prio24" type="radio" name="priority" value="24">
+  <label for="prio24"> <span><i class="fas fa-stopwatch" aria-hidden="true"></i>24 Hours</span></label>
+
+<input id="prio48" type="radio" name="priority" value="48" checked="true">
+  <label for="prio48"> <span><i class="fas fa-clock" aria-hidden="true"></i>48 Hours</span></label>
+</div>
+
           <div class="gradient">Woudn't it be great to just know the truth instead of cunsumming yourself with constant thoughts?</div>
           <input type="submit" name="past_life" value="Yes i want my past life reading">
 
@@ -127,7 +130,32 @@ text-align:center;
     </form>
   </div>
 </div>
+<script>
+jQuery('input[name="priority"]').change(function(){
+    if (this.value == '12') {
+        jQuery('.new_prce').animate({'opacity' : 0}, 200, function(){jQuery('.new_prce').html('$49.99').animate({'opacity': 1}, 200);});
+		jQuery('.old_price del').animate({'opacity' : 0}, 300, function(){jQuery('.old_price del').html('$499.99').animate({'opacity': 1}, 300);});
+		jQuery('.saveda').animate({'opacity' : 0}, 400, function(){jQuery('.saveda').html('$450 (90%)').animate({'opacity': 1}, 400);});	
+    }
+    if (this.value == '24') {
+		jQuery('.new_prce').animate({'opacity' : 0}, 200, function(){jQuery('.new_prce').html('$39.99').animate({'opacity': 1}, 200);});
+		jQuery('.old_price del').animate({'opacity' : 0}, 300, function(){jQuery('.old_price del').html('$399.99').animate({'opacity': 1}, 300);});
+		jQuery('.saveda').animate({'opacity' : 0}, 400, function(){jQuery('.saveda').html('$360 (90%)').animate({'opacity': 1}, 400);});
+    }
+    if (this.value == '48') {
+		jQuery('.new_prce').animate({'opacity' : 0}, 200, function(){jQuery('.new_prce').html('$29.99').animate({'opacity': 1}, 200);});
+		jQuery('.old_price del').animate({'opacity' : 0}, 300, function(){jQuery('.old_price del').html('$299.99').animate({'opacity': 1}, 300);});
+		jQuery('.saveda').animate({'opacity' : 0}, 400, function(){jQuery('.saveda').html('$270 (90%)').animate({'opacity': 1}, 400);});
+    }
+})
+</script>
+<script>
 
+
+var product_code = $('.product_code').text()
+$('.product').val(product_code);
+
+</script>
 <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/create_chat.php'; ?>
 <style>@media(max-width: 1080px) {
 	
