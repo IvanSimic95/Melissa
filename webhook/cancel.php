@@ -1,8 +1,24 @@
 <?php
 $data = file_get_contents('php://input');
 $json_data = json_decode($data);
-$obj = $json_data;
 
 
-file_put_contents('test-cancel.txt', print_r($obj, true));
+$order_email = $json_data->email;
+$order_price = $json_data->price;
+$order_buygoods = $json_data->bgorderid;
+$cookie_id = $json_data->cookie;
+$mOrderID = $json_data->morderid;
+
+if($order_email) {
+include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+
+    $sql = "UPDATE `orders` SET `order_status`='canceled',`order_email`='$order_email',`order_price`='$order_price',`buygoods_order_id`='$order_buygoods' WHERE order_id='$mOrderID'" ;
+
+    if ($conn->query($sql) === TRUE) {
+      echo "Order Status updated to Canceled succesfully!";
+    } else {
+      echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+}
 ?>

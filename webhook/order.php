@@ -7,14 +7,15 @@ $order_email = $json_data->email;
 $order_price = $json_data->price;
 $order_buygoods = $json_data->bgorderid;
 $cookie_id = $json_data->cookie;
+$mOrderID = $json_data->morderid;
 
 if($order_email) {
 include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
-    $sql = "UPDATE `orders` SET `order_status`='paid',`order_email`='$order_email',`order_price`='$order_price',`buygoods_order_id`='$order_buygoods' WHERE cookie_id='$cookie_id'" ;
+    $sql = "UPDATE `orders` SET `order_status`='paid',`order_email`='$order_email',`order_price`='$order_price',`buygoods_order_id`='$order_buygoods' WHERE order_id='$mOrderID'" ;
 
     if ($conn->query($sql) === TRUE) {
-      echo "Update successfully";
+      echo "Order Status updated to Paid succesfully!";
     } else {
       echo "Error: " . $sql . "<br>" . $conn->error;
     }

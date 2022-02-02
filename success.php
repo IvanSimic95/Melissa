@@ -9,24 +9,18 @@ $cookie_id = $_SESSION['user_cookie_id'];
 $createChat = "";
 // echo $cookie_id;
 if($order_email) {
-  
-  include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
-    $sql = "UPDATE `orders` SET `order_status`='paid',`order_email`='$order_email',`order_price`='$order_price',`buygoods_order_id`='$order_buygoods' WHERE cookie_id='$cookie_id'" ;
-    // $sql = "INSERT INTO orders (order_id, cookie_id, user_age, user_name, order_status, order_date, order_email, order_product, order_priority, order_price, buygoods_order_id)
-    //                       VALUES (NULL, '$cookie_id', '$user_age', '$user_name', 'pending', '$order_date', '', '$order_product', '$order_priority', '', '')";
+    $sql = "SELECT * FROM `orders` WHERE `cookie_id`='$cookie_id'";
+    $result = $conn->query($sql);
+    $count = $result->num_rows;
+    if($result->num_rows != 0) {
+      $row = $result->fetch_assoc();
 
-
-    if ($conn->query($sql) === TRUE) {
-      // echo "Update successfully";
-
-      //unset($_COOKIE['user_cookie_id']);
-    } else {
-      // echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-
-
-
+    echo $row->genderAcc;
+     
+   
+  }
 
 
 ?>
