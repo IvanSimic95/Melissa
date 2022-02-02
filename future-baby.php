@@ -105,7 +105,7 @@ text-align:center;
 
         <div class="sides">
           <div class="price_box">
-            <span class="new_prce">$14.99</span>
+            <span class="new_prce">$29.99</span>
           </div>
 
           <div class="form_box input-group">
