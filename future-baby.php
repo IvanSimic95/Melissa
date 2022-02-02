@@ -4,14 +4,15 @@ include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 //echo $cookie_id;
 // set parameters and execute
 $cookie_id = $_SESSION['user_cookie_id'];
+$createChat = "";
 //echo $cookie_id;
 if($cookie_id){
 ?>
 
 
 
-<?php $title = "Past Life | Melissa Psychic"; ?>
-<?php $description = "Past Life Readings"; ?>
+<?php $title = "Future Baby Drawing | Melissa Psychic"; ?>
+<?php $description = "Future Baby Drawing"; ?>
 <?php $menu_order="men_0_0"; ?>
 <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php';
 $cookie_id = $_SESSION['user_cookie_id'];
@@ -128,6 +129,74 @@ text-align:center;
 </div>
 
 <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/create_chat.php'; ?>
+<style>@media(max-width: 1080px) {
+	
+	
+	.form_box > .sides{
+		display: flex!important;
+		 justify-content: space-between!important;
+		
+		 align-items:stretch;
+		}
+		
+	form > div:nth-child(2) > div > div:nth-child(2)
+	{
+	margin-left:10px;
+	margin-right:10px;
+		}
+	}
+	
+.third {
+	margin-bottom:0!important;
+   }
+.input-group {
+border-radius: 8px!important;
+    height: 46px!important;
+    border: 1px solid #cad1da!important;
+	display: inline-flex!important;
+	justify-content:space-evenly!important;
+	width:100%!important;
+	align-items: center;
+}
+
+select:invalid { color: gray; }
+	
+	
+.input-group input[type="radio"] {
+  display: none!important;
+}
+.input-group input[type="radio"] + label,
+.input-group select {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 33%;
+  padding: 13px 2px;
+  text-align:center;
+  cursor: pointer;
+}
+.input-group input[type="radio"] + label:first-of-type {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+  border-right: 1px solid #cad1da!important;
+}
+.input-group input[type="radio"] + label:last-of-type {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+  border-left: 1px solid #cad1da!important;
+}
+.input-group input[type="radio"] + label i {
+  padding-right: 0.4em;
+}
+.input-group input[type="radio"]:checked + label,
+.input-group input:checked + label:before,
+.input-group select:focus,
+.input-group select:active {
+ background: linear-gradient(90deg,#d130eb,#4a30eb 80%,#2b216c);
+  color: #fff!important;
+  font-weight: bold;
+  border-color: #bd8200;
+}
+</style>
 
 <style>
   .labbel-wrapper {
