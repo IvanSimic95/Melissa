@@ -71,7 +71,8 @@ $conn->close();
     $conn->close();
 
 
-
+header("Location: /order-complete.php");
+die();
 ?>
 
 
@@ -312,7 +313,8 @@ input[type=radio]:checked ~ label {
 
 <?php
 }else{
-  header('Location: /');
+  header("Location: /order-complete.php");
+  die();
 }
 
  ?>
