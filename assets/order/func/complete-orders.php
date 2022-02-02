@@ -55,7 +55,7 @@ echo "Starting complete-orders.php...<br><br>";
 				echo "Waiting | ";
 			}
 			
-			echo ""  . $hours . " hours | ";
+			echo ""  . $hours . " hours | <br>";
 			
 				if ($orderProduct == "soulmate" || $orderProduct == "husband" || $orderProduct =="twinflame") {
 				    $image_send = 1;
