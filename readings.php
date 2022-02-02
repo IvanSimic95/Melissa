@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php';
+session_start();
 include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 // set parameters and execute
 $cookie_id = $_SESSION['user_cookie_id'];
