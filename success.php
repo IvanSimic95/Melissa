@@ -11,7 +11,7 @@ $createChat = $genderAcc = "";
 if($order_email) {
 include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
-    $sql = "SELECT * FROM `orders` WHERE `cookie_id`='$cookie_id'";
+    $sql = "SELECT * FROM `orders` WHERE `order_email` = '$order_email' ORDER BY  `order_id` DESC LIMIT 1";
     $result = $conn->query($sql);
     $count = $result->num_rows;
     if($result->num_rows != 0) {
