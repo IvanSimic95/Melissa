@@ -3,9 +3,6 @@ session_start();
 include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 //echo $cookie_id;
 // set parameters and execute
-$order_email = $_GET['emailaddress'];
-$order_price = $_GET['total'];
-$order_buygoods = $_GET['order_id'];
 $cookie_id = $_SESSION['user_cookie_id'];
 //echo $cookie_id;
 if($cookie_id){
