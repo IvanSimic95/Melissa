@@ -19,26 +19,7 @@ $order_name = str_replace('%20', ' ', $_GET['username']);}
 
 }
 
-$domain = $_SERVER['SERVER_NAME'];
-	if($domain == "melissa.test"){
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "melissap_website";
-}else{
-    $servername = "localhost";
-    $username = "melissap_melissapsychic";
-    $password = ";w[#i&[zcrm?";
-    $dbname = "melissap_website";
-}
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
 $sql = "SELECT * FROM orders WHERE order_email = '$order_email' OR user_name = '$order_name '";
 

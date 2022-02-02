@@ -4,32 +4,7 @@ $id = $_GET['id'];
 }
 $shortlink = str_replace("/blog/", "",$id);
 $cleanshortlink = preg_replace('/[^-a-zA-Z0-9_]/', '', $shortlink);
-
-$domain = $_SERVER['SERVER_NAME'];
-	if($domain == "melissa.test"){
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "melissap_website";
-}else{
-    $servername = "localhost";
-    $username = "melissap_melissapsychic";
-    $password = ";w[#i&[zcrm?";
-    $dbname = "melissap_website";
-}
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-$conn->query('set character_set_client=utf8');
-$conn->query('set character_set_connection=utf8');
-$conn->query('set character_set_results=utf8');
-$conn->query('set character_set_server=utf8');
-$conn->set_charset('utf8mb4');
-
-    // Check connection
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-    }
+include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
     $sql = "SELECT * FROM blog WHERE shortlink = '".$cleanshortlink."' ORDER BY id DESC";
     $result = $conn->query($sql);

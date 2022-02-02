@@ -1,25 +1,5 @@
 <?php
-$domain = $_SERVER['SERVER_NAME'];
-if ($domain == "melissa.test") {
-    //Define your host here.
-    $servername = "localhost";
-    //Define your database username here.
-    $username = "root";
-    //Define your database password here.
-    $password = "";
-    //Define your database name here.
-    $dbname = "melissap_website";
-} else {
-    //Define your host here.
-    $servername = "localhost";
-    //Define your database username here.
-    $username = "melissap_melissapsychic";
-    //Define your database password here.
-    $password = ";w[#i&[zcrm?";
-    //Define your database name here.
-    $dbname = "melissap_website";
-}
-
+include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
 function time_ago($timestamp)  
  {  

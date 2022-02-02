@@ -35,7 +35,7 @@ if($domain == "melissa.test"){
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $dbname = "melissap_website";
+    $dbname = "melissap_melissa";
 	$base_url = "https://melissa.test";
 }else{
     $servername = "localhost";

@@ -9,33 +9,7 @@
 <div class="contents">
 
     <?php
-	$domain = $_SERVER['SERVER_NAME'];
-	if($domain == "melissa.test"){
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "melissap_website";
-}else{
-    $servername = "localhost";
-    $username = "melissap_melissapsychic";
-    $password = ";w[#i&[zcrm?";
-    $dbname = "melissap_website";
-}
-
-$variant = rand(1,3);
-include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/time.php';
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-$conn->query('set character_set_client=utf8');
-$conn->query('set character_set_connection=utf8');
-$conn->query('set character_set_results=utf8');
-$conn->query('set character_set_server=utf8');
-$conn->set_charset('utf8mb4');
-
-    // Check connection
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-    }
+include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
     $sql = "SELECT * FROM reviews WHERE review_moderated = 'approved' ORDER BY review_date DESC LIMIT 10";
 	$sql2 = "SELECT * FROM reviews WHERE review_moderated = 'approved' ORDER BY review_date DESC";

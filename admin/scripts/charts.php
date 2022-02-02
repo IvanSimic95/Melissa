@@ -53,6 +53,7 @@ while ($row = $result->fetch_assoc()) {
   $r[] = $row;
 }
 $ccountr = count($r);
+if($ccountr > '0'){
 
 $minusdays = $earnings - 1;
 $minusdays = "-".$minusdays." days";
@@ -435,3 +436,5 @@ var myLineChart = new Chart(ctx2, {
   }
 });
     </script>
+    
+<?php } ?>

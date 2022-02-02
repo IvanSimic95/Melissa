@@ -1,24 +1,5 @@
 <?php
-$domain = $_SERVER['SERVER_NAME'];
-if ($domain == "melissa.test") {
-    //Define your host here.
-    $host = "localhost";
-    //Define your database username here.
-    $user = "root";
-    //Define your database password here.
-    $password = "";
-    //Define your database name here.
-    $db = "melissap_melissa";
-} else {
-    //Define your host here.
-    $host = "localhost";
-    //Define your database username here.
-    $user= "melissap_melissapsychic";
-    //Define your database password here.
-    $password = ";w[#i&[zcrm?";
-    //Define your database name here.
-    $db = "melissap_melissa";
-}
+include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=UTF8";
 
