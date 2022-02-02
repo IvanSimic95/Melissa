@@ -5,7 +5,7 @@ session_start();
 $order_email = $_GET['emailaddress'];
 $order_price = $_GET['total'];
 $order_buygoods = $_GET['order_id'];
-$cookie_id = 760782685;
+$cookie_id = $_SESSION['user_cookie_id'];
 $createChat = "";
 // echo $cookie_id;
 if($order_email) {

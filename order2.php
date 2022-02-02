@@ -78,7 +78,7 @@ if (getUrlParameter('health')) {
 
 
 
- window.location.href = "https://www.buygoods.com/secure/upsell?account_id=6274&product_codename=" + nr_total + "xreadings&redirect=aHR0cHM6Ly9tZWxpc3NhLXBzeWNoaWMuY29tL3Bhc3QtbGlmZS5waHA=";
+ window.location.href = "https://www.buygoods.com/secure/upsell?account_id=6274&product_codename=" + nr_total + "xreadings&redirect=aHR0cHM6Ly9tZWxpc3NhLXBzeWNoaWMuY29tL2Z1dHVyZS1iYWJ5LnBocA==";
 </script>
 
 

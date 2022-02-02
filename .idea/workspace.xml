@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="81b954d3-d2cb-4927-b2e8-a997c349cce5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/composer-setup.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.phar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/order.php" beforeDir="false" afterPath="$PROJECT_DIR$/order.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/order2.php" beforeDir="false" afterPath="$PROJECT_DIR$/order2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/carlosio/opcache-dashboard/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/carlosio/opcache-dashboard/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/carlosio/opcache-dashboard/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/carlosio/opcache-dashboard/opcache.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/carlosio/opcache-dashboard/thumbnail-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/carlosio/opcache-dashboard/thumbnail-2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/carlosio/opcache-dashboard/thumbnail-3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/carlosio/opcache-dashboard/thumbnail-4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.json" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/installed.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/installed.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/composer/platform_check.php" beforeDir="false" afterPath="$PROJECT_DIR$/vendor/composer/platform_check.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/melbahja/seo/src/Schema/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/psr/simple-cache/.editorconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/psr/simple-cache/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/psr/simple-cache/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/psr/simple-cache/composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/psr/simple-cache/src/CacheException.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/psr/simple-cache/src/CacheInterface.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/vendor/psr/simple-cache/src/InvalidArgumentException.php" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="24ZTZBuhQxFlHgurjJm0ZBDKDlO" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="81b954d3-d2cb-4927-b2e8-a997c349cce5" name="Changes" comment="" />
+      <created>1643837167249</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1643837167249</updated>
+      <workItem from="1643837169965" duration="12000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

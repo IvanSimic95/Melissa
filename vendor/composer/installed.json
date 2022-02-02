@@ -1,45 +1,6 @@
 {
     "packages": [
         {
-            "name": "carlosio/opcache-dashboard",
-            "version": "1.0.0",
-            "version_normalized": "1.0.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/carlosbuenosvinos/opcache-dashboard.git",
-                "reference": "0bb0bd28ef46460c96c8890e2ae817da492577dc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/carlosbuenosvinos/opcache-dashboard/zipball/0bb0bd28ef46460c96c8890e2ae817da492577dc",
-                "reference": "0bb0bd28ef46460c96c8890e2ae817da492577dc",
-                "shasum": ""
-            },
-            "time": "2014-05-29T16:39:54+00:00",
-            "type": "library",
-            "installation-source": "dist",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Carlos Buenosvinos",
-                    "email": "hi@carlos.io",
-                    "homepage": "http://carlosbuenosvinos.com"
-                }
-            ],
-            "description": "Set up properly and monitor your Zend OPcache with this dashboard that will help you checking memory, hits and status, configuring for optimal performance (warning you when cache full, validation, etc.) and reseting one or all scripts with one click.",
-            "keywords": [
-                "Opcache"
-            ],
-            "support": {
-                "issues": "https://github.com/carlosbuenosvinos/opcache-dashboard/issues",
-                "source": "https://github.com/carlosbuenosvinos/opcache-dashboard/tree/master"
-            },
-            "install-path": "../carlosio/opcache-dashboard"
-        },
-        {
             "name": "melbahja/seo",
             "version": "v2.0.0",
             "version_normalized": "2.0.0.0",
@@ -101,6 +62,105 @@
                 "source": "https://github.com/melbahja/seo/tree/v2.0.0"
             },
             "install-path": "../melbahja/seo"
+        },
+        {
+            "name": "theiconic/name-parser",
+            "version": "v1.2.11",
+            "version_normalized": "1.2.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/theiconic/name-parser.git",
+                "reference": "9a54a713bf5b2e7fd990828147d42de16bf8a253"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/theiconic/name-parser/zipball/9a54a713bf5b2e7fd990828147d42de16bf8a253",
+                "reference": "9a54a713bf5b2e7fd990828147d42de16bf8a253",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "php-coveralls/php-coveralls": "^2.1",
+                "php-mock/php-mock-phpunit": "^2.1",
+                "phpunit/phpunit": "^7.0"
+            },
+            "time": "2019-11-14T14:08:48+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "TheIconic\\NameParser\\": [
+                        "src/",
+                        "tests/"
+                    ]
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "The Iconic",
+                    "email": "engineering@theiconic.com.au"
+                }
+            ],
+            "description": "PHP library for parsing a string containing a full name into its parts",
+            "support": {
+                "issues": "https://github.com/theiconic/name-parser/issues",
+                "source": "https://github.com/theiconic/name-parser/tree/v1.2.11"
+            },
+            "install-path": "../theiconic/name-parser"
+        },
+        {
+            "name": "tuqqu/gender-detector",
+            "version": "v0.3",
+            "version_normalized": "0.3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tuqqu/gender-detector.git",
+                "reference": "f62ae42917a2ba43257107b3c3349a4244487a8e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tuqqu/gender-detector/zipball/f62ae42917a2ba43257107b3c3349a4244487a8e",
+                "reference": "f62ae42917a2ba43257107b3c3349a4244487a8e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.4"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16",
+                "phpunit/phpunit": "^9.4",
+                "symfony/var-dumper": "^5.2",
+                "vimeo/psalm": "^4.2"
+            },
+            "time": "2020-12-01T22:36:43+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "GenderDetector\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "tuqqu"
+                }
+            ],
+            "description": "A library to detect a person's gender by their first name.",
+            "support": {
+                "issues": "https://github.com/tuqqu/gender-detector/issues",
+                "source": "https://github.com/tuqqu/gender-detector/tree/v0.3"
+            },
+            "install-path": "../tuqqu/gender-detector"
         }
     ],
     "dev": true,

@@ -6,5 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'TheIconic\\NameParser\\' => array($vendorDir . '/theiconic/name-parser/src', $vendorDir . '/theiconic/name-parser/tests'),
     'Melbahja\\Seo\\' => array($vendorDir . '/melbahja/seo/src'),
+    'GenderDetector\\' => array($vendorDir . '/tuqqu/gender-detector/src'),
 );
