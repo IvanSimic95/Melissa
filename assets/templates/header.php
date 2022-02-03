@@ -44,7 +44,8 @@ if(isset($_GET['logout'])){
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 
     <link rel="stylesheet" href="/assets/css/style.css">
-    <script>UST_CT = [];UST = { s: Date.now(), addTag: function(tag) { UST_CT.push(tag) } };UST.addEvent = UST.addTag;</script>
+
+<script>UST_CT = [];UST = { s: Date.now(), addTag: function(tag) { UST_CT.push(tag) } };UST.addEvent = UST.addTag;</script>
 <script src="https://cdn.psychic-artist.com/server/ust-rr.min.js?v=4.2.0" async></script>
 
   </head>
