@@ -32,7 +32,7 @@ if ($sex_picked==1) {
         } else {
             while ($row = $result->fetch_assoc()) {
                 $order_id =  $row["order_id"];
-                $user_name =  $row["user_name"];
+                $first_name =  $row["first_name"];
                 $order_email =  $row["order_email"];
                 $order_product = 'Readings';
             }
@@ -57,7 +57,7 @@ if ($sex_picked==1) {
   } else {
       while ($row = $result->fetch_assoc()) {
           $order_id =  $row["order_id"];
-          $user_name =  $row["user_name"];
+          $first_name =  $row["first_name"];
           $order_email =  $_SESSION['orderEmail'];
           $order_product = 'Readings';
           $createChat = "1";

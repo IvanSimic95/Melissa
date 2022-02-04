@@ -1,8 +1,10 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
+
 // set parameters and execute
 $cookie_id = $_GET['cookie_id'];
-$user_name = 'Addon';
+$user_name = $_SESSION['orderFName'];
 $order_product = 'baby';
 $order_date = date('Y-m-d H:i:s');
 $partnerGender = "male";

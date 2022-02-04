@@ -25,6 +25,9 @@ include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
 
     $_SESSION['orderEmail'] = $order_email;
+    $_SESSION['orderFName'] = $row['firt_name'];
+    $_SESSION['orderEmail'] = $order_email;
+
     $_SESSION['mainOrder'] = $redirectID;
     $_SESSION['genderAcc'] = $genderAcc;
     $_SESSION['userGender'] = $userGender;

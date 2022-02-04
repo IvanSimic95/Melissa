@@ -17,7 +17,7 @@ if($cookie_id){
   } else {
       while ($row = $result->fetch_assoc()) {
           $order_id =  $row["order_id"];
-          $user_name =  $row["user_name"];
+          $first_name =  $row["first_name"];
           $order_email =  $_SESSION['orderEmail'];
           $order_product = 'Future Baby';
           $createChat = "1";

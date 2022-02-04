@@ -18,7 +18,7 @@ $signature = hash_hmac('sha256', strval($order_id), 'sk_test_dmh9xKYFEPiN2BxC0Z9
     Talk.ready.then(function() {
       var other = new Talk.User({
           id: "<?php echo $order_id; ?>",
-          name: "<?php echo $user_name; ?>",
+          name: "<?php echo $first_name; ?>",
           email: "<?php echo $order_email; ?>",
           photoUrl: "https://avatars.dicebear.com/api/adventurer/<?php echo $order_email; ?>.svg?skinColor=variant02",
           role: "customer",

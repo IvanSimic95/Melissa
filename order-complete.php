@@ -1,3 +1,35 @@
+<?php
+session_start();
+include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+//echo $cookie_id;
+// set parameters and execute
+$cookie_id = $_SESSION['user_cookie_id'];
+$createChat = "";
+//echo $cookie_id;
+if($cookie_id){
+
+
+  $sql = "SELECT * FROM orders WHERE cookie_id='$cookie_id'";
+
+  $result = $conn->query($sql);
+
+  if ($result->num_rows == 0) {
+  } else {
+      while ($row = $result->fetch_assoc()) {
+          $order_id =  $row["order_id"];
+          $first_name =  $row["first_name"];
+          $order_email =  $_SESSION['orderEmail'];
+          $order_product = 'Future Baby';
+          $createChat = "1";
+      }
+      
+  }
+  unset($_COOKIE['user_cookie_id']);
+
+}
+?>
+
+
 <?php $title = "Dashboard | Melissa Psychic"; ?>
 <?php $description = "Dashboard"; ?>
 <?php $menu_order="0_0"; ?>
@@ -32,7 +64,7 @@
   </div>
 </div>
 </div>
-
+<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/create_chat.php'; ?>
 <style>
   .white-wrapper {
 margin-top:50px;

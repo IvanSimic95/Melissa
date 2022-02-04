@@ -9,7 +9,7 @@ if(isset($_GET['career'])) {$career = $_GET['career'];}else{$career = "";}
 if(isset($_GET['health'])) {$health = $_GET['health'];}else{$health = "";}
 
 $cookie_id = $_GET['cookie_id'];
-$user_name = 'Addon';
+$user_name = $_SESSION['orderFName'];
 $order_product = $general . " " .  $love . " " . $career . " " . $health;
 $order_date = date('Y-m-d H:i:s');
 $partnerGender = "male";
