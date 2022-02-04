@@ -16,6 +16,11 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
+$randomNumber = rand(155654654,955654654);
+if(!isset($_SESSION['user_cookie_id'])) {
+$_SESSION['user_cookie_id'] = $randomNumber;
+}
+
 if(isset($_GET['logout'])){
   $_SESSION = array();
   session_destroy();

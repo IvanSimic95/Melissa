@@ -36,8 +36,7 @@ if ($sex_picked==1) {
             }
         }
         // echo "Update successfully";
-        session_unset();
-        session_destroy();
+
     //unset($_COOKIE['user_cookie_id']);
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;

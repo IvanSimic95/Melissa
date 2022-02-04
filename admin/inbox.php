@@ -1,6 +1,7 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/head.php';
 include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
+$signature = hash_hmac('sha256', 'administrator', 'sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL');
 ?>
 <div class="container-fluid px-4">
     <div class="row justify-content-start" style="">
@@ -27,11 +28,12 @@ include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
          name: "Melissa",
          email: "contact@melissa-psychic.com",
          photoUrl: "/assets/img/avatars/admin.png",
-         role: "admin"
+         role: "administrator"
      });
      window.talkSession = new Talk.Session({
          appId: "t2X08S4H",
-         me: admin
+         me: admin,
+         signature: "<?php echo $signature; ?>"
      });
      var inbox = window.talkSession.createInbox();
      inbox.mount(document.getElementById('talkjs-container'));
