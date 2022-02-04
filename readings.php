@@ -3,7 +3,6 @@ session_start();
 include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 // set parameters and execute
 $cookie_id = $_SESSION['user_cookie_id'];
-echo $cookie_id;
 
 $genderAcc = $_SESSION['genderAcc'];
 $userGender = $_SESSION['userGender'];

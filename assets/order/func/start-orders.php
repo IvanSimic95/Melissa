@@ -45,14 +45,14 @@ echo "Starting start-orders.php...<br><br>";
 				"type" => "SystemMessage"
 			],
 			[
-				"sender"  => "654321252",
+				"sender"  => "administrator",
 				"text" => $message,
 				"type" => "UserMessage"
 			]];
 			
 			$data1 = json_encode($data);
 
-			curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/t2X08S4H/conversations/' . $row["order_id"] . '/messages');
+			curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/t2X08S4H/conversations/' . $orderId . '/messages');
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
 
