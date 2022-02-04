@@ -19,7 +19,7 @@ if($cookie_id){
           $order_id =  $row["order_id"];
           $first_name =  $row["first_name"];
           $order_email =  $_SESSION['orderEmail'];
-          $order_product = 'Future Baby';
+          $order_product = 'Personal Reading';
           $createChat = "1";
       }
       

@@ -21,4 +21,27 @@ include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
     }
 
 }
+
+$ch = curl_init();
+$data = [
+"custom" => ["status" => "Completed"]
+];
+$data1 = json_encode($data);
+print_r($data1);
+curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/t2X08S4H/conversations/'.$orderID);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data1);
+
+$headers = array();
+$headers[] = 'Content-Type: application/json';
+$headers[] = 'Authorization: Bearer sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL';
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+$result = curl_exec($ch);
+if (curl_errno($ch)) {
+    echo 'Error:' . curl_error($ch);
+}
+curl_close($ch);
 ?>
