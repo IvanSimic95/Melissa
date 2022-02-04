@@ -7,6 +7,24 @@ $cookie_id = $_SESSION['user_cookie_id'];
 $createChat = "";
 //echo $cookie_id;
 if($cookie_id){
+
+
+  $sql = "SELECT * FROM orders WHERE cookie_id='$cookie_id'";
+
+  $result = $conn->query($sql);
+
+  if ($result->num_rows == 0) {
+  } else {
+      while ($row = $result->fetch_assoc()) {
+          $order_id =  $row["order_id"];
+          $user_name =  $row["user_name"];
+          $order_email =  $_SESSION['orderEmail'];
+          $order_product = 'Future Baby';
+          $createChat = "1";
+      }
+      
+  }
+  unset($_COOKIE['user_cookie_id']);
 ?>
 
 
