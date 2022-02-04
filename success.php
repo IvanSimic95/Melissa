@@ -23,6 +23,9 @@ include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
     $userGender = $row['user_sex'];
     $partnerGender = $row['pick_sex'];
 
+
+    $_SESSION['orderEmail'] = $order_email;
+    $_SESSION['mainOrder'] = $redirectID;
     $_SESSION['genderAcc'] = $genderAcc;
     $_SESSION['userGender'] = $userGender;
     $_SESSION['partnerGender'] = $partnerGender;

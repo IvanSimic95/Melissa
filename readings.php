@@ -3,6 +3,7 @@ session_start();
 include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 // set parameters and execute
 $cookie_id = $_SESSION['user_cookie_id'];
+echo $cookie_id;
 
 $genderAcc = $_SESSION['genderAcc'];
 $userGender = $_SESSION['userGender'];
@@ -39,7 +40,7 @@ if ($sex_picked==1) {
         }
         // echo "Update successfully";
 
-    //unset($_COOKIE['user_cookie_id']);
+        unset($_COOKIE['user_cookie_id']);
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
@@ -47,8 +48,9 @@ if ($sex_picked==1) {
     $conn->close();
   
 }else{
+  $order_id = $_SESSION['mainOrder'];
 
-  $sql = "SELECT * FROM orders WHERE cookie_id='$cookie_id'";
+  $sql = "SELECT * FROM orders WHERE order_id='$order_id'";
 
   $result = $conn->query($sql);
 
@@ -57,13 +59,13 @@ if ($sex_picked==1) {
       while ($row = $result->fetch_assoc()) {
           $order_id =  $row["order_id"];
           $user_name =  $row["user_name"];
-          $order_email =  $row["order_email"];
+          $order_email =  $_SESSION['orderEmail'];
           $order_product = 'Readings';
+          $createChat = "1";
       }
       
   }
-
-//unset($_COOKIE['user_cookie_id']);
+  unset($_COOKIE['user_cookie_id']);
 }
 ?>
 
