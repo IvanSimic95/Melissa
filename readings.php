@@ -8,7 +8,7 @@ $genderAcc = $_SESSION['genderAcc'];
 $userGender = $_SESSION['userGender'];
 $partnerGender = $_SESSION['partnerGender'];
 
-$createChat = "";
+$createChat="1";
 
 $sex_picked = "";
 if(isset($_POST['pick_sex'])){
@@ -47,6 +47,7 @@ if ($sex_picked==1) {
     $conn->close();
   
 }else{
+
   $sql = "SELECT * FROM orders WHERE cookie_id='$cookie_id'";
 
   $result = $conn->query($sql);
@@ -59,7 +60,7 @@ if ($sex_picked==1) {
           $order_email =  $row["order_email"];
           $order_product = 'Readings';
       }
-      $createChat = 1;
+      
   }
 
 //unset($_COOKIE['user_cookie_id']);
