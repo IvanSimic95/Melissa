@@ -22,7 +22,6 @@ $signature = hash_hmac('sha256', strval($order_id), 'sk_test_dmh9xKYFEPiN2BxC0Z9
           email: "<?php echo $order_email; ?>",
           photoUrl: "https://avatars.dicebear.com/api/adventurer/<?php echo $order_email; ?>.svg?skinColor=variant02",
           role: "customer",
-          welcomeMessage: "Hey, let's have a chat!",
           custom: {
           email: "<?php echo $order_email; ?>",
           lastOrder: "<?php echo $order_id; ?>"

@@ -8,6 +8,8 @@ $genderAcc = $_SESSION['genderAcc'];
 $userGender = $_SESSION['userGender'];
 $partnerGender = $_SESSION['partnerGender'];
 
+$createChat = "";
+
 $sex_picked = "";
 if(isset($_POST['pick_sex'])){
   $pick_sex = $_POST['pick_sex'];
@@ -44,7 +46,24 @@ if ($sex_picked==1) {
 
     $conn->close();
   
-} 
+}else{
+  $sql = "SELECT * FROM orders WHERE cookie_id='$cookie_id'";
+
+  $result = $conn->query($sql);
+
+  if ($result->num_rows == 0) {
+  } else {
+      while ($row = $result->fetch_assoc()) {
+          $order_id =  $row["order_id"];
+          $user_name =  $row["user_name"];
+          $order_email =  $row["order_email"];
+          $order_product = 'Readings';
+      }
+      $createChat = 1;
+  }
+
+//unset($_COOKIE['user_cookie_id']);
+}
 ?>
 
 
@@ -230,7 +249,7 @@ text-align:center;
         }
       });
     </script>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php';
-
-
+<?php 
+include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/create_chat.php';
+include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php';
 ?>
