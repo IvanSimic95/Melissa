@@ -1,5 +1,7 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
+
 // set parameters and execute
 if(isset($_GET['general'])) {$general = $_GET['general'];}else{$general = "";}
 if(isset($_GET['love'])) {$love = $_GET['love'];}else{$love = "";}
@@ -55,6 +57,8 @@ if($cookie_id) {
     } else {
       // echo "Error: " . $sql . "<br>" . $conn->error;
     }
+
+    $lastRowInsert = mysqli_insert_id($conn);
 
     $conn->close();
 ?>
