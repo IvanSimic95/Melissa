@@ -252,6 +252,5 @@ text-align:center;
       });
     </script>
 <?php 
-include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/create_chat.php';
 include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php';
 ?>

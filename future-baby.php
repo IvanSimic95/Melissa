@@ -174,7 +174,6 @@ var product_code = $('.product_code').text()
 $('.product').val(product_code);
 
 </script>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/create_chat.php'; ?>
 <style>@media(max-width: 1080px) {
 	
 	

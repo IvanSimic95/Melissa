@@ -174,7 +174,6 @@ if($result->num_rows == 0 || $order_email == "") {
     $conn->close();
 }
 
-include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/create_chat.php';
 
 }else{
   header('Location: /');

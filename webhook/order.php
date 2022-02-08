@@ -24,7 +24,8 @@ include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
 $ch = curl_init();
 $data = [
-"custom" => ["status" => "Completed"]
+"participants" => ["administrator", $mOrderID],
+"custom" => ["status" => "Paid"]
 ];
 $data1 = json_encode($data);
 print_r($data1);
