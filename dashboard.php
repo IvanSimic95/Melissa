@@ -37,7 +37,7 @@ $_SESSION['valid'] = true;
 $_SESSION['timeout'] = time();
 $_SESSION['email'] = $order_email;
 
-include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/signed_in2.php';
+include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/signed_in.php';
 }
 
  ?>
