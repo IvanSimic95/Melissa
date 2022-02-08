@@ -104,20 +104,20 @@ span.sbadge{
   }
   
   
-  span.sbadge .fas{
-  display:none;
+  span.sbadge .svg-inline--fa{
+  display:none!important;
   }
   span.sbadge-completed .fa-check{
-  display:inline-block;
+  display:inline-block!important;
   }
   span.sbadge-processing .fa-redo{
-  display:inline-block;
+  display:inline-block!important;
   }
   span.sbadge-pending .fa-stream{
-  display:inline-block;
+  display:inline-block!important;
   }
   span.sbadge-canceled .fa-ban{
-  display:inline-block;
+  display:inline-block!important;
   }
 </style>
 <script>
