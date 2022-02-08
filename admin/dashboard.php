@@ -75,12 +75,16 @@ include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
 </div>
 </div>
 <style>
+tr {
+vertical-align: middle!important;
+text-align: center!important;
+}
 .card {
     height: 100%;
 }
 .sbadge{
     border-radius: 0.25rem !important;
-    padding: 0.5rem !important;
+    padding: 0.2rem !important;
     text-transform: capitalize!important;
     font-weight:600!important;
     text-align: center;
