@@ -81,7 +81,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
 </style>
 <script>
                     function buttonClicked(conversationId) {
-                        var me = new Talk.User(administrator);
+                        var me = new Talk.User("administrator");
                         var other = conversationId;
                         window.talkSession = new Talk.Session({
                             appId: "t2X08S4H",
