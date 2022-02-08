@@ -202,7 +202,7 @@ $trigger = "1";
 				
 				$message = $theader.$email_text.$tfooter;
 
-			}elseif ($orderProduct == "pastlife") {
+			}elseif ($orderProduct == "past") {
 				$image_send = 1;
 				$img_folder_name = "past";
 

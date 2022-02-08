@@ -21,6 +21,8 @@ $lName = $name->getLastname();
 $_SESSION['orderFName'] = $fName;
 $_SESSION['orderLName'] = $lName;
 
+$_SESSION['orderAge'] = $user_age;
+
 //Find User Gender
 function findGender($name) {
 $apiKey = 'Whc29bSnvP3zrQG3hYCwXKMoYu5h4ZQukS6n'; //Your API Key

@@ -9,16 +9,20 @@ if(isset($_GET['skip'])){
   die();
   }
 }
-
 $cookie_id = $_GET['cookie_id'];
-$user_name = $_SESSION['orderFName'];
-$order_product = $general . " " .  $love . " " . $career . " " . $health;
+
+$order_product = "baby";
 $order_date = date('Y-m-d H:i:s');
 $partnerGender = "male";
 
 $fName = $_SESSION['orderFName'];
 $lName = $_SESSION['orderLName'];
 
+$user_name = $fName . $lName;
+
+$user_age = $_SESSION['orderAge'];
+
+$order_priority = "24";
 
 //Find User Gender
 function findGender($name) {
