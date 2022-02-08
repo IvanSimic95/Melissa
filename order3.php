@@ -22,7 +22,7 @@ $user_name = $fName . $lName;
 
 $user_age = $_SESSION['orderAge'];
 
-$order_priority = "24";
+$order_priority = $_GET['priority'];
 
 //Find User Gender
 function findGender($name) {
@@ -84,7 +84,7 @@ if($cookie_id) {
 </div>
 <script>
 var prio = getUrlParameter('priority');
-var product = getUrlParameter('product');
+var product = "baby";
 
 window.location.href = "https://www.buygoods.com/secure/upsell?account_id=6274&product_codename=" + product + prio + "&subid=<?php echo $cookie_id; ?>&subid2=<?php echo $lastRowInsert; ?>&redirect=<?php echo $returnEncoded; ?>";
 </script>

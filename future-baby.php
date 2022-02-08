@@ -109,7 +109,7 @@ text-align:center;
 </div>
 
           <div class="gradient">Woudn't it be great to just know the truth instead of cunsumming yourself with constant thoughts?</div>
-          <input type="submit" name="past_life" value="Yes i want my past life reading">
+          <input type="submit" name="future_baby" value="Yes i want my future baby drawing">
 
         </div>
       </div>
