@@ -2053,3 +2053,9 @@ color:#fff!important;
   .chat > .btn {
     border-radius: 0.25rem !important;
   }
+
+  @media (max-width: 1080px) {
+    .table_bodies span.chat{
+       padding:0!important;
+      }
+  }
