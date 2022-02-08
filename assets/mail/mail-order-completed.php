@@ -266,7 +266,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 					</script>
 					<script>
 							Talk.ready.then(function() {
-								var me = new Talk.User(654321252);
+								var me = new Talk.User(administrator);
 								var other = new Talk.User(<?php echo $orderID; ?>);
 								window.talkSession = new Talk.Session({
 										appId: "t2X08S4H",
