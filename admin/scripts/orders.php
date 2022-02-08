@@ -30,7 +30,7 @@ $sql = "SELECT * FROM orders WHERE order_status = 'processing' OR order_status =
                         <td>' . $row["user_name"]. '</td>
                         <td>' . $row["order_email"]. '</td>
                         <td>' . $product. '</td>
-                        <td><span class="sbadge sbadge-' . $status. '>' . $status. '</span></td>
+                        <td><span class="sbadge sbadge-' . $status. '">' . $status. '</span></td>
                         <td>$' . $row["order_price"]. '</td>
                         <td>' . $row["order_priority"]. '</td>
                         </tr>
