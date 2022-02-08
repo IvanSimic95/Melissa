@@ -42,8 +42,12 @@ $metatags
   <script src="https://kit.fontawesome.com/699dff544d.js" crossorigin="anonymous"></script>
 
   <!-- Heatmap & Visitor Stats -->
-  <script>UST_CT = [];UST = { s: Date.now(), addTag: function(tag) { UST_CT.push(tag) } };UST.addEvent = UST.addTag;</script>
-  <script src="https://cdn.psychic-artist.com/server/ust-rr.min.js?v=4.2.0" async></script>
+<script>UST_CT = [];UST = { s: Date.now(), addTag: function(tag) { UST_CT.push(tag) } };UST.addEvent = UST.addTag;
+(function() {var ust_s = document.createElement('STYLE');ust_s.id = 'ust_body_style';
+ust_s.appendChild(document.createTextNode('body {opacity: 0}'));document.head.appendChild(ust_s);})();
+setTimeout(function(){ var el = document.getElementById('ust_body_style'); el && el.remove()}, 800);</script>
+<script src="https://cdn.psychic-artist.com/server/ab/melissa-psychic.com.ab.js?v=4.2.0" defer></script>
+<script src="https://cdn.psychic-artist.com/server/ust-rr.min.js?v=4.2.0" async></script>
   </head>
 
   <body id="<?php echo $menu_order; ?>">

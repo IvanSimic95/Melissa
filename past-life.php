@@ -8,80 +8,75 @@ $order_buygoods = $_GET['order_id'];
 $cookie_id = $_SESSION['user_cookie_id'];
 //echo $cookie_id;
 
-if($order_email) {
-    
-include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+if ($order_email) {
 
-$sql = "SELECT * FROM orders WHERE order_email ='$order_email'";
+  
+include $_SERVER['DOCUMENT_ROOT'] . '/config/vars.php';
+  $sql = "SELECT * FROM orders WHERE order_email ='$order_email'";
+  $result = $conn->query($sql);
+  if ($result->num_rows == 0 || $order_email == "") {
 
-$result = $conn->query($sql);
-
-if($result->num_rows == 0 || $order_email == "") {
-
-
-} else {
-    while($row = $result->fetch_assoc()) {
+  }
+  else {
+    while ($row = $result->fetch_assoc()) {
       $retained_username = $row["user_name"];
     }
-
-}
-$conn->close();
-// end of fetch email from past order
+  }  $conn->close();  // end of fetch email from past order
 
 
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
+  // Create connection
+  $conn = new mysqli($servername, $username, $password, $dbname);
 
-    // Check connection
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
+  // Check connection
+  if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+  }
+
+
+  $sql = "UPDATE `orders` SET `user_name` = '$retained_username', `order_status`='paid',`order_email`='$order_email',`order_price`='$order_price',`buygoods_order_id`='$order_buygoods' WHERE cookie_id='$cookie_id'";
+
+
+  if ($conn->query($sql) === TRUE) {
+    $sql = "SELECT * FROM orders WHERE cookie_id='$cookie_id'";
+
+    $result = $conn->query($sql);
+
+    if ($result->num_rows == 0 || $order_email == "") {
+
+
+    }
+    else {
+      while ($row = $result->fetch_assoc()) {
+        $order_id = $row["order_id"];
+        $user_name = $row["user_name"];
+        $order_email = $row["order_email"];
+        $order_product = 'Readings';
+      }
+
     }
 
 
-    $sql = "UPDATE `orders` SET `user_name` = '$retained_username', `order_status`='paid',`order_email`='$order_email',`order_price`='$order_price',`buygoods_order_id`='$order_buygoods' WHERE cookie_id='$cookie_id'" ;
+    // echo "Update successfully";
+    session_unset();
+    session_destroy();
+  //unset($_COOKIE['user_cookie_id']);
+  }
+  else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
 
+  $conn->close();
 
-    if ($conn->query($sql) === TRUE) {
-      $sql = "SELECT * FROM orders WHERE cookie_id='$cookie_id'";
-
-      $result = $conn->query($sql);
-
-      if($result->num_rows == 0 || $order_email == "") {
-
-
-    } else {
-          while($row = $result->fetch_assoc()) {
-            $order_id =  $row["order_id"];
-            $user_name =  $row["user_name"];
-            $order_email =  $row["order_email"];
-            $order_product = 'Readings';
-          }
-
-          }
-
-
-       // echo "Update successfully";
-       session_unset();
-       session_destroy();
-       //unset($_COOKIE['user_cookie_id']);
-    } else {
-       echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-
-    $conn->close();
-
-
-header("Location: /order-complete.php");
-die();
+  header("Location: /order-complete.php");  die();
 ?>
 
 
 
 <?php $title = "Past Life | Melissa Psychic"; ?>
 <?php $description = "Past Life Readings"; ?>
-<?php $menu_order="men_0_0"; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php'; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
+<?php $menu_order = "men_0_0"; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/templates/session.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/templates/header.php'; ?>
 <style>
 h1 {
 font-size: 36px;
@@ -179,7 +174,7 @@ text-align:center;
   </div>
 </div>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/create_chat.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/templates/create_chat.php'; ?>
 
 <style>
   .labbel-wrapper {
@@ -312,13 +307,14 @@ input[type=radio]:checked ~ label {
     </style>
 
 <?php
-}else{
+}
+else {
   header("Location: /order-complete.php");
   die();
 }
 
- ?>
+?>
 
 
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/templates/footer.php'; ?>

@@ -1,8 +1,8 @@
 <?php $title = "Melissa Psychic | Homepage"; ?>
 <?php $description = "I can read anything for you with my psychic abilities"; ?>
-<?php $menu_order="men_1_0"; ?>
+<?php $menu_order = "men_1_0"; ?>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/templates/header.php'; ?>
 
 <section class="hero_slider">
   <div class="dark_bg"></div>
@@ -17,7 +17,7 @@
       </div>
     </div>
 </section>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/product_grid.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/templates/product_grid.php'; ?>
 <section class="about">
   <div class="container">
     <div class="sides">
@@ -36,7 +36,7 @@
 <section class="reviews">
   <div class="container">
     <h2>But dont take my word, here what my past clients say:</h2>
-    <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/reviews-home.php'; ?>
+    <?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/templates/reviews-home.php'; ?>
   </div>
 </section>
 <!--<section class="subscribe">
@@ -48,4 +48,4 @@
     </form>
   </div>
 </section>-->
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>
+<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/templates/footer.php'; ?>
