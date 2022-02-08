@@ -32,7 +32,7 @@ $data = [
 "email" => [$order_email],
 "role" => "customer",
 "photoUrl" => "https://avatars.dicebear.com/api/adventurer/".$order_email.".svg?skinColor=variant02",
-"custom" => ["email" => $order_email, "phone" => $cPhone,]
+"custom" => ["email" => $order_email, "phone" => $cPhone, "lastOrder" => $mOrderID]
 ];
 $data1 = json_encode($data);
 print_r($data1);
@@ -58,7 +58,9 @@ echo $result;
 //Now create new conversation
 $ch2 = curl_init();
 $data2 = [
+"subject" => "Order #".$mOrderID." | ".$productFullTitle,
 "participants" => ["administrator", $mOrderID],
+"photoUrl" => $productImage,
 "custom" => ["status" => "Paid"]
 ];
 $data22 = json_encode($data2);
