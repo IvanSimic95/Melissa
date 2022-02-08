@@ -23,7 +23,48 @@
     <div class="row">
       <div class="col-md-12">
    <div class="white-wrapper">
+<style>
+.table_bodies span.sbadge{
+  border-radius: 0.25rem !important;
+  padding: 0.5rem !important;
+  text-transform: capitalize!important;
+  font-weight:600!important;
+  text-align: center;
+}
 
+.table_bodies span.sbadge-pending{
+color: #9d5228;
+background-color: #fde6d8;
+}
+.table_bodies span.sbadge-completed{
+color: #00864e;
+background-color: #ccf6e4;
+}
+.table_bodies span.sbadge-processing{
+color: #1c4f93;
+background-color: #d5e5fa;
+}
+
+.table_bodies span.sbadge .fas{
+display:none;
+}
+
+.table_bodies span.sbadge-completed .fa-check{
+display:inline-block;
+}
+.table_bodies span.sbadge-processing .fa-redo{
+display:inline-block;
+}
+.table_bodies span.sbadge-pending .fa-stream{
+display:inline-block;
+}
+
+
+
+.chat > .btn {
+  border-radius: 0.25rem !important;
+}
+  </style>
 
 
   <div class="gradient-top">
@@ -33,7 +74,7 @@
     <div class="table_box">
       <div class="table_inside">
         <div class="table_heads">
-          <h5>Name</h5><h5>Email </h5><h5>Product</h5><h5>Status</h5><h5>Price</h5><h5>Chat</h5>
+          <h5>Name</h5><h5>Email </h5><h5>Product</h5><h5>Price</h5><h5>Status</h5><h5>Chat</h5>
         </div>
         <div class="table_bodies">
           <?php
@@ -56,8 +97,8 @@
                     $product = "Twin Flame Drawing";
                     break;
             }
-            if($row["order_status"]=="shipped"){$status="Completed";}else{$status = $row["order_status"];}
-              echo "<div class='order_single'><span>" . $row["user_name"]. "</span><span>" . ucwords($row["order_email"]) . "</span><span>" . $product . "</span><span>" . $status . "</span><span>$" . $row["order_price"]. "</span><span class='chat' id='talkjs-" . $row["order_id"] . "'><a class='btn'>View Order #" . $row["order_id"] . "</a></span></div>";
+            if($row["order_status"]=="shipped"){$status="completed";}else{$status = $row["order_status"];}
+              echo "<div class='order_single'><span>" . $row["user_name"]. "</span><span>" . ucwords($row["order_email"]) . "</span><span>" . $product . "</span><span>$" . $row["order_price"]. "</span><span class='sbadge sbadge-" . $status . "'>" . $status . " <i class='fas fa-check'></i><i class='fas fa-stream'></i><i class='fas fa-redo'></i></span><span class='chat' id='talkjs-" . $row["order_id"] . "'><a class='btn'>View Order #" . $row["order_id"] . "</a></span></div>";
               ?>
               <div class="chat_box" style="width: 420px; margin: 0px; height: 500px; position:fixed;bottom:0;right:0;z-index:999;">
                 <i class="fas fa-times"></i>
