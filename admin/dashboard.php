@@ -78,7 +78,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
 .card {
     height: 100%;
 }
-span.sbadge{
+.sbadge{
     border-radius: 0.25rem !important;
     padding: 0.5rem !important;
     text-transform: capitalize!important;
@@ -86,37 +86,37 @@ span.sbadge{
     text-align: center;
   }
   
-  span.sbadge-pending{
+.sbadge-pending{
   color: #9d5228;
   background-color: #fde6d8;
   }
-  span.sbadge-completed{
+.sbadge-completed{
   color: #00864e;
   background-color: #ccf6e4;
   }
-  span.sbadge-processing{
+.sbadge-processing{
   color: #1c4f93;
   background-color: #d5e5fa;
   }
-  span.sbadge-canceled{
+.sbadge-canceled{
   color: #7d899b;
   background-color: #e3e6ea;
   }
   
   
-  span.sbadge .svg-inline--fa{
+.sbadge .svg-inline--fa{
   display:none!important;
   }
-  span.sbadge-completed .fa-check{
+.sbadge-completed .fa-check{
   display:inline-block!important;
   }
-  span.sbadge-processing .fa-redo{
+.sbadge-processing .fa-redo{
   display:inline-block!important;
   }
-  span.sbadge-pending .fa-stream{
+.sbadge-pending .fa-stream{
   display:inline-block!important;
   }
-  span.sbadge-canceled .fa-ban{
+.sbadge-canceled .fa-ban{
   display:inline-block!important;
   }
 </style>
