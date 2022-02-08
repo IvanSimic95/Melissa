@@ -19,9 +19,9 @@ include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
     $sql = "UPDATE `orders` SET `order_status`='paid',`order_email`='$order_email',`order_price`='$order_price',`buygoods_order_id`='$order_buygoods' WHERE order_id='$mOrderID'" ;
 
     if ($conn->query($sql) === TRUE) {
-      echo "Order Status updated to Paid succesfully!";
+      //echo "Order Status updated to Paid succesfully!";
     } else {
-      echo "Error: " . $sql . "<br>" . $conn->error;
+      //echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
 //First create TalkJS User with same ID as conversation
@@ -53,33 +53,33 @@ if (curl_errno($ch)) {
 echo 'Error:' . curl_error($ch);
 }
 curl_close($ch);
-
+echo $result;
 
 
 //Now create new conversation
-$ch = curl_init();
-$data = [
+$ch2 = curl_init();
+$data2 = [
 "participants" => ["administrator", $mOrderID],
 "custom" => ["status" => "Paid"]
 ];
-$data1 = json_encode($data);
+$data22 = json_encode($data2);
 print_r($data1);
-curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/t2X08S4H/conversations/'.$mOrderID);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+curl_setopt($ch2, CURLOPT_URL, 'https://api.talkjs.com/v1/t2X08S4H/conversations/'.$mOrderID);
+curl_setopt($ch2, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch2, CURLOPT_CUSTOMREQUEST, 'PUT');
 
-curl_setopt($ch, CURLOPT_POSTFIELDS, $data1);
+curl_setopt($ch2, CURLOPT_POSTFIELDS, $data22);
 
 $headers = array();
 $headers[] = 'Content-Type: application/json';
 $headers[] = 'Authorization: Bearer sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL';
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+curl_setopt($ch2, CURLOPT_HTTPHEADER, $headers);
 
-$result = curl_exec($ch);
-if (curl_errno($ch)) {
-    echo 'Error:' . curl_error($ch);
+$result2 = curl_exec($ch2);
+if (curl_errno($ch2)) {
+    echo 'Error:' . curl_error($ch2);
 }
-curl_close($ch);
-
+curl_close($ch2);
+echo $result2;
 }
 ?>
