@@ -59,7 +59,7 @@ if($cookie_id) {
     } else {
       // echo "Error: " . $sql . "<br>" . $conn->error;
     }
-
+    $lastRowInsert = mysqli_insert_id($conn);
     $conn->close();
 ?>
 
