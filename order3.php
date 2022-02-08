@@ -10,19 +10,14 @@ if(isset($_GET['skip'])){
   }
 }
 
-// set parameters and execute
 $cookie_id = $_GET['cookie_id'];
 $user_name = $_SESSION['orderFName'];
-$order_product = 'baby';
+$order_product = $general . " " .  $love . " " . $career . " " . $health;
 $order_date = date('Y-m-d H:i:s');
 $partnerGender = "male";
 
-//Full name -> First and Last Name
-$parser = new TheIconic\NameParser\Parser();
-$name = $parser->parse($user_name);
-
-$fName = $name->getFirstname();
-$lName = $name->getLastname();
+$fName = $_SESSION['orderFName'];
+$lName = $_SESSION['orderLName'];
 
 
 //Find User Gender

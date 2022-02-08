@@ -18,6 +18,8 @@ $name = $parser->parse($user_name);
 $fName = $name->getFirstname();
 $lName = $name->getLastname();
 
+$_SESSION['orderFName'] = $fName;
+$_SESSION['orderLName'] = $lName;
 
 //Find User Gender
 function findGender($name) {
