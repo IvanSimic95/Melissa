@@ -46,7 +46,7 @@ function displayDates($date1, $date2, $format = 'd-m-Y' ) {
     return $dates;
  }
 
-$sql = "SELECT DATE(order_date), SUM(order_price) FROM orders GROUP BY DATE(order_date) ORDER BY DATE(order_date) desc LIMIT ".$earnings.";";
+$sql = "SELECT DATE(order_date), SUM(order_price) FROM orders WHERE order_status='processing' OR order_status='shipped' GROUP BY DATE(order_date) ORDER BY DATE(order_date) desc LIMIT ".$earnings.";";
 $r = array();
 $result = $conn->query($sql);
 while ($row = $result->fetch_assoc()) {
@@ -131,7 +131,7 @@ $maxtotal = $maxtotal * 2;
 $maxtotal = round($maxtotal, -2);
 //PHP FOR ORDER COUNT BELOW THIS!
 
-$sqlo = "SELECT DATE(order_date), COUNT(*) FROM orders GROUP BY DATE(order_date) ORDER BY DATE(order_date) desc LIMIT ".$orders.";";
+$sqlo = "SELECT DATE(order_date), COUNT(*) FROM orders WHERE order_status='processing' OR order_status='shipped' GROUP BY DATE(order_date) ORDER BY DATE(order_date) desc LIMIT ".$orders.";";
 $r2 = array();
 $result = $conn->query($sqlo);
 while ($row = $result->fetch_assoc()) {
