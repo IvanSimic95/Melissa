@@ -1,5 +1,6 @@
 <?php
-session_start();
+include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+
 
 // set parameters and execute
 $order_email = $_GET['emailaddress'];
@@ -8,36 +9,34 @@ $order_buygoods = $_GET['order_id'];
 $cookie_id = $_SESSION['user_cookie_id'];
 $createChat = $genderAcc = $redirectID = "";
 // echo $cookie_id;
+
+//
 if($order_email) {
-include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
     $sql = "SELECT * FROM `orders` WHERE `cookie_id` = '$cookie_id' ORDER BY  `order_id` DESC LIMIT 1";
     $result = $conn->query($sql);
     $count = $result->num_rows;
+
     if($result->num_rows != 0) {
-      $row = $result->fetch_assoc();
-
+    $row = $result->fetch_assoc();
     $redirectID = $row['order_id'];
-
     $genderAcc = $row['genderAcc'];
     $userGender = $row['user_sex'];
     $partnerGender = $row['pick_sex'];
 
+    $_SESSION['funnel_page'] = "readings";
+    unset($_COOKIE['user_cookie_id']);
 
-    $_SESSION['orderEmail'] = $order_email;
-    $_SESSION['orderFName'] = $row['firt_name'];
-    $_SESSION['orderEmail'] = $order_email;
+    //If gender Accuracy is over 90 redirect to readings page
+    if($genderAcc>89){
+      header('Location: /readings.php?order='.$redirectID);
+    }
 
-    $_SESSION['mainOrder'] = $redirectID;
-    $_SESSION['genderAcc'] = $genderAcc;
-    $_SESSION['userGender'] = $userGender;
-    $_SESSION['partnerGender'] = $partnerGender;
-  }
-if($genderAcc>89){
-  
-  header('Location: /readings.php?order='.$redirectID);
+    }
 
-}
+
+
+
 
 ?>
 
@@ -102,6 +101,7 @@ if($genderAcc>89){
   </div>
           </div>
       </div>
+      <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $cookie_id; ?>">
       <div class="form_box">
         <input type="submit" class="disabled" id="submit-button" name="form_submit" value="Choose a man or a woman" disabled>
       </div>
@@ -135,45 +135,9 @@ $(".label-woman").click(function(){
 });
   </script>
 
-<?php } ?>
-
-<?php
-$sql = "SELECT * FROM orders WHERE cookie_id='$cookie_id'";
-
-$result = $conn->query($sql);
-
-if($result->num_rows == 0 || $order_email == "") {
-
-
-} else {
-    while($row = $result->fetch_assoc()) {
-      $order_id =  $row["order_id"];
-      $user_name =  $row["user_name"];
-      $order_email =  $row["order_email"];
-      $order_product = $row["order_product"];
-      $createChat = "1";
-    }
-
-
-	// Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    // Check connection
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-    }
-
-    if ($conn->query($sql) === TRUE) {
-      // echo "Update successfully";
-
-      //unset($_COOKIE['user_cookie_id']);
-    } else {
-      // echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-
-    $conn->close();
-}
-
+<?php 
+  
+  }  
 
 }else{
   header('Location: /');

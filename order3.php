@@ -2,6 +2,14 @@
 include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 include $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 
+if(isset($_GET['skip'])){ 
+  if($_GET['skip']=="yes"){ 
+  $_SESSION['funnel_page'] = "funnel-complete";
+  header('Location: /order-complete.php');
+  die();
+  }
+}
+
 // set parameters and execute
 $cookie_id = $_GET['cookie_id'];
 $user_name = $_SESSION['orderFName'];

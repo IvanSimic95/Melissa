@@ -3,8 +3,7 @@ include '/home/melissapsychic/public_html/config/vars.php';
 echo "Starting complete-orders.php...<br><br>";
 
 
-
-
+$trigger = "1";
 
 
 	// Create connection
@@ -33,6 +32,7 @@ echo "Starting complete-orders.php...<br><br>";
 			$orderPrio = $row["order_priority"];
 			$orderProduct = $row["order_product"];
 			$orderSex = $row["pick_sex"];
+			$userSex = $row["user_sex"];
 			$date1 = $orderDate;
 			$date2 =  date("Y-m-d H:i:s");
 			$start = new \DateTime($date1);
@@ -41,7 +41,8 @@ echo "Starting complete-orders.php...<br><br>";
 			$periods = new \DatePeriod($start, $interval, $end);
 			$hours = iterator_count($periods);
 			
-			$trigger = 0;
+			//$trigger = 0;
+			$trigger = 1;
 			$image_send = 0;
 			$randomDelay = rand(0,4);
 
@@ -90,7 +91,6 @@ echo "Starting complete-orders.php...<br><br>";
 					$sql_pick = "SELECT * FROM orders_image WHERE age < '$age_max' AND age > '$age_min' AND sex = 'male' order by RAND() limit 1";
 					$sql_pick_res = $conn->query($sql_pick);
 					if($sql_pick_res->num_rows == 0) {
-					     //echo "No Orders found in database";
 							 $image_name = "";
 					} else {
 						while($rowImages = $sql_pick_res->fetch_assoc()) {
@@ -102,9 +102,7 @@ echo "Starting complete-orders.php...<br><br>";
 					$sql_text = "SELECT * FROM orders_text WHERE product = '$orderProduct' order by RAND() limit 1";
 					$sql_text_res = $conn->query($sql_text);
 					if($sql_text_res->num_rows == 0) {
-						   // echo "No Orders found in database";
 							 $email_text = "";
-
 					} else {
 						while($rowText = $sql_text_res->fetch_assoc()) {
 							$email_text = $rowText["text"];
@@ -117,33 +115,37 @@ echo "Starting complete-orders.php...<br><br>";
 				$image_send = 1;
 				$prod_type = "baby";
 				$img_folder_name = "baby";
+				$babyGender = "female";
 
 				$theader = $babyOrderHeader;
 				$tfooter = $babyOrderFooter;
 
+						
+				if($userSex == "male"){ //If customer sex is set as male
+				$babyGender = "male";
+				}elseif($userSex == "female"){ //If customer sex is set as female
+				$babyGender = "female";
+				}
+					
+
 				$sql_pick = "SELECT * FROM  orders_image WHERE product = 'baby' order by RAND() limit 1";
 				$sql_pick_res = $conn->query($sql_pick);
+				
 				if($sql_pick_res->num_rows == 0) {
-					 // echo "No Orders found in database";
-					 $image_name = "";
+					$image_name = "";
 				} else {
 					while($rowImages = $sql_pick_res->fetch_assoc()) {
-						$image_name = $rowImages["name"];
-						 //echo $image_name . " </br>";
+					$image_name = $rowImages["name"];
 					}
 				}
-				$sql_text = "SELECT * FROM orders_text WHERE product = '$prod_type' order by RAND() limit 1";
+				$sql_text = "SELECT * FROM orders_text WHERE product = '$prod_type' AND gender = '$babyGender' order by RAND() limit 1";
 				$sql_text_res = $conn->query($sql_text);
 				if($sql_text_res->num_rows == 0) {
-					 // echo "No Orders found in database";
 						$email_text = "";
 				} else {
 					while($rowText = $sql_text_res->fetch_assoc()) {
 						$email_text = $rowText["text"];
 						$message = $theader.$email_text.$tfooter;
-
-						//  echo $email_text . " </br>";
-
 					}
 				}
 				//END IF PRODUCT = FUTURE BABY
@@ -210,7 +212,6 @@ echo "Starting complete-orders.php...<br><br>";
 				$sql_pick = "SELECT * FROM orders_image WHERE product = 'past' order by RAND() limit 1";
 				$sql_pick_res = $conn->query($sql_pick);
 				if($sql_pick_res->num_rows == 0) {
-					 // echo "No Orders found in database";
 					 $image_name = "";
 				} else {
 					while($rowImages = $sql_pick_res->fetch_assoc()) {
@@ -222,25 +223,17 @@ echo "Starting complete-orders.php...<br><br>";
 				$sql_text = "SELECT * FROM orders_text WHERE product = 'past' order by RAND() limit 1";
 				$sql_text_res = $conn->query($sql_text);
 				if($sql_text_res->num_rows == 0) {
-					 // echo "No Orders found in database";
 						$email_text = "";
-					
 				} else {
 					while($rowText = $sql_text_res->fetch_assoc()) {
 						$email_text = $rowText["text"];
-						$extra_text ="";
-
-						//  echo $email_text . " </br>";
-
+						$message = $theader.$email_text.$tfooter;
 					}
 				}
-
-				$message = $theader.$email_text.$tfooter;
 			}
-			// end of baby
+			// end of past life
 			
-			//echo "<HR>";
-			//echo "trigger = " . $trigger;
+		//If trigger is set to 1 (order is ready to be delivered)
 		if ($trigger == 1) {
 
 			$message = str_replace("%FIRSTNAME%", $fName, $message);

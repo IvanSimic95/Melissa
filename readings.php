@@ -1,152 +1,28 @@
 <?php
-session_start();
 include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
-// set parameters and execute
-$cookie_id = $_SESSION['user_cookie_id'];
+include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/noskip.php';
 
-$genderAcc = $_SESSION['genderAcc'];
-$userGender = $_SESSION['userGender'];
-$partnerGender = $_SESSION['partnerGender'];
-
-$createChat="1";
-
+//Check if partner sex was manually picked by user
 $sex_picked = "";
 if(isset($_POST['pick_sex'])){
   $pick_sex = $_POST['pick_sex'];
   $sex_picked = "1";
 }
 
-
+//If sex was picked manually by user update it in order info
 if ($sex_picked==1) {
-  
-
-    $sql = "UPDATE `orders` SET `pick_sex`='$pick_sex' WHERE cookie_id='$cookie_id'" ;
-
-
-    if ($conn->query($sql) === true) {
-        $sql = "SELECT * FROM orders WHERE cookie_id='$cookie_id'";
-
-        $result = $conn->query($sql);
-
-        if ($result->num_rows == 0) {
-        } else {
-            while ($row = $result->fetch_assoc()) {
-                $order_id =  $row["order_id"];
-                $first_name =  $row["first_name"];
-                $order_email =  $row["order_email"];
-                $order_product = 'Readings';
-            }
-        }
-        // echo "Update successfully";
-
-        unset($_COOKIE['user_cookie_id']);
-    } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
-    }
-
+    $order_id = $_POST['cookie_id'];
+    $sql = "UPDATE `orders` SET `pick_sex`='$pick_sex' WHERE cookie_id='$order_id'" ;
     $conn->close();
-  
-}else{
-  $order_id = $_SESSION['mainOrder'];
-
-  $sql = "SELECT * FROM orders WHERE order_id='$order_id'";
-
-  $result = $conn->query($sql);
-
-  if ($result->num_rows == 0) {
-  } else {
-      while ($row = $result->fetch_assoc()) {
-          $order_id =  $row["order_id"];
-          $first_name =  $row["first_name"];
-          $order_email =  $_SESSION['orderEmail'];
-          $order_product = 'Readings';
-          $createChat = "1";
-      }
-      
-  }
-  unset($_COOKIE['user_cookie_id']);
 }
+
+$title = "Readings | Melissa Psychic";
+$description = "Readings";
+$menu_order="men_0_0";
+
+include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; 
 ?>
-
-
-
-<?php $title = "Readings | Melissa Psychic"; ?>
-<?php $description = "Readings"; ?>
-<?php $menu_order="men_0_0"; ?>
-<?php  ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php';
-$cookie_id = $_SESSION['user_cookie_id'];
- ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
 <link rel="stylesheet" href="assets/css/upsell.css">
-<style>
-h1 {
-font-size: 36px;
-    font-weight: bold;
-    background: linear-gradient( 90deg,#d130eb,#4a30eb 80%,#2b216c);
-    color: #fff!important;
-    margin-top: -25px;
-    margin-left: -25px;
-    margin-right: -25px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    text-align: center;
-    padding: 15px;
-	text-transform:uppercase;
-}
-h2 {
-  font-size: 28px!important;
-    font-weight: bold;
-    background: -webkit-linear-gradient(#d130eb,#4a30eb 80%,#2b216c);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-}
-h3 {
-  font-size: 20px!important;
-    font-weight: bold;
-    background: -webkit-linear-gradient(#d130eb,#4a30eb 80%,#2b216c);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-}
-.fill-control-description {
-  font-size: 24px!important;
-    font-weight: bold;
-    background: -webkit-linear-gradient(#d130eb,#4a30eb 80%,#2b216c);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-}
-.col-6 {
-    -webkit-box-flex: 0;
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
-}
-
-.price_box{
-text-align:center;
-}
-.gradient{
-  font-size: 18px!important;
-    font-weight: bold;
-    background: -webkit-linear-gradient(#d130eb,#4a30eb 80%,#2b216c);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-align: center;
-    margin-bottom:15px;
-}
-@media only screen and (min-width: 768px) {
-  .offset-md-2 {
-    margin-left: 8.333333%;
-}
-.offset-md-4 {
-    margin-left: 16.666666%;
-}
-}
-
-</style>
 <div class="breadcrumbs">
   <div class="container">
     <a href="/index.php">Melissa</a> > Readings
@@ -214,7 +90,7 @@ text-align:center;
         </div>
       </div>
      
-      <a class="nothanks" href="/future-baby.php">No thanks</a>
+      <a class="nothanks" href="/order2.php?skip=yes">No thanks</a>
       </div></div>
     </form>
    

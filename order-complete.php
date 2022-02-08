@@ -1,32 +1,7 @@
 <?php
-session_start();
 include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
-//echo $cookie_id;
-// set parameters and execute
-$cookie_id = $_SESSION['user_cookie_id'];
-$createChat = "";
-//echo $cookie_id;
-if($cookie_id){
+include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/noskip.php';
 
-
-  $sql = "SELECT * FROM orders WHERE cookie_id='$cookie_id'";
-
-  $result = $conn->query($sql);
-
-  if ($result->num_rows == 0) {
-  } else {
-      while ($row = $result->fetch_assoc()) {
-          $order_id =  $row["order_id"];
-          $first_name =  $row["first_name"];
-          $order_email =  $_SESSION['orderEmail'];
-          $order_product = 'Future Baby';
-          $createChat = "1";
-      }
-      
-  }
-  unset($_COOKIE['user_cookie_id']);
-
-}
 ?>
 
 
@@ -58,27 +33,24 @@ if($cookie_id){
     
      <h3>Your order is now complete & you will receive an email with your order details and dashboard login link.</h3>
 </div>
-
-
-   </div>
-  </div>
 </div>
 </div>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/create_chat.php'; ?>
+</div>
+</div>
 <style>
-  .white-wrapper {
+.white-wrapper {
 margin-top:50px;
 margin-bottom:150px;
 }
-  .login-form
-  {
-   text-align:center;
-   min-height: 200px;
-    padding-top: 100px;
-  }
-  .checkmark{
-    max-width:100px;
-  }
+.login-form
+{
+text-align:center;
+min-height: 200px;
+padding-top: 100px;
+}
+.checkmark{
+max-width:100px;
+}
 .try-again{
   padding: 8px 20px!important;
   margin-top: 10px!important;
@@ -99,57 +71,49 @@ margin-bottom:150px;
   text-align: center!important;
   color: #fff!important;
   box-shadow: 0 8px 15px rgb(0 0 0 / 30%)!important;
-
 }
 .profile-img-card {
-
-    margin: 10px auto 10px;
-    display: block;
-
+margin: 10px auto 10px;
+display: block;
 }
 .input-group-addon{
 color:#fff;
 background: linear-gradient( 90deg,#d130eb,#4a30eb 80%,#2b216c);
-  }
+}
 .input-group-addon > i{
 font-size:28px;
-    }
+}
 .customer_email{
-  width: 100%!important;
-      padding: 8px 20px!important;
-      box-sizing: border-box!important;
-      border-radius: 8px!important;
-      padding: 14px!important;
-      border: 1px solid #cad1da!important;
-      outline: none!important;
-      height: auto!important;
-      border-top-left-radius: 0!important;
-      border-bottom-left-radius: 0!important;
-
+width: 100%!important;
+padding: 8px 20px!important;
+box-sizing: border-box!important;
+border-radius: 8px!important;
+padding: 14px!important;
+border: 1px solid #cad1da!important;
+outline: none!important;
+height: auto!important;
+border-top-left-radius: 0!important;
+border-bottom-left-radius: 0!important;
 }
 .gradient-top{
-  background: linear-gradient( 
-90deg,#d130eb,#4a30eb 80%,#2b216c);
-    margin-top: -130px;
-    margin-left: -30px;
-    margin-right: -30px;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
-    padding: 7px;
-  }
+background: linear-gradient(90deg,#d130eb,#4a30eb 80%,#2b216c);
+margin-top: -130px;
+margin-left: -30px;
+margin-right: -30px;
+border-top-left-radius: 8px;
+border-top-right-radius: 8px;
+padding: 7px;
+}
 h1 {
 font-size: 26px;
-    font-weight: bold;
+font-weight: bold;
 margin-bottom:0!important;
-    color: #fff!important;
-
-
-    text-align: center;
-
-	text-transform:uppercase;
+color: #fff!important;
+text-align: center;
+text-transform:uppercase;
 }
 h3{
-  font-size: 20px;
+font-size: 20px;
 margin-bottom:0px;
 text-align: center;
 margin-top:40px;
@@ -159,9 +123,9 @@ padding-right:50px;
 .check_user input{
 max-width:100%;
 display:block;
-  }
+}
 .check_user input[type='submit'] {
-  padding: 8px 20px;
+padding: 8px 20px;
 margin-top: 10px;
 margin-bottom: 10px;
 box-sizing: border-box;
@@ -183,18 +147,8 @@ color: #fff;
 box-shadow: 0 8px 15px rgb(0 0 0 / 30%);
 }
 .general_section > .container{
-  padding-top: 50px;
-      padding-bottom: 150px;
-  }
-  }
+padding-top: 50px;
+padding-bottom: 150px;
+}
 </style>
-
-
-
-
-
-
-
-
-
 <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php';

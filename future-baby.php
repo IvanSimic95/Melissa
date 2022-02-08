@@ -1,43 +1,13 @@
 <?php
-session_start();
 include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
-//echo $cookie_id;
-// set parameters and execute
-$cookie_id = $_SESSION['user_cookie_id'];
-$createChat = "";
-//echo $cookie_id;
-if($cookie_id){
+include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/noskip.php';
 
 
-  $sql = "SELECT * FROM orders WHERE cookie_id='$cookie_id'";
-
-  $result = $conn->query($sql);
-
-  if ($result->num_rows == 0) {
-  } else {
-      while ($row = $result->fetch_assoc()) {
-          $order_id =  $row["order_id"];
-          $first_name =  $row["first_name"];
-          $order_email =  $_SESSION['orderEmail'];
-          $order_product = 'Personal Reading';
-          $createChat = "1";
-      }
-      
-  }
-  unset($_COOKIE['user_cookie_id']);
+$title = "Future Baby Drawing | Melissa Psychic";
+$description = "Future Baby Drawing"; 
+$menu_order="men_0_0"; 
+include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; 
 ?>
-
-
-
-<?php $title = "Future Baby Drawing | Melissa Psychic"; ?>
-<?php $description = "Future Baby Drawing"; ?>
-<?php $menu_order="men_0_0"; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php';
-$cookie_id = $_SESSION['user_cookie_id'];
-
-?>
-
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
 <style>
 h1 {
 font-size: 36px;
@@ -144,7 +114,7 @@ text-align:center;
         </div>
       </div>
       
-      <a class="nothanks" href="/order-complete.php">No thanks</a>
+      <a class="nothanks" href="/order3.php?skip=yes">No thanks</a>
     </form>
   </div>
 </div>
@@ -373,13 +343,6 @@ input[type=radio]:checked ~ label {
 }
     </style>
 
-<?php
-}else{
-  header("Location: /order-complete.php");
-  die();
-}
-
- ?>
 
 
 

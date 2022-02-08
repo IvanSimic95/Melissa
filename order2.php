@@ -2,6 +2,17 @@
 include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 include $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 
+
+if(isset($_GET['skip'])){ 
+  if($_GET['skip']=="yes"){ 
+  $_SESSION['funnel_page'] = "future-baby";
+  header('Location: /future-baby.php');
+  die();
+  }
+}
+
+$_SESSION['funnel_page'] = "future-baby";
+
 // set parameters and execute
 if(isset($_GET['general'])) {$general = $_GET['general'];}else{$general = "";}
 if(isset($_GET['love'])) {$love = $_GET['love'];}else{$love = "";}

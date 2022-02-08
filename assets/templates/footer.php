@@ -45,8 +45,10 @@
           &copy; <?php echo date("Y"); ?> Melissa. All Rights Reserved.
         </div>
       </div>
+      <!-- Footer JS Files -->
+      <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
       <script src="/assets/js/scripts.js"></script>
-	  <script src="/assets/js/lazyload.js"></script>
+	    <script src="/assets/js/lazyload.js"></script>
     </footer>
   </body>
 </html>
