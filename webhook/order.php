@@ -29,9 +29,9 @@ $ch = curl_init();
 $data = [
 "id" => $mOrderID,
 "name" => $cName,
-"email" => $order_email,
+"email" => [$order_email],
 "role" => "customer",
-"phone" => $cPhone,
+"phone" => [$cPhone],
 "photoUrl" => "https://avatars.dicebear.com/api/adventurer/".$order_email.".svg?skinColor=variant02",
 "custom" => ["status" => "Paid"]
 ];
