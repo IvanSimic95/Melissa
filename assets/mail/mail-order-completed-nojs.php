@@ -349,7 +349,7 @@
                 $ch = curl_init();
                 $data = [[
                   "attachmentToken" => $token_key2,
-                  "sender"  => "654321252",
+                  "sender"  => "administrator",
                   "type" => "UserMessage",
                 ]];
 
@@ -395,7 +395,7 @@
 
           $ch = curl_init();
           $data = [[
-            "sender"  => "654321252",
+            "sender"  => "administrator",
             "text" => $email_text,
             "type" => "UserMessage",
           ]];

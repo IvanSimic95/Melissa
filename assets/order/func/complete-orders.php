@@ -301,12 +301,12 @@ $trigger = "1";
                 $ch = curl_init();
                 $data = [[
                 "text" => $message,
-                "sender"  => "654321252",
+                "sender"  => "administrator",
                 "type" => "UserMessage"
 				],
 				[
 				"attachmentToken" => $Atoken_key,
-				"sender"  => "654321252",
+				"sender"  => "administrator",
 				"type" => "UserMessage",
 				],[
 				"text" => $OrderCompleteMessage,
@@ -341,7 +341,7 @@ $trigger = "1";
 					 $ch = curl_init();
 					 $data = [[
 					 "text" => $message,
-					 "sender"  => "654321252",
+					 "sender"  => "administrator",
 					 "type" => "UserMessage"
 					 ],
 					[

@@ -64,7 +64,7 @@
 			<script type="text/javascript">
 			let data<?php echo $row["order_id"]; ?> =  [
 			    {
-			      "sender": "654321252",
+			      "sender": "administrator",
 			      "text": "<?php echo $message; ?>",
 			      "type": "UserMessage"
 			    }
