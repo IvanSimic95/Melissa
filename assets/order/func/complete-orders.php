@@ -335,7 +335,7 @@ $trigger = "1";
                     echo 'Error:' . curl_error($ch);
                 }
                 curl_close($ch);
-				echo $result;
+				
                 //SEND IMAGE END
                 	}else{//SEND ONLY TEXT START
 					 // curl implementation
@@ -373,7 +373,7 @@ $trigger = "1";
 					 }
 					 curl_close($ch);
 					 //SEND ONLY TEXT END
-					 echo $result;
+					
 				}
 
 
