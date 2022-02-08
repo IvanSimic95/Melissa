@@ -78,6 +78,47 @@ include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
 .card {
     height: 100%;
 }
+span.sbadge{
+    border-radius: 0.25rem !important;
+    padding: 0.5rem !important;
+    text-transform: capitalize!important;
+    font-weight:600!important;
+    text-align: center;
+  }
+  
+  span.sbadge-pending{
+  color: #9d5228;
+  background-color: #fde6d8;
+  }
+  span.sbadge-completed{
+  color: #00864e;
+  background-color: #ccf6e4;
+  }
+  span.sbadge-processing{
+  color: #1c4f93;
+  background-color: #d5e5fa;
+  }
+  span.sbadge-canceled{
+  color: #7d899b;
+  background-color: #e3e6ea;
+  }
+  
+  
+  span.sbadge .fas{
+  display:none;
+  }
+  span.sbadge-completed .fa-check{
+  display:inline-block;
+  }
+  span.sbadge-processing .fa-redo{
+  display:inline-block;
+  }
+  span.sbadge-pending .fa-stream{
+  display:inline-block;
+  }
+  span.sbadge-canceled .fa-ban{
+  display:inline-block;
+  }
 </style>
 <script>
                     function buttonClicked(conversationId) {
