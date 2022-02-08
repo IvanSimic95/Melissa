@@ -275,7 +275,7 @@ $trigger = "1";
 							
 						// Set image data for upload via CURL
 						
-                            $filename = $rootDir.'assets/email/delivery-images/'.$newImagename;
+                            $filename = $rootDir.'/assets/email/delivery-images/'.$newImagename;
                             $finfo = new \finfo(FILEINFO_MIME_TYPE);
                             $mimetype = $finfo->file($filename);
 							$cfile = curl_file_create($filename, $mimetype, basename($filename));
