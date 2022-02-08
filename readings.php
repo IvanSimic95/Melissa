@@ -23,6 +23,72 @@ $menu_order="men_0_0";
 include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; 
 ?>
 <link rel="stylesheet" href="assets/css/upsell.css">
+<style>
+h1 {
+font-size: 36px;
+    font-weight: bold;
+    background: linear-gradient( 90deg,#d130eb,#4a30eb 80%,#2b216c);
+    color: #fff!important;
+    margin-top: -25px;
+    margin-left: -25px;
+    margin-right: -25px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-align: center;
+    padding: 15px;
+	text-transform:uppercase;
+  font-family: Nunito,sans-serif;
+    font-style: normal;
+    font-weight: 800;
+}
+h2 {
+  font-size: 28px!important;
+    font-weight: bold;
+    background: -webkit-linear-gradient(#d130eb,#4a30eb 80%,#2b216c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    font-family: Nunito,sans-serif;
+    font-style: normal;
+    font-weight: 800;
+}
+h3 {
+  font-size: 20px!important;
+    font-weight: bold;
+    background: -webkit-linear-gradient(#d130eb,#4a30eb 80%,#2b216c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+.fill-control-description {
+  font-size: 24px!important;
+    font-weight: bold;
+    background: -webkit-linear-gradient(#d130eb,#4a30eb 80%,#2b216c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+}
+.col-6 {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 50%;
+    flex: 0 0 50%;
+    max-width: 50%;
+}
+
+.price_box{
+text-align:center;
+}
+.gradient{
+  font-size: 18px!important;
+    font-weight: bold;
+    background: -webkit-linear-gradient(#d130eb,#4a30eb 80%,#2b216c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom:15px;
+}
+
+</style>
 <div class="breadcrumbs">
   <div class="container">
     <a href="/index.php">Melissa</a> > Readings
