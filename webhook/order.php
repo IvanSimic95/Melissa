@@ -31,9 +31,8 @@ $data = [
 "name" => $cName,
 "email" => [$order_email],
 "role" => "customer",
-"phone" => [$cPhone],
 "photoUrl" => "https://avatars.dicebear.com/api/adventurer/".$order_email.".svg?skinColor=variant02",
-"custom" => ["status" => "Paid"]
+"custom" => ["email" => $order_email, "phone" => $cPhone,]
 ];
 $data1 = json_encode($data);
 print_r($data1);
