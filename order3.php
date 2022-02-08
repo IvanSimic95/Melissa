@@ -24,6 +24,7 @@ $user_age = $_SESSION['orderAge'];
 
 $order_priority = $_GET['priority'];
 
+$_SESSION['funnel_page'] = "funnel-complete";
 //Find User Gender
 function findGender($name) {
 $apiKey = 'Whc29bSnvP3zrQG3hYCwXKMoYu5h4ZQukS6n'; //Your API Key

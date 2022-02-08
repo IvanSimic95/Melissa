@@ -247,7 +247,7 @@ $trigger = "1";
 
 						// Old Paths
 					        $oldImagename = $image_name;
-							$oldImageShortPath = "assets/order/images/".$img_folder_name."/".$image_name.$ext;
+							$oldImageShortPath = "/assets/order/images/".$img_folder_name."/".$image_name.$ext;
 							
 							$oldImageFullPath = $base_url.$oldImageShortPath;
 							
@@ -255,7 +255,7 @@ $trigger = "1";
 
 						// new Paths
 							$newImagename = $orderProduct ."-" .$randomImageName ."-" .$orderID .$ext;
-							$newImageShortPath = "assets/email/delivery-images/".$newImagename;
+							$newImageShortPath = "/assets/email/delivery-images/".$newImagename;
 							$newImageServerPath = $rootDir .$newImageShortPath;
 							$newImageFullPath = $base_url .$newImageShortPath;
 
