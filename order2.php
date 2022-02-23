@@ -85,12 +85,14 @@ if($cookie_id) {
   </div>
 </div>
 
-
 <div class="general_section">
-  <div class="container">
-      <h1>You will be redirected to the Payment Processor. Please dont close this page</h1>
+  <div class="container" >
+  <div class="white-wrapper col-md-8 offset-md-4"style="min-height:300px;padding:20px 30px 20px 30px;"> <h1>Please dont close this page!</h1>
+  <br><br>
+  <h2 style="text-align:center;">You are being redirected to the Payment Page</h2>
   </div>
-</div>
+  </div>
+  </div>
 <script>
 var getUrlParameter = function getUrlParameter(sParam) {
     var sPageURL = window.location.search.substring(1),

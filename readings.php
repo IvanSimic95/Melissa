@@ -17,10 +17,6 @@ if ($sex_picked==1) {
     $conn->close();
 }
 
-//Reset user cookie to prepare it for next order
-$randomNumber = rand(155654654,955654654);
-$_SESSION['user_cookie_id'] = $randomNumber;
-
 $title = "Readings | Melissa Psychic";
 $description = "Readings";
 $menu_order="men_0_0";
@@ -154,7 +150,7 @@ text-align:center;
 					</li>
           
 				</ul>
-        <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['user_cookie_id']; ?>">
+        <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['user_cookie_id2']; ?>">
 
       <div class="meta_part">
 

@@ -10,7 +10,7 @@ $menu_order="men_0_0";
 if(isset($_GET['emailaddress']))$order_email = $_GET['emailaddress'];
 if(isset($_GET['total']))$order_price = $_GET['total'];
 if(isset($_GET['order_id']))$order_buygoods = $_GET['order_id'];
-$cookie_id = $_SESSION['user_cookie_id'];
+$cookie_id = $_SESSION['user_cookie_id2'];
 $createChat = "";
 
 
@@ -25,6 +25,9 @@ if(isset($_GET['emailaddress'])) {
   if($result->num_rows != 0) {
   $row = $result->fetch_assoc();
   $orderID = $row['order_id'];
+  $first_name = $row['first_name'];
+  $product = $row['order_product'];
+
   $sql = "UPDATE `orders` SET `order_email`='$order_email', `order_price`='$order_price', `buygoods_order_id`='$order_buygoods', `order_status`='paid' WHERE order_id='$orderID'";
   $result = $conn->query($sql);
 
@@ -32,11 +35,6 @@ if(isset($_GET['emailaddress'])) {
   }
 
 }
-
-//Reset user cookie to prepare it for next order
-$randomNumber = rand(155654654,955654654);
-$_SESSION['user_cookie_id'] = $randomNumber;
-
 
 
 
@@ -131,7 +129,7 @@ text-align:center;
     <form class="readings" action="/order3.php" method="get">
       <h2>Future Baby Reading + Portrait</h2>
     
-      <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['user_cookie_id']; ?>">
+      <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['user_cookie_id3']; ?>">
       <div class="meta_part">
 
         <div class="sides">
