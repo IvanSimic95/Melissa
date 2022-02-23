@@ -108,7 +108,7 @@ var product = "baby";
 document.addEventListener("DOMContentLoaded", function(event) {
     setTimeout(function(){
       window.location.href = "https://www.buygoods.com/secure/upsell?account_id=6274&product_codename=" + product + prio + "&redirect=<?php echo $returnEncoded; ?>";
-     }, 3000);
+     }, 1000);
   });
 </script>
 
