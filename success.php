@@ -6,9 +6,7 @@ if(isset($_GET['emailaddress']))$order_email = $_GET['emailaddress'];
 if(isset($_GET['total']))$order_price = $_GET['total'];
 if(isset($_GET['order_id']))$order_buygoods = $_GET['order_id'];
 $cookie_id = $_SESSION['user_cookie_id'];
-$cookie_id = "202136433";
 $createChat = $genderAcc =   $skipSelect = "";
-
 
 if(isset($_GET['emailaddress'])) {
 
@@ -25,8 +23,12 @@ if(isset($_GET['emailaddress'])) {
   $first_name = $row['first_name'];
   $product = $row['order_product'];
   $genderAcc = $row['genderAcc'];
+
+
   $sql = "UPDATE `orders` SET `order_email`='$order_email', `order_price`='$order_price', `buygoods_order_id`='$order_buygoods', `order_status`='paid' WHERE order_id='$orderID'";
   $result = $conn->query($sql);
+
+  echo  $genderAcc;
 
   //If gender Accuracy is over 90 redirect to readings page
   if($genderAcc>89){
