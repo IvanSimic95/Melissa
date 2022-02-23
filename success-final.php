@@ -5,7 +5,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 if(isset($_GET['emailaddress']))$order_email = $_GET['emailaddress'];
 if(isset($_GET['total']))$order_price = $_GET['total'];
 if(isset($_GET['order_id']))$order_buygoods = $_GET['order_id'];
-$cookie_id = $_SESSION['user_cookie_id'];
+$cookie_id = $_SESSION['user_cookie_id3'];
 $createChat = "";
 
 if(isset($_GET['emailaddress'])) {
@@ -52,7 +52,7 @@ $conn->close();
   document.addEventListener("DOMContentLoaded", function(event) {
     setTimeout(function(){
       window.location.href = "https://melissa-psychic.com/order-complete.php";
-     }, 5000);
+     }, 3000);
   });
 
 </script>
