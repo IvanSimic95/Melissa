@@ -44,7 +44,15 @@ include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php';
 include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/create_chat.php';
 ?>
 <style>
-h1 {
+    @media only screen and (min-width: 768px) {
+  .offset-md-2 {
+    margin-left: 8.333333%;
+}
+.offset-md-4 {
+    margin-left: 16.666666%;
+}
+}
+.upsale_page h1 {
 font-size: 36px;
     font-weight: bold;
     background: linear-gradient( 90deg,#d130eb,#4a30eb 80%,#2b216c);
@@ -61,7 +69,7 @@ font-size: 36px;
     font-style: normal;
     font-weight: 800;
 }
-h2 {
+.upsale_page h2 {
   font-size: 28px!important;
     font-weight: bold;
     background: -webkit-linear-gradient(#d130eb,#4a30eb 80%,#2b216c);
@@ -72,7 +80,7 @@ h2 {
     font-style: normal;
     font-weight: 800;
 }
-h3 {
+.upsale_page h3 {
   font-size: 20px!important;
     font-weight: bold;
     background: -webkit-linear-gradient(#d130eb,#4a30eb 80%,#2b216c);

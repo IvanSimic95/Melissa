@@ -5,7 +5,6 @@ include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 if(isset($_GET['emailaddress']))$order_email = $_GET['emailaddress'];
 if(isset($_GET['total']))$order_price = $_GET['total'];
 if(isset($_GET['order_id']))$order_buygoods = $_GET['order_id'];
-$_SESSION['user_cookie_id'] = "781718718";
 $cookie_id = $_SESSION['user_cookie_id'];
 $createChat = $genderAcc =   $skipSelect = "";
 
@@ -73,7 +72,7 @@ if(isset($_GET['emailaddress'])) {
   <div class="container" >
   <div class="white-wrapper col-md-8 offset-md-4"style="min-height:300px;padding:20px 30px 20px 30px;"> <h1>Processing your order...</h1>
   <br><br>
-  <h2 style="text-align:center;">This usually takes about 5 seconds to finish processing.</h2>
+  <h2 style="text-align:center;">This usually takes about 3 seconds to finish processing.</h2>
   </div>
   </div>
   </div>
@@ -82,7 +81,7 @@ if(isset($_GET['emailaddress'])) {
   document.addEventListener("DOMContentLoaded", function(event) {
     setTimeout(function(){
       window.location.href = "https://melissa-psychic.com/readings.php";
-     }, 5000);
+     }, 3000);
   });
 
 </script>
