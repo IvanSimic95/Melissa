@@ -129,7 +129,7 @@ if (getUrlParameter('health')) {
 
 document.addEventListener("DOMContentLoaded", function(event) {
     setTimeout(function(){
-      window.location.href = "https://www.buygoods.com/secure/upsell?account_id=6274&product_codename=" + nr_total + "xreadings&subid=<?php echo $cookie_id; ?>&subid2=<?php echo $lastRowInsert; ?>&redirect=<?php echo $returnEncoded; ?>";
+      window.location.href = "https://www.buygoods.com/secure/upsell?account_id=6274&product_codename=" + nr_total + "xreadings&redirect=<?php echo $returnEncoded; ?>";
      }, 3000);
   });
 </script>
