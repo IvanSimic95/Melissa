@@ -1,43 +1,43 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
-
 // set parameters and execute
-$order_email = $_GET['emailaddress'];
-$order_price = $_GET['total'];
-$order_buygoods = $_GET['order_id'];
+if(isset($_GET['emailaddress']))$order_email = $_GET['emailaddress'];
+if(isset($_GET['total']))$order_price = $_GET['total'];
+if(isset($_GET['order_id']))$order_buygoods = $_GET['order_id'];
 $cookie_id = $_SESSION['user_cookie_id'];
-$createChat = $genderAcc = $redirectID = "";
-// echo $cookie_id;
-
-//
-if($order_email) {
-
-    $sql = "SELECT * FROM `orders` WHERE `cookie_id` = '$cookie_id' ORDER BY  `order_id` DESC LIMIT 1";
-    $result = $conn->query($sql);
-    $count = $result->num_rows;
-
-    if($result->num_rows != 0) {
-    $row = $result->fetch_assoc();
-    $redirectID = $row['order_id'];
-    $genderAcc = $row['genderAcc'];
-    $userGender = $row['user_sex'];
-    $partnerGender = $row['pick_sex'];
-
-    $_SESSION['funnel_page'] = "readings";
-    unset($_COOKIE['user_cookie_id']);
-
-    //If gender Accuracy is over 90 redirect to readings page
-    if($genderAcc>89){
-      header('Location: /readings.php?order='.$redirectID);
-    }
-
-    }
+$cookie_id = "202136433";
+$createChat = $genderAcc =   $skipSelect = "";
 
 
+if(isset($_GET['emailaddress'])) {
 
+  
+  //Find Correct Order
+  $sql = "SELECT * FROM `orders` WHERE `cookie_id` = '$cookie_id' ORDER BY  `order_id` DESC LIMIT 1";
+  $result = $conn->query($sql);
+  $count = $result->num_rows;
 
+  //If order is found input data from BG and update status to paid
+  if($result->num_rows != 0) {
+  $row = $result->fetch_assoc();
+  $orderID = $row['order_id'];
+  $first_name = $row['first_name'];
+  $product = $row['order_product'];
+  $genderAcc = $row['genderAcc'];
+  $sql = "UPDATE `orders` SET `order_email`='$order_email', `order_price`='$order_price', `buygoods_order_id`='$order_buygoods', `order_status`='paid' WHERE order_id='$orderID'";
+  $result = $conn->query($sql);
 
+  //If gender Accuracy is over 90 redirect to readings page
+  if($genderAcc>89){
+  $skipSelect = 1;
+  }else{
+  $skipSelect = 0;
+  }
+
+  //Enable Chat Creation
+  $createChat = 1;
+  }
 ?>
 
 
@@ -46,7 +46,7 @@ if($order_email) {
 <?php $description = "Success"; ?>
 <?php $menu_order="men_0_0"; ?>
 <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
-
+<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/create_chat.php'; ?>
 <div class="breadcrumbs">
   <div class="container">
     <a href="/index.php">Melissa</a> > Success
@@ -59,13 +59,30 @@ if($order_email) {
   <div class="white-wrapper col-md-8 offset-md-4"style="min-height:300px;padding:20px 30px 20px 30px;"> <h1>Thank you for your order!</h1>
   <br><br>
   <h2 style="text-align:center;">Your order is now complete & you will receive an email with your order details and dashboard login link.</h2>
-
-
+  </div>
+  </div>
   </div>
 
-  </div>
-</div>
 
+<?php }else{ ?>
+<?php if($skipSelect==1){?>
+  <div class="general_section">
+  <div class="container" >
+  <div class="white-wrapper col-md-8 offset-md-4"style="min-height:300px;padding:20px 30px 20px 30px;"> <h1>Processing your order...</h1>
+  <br><br>
+  <h2 style="text-align:center;">This usually takes about 5 seconds to finish processing.</h2>
+  </div>
+  </div>
+  </div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function(event) {
+    setTimeout(function(){
+      window.location.href = "https://melissa-psychic.com/readings.php";
+     }, 5000);
+  });
+
+</script>
 
 <?php }else{ ?>
 <div class="general_section">
@@ -136,7 +153,7 @@ $(".label-woman").click(function(){
   </script>
 
 <?php 
-  
+    }  
   }  
 
 }else{
@@ -276,4 +293,7 @@ input[type=radio]:checked ~ label {
 }
     </style>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>
+<?php 
+unset($_SESSION['user_cookie_id']);
+include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; 
+?>

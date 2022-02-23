@@ -1,6 +1,5 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
-include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/noskip.php';
 
 //Check if partner sex was manually picked by user
 $sex_picked = "";
@@ -12,9 +11,12 @@ if(isset($_POST['pick_sex'])){
 //If sex was picked manually by user update it in order info
 if ($sex_picked==1) {
     $order_id = $_POST['cookie_id'];
-    $sql = "UPDATE `orders` SET `pick_sex`='$pick_sex' WHERE cookie_id='$order_id'" ;
+    $sql = "UPDATE `orders` SET `pick_sex`='$pick_sex' WHERE cookie_id='$order_id'";
+    $result = $conn->query($sql);
+
     $conn->close();
 }
+
 
 $title = "Readings | Melissa Psychic";
 $description = "Readings";
@@ -141,8 +143,7 @@ text-align:center;
 					</li>
           
 				</ul>
-        <input class="cookie" type="hidden" name="cookie_id"
-            value="<?php echo $_SESSION['user_cookie_id']; ?>">
+        <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['user_cookie_id']; ?>">
 
       <div class="meta_part">
 

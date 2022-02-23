@@ -1,11 +1,45 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
-include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/noskip.php';
-
 
 $title = "Future Baby Drawing | Melissa Psychic";
 $description = "Future Baby Drawing"; 
 $menu_order="men_0_0"; 
+
+
+// set parameters and execute
+if(isset($_GET['emailaddress']))$order_email = $_GET['emailaddress'];
+if(isset($_GET['total']))$order_price = $_GET['total'];
+if(isset($_GET['order_id']))$order_buygoods = $_GET['order_id'];
+$cookie_id = $_SESSION['user_cookie_id'];
+$createChat = "";
+
+
+if(isset($_GET['emailaddress'])) {
+
+  //Find Correct Order
+  $sql = "SELECT * FROM `orders` WHERE `cookie_id` = '$cookie_id' ORDER BY  `order_id` DESC LIMIT 1";
+  $result = $conn->query($sql);
+  $count = $result->num_rows;
+
+  //If order is found input data from BG and update status to paid
+  if($result->num_rows != 0) {
+  $row = $result->fetch_assoc();
+  $orderID = $row['order_id'];
+  $sql = "UPDATE `orders` SET `order_email`='$order_email', `order_price`='$order_price', `buygoods_order_id`='$order_buygoods', `order_status`='paid' WHERE order_id='$orderID'";
+  $result = $conn->query($sql);
+
+  $createChat = 1;
+  }
+
+}
+
+//Reset user cookie to prepare it for next order
+$randomNumber = rand(155654654,955654654);
+$_SESSION['user_cookie_id'] = $randomNumber;
+
+
+
+
 include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; 
 ?>
 <style>
@@ -341,9 +375,9 @@ input[type=radio]:checked ~ label {
   opacity: 1;
   border: 1px solid #FAFAFA;
 }
-    </style>
+</style>
 
-
+<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/create_chat.php'; ?>
 
 
 <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>

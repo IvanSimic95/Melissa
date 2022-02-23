@@ -1,8 +1,77 @@
 <?php
-if($createChat=="1"){
-$signature = hash_hmac('sha256', strval($order_id), 'sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL');
+if($createChat==1){
+
+$product = strtolower($product);
+$product = ucwords($product);
+$order_product_codename = $product;
+
+switch ($product) {
+    case "Husband":
+    $product = "Future Husband Drawing";
+    break;
+
+    case "Pastlife":
+    $product = "Past Life Drawing";
+    break;
+
+    case "Baby":
+    $product = "Future Baby Drawing";
+    break;
+  
+    case "Soulmate":
+    $product = "Soulmate Drawing";
+    break;
+  
+    case "Twinflame":
+    $product = "Twin Flame Drawing";
+    break;
+
+          case "General":
+          $product = "Personal Reading: General";
+          break;
+
+          case "General Love":
+          $product = "Personal Reading: General & Love";
+          break;
+
+          case "General Love Career":
+          $product = "Personal Reading: General, Love & Career";
+          break;
+
+          case "General Love Career Health":
+          $product = "Personal Reading: General, Love, Career & Health";
+          break;
+
+          
+          case "Love":
+          $product = "Personal Reading: Love";
+          break; 
+
+          case "Love Career":
+          $product = "Personal Reading: Love & Career";
+          break;
+
+          case "Love Career Health":
+          $product = "Personal Reading: Love, Career & Health";
+          break;
+
+
+          case "Career":
+          $product = "Personal Reading: Career";
+          break;
+
+          case "Career Health":
+          $product = "Personal Reading: Health & Career";
+          break;
+
+          case "Health":
+          $product = "Personal Reading: Health";
+          break; 
+      }
+
+$signature = hash_hmac('sha256', strval($orderID), 'sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL');
 ?>
- <div id="talkjs-container-<?php echo $order_id; ?>" style="width: 90%; margin: 30px; height: 500px; position:fixed;bottom:0;right:0;z-index:999;display:none !important">
+ <div id="talkjs-container-<?php echo $orderID; ?>" style="width: 90%; margin: 30px; height: 500px; position:fixed;bottom:0;right:0;z-index:999;display:none !important">
      <i>Loading chat...</i>
  </div>
 
@@ -17,14 +86,14 @@ $signature = hash_hmac('sha256', strval($order_id), 'sk_test_dmh9xKYFEPiN2BxC0Z9
 <script>  
     Talk.ready.then(function() {
       var other = new Talk.User({
-          id: "<?php echo $order_id; ?>",
+          id: "<?php echo $orderID; ?>",
           name: "<?php echo $first_name; ?>",
           email: "<?php echo $order_email; ?>",
           photoUrl: "https://avatars.dicebear.com/api/adventurer/<?php echo $order_email; ?>.svg?skinColor=variant02",
           role: "customer",
           custom: {
           email: "<?php echo $order_email; ?>",
-          lastOrder: "<?php echo $order_id; ?>"
+          lastOrder: "<?php echo $orderID; ?>"
           }
       });
       var me = new Talk.User("administrator");
@@ -33,11 +102,11 @@ $signature = hash_hmac('sha256', strval($order_id), 'sk_test_dmh9xKYFEPiN2BxC0Z9
           me: other,
           signature: "<?php echo $signature; ?>"
       });
-      var conversation = talkSession.getOrCreateConversation("<?php echo $order_id; ?>");
+      var conversation = talkSession.getOrCreateConversation("<?php echo $orderID; ?>");
           conversation.setAttributes({
-          subject: "<?php echo "Order #" . $order_id . " | " .ucwords($order_product)." Drawing"; ?>",
+          subject: "<?php echo "Order #" . $orderID . " | " .$product; ?>",
           custom: { 
-          category: "<?php echo $order_product; ?>", 
+          category: "<?php echo $order_product_codename; ?>", 
           status: "Paid"
           }
       });
@@ -46,7 +115,7 @@ $signature = hash_hmac('sha256', strval($order_id), 'sk_test_dmh9xKYFEPiN2BxC0Z9
       conversation.setParticipant(me);
 
         var chatbox = window.talkSession.createChatbox(conversation);
-        chatbox.mount(document.getElementById("talkjs-container-<?php echo $order_id; ?>"));
+        chatbox.mount(document.getElementById("talkjs-container-<?php echo $orderID; ?>"));
     })
 
 </script>
