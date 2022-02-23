@@ -17,6 +17,9 @@ if ($sex_picked==1) {
     $conn->close();
 }
 
+//Reset user cookie to prepare it for next order
+$randomNumber = rand(155654654,955654654);
+$_SESSION['user_cookie_id'] = $randomNumber;
 
 $title = "Readings | Melissa Psychic";
 $description = "Readings";

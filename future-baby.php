@@ -41,6 +41,7 @@ $_SESSION['user_cookie_id'] = $randomNumber;
 
 
 include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; 
+include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/create_chat.php';
 ?>
 <style>
 h1 {
@@ -377,7 +378,7 @@ input[type=radio]:checked ~ label {
 }
 </style>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/create_chat.php'; ?>
+
 
 
 <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>

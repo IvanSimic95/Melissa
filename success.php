@@ -5,6 +5,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 if(isset($_GET['emailaddress']))$order_email = $_GET['emailaddress'];
 if(isset($_GET['total']))$order_price = $_GET['total'];
 if(isset($_GET['order_id']))$order_buygoods = $_GET['order_id'];
+$_SESSION['user_cookie_id'] = "781718718";
 $cookie_id = $_SESSION['user_cookie_id'];
 $createChat = $genderAcc =   $skipSelect = "";
 
@@ -295,7 +296,4 @@ input[type=radio]:checked ~ label {
 }
     </style>
 
-<?php 
-unset($_SESSION['user_cookie_id']);
-include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; 
-?>
+<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>
