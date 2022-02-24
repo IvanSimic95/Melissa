@@ -334,7 +334,7 @@ $trigger = "1";
 
                 $result = curl_exec($ch);
 				$logArray['3'] = $result;
-				$logArray['4'] = $message;
+				//$logArray['4'] = $message;
 				$logArray['5'] = $Atoken_key;
 				$logArray['6'] = $data1;
 				formLog($logArray);
@@ -374,7 +374,7 @@ $trigger = "1";
 	  
 					  $result = curl_exec($ch);
 					  $logArray['3'] = $result;
-					  $logArray['4'] = $message;
+					  //$logArray['4'] = $message;
 					  $logArray['6'] = $data1;
 					  formLog($logArray);
 					  curl_close($ch);		
