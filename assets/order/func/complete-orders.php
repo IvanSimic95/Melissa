@@ -306,18 +306,17 @@ $trigger = "1";
                 "text" => $message,
                 "sender"  => "administrator",
                 "type" => "UserMessage"
-				],
-				[
+				],[
 				"attachmentToken" => $Atoken_key,
 				"sender"  => "administrator",
-				"type" => "UserMessage",
+				"type" => "UserMessage"
 				],[
 				"text" => $OrderCompleteMessage,
 				"type" => "SystemMessage"
 				],[
-					"text" => $ContinueConvoMsg,
-					"type" => "SystemMessage"
-					]];
+				"text" => $ContinueConvoMsg,
+				"type" => "SystemMessage"
+				]];
 
                 $data1 = json_encode($data);
             
@@ -335,27 +334,30 @@ $trigger = "1";
 
                 $result = curl_exec($ch);
 				$logArray['3'] = $result;
+				$logArray['4'] = $data1;
+				$logArray['5'] = $data;
 				formLog($logArray);
                 curl_close($ch);
+
+
                 //SEND IMAGE END
                 	}else{//SEND ONLY TEXT START
 					  // curl implementation
-					  $ch = curl_init();
-					  $data = [[
-					  "text" => $message,
-					  "sender"  => "administrator",
-					  "type" => "UserMessage"
-					  ],
-					  [
-					  "text" => $OrderCompleteMessage,
-					  "type" => "SystemMessage"
-					  ],[
-						  "text" => $ContinueConvoMsg,
-						  "type" => "SystemMessage"
-						  ]];
+					$ch = curl_init();
+					$data = [[
+					"text" => $message,
+					"sender"  => "administrator",
+					"type" => "UserMessage"
+					],[
+					"text" => $OrderCompleteMessage,
+					"type" => "SystemMessage"
+					],[
+					"text" => $ContinueConvoMsg,
+					"type" => "SystemMessage"
+					]];
 	  
-					  $data1 = json_encode($data);
-					  print_r($data1);
+					$data1 = json_encode($data);
+					print_r($data1);
 				  
 	  
 					  curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/t2X08S4H/conversations/' . $row["order_id"] . '/messages');
@@ -371,6 +373,8 @@ $trigger = "1";
 	  
 					  $result = curl_exec($ch);
 					  $logArray['3'] = $result;
+					  $logArray['4'] = $data1;
+					  $logArray['5'] = $data;
 					  formLog($logArray);
 					  curl_close($ch);		
 				}
@@ -379,8 +383,8 @@ $trigger = "1";
 
 				// Set order to shipped
 			$sqlupdate = "UPDATE `orders` SET `order_status`='shipped' WHERE order_id='$orderID'";
-					if ($conn->query($sqlupdate) === TRUE) {
-		     		echo "Updated";
+			if ($conn->query($sqlupdate) === TRUE) {
+		    echo "Updated";
 
 // curl implementation
 $ch = curl_init();
