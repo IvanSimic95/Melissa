@@ -30,7 +30,7 @@ $ContinueConvoMsg = "If you want to chat with Melissa, simply reply to this conv
 //END Order Messages
 
 //Save to order log function
-function formError($array) {
+function formLog($array) {
     $dataToLog = $array;
     $data = implode(" | ", $dataToLog);
     $data .= PHP_EOL;
