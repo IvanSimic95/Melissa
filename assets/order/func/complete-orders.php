@@ -1,5 +1,5 @@
 <?php
-include '/home/melissapsychic/public_html/config/vars.php';
+include_once '/home/melissapsychic/public_html/config/vars.php';
 echo "Starting complete-orders.php...<br><br>";
 
 $logArray = array();
