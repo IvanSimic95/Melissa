@@ -335,7 +335,6 @@ $trigger = "1";
                 $result = curl_exec($ch);
 				$logArray['3'] = $result;
 				$logArray['4'] = $data1;
-				$logArray['5'] = $data;
 				formLog($logArray);
                 curl_close($ch);
 
@@ -374,7 +373,6 @@ $trigger = "1";
 					  $result = curl_exec($ch);
 					  $logArray['3'] = $result;
 					  $logArray['4'] = $data1;
-					  $logArray['5'] = $data;
 					  formLog($logArray);
 					  curl_close($ch);		
 				}
