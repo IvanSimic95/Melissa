@@ -336,9 +336,7 @@ $trigger = "1";
                 $result = curl_exec($ch);
 				$logArray['3'] = $result;
 				formLog($logArray);
-
                 curl_close($ch);
-				
                 //SEND IMAGE END
                 	}else{//SEND ONLY TEXT START
 					  // curl implementation
@@ -371,10 +369,10 @@ $trigger = "1";
 					  $headers[] = 'Authorization: Bearer sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL';
 					  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 	  
+					  $result = curl_exec($ch);
 					  $logArray['3'] = $result;
 					  formLog($logArray);
-					  curl_close($ch);
-					
+					  curl_close($ch);		
 				}
 
 
