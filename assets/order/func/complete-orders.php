@@ -2,6 +2,9 @@
 include '/home/melissapsychic/public_html/config/vars.php';
 echo "Starting complete-orders.php...<br><br>";
 
+$logArray = array();
+$logArray['1'] = date("d-m-Y H:i:s");
+$logArray['2'] = $_SERVER['REMOTE_ADDR'];
 
 $trigger = "1";
 
@@ -331,10 +334,9 @@ $trigger = "1";
                 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
                 $result = curl_exec($ch);
-                if (curl_errno($ch)) {
-                    echo 'Error:' . curl_error($ch);
-                }
-				echo $result;
+				$logArray['3'] = $result;
+				formLog($logArray);
+
                 curl_close($ch);
 				
                 //SEND IMAGE END
@@ -369,11 +371,8 @@ $trigger = "1";
 					  $headers[] = 'Authorization: Bearer sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL';
 					  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 	  
-					  $result = curl_exec($ch);
-					  if (curl_errno($ch)) {
-						  echo 'Error:' . curl_error($ch);
-					  }
-					  echo $result;
+					  $logArray['3'] = $result;
+					  formLog($logArray);
 					  curl_close($ch);
 					
 				}
