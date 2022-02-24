@@ -334,45 +334,46 @@ $trigger = "1";
                 if (curl_errno($ch)) {
                     echo 'Error:' . curl_error($ch);
                 }
+				echo $result;
                 curl_close($ch);
 				
                 //SEND IMAGE END
                 	}else{//SEND ONLY TEXT START
-					 // curl implementation
-					 $ch = curl_init();
-					 $data = [[
-					 "text" => $message,
-					 "sender"  => "administrator",
-					 "type" => "UserMessage"
-					 ],
-					[
-					"text" => $OrderCompleteMessage,
-					"type" => "SystemMessage"
-					],[
-						"text" => $ContinueConvoMsg,
-						"type" => "SystemMessage"
-						]];
-	 
-					 $data1 = json_encode($data);
-				 
-	 
-					 curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/t2X08S4H/conversations/' . $row["order_id"] . '/messages');
-					 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-					 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-	 
-					 curl_setopt($ch, CURLOPT_POSTFIELDS, $data1);
-	 
-					 $headers = array();
-					 $headers[] = 'Content-Type: application/json';
-					 $headers[] = 'Authorization: Bearer sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL';
-					 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-	 
-					 $result = curl_exec($ch);
-					 if (curl_errno($ch)) {
-						 echo 'Error:' . curl_error($ch);
-					 }
-					 curl_close($ch);
-					 //SEND ONLY TEXT END
+					  // curl implementation
+					  $ch = curl_init();
+					  $data = [[
+					  "text" => $message,
+					  "sender"  => "administrator",
+					  "type" => "UserMessage"
+					  ],
+					  [
+					  "text" => $OrderCompleteMessage,
+					  "type" => "SystemMessage"
+					  ],[
+						  "text" => $ContinueConvoMsg,
+						  "type" => "SystemMessage"
+						  ]];
+	  
+					  $data1 = json_encode($data);
+				  
+	  
+					  curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/t2X08S4H/conversations/' . $row["order_id"] . '/messages');
+					  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+					  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+	  
+					  curl_setopt($ch, CURLOPT_POSTFIELDS, $data1);
+	  
+					  $headers = array();
+					  $headers[] = 'Content-Type: application/json';
+					  $headers[] = 'Authorization: Bearer sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL';
+					  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+	  
+					  $result = curl_exec($ch);
+					  if (curl_errno($ch)) {
+						  echo 'Error:' . curl_error($ch);
+					  }
+					  echo $result;
+					  curl_close($ch);
 					
 				}
 
