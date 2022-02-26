@@ -4,7 +4,7 @@ $id = $_GET['id'];
 }
 $shortlink = str_replace("/blog/", "",$id);
 $cleanshortlink = preg_replace('/[^-a-zA-Z0-9_]/', '', $shortlink);
-include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
     $sql = "SELECT * FROM blog WHERE shortlink = '".$cleanshortlink."' ORDER BY id DESC";
     $result = $conn->query($sql);
@@ -42,7 +42,7 @@ if ($aid % 2 == 0) {
 <?php $title = $atitle; ?>
 <?php $description = "Blog"; ?>
 <?php $menu_order="men_4_0"; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
 <div class="breadcrumbs">
   <div class="container">
     <a href="/index.php">Melissa</a> > <a href="/blog/">Blog</a> > <a href="<?php echo "/blog/".$ashortlink?>"><?php echo $atitle; ?></a>
@@ -137,4 +137,4 @@ font-size: 26px;
 }
 </style>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>

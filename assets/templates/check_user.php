@@ -1,7 +1,7 @@
 <?php $title = "Dashboard | Melissa Psychic"; ?>
 <?php $description = "Dashboard"; ?>
 <?php $menu_order="0_0"; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
 
 <div class="breadcrumbs">
   <div class="container">
@@ -196,4 +196,4 @@ box-shadow: 0 8px 15px rgb(0 0 0 / 30%);
 
 
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>

@@ -2,7 +2,7 @@
 // set parameters and execute
 $order_email = $_POST['check_email'];
 // echo "order email=" . $order_email;
-include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
 $sql = "SELECT * FROM orders WHERE order_email = '$order_email'";
 

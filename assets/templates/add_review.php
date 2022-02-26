@@ -10,7 +10,7 @@ $review_rating = $_POST['review_rating'];
 $review_text = $_POST['rating_testimonial'];
 $review_date = date('Y-m-d H:i:s');
 
-include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
 
     $sql = "INSERT INTO reviews (review_id, review_name, review_rating, review_text, review_date, review_moderated)

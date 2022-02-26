@@ -10,10 +10,10 @@ if($id == "0"){
 <?php $title = "Blog | Melissa Psychic"; ?>
 <?php $description = "Blog"; ?>
 <?php $menu_order="men_4_0"; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
     $sql = "SELECT * FROM blog ORDER BY id DESC";
     $result = $conn->query($sql);
@@ -206,8 +206,8 @@ display:none;
 
 
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>
 <?php }else{?>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/blog-controll.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/blog-controll.php'; ?>
 <?php }?>

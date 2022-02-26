@@ -1,12 +1,12 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/head.php';
-include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/head.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
 ?>
 
 <div class="container-fluid px-4">
 
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/admin/scripts/charts.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/admin/scripts/charts.php'; ?>
     <div class="row justify-content-center" style="margin-top:20px;">
         <div class="col-xl-9 col-md-8">
             <div class="card mb-4">
@@ -31,7 +31,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
                         <tbody>
 
                             <?php
-                        include $_SERVER['DOCUMENT_ROOT'].'/admin/scripts/orders.php';
+                        include_once $_SERVER['DOCUMENT_ROOT'].'/admin/scripts/orders.php';
                         ?>
 
                         </tbody>
@@ -151,4 +151,4 @@ $(document).ready(function() {
 } );
 </script>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/footer.php';
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/footer.php';

@@ -38,7 +38,7 @@
         <h2>Sale ends in few hours</h2>
           <!--<span class="vat"> <strong>VAT included (where applicable)</strong> </span>-->
 
-          <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/order-form.php'; ?>
+          <?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/order-form.php'; ?>
           <!-- <div class="disclamer">
             I will use my Psychic Abilities to draw your <?php echo $t_product_name; ?> within 48 hours with 100% accuracy, All i need is your full name and birth date!
           </div> -->
@@ -69,10 +69,10 @@
   </div>
 </div>
 <div class="container">
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/review-total.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/review-total.php'; ?>
 </div>
 
-<div class="container">
+<div class="container" style="margin-top:30px;">
  <div class="gradient-border">
   <div class="product_text">
     <h2><?php echo $t_about_title; ?></h2>
@@ -89,7 +89,7 @@
 <section class="reviews">
   <div class="container">
     <h2>But dont take my word, here is what my past clients say:</h2>
-      <?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/reviews.php'; ?>
+      <?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/reviews.php'; ?>
   </div>
 </section>
 <script>

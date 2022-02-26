@@ -1,6 +1,6 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
-include $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 
 // set parameters and execute
 $cookie_id = $_GET['cookie_id'];
@@ -69,7 +69,7 @@ if($user_name ) {
 <?php $title = "Order | Melissa Psychic"; ?>
 <?php $description = "Order"; ?>
 <?php $menu_order="men_0_0"; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
 
 <div class="breadcrumbs">
   <div class="container">
@@ -253,4 +253,4 @@ input[type=radio]:checked ~ label {
 }
 </style>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>

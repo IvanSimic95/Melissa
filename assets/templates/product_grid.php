@@ -12,7 +12,7 @@ border: 1px solid #cad1da;
 }
 .product_wrapper{
 box-shadow: 0 8px 15px rgb(0 0 0 / 30%);
-background-color:transparent;
+background-color:#fff;
 border-radius:8px;
 }
 </style>

@@ -1,6 +1,6 @@
 <?php/
-include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/head.php';
-include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/head.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
 }else{
@@ -63,7 +63,7 @@ $row = $result->fetch_assoc();
 </style>
 
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/footer.php';?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/footer.php';?>
  <script src="https://cdn.tiny.cloud/1/ly6d0hde1eh4gt59zqmetvn9j0xmv4id59ophuj8ksc56ock/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
  <script type="text/javascript">

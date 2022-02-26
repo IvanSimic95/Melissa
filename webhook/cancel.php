@@ -10,7 +10,7 @@ $cookie_id = $json_data->cookie;
 $mOrderID = $json_data->morderid;
 
 if($order_email) {
-include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
     $sql = "UPDATE `orders` SET `order_status`='canceled',`order_email`='$order_email',`order_price`='$order_price',`buygoods_order_id`='$order_buygoods' WHERE order_id='$mOrderID'" ;
 

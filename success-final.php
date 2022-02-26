@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
 // set parameters and execute
 if(isset($_GET['emailaddress']))$order_email = $_GET['emailaddress'];
@@ -35,9 +35,9 @@ $conn->close();
 <?php $title = "Processing.. | Melissa Psychic"; ?>
 <?php $description = "Success"; ?>
 <?php $menu_order="men_0_0"; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/create_chat.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/create_chat.php'; ?>
 
 <div class="general_section">
   <div class="container" >
@@ -185,4 +185,4 @@ input[type=radio]:checked ~ label {
   border: 1px solid #FAFAFA;
 }
 </style>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>

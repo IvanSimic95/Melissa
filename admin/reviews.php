@@ -1,6 +1,6 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/head.php';
-include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/head.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
 ?>
 <script src="https://cdn.datatables.net/searchpanes/1.4.0/js/dataTables.searchPanes.min.js"></script>
 <div class="container-fluid px-4">
@@ -29,7 +29,7 @@ include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
 
                             <?php
                             
-                        include $_SERVER['DOCUMENT_ROOT'].'/admin/scripts/reviews.php';
+                        include_once $_SERVER['DOCUMENT_ROOT'].'/admin/scripts/reviews.php';
                         ?>
 
                         </tbody>
@@ -62,4 +62,4 @@ include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
 </style>
 
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/footer.php';
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/footer.php';

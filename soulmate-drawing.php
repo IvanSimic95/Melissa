@@ -1,9 +1,9 @@
 <?php header('Content-type: text/html; charset=utf-8') ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php'; ?>
 <?php $title = "Soulmate Drawing | Melissa Psychic"; ?>
 <?php $description = "I will draw your SOULMATE with 100% accuracy"; ?>
 <?php $menu_order="men_2_0"; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
 <?php
 $t_product_name = "SOULMATE";
 $t_product_image = '/assets/img/da1.jpg';
@@ -31,5 +31,5 @@ $t_about_content = "
 <p>Due to my countless TV apparitions and excellent feedback from stars and celebrities, I have limited the number of sales to 10/day.</p>
 ";?>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/product_template.php'; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/product_template.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>

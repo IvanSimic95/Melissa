@@ -25,7 +25,7 @@ case "all":
     $product = "SOULMATE";
 }
 
-include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 	
 	if($product == "ALL PRODUCTS"){
 	$newdate1 = date('Y-m-d H:i:s');

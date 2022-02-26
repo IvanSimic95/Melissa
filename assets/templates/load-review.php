@@ -9,8 +9,8 @@ $product = $_GET['product'];
 }else{
 $product = "SOULMATE";	
 }
-include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
-include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/time.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/time.php';
 $perpage = 5;
 $offset = ($page-1) * $perpage; 
 	

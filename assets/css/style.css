@@ -2060,3 +2060,35 @@ color:#fff!important;
         padding-top: 5px!important
       }
   }
+
+  .about-wrap h1{
+    background: linear-gradient( 90deg,#d130eb,#4a30eb 80%,#2b216c);
+    color: #fff!important;
+    margin-top: -25px;
+    margin-left: -25px;
+    margin-right: -25px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    text-align: center;
+    padding: 20px;
+    border: none;
+    font-size: 30px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.about-wrap{
+box-shadow: 0 8px 15px rgb(0 0 0 / 30%);
+}
+
+.about-wrap p{
+    font-size: 100%;
+    line-height: 24px;
+    margin-bottom: 15px;
+    }
+
+    .about-wrap img{
+        border-radius: 8px;
+        box-shadow: 0 8px 15px rgb(0 0 0 / 30%);
+        }

@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
 //Check if partner sex was manually picked by user
 $sex_picked = "";
@@ -21,7 +21,7 @@ $title = "Readings | Melissa Psychic";
 $description = "Readings";
 $menu_order="men_0_0";
 
-include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; 
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; 
 ?>
 <link rel="stylesheet" href="assets/css/upsell.css">
 <style>
@@ -202,5 +202,5 @@ text-align:center;
       });
     </script>
 <?php 
-include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php';
 ?>

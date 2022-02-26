@@ -4,7 +4,7 @@
 <?php $title = "Dashboard | Melissa Psychic"; ?>
 <?php $description = "Dashboard"; ?>
 <?php $menu_order="6_0"; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
 
 <div class="breadcrumbs">
   <div class="container">
@@ -142,4 +142,4 @@ width:100%;
 
 
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>

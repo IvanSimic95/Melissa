@@ -11,7 +11,7 @@ $cookie_id = $_SESSION['user_cookie_id'];
 if ($order_email) {
 
   
-include $_SERVER['DOCUMENT_ROOT'] . '/config/vars.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/config/vars.php';
   $sql = "SELECT * FROM orders WHERE order_email ='$order_email'";
   $result = $conn->query($sql);
   if ($result->num_rows == 0 || $order_email == "") {
@@ -75,8 +75,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/config/vars.php';
 <?php $title = "Past Life | Melissa Psychic"; ?>
 <?php $description = "Past Life Readings"; ?>
 <?php $menu_order = "men_0_0"; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/templates/session.php'; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/templates/header.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/assets/templates/session.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/assets/templates/header.php'; ?>
 <style>
 h1 {
 font-size: 36px;
@@ -174,7 +174,7 @@ text-align:center;
   </div>
 </div>
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/templates/create_chat.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/assets/templates/create_chat.php'; ?>
 
 <style>
   .labbel-wrapper {
@@ -317,4 +317,4 @@ else {
 
 
 
-<?php include $_SERVER['DOCUMENT_ROOT'] . '/assets/templates/footer.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/assets/templates/footer.php'; ?>

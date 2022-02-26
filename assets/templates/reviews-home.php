@@ -9,8 +9,8 @@
 <div class="contents">
 
     <?php
-include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/time.php';
-include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/time.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
     $sql = "SELECT * FROM reviews WHERE review_moderated = 'approved' ORDER BY review_date DESC LIMIT 10";
 	$sql2 = "SELECT * FROM reviews WHERE review_moderated = 'approved' ORDER BY review_date DESC";

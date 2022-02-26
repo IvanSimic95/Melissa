@@ -1,9 +1,9 @@
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php'; ?>
 <?php $title = "Twin Flame Drawing | Melissa Psychic"; ?>
 <?php $description = "I will draw your TWIN FLAME with 100% accuracy"; ?>
 <?php $menu_order="men_2_0"; ?>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
 
 <?php
 $t_product_name = "TWIN FLAME";
@@ -34,5 +34,5 @@ This is your special chance to be closer than ever to your twin flame and finall
 Due to my countless TV apparitions and excellent feedback from stars and celebrities, I have limited the number of sales to 10/day.
 </p>";
 ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/product_template.php'; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/product_template.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>

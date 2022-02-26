@@ -14,7 +14,7 @@ $productImage = $json_data->productImage;
 $productFullTitle = $json_data->productFullTitle;
 
 if($order_email) {
-include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
     $sql = "UPDATE `orders` SET `order_status`='paid',`order_email`='$order_email',`order_price`='$order_price',`buygoods_order_id`='$order_buygoods' WHERE order_id='$mOrderID'" ;
 

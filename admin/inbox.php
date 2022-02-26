@@ -1,6 +1,6 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/head.php';
-include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/head.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
 $signature = hash_hmac('sha256', 'administrator', 'sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL');
 ?>
 <div class="container-fluid px-4">
@@ -40,4 +40,4 @@ $signature = hash_hmac('sha256', 'administrator', 'sk_test_dmh9xKYFEPiN2BxC0Z9Gu
    })
 
 </script>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/admin/partials/footer.php';
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/footer.php';

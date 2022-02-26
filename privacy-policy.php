@@ -1,7 +1,7 @@
 <?php $title = "Privacy Policy | Melissa Psychic"; ?>
 <?php $description = "Privacy Policy"; ?>
 <?php $menu_order="0_0"; ?>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
 
 <div class="breadcrumbs">
   <div class="container">
@@ -262,4 +262,4 @@ text-align:center;
 
 
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>

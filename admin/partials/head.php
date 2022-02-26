@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'].'/admin/config/database.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/admin/config/database.php';
 
     ?>
 <!DOCTYPE html>

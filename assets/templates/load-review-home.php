@@ -4,11 +4,11 @@ $page = $_GET['page'];
 }else{
 $page = "0";	
 }
-include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
 $perpage = 5;
 $offset = ($page-1) * $perpage; 
-include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/time.php';	
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/time.php';	
 $offset = $offset + 10;
 
 $total_pages_sql = "SELECT COUNT(*) FROM reviews WHERE review_moderated = 'approved'";

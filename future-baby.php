@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
 $title = "Future Baby Drawing | Melissa Psychic";
 $description = "Future Baby Drawing"; 
@@ -38,8 +38,8 @@ if(isset($_GET['emailaddress'])) {
 
 
 
-include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; 
-include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/create_chat.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; 
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/create_chat.php';
 ?>
 <style>
     @media only screen and (min-width: 768px) {
@@ -387,4 +387,4 @@ input[type=radio]:checked ~ label {
 
 
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>

@@ -7,7 +7,7 @@
 
 <?php $menu_order="men_5_0"; ?>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
 
 <div class="breadcrumbs">
 
@@ -27,7 +27,7 @@
 
             <h1>Frequently Asked Questions</h1>
     </div>
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/faq.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/faq.php'; ?>
 
   </div>
 <div class="col-sm-6">
@@ -126,4 +126,4 @@ margin-bottom:5px;
 <!--jqBootstrapValidation js file-->
 <script src="/assets/js/jqBootstrapValidation.js"></script>
 
-<?php include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>

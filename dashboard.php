@@ -19,7 +19,7 @@ $order_name = str_replace('%20', ' ', $_GET['username']);}
 
 }
 
-include $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
 $sql = "SELECT * FROM orders WHERE order_email = '$order_email' OR user_name = '$order_name' ORDER BY order_id DESC";
 
@@ -29,7 +29,7 @@ if( ($result->num_rows == 0 || $order_email == "") && ($result->num_rows == 0 ||
 
 			if($order_email==""){$error = "";}else{$error = "Email is not valid, account not found!";}
 
-   include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/check_user.php';
+   include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/check_user.php';
 
 } else {
 
@@ -37,7 +37,7 @@ $_SESSION['valid'] = true;
 $_SESSION['timeout'] = time();
 $_SESSION['email'] = $order_email;
 
-include $_SERVER['DOCUMENT_ROOT'].'/assets/templates/signed_in.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/signed_in.php';
 }
 
  ?>
