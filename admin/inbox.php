@@ -36,6 +36,7 @@ $signature = hash_hmac('sha256', 'administrator', 'sk_test_dmh9xKYFEPiN2BxC0Z9Gu
          signature: "<?php echo $signature; ?>"
      });
      var inbox = window.talkSession.createInbox();
+     inbox.setFeedFilter({ hasUnreadMessages: true });
      inbox.mount(document.getElementById('talkjs-container'));
    })
 

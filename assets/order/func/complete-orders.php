@@ -131,7 +131,7 @@ $trigger = "1";
 				}
 					
 
-				$sql_pick = "SELECT * FROM  orders_image WHERE product = 'baby' order by RAND() limit 1";
+				$sql_pick = "SELECT * FROM  orders_image WHERE product = 'baby' AND sex = '$babyGender' order by RAND() limit 1";
 				$sql_pick_res = $conn->query($sql_pick);
 				
 				if($sql_pick_res->num_rows == 0) {
@@ -163,7 +163,7 @@ $trigger = "1";
 				$tfooter = $readingOrderFooter;
 				if (strpos($orderProduct, 'general') !== false) {
 
-					$sql_text = "SELECT * FROM orders_text WHERE product = 'General' order by RAND() limit 1";
+					$sql_text = "SELECT * FROM orders_text WHERE product = 'general' order by RAND() limit 1";
 					$sql_text_res = $conn->query($sql_text);
 					if($sql_text_res->num_rows == 0) {
 					} else {
@@ -173,7 +173,7 @@ $trigger = "1";
 					}
 				}
 				if (strpos($orderProduct, 'love') !== false) {
-					$sql_text = "SELECT * FROM orders_text WHERE product = 'Love' order by RAND() limit 1";
+					$sql_text = "SELECT * FROM orders_text WHERE product = 'love' order by RAND() limit 1";
 					$sql_text_res = $conn->query($sql_text);
 					if($sql_text_res->num_rows == 0) {
 					} else {
@@ -183,7 +183,7 @@ $trigger = "1";
 					}
 				}
 				if (strpos($orderProduct, 'career') !== false) {
-					$sql_text = "SELECT * FROM orders_text WHERE product = 'Career' order by RAND() limit 1";
+					$sql_text = "SELECT * FROM orders_text WHERE product = 'career' order by RAND() limit 1";
 					$sql_text_res = $conn->query($sql_text);
 					if($sql_text_res->num_rows == 0) {
 					} else {
@@ -193,7 +193,7 @@ $trigger = "1";
 					}
 				}
 				if (strpos($orderProduct, 'health') !== false) {
-					$sql_text = "SELECT * FROM orders_text WHERE product = 'Health' order by RAND() limit 1";
+					$sql_text = "SELECT * FROM orders_text WHERE product = 'health' order by RAND() limit 1";
 					$sql_text_res = $conn->query($sql_text);
 					if($sql_text_res->num_rows == 0) {
 					} else {
