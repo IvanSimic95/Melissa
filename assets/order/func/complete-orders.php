@@ -47,7 +47,7 @@ $trigger = "1";
 			$trigger = 0;
 			//$trigger = 1;
 			$image_send = 0;
-			$randomDelay = rand(0,4);
+			$randomDelay = rand(0,3);
 
 			echo "".$orderID." | ";
 			
@@ -149,6 +149,7 @@ $trigger = "1";
 					while($rowText = $sql_text_res->fetch_assoc()) {
 						$email_text = $rowText["text"];
 						$message = $theader.$email_text.$tfooter;
+						echo $message;
 					}
 				}
 				//END IF PRODUCT = FUTURE BABY
