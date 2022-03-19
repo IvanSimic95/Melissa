@@ -138,7 +138,8 @@ $trigger = "1";
 					$image_name = "";
 				} else {
 					while($rowImages = $sql_pick_res->fetch_assoc()) {
-					$image_name = $rowImages["name"];
+					$image_name = $rowImages['name'];
+					$logArray[] = $image_name;
 					}
 				}
 				$sql_text = "SELECT * FROM orders_text WHERE product = '$prod_type' AND gender = '$babyGender' order by RAND() limit 1";
@@ -147,8 +148,9 @@ $trigger = "1";
 						$email_text = "";
 				} else {
 					while($rowText = $sql_text_res->fetch_assoc()) {
-						$email_text = $rowText["text"];
+						$email_text = $rowText['text'];
 						$message = $theader.$email_text.$tfooter;
+						$logArray[] = $rowText['id'];
 						
 					}
 				}
@@ -334,10 +336,10 @@ $trigger = "1";
                 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
                 $result = curl_exec($ch);
-				$logArray['3'] = $result;
+				$logArray[] = $result;
 				//$logArray['4'] = $message;
-				$logArray['5'] = $Atoken_key;
-				$logArray['6'] = $data1;
+				$logArray[] = $Atoken_key;
+				$logArray[] = $data1;
 				formLog($logArray);
                 curl_close($ch);
 
@@ -358,8 +360,7 @@ $trigger = "1";
 					"type" => "SystemMessage"
 					]];
 						
-					$logArray['3'] = $rowText["id"];
-					$logArray['4'] = $rowText["text"];
+				
 							
 
 					$data1 = json_encode($data);
@@ -378,7 +379,7 @@ $trigger = "1";
 					  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 	  
 					  $result = curl_exec($ch);
-					  $logArray['5'] = $result;
+					  $logArray['3'] = $result;
 					  //$logArray['4'] = $message;
 					  $logArray['6'] = $data1;
 					  formLog($logArray);
