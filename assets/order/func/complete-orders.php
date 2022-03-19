@@ -131,7 +131,7 @@ $trigger = "1";
 				}
 					
 
-				$sql_pick = "SELECT * FROM  orders_image WHERE product = 'baby' AND sex = '$babyGender' order by RAND() limit 1";
+				$sql_pick = "SELECT * FROM  orders_image WHERE product = 'baby2' AND sex = '$babyGender' order by RAND() limit 1";
 				$sql_pick_res = $conn->query($sql_pick);
 				
 				if($sql_pick_res->num_rows == 0) {
