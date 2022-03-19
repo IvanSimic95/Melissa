@@ -340,6 +340,7 @@ $trigger = "1";
 				//$logArray['4'] = $message;
 				formLog($logArray);
                 curl_close($ch);
+				echo "<hr>";
 				var_dump($data);
 				echo "<hr>";
 				var_dump($data1);
