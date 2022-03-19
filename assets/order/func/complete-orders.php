@@ -341,6 +341,7 @@ $trigger = "1";
 				formLog($logArray);
                 curl_close($ch);
 
+				var_dump($result);
 
                 //SEND IMAGE END
                 	}else{//SEND ONLY TEXT START
