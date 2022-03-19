@@ -242,7 +242,7 @@ $trigger = "1";
 
 			$message = str_replace("%FIRSTNAME%", $fName, $message);
 			$logArray[] = $message;
-			$logArray[] = $OrderCompleteMessag;
+			$logArray[] = $OrderCompleteMessage;
 			$logArray[] = $ContinueConvoMsg;
 			if ($image_send == "1") { //SEND IMAGE START
 						// define image name and new path
