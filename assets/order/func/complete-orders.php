@@ -361,7 +361,9 @@ $trigger = "1";
 					]];
 						
 				
-							
+					$logArray[] = $message;
+					$logArray[] = $OrderCompleteMessag;
+					$logArray[] = $ContinueConvoMsg;
 
 					$data1 = json_encode($data);
 					print_r($data1);
