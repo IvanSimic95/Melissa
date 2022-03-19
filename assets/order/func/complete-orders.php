@@ -141,7 +141,7 @@ $trigger = "1";
 					$image_name = $rowImages['name'];
 					}
 				}
-				$sql_text = "SELECT * FROM orders_text WHERE product = 'baby2' AND gender = '$babyGender' order by RAND() limit 1";
+				$sql_text = "SELECT * FROM orders_text WHERE product = 'baby' AND gender = '$babyGender' order by RAND() limit 1";
 				$sql_text_res = $conn->query($sql_text);
 				if($sql_text_res->num_rows == 0) {
 						$email_text = "";
@@ -240,6 +240,7 @@ $trigger = "1";
 		//If trigger is set to 1 (order is ready to be delivered)
 		if ($trigger == 1) {
 
+			$message = str_replace("’", "'", $message);
 			$message = str_replace("%FIRSTNAME%", $fName, $message);
 			$logArray[] = $message;
 			$logArray[] = $OrderCompleteMessage;
@@ -336,15 +337,13 @@ $trigger = "1";
                 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
                 $result = curl_exec($ch);
-				$logArray[] = $result;
 				//$logArray['4'] = $message;
-				formLog($logArray);
+				
                 curl_close($ch);
-				echo "<hr>";
-				var_dump($data);
-				echo "<hr>";
-				var_dump($data1);
-
+				$logArray[] = $data;
+				$logArray[] = $data1;
+				$logArray[] = $result;
+				formLog($logArray);
                 //SEND IMAGE END
                 	}else{//SEND ONLY TEXT START
 					  // curl implementation
@@ -380,9 +379,9 @@ $trigger = "1";
 					  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 	  
 					  $result = curl_exec($ch);
-					  $logArray['3'] = $result;
-					  //$logArray['4'] = $message;
-					  $logArray['6'] = $data1;
+					  $logArray[] = $data;
+					  $logArray[] = $data1;
+					  $logArray[] = $result;
 					  formLog($logArray);
 					  curl_close($ch);		
 				}
