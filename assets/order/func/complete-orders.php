@@ -149,7 +149,7 @@ $trigger = "1";
 					while($rowText = $sql_text_res->fetch_assoc()) {
 						$email_text = $rowText["text"];
 						$message = $theader.$email_text.$tfooter;
-						echo $message;
+						
 					}
 				}
 				//END IF PRODUCT = FUTURE BABY
@@ -357,7 +357,11 @@ $trigger = "1";
 					"text" => $ContinueConvoMsg,
 					"type" => "SystemMessage"
 					]];
-	  
+						
+					$logArray['3'] = $rowText["id"];
+					$logArray['4'] = $rowText["text"];
+							
+
 					$data1 = json_encode($data);
 					print_r($data1);
 				  
@@ -374,7 +378,7 @@ $trigger = "1";
 					  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 	  
 					  $result = curl_exec($ch);
-					  $logArray['3'] = $result;
+					  $logArray['5'] = $result;
 					  //$logArray['4'] = $message;
 					  $logArray['6'] = $data1;
 					  formLog($logArray);
