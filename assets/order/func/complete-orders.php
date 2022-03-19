@@ -139,7 +139,6 @@ $trigger = "1";
 				} else {
 					while($rowImages = $sql_pick_res->fetch_assoc()) {
 					$image_name = $rowImages['name'];
-					$logArray[] = $image_name;
 					}
 				}
 				$sql_text = "SELECT * FROM orders_text WHERE product = '$prod_type' AND gender = '$babyGender' order by RAND() limit 1";
@@ -150,7 +149,6 @@ $trigger = "1";
 					while($rowText = $sql_text_res->fetch_assoc()) {
 						$email_text = $rowText['text'];
 						$message = $theader.$email_text.$tfooter;
-						$logArray[] = $rowText['id'];
 						
 					}
 				}
@@ -243,7 +241,9 @@ $trigger = "1";
 		if ($trigger == 1) {
 
 			$message = str_replace("%FIRSTNAME%", $fName, $message);
-
+			$logArray[] = $message;
+			$logArray[] = $OrderCompleteMessag;
+			$logArray[] = $ContinueConvoMsg;
 			if ($image_send == "1") { //SEND IMAGE START
 						// define image name and new path
 							$rootDir = $_SERVER['DOCUMENT_ROOT'];
@@ -338,8 +338,6 @@ $trigger = "1";
                 $result = curl_exec($ch);
 				$logArray[] = $result;
 				//$logArray['4'] = $message;
-				$logArray[] = $Atoken_key;
-				$logArray[] = $data1;
 				formLog($logArray);
                 curl_close($ch);
 
@@ -361,9 +359,7 @@ $trigger = "1";
 					]];
 						
 				
-					$logArray[] = $message;
-					$logArray[] = $OrderCompleteMessag;
-					$logArray[] = $ContinueConvoMsg;
+				
 
 					$data1 = json_encode($data);
 					print_r($data1);
