@@ -240,6 +240,7 @@ $trigger = "1";
 		//If trigger is set to 1 (order is ready to be delivered)
 		if ($trigger == 1) {
 
+			$message = str_replace("'", "", $message);
 			$message = str_replace("’", "", $message);
 			$message = str_replace("‘", "", $message);
 			$message = str_replace("%FIRSTNAME%", $fName, $message);
