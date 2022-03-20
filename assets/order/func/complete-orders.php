@@ -340,8 +340,6 @@ $trigger = "1";
 				//$logArray['4'] = $message;
 				
                 curl_close($ch);
-				$logArray[] = $data;
-				$logArray[] = $data1;
 				$logArray[] = $result;
 				formLog($logArray);
                 //SEND IMAGE END
@@ -379,8 +377,6 @@ $trigger = "1";
 					  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 	  
 					  $result = curl_exec($ch);
-					  $logArray[] = $data;
-					  $logArray[] = $data1;
 					  $logArray[] = $result;
 					  formLog($logArray);
 					  curl_close($ch);		
