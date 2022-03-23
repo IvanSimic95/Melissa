@@ -1,0 +1,14 @@
+[23-Feb-2022 11:19:30 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/melissapsychic/public_html/admin/scripts/admin-login.php on line 10
+[24-Feb-2022 02:34:05 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/melissapsychic/public_html/admin/scripts/admin-login.php on line 10
+[24-Feb-2022 03:30:49 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/melissapsychic/public_html/admin/scripts/admin-login.php on line 10
+[24-Feb-2022 20:28:25 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/melissapsychic/public_html/admin/scripts/admin-login.php on line 10
+[25-Feb-2022 04:18:08 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/melissapsychic/public_html/admin/scripts/admin-login.php on line 10
+[26-Feb-2022 02:50:00 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/melissapsychic/public_html/admin/scripts/admin-login.php on line 10
+[26-Feb-2022 02:50:46 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/melissapsychic/public_html/admin/scripts/admin-login.php on line 10
+[26-Feb-2022 03:13:57 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/melissapsychic/public_html/admin/scripts/admin-login.php on line 10
+[26-Feb-2022 11:59:29 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/melissapsychic/public_html/admin/scripts/admin-login.php on line 10
+[27-Feb-2022 12:33:02 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/melissapsychic/public_html/admin/scripts/admin-login.php on line 10
+[27-Feb-2022 17:52:38 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/melissapsychic/public_html/admin/scripts/admin-login.php on line 10
+[18-Mar-2022 01:14:10 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/melissapsychic/public_html/admin/scripts/admin-login.php on line 10
+[18-Mar-2022 11:35:41 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/melissapsychic/public_html/admin/scripts/admin-login.php on line 10
+[20-Mar-2022 23:08:35 UTC] PHP Notice:  session_start(): A session had already been started - ignoring in /home/melissapsychic/public_html/admin/scripts/admin-login.php on line 10

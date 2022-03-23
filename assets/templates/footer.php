@@ -2,6 +2,10 @@
     <footer>
 	
       <div class="container">
+
+      <div class="paragraph">
+      The information contained herein should not be used as a substitute for the advice of appropriately qualified and licensed person. According to all laws, I must state that my services are for entertainments purposes only. I have no liability and/or responsibility for any actions and/or decisions any buyer/client chooses to take or make based on his/her consultation.
+</div><hr>
         <div class="sides">
           <div class="quarter">
             <h3>From Melissa</h3>

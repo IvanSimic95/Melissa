@@ -109,7 +109,7 @@ text-align:center;
   <div class="container">
   <div class="white-wrapper col-md-10 offset-md-2"> <h1>You Unlocked a Special Service!</h1>
     
-    <img src="/assets/img/psychic.jpg" alt="upsell">
+    <center> <img src="/assets/img/sitee91.jpg" alt="upsell"> </center>
     <h3>This is an exclusive service which I'm only offering to a small number of customers. You can't get back to this page later!</h3>
    
     
@@ -118,7 +118,15 @@ text-align:center;
   <form class="readings" action="/order2.php" method="get">
       <h1>Personal Psychic Reading</h1>
     
- 
+ <br>
+          <center> <b> <div class="gradient"> <h3> WOULDN'T BE GREAT TO JUST KNOW THE TRUTH INSTEAD OF CUNSUMMING YOURSELF WITH CONSTANT THOUGHTS? </h3></span> </b> </center>
+           <br> </r>
+          <div class="gradient">Your personal psychic reading will help answer some important questions that you've been asking yourself for a long time. If you would like to know more about your future love life, career, health, or where your life is headed in general, this is the perfect service for you.</div>
+                   <br>
+            
+                   <div class="gradient"> You will receive your reading within 24 hours with everything you need to find out about yourself. </div>
+                   <br>
+                   <center> 
       <ul class="list-group list-group-flush">
           <li class="list-group-control">
 					<label class="custom-control fill-checkbox">
@@ -149,7 +157,7 @@ text-align:center;
 		      </label>
 					</li>
           
-				</ul>
+				</ul></center>
         <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['user_cookie_id2']; ?>">
 
       <div class="meta_part">
@@ -158,7 +166,6 @@ text-align:center;
           <div class="price_box">
             <span class="new_prce">$19.99</span>
           </div>
-          <span class="gradient">Woudn't it be great to just know the truth instead of cunsumming yourself with constant thoughts?</span>
           <input type="submit" name="form_submit" value="Add to my Purchase">
 
         </div>

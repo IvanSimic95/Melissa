@@ -6,8 +6,6 @@ $logArray = array();
 $logArray['1'] = date("d-m-Y H:i:s");
 $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 
-$trigger = "1";
-
 
 	// Create connection
 	$conn = new mysqli($servername, $username, $password, $dbname);
@@ -44,8 +42,8 @@ $trigger = "1";
 			$periods = new \DatePeriod($start, $interval, $end);
 			$hours = iterator_count($periods);
 			
-			//$trigger = 0;
-			$trigger = 1;
+			$trigger = 0;
+			//$trigger = 1;
 			$image_send = 0;
 			$randomDelay = rand(0,3);
 
