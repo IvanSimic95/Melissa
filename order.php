@@ -4,8 +4,14 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 
 // set parameters and execute
 $cookie_id = $_GET['cookie_id'];
-$user_age = $_GET['form_year'];
+
 $user_birthday = $_GET['form_day']."-".$_GET['form_month']."-".$_GET['form_year'];
+$birthday = new DateTime($user_birthday);
+$interval = $birthday->diff(new DateTime);
+
+$user_age = $interval->y;
+echo $user_age;
+
 $user_name = $_GET['form_name'];
 $order_product = $_GET['product'];
 $order_priority = $_GET['priority'];

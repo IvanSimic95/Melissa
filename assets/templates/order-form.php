@@ -74,7 +74,7 @@
            $ending_year = date('Y', strtotime('-18 year'));
            $current_year = date('Y');
            for($starting_year; $starting_year <= $ending_year; $starting_year++) {
-               echo '<option value="'. ( $current_year - $starting_year ).'"';
+               echo '<option value="'.$starting_year.'"';
                echo ' >'.$starting_year.'</option>';
            }
            ?>
