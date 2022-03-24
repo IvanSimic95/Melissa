@@ -1,6 +1,6 @@
   </main>
 
-
+<?php if ($startpixel == 1) { ?>
 <!-- Meta Pixel Code -->
 <script>
 !function(f,b,e,v,n,t,s)
@@ -19,6 +19,9 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=<?php echo $FBPixel; ?>&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<?php } ?>
+
+<?php echo $FBPurchasePixel; ?>
 
 
     <footer>

@@ -1,17 +1,21 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
-$_SESSION['fbfirepixel'] = 0;
+
+$_SESSION['fbfireUpsellpixel'] = 0;
+
+
 // set parameters and execute
 if(isset($_GET['emailaddress']))$order_email = $_GET['emailaddress'];
 if(isset($_GET['total']))$order_price = $_GET['total'];
 if(isset($_GET['order_id']))$order_buygoods = $_GET['order_id'];
-$cookie_id = $_SESSION['user_cookie_id'];
-$createChat = $genderAcc =   $skipSelect = "";
+$cookie_id = $_SESSION['user_cookie_id2'];
+$cookie_id = "545741992";
+$createChat = "";
+
 
 if(isset($_GET['emailaddress'])) {
 
-  
   //Find Correct Order
   $sql = "SELECT * FROM `orders` WHERE `cookie_id` = '$cookie_id' ORDER BY  `order_id` DESC LIMIT 1";
   $result = $conn->query($sql);
@@ -23,30 +27,21 @@ if(isset($_GET['emailaddress'])) {
   $orderID = $row['order_id'];
   $first_name = $row['first_name'];
   $product = $row['order_product'];
-  $genderAcc = $row['genderAcc'];
 
 
-  $_SESSION['fbfirepixel'] = 1;
+  $_SESSION['fbfireUpsellpixel'] = 1;
   $_SESSION['fborderID'] = $orderID;
   $_SESSION['fborderPrice'] = $order_price;
   $_SESSION['fbproduct'] = $product;
 
-
   $sql = "UPDATE `orders` SET `order_email`='$order_email', `order_price`='$order_price', `buygoods_order_id`='$order_buygoods', `order_status`='paid' WHERE order_id='$orderID'";
   $result = $conn->query($sql);
 
-  //echo  $genderAcc;
-
-  //If gender Accuracy is over 90 redirect to readings page
-  if($genderAcc>89){
-  $skipSelect = 1;
-  }else{
-  $skipSelect = 0;
-  }
-
-  //Enable Chat Creation
   $createChat = 1;
   }
+
+}
+
 ?>
 
 
@@ -56,26 +51,8 @@ if(isset($_GET['emailaddress'])) {
 <?php $menu_order="men_0_0"; ?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/create_chat.php'; ?>
-<div class="breadcrumbs">
-  <div class="container">
-    <a href="/index.php">Melissa</a> > Success
-  </div>
-</div>
 
-<?php if($_GET['item'] == "baby12" OR $_GET['item'] == "baby24" OR $_GET['item'] == "baby48"){ ?>
-  <div class="general_section">
-  <div class="container" >
-  <div class="white-wrapper col-md-8 offset-md-4"style="min-height:300px;padding:20px 30px 20px 30px;"> <h1>Thank you for your order!</h1>
-  <br><br>
-  <h2 style="text-align:center;">Your order is now complete & you will receive an email with your order details and dashboard login link.</h2>
-  </div>
-  </div>
-  </div>
-
-
-<?php }else{ ?>
-<?php if($skipSelect==1){?>
-  <div class="general_section">
+<div class="general_section">
   <div class="container" >
   <div class="white-wrapper col-md-8 offset-md-4"style="min-height:300px;padding:20px 30px 20px 30px;"> <h1>Processing your order...</h1>
   <br><br>
@@ -87,93 +64,15 @@ if(isset($_GET['emailaddress'])) {
 <script>
   document.addEventListener("DOMContentLoaded", function(event) {
     setTimeout(function(){
-      window.location.href = "https://melissa-psychic.com/readings.php";
+      window.location.href = "https://melissa-psychic.com/future-baby.php";
      }, 3000);
   });
 
 </script>
 
-<?php }else{ ?>
-<div class="general_section">
-  <div class="container">
-  <div class="white-wrapper col-md-10 offset-md-2"> <h1>Choose your Sexual Orientation!</h1>
-    <form class="pick_sex" action="/readings.php" method="post">
-      <div class="form_box">
-          <span>I would like to recieve a drawing of a:</span>
-          <div class="radio_box">
-          <div class="row" style="display:flex;flex-wrap: wrap;">
-          <div class='col-6 text-center'>
-        <input type="radio" name="pick_sex" id="match_1" value="male" checked> 
-				<label class="imgbgchk label-man" for="match_1" style="position: relative;">
-        <div class="labbel-wrapper">
-        <img src="assets/img/man.png">
-				<div class="tick_container">
-                <div class="tick"><i class="fa fa-check"></i></div>
-        </div>
-  </div>
-				</label> 
-  </div>
-  <div class='col-6 text-center'>
-           	<input type="radio" name="pick_sex" id="match_2" value="female"> 
-				<label class="imgbgchk label-woman" for="match_2" style="position: relative;">
-        <div class="labbel-wrapper">
-        <img src="assets/img/woman.png">
-          <div class="tick_container">
-                <div class="tick"><i class="fa fa-check"></i></div>
-              </div>
-  </div>
-				</label> 
-  </div>
-  </div>
-          </div>
-      </div>
-      <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $cookie_id; ?>">
-      <div class="form_box">
-        <input type="submit" class="disabled" id="submit-button" name="form_submit" value="Choose a man or a woman" disabled>
-      </div>
-    </form>
-
-
-  </div>
-
-  </div>
-</div>
-
-<script>
-$(".label-man").click(function(){
-  $(this).find('.tick_container').css('opacity', '1');
-  $(this).find('.labbel-wrapper').addClass('greenshadow');
-  $(".label-woman").find('.labbel-wrapper').removeClass('greenshadow');
-  $(".label-woman").find('.tick_container').css('opacity', '0');
-  $("#submit-button").val('Confirm a Man!');
-  $("#submit-button").removeClass('disabled');
-  $("#submit-button").removeAttr('disabled');
-});
-
-$(".label-woman").click(function(){
-  $(this).find('.tick_container').css('opacity', '1');
-  $(this).find('.labbel-wrapper').addClass('greenshadow');
-  $(".label-man").find('.labbel-wrapper').removeClass('greenshadow');
-  $(".label-man").find('.tick_container').css('opacity', '0');
-  $("#submit-button").val('Confirm a Woman!');
-  $("#submit-button").removeClass('disabled');
-  $("#submit-button").removeAttr('disabled');
-});
-  </script>
-
-<?php 
-    }  
-  }  
-
-}else{
-  header('Location: /');
-}
-
- ?>
-
 
 <style>
-  .labbel-wrapper {
+.labbel-wrapper {
 height:100%;
 border-radius:15px;
 

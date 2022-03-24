@@ -50,7 +50,7 @@ $userGenderAcc = $findGenderFunc['0']['accuracy'];
 if($userGender=="male"){$partnerGender = "female";}
 if($userGender=="female"){$partnerGender = "male";}
 
-$returnURL = "https://melissa-psychic.com/future-baby.php";
+$returnURL = "https://melissa-psychic.com/success-reading.php";
 $returnEncoded = base64_encode($returnURL);
 
 if($cookie_id) {

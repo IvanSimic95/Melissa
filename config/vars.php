@@ -1,6 +1,9 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php';
+$startpixel = 1;
 $FBPixel = "849174466483788";
+$FBPurchasePixel = "";
+
 //START Order Messages
 $processingWelcome = "We are now processing your *Order #%ORDERID%*\n\nYour order will be delivered to your email in %PRIORITY% hours or less.\n\nIf this is your first order your new account will be created automatically\n\nIn order to automatically login to your account just <%EMAILLINK%|Click Here!>\n\n_With Love!_\n*Melissa*";
 

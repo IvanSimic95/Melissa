@@ -1,6 +1,5 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
-
 //Check if partner sex was manually picked by user
 $sex_picked = "";
 if(isset($_POST['pick_sex'])){
@@ -209,5 +208,29 @@ text-align:center;
       });
     </script>
 <?php 
+$FirePixel = $_SESSION['fbfirepixel'];
+
+if($FirePixel == 1){
+  $orderID = $_SESSION['fborderID'];
+  $orderPrice = $_SESSION['fborderPrice'];
+  $first_name = $_SESSION['fbname'];
+  $product = $_SESSION['fbproduct'];
+  $genderAcc = $_SESSION['fbgender'];
+
+$FBPurchasePixel = <<<EOT
+<script>
+fbq('track', 'Purchase', {
+  value: $orderPrice , 
+  currency: 'USD',
+  content_type: 'product', 
+  content_ids: '$product'
+}, 
+{eventID: '$orderID'});
+</script>
+EOT;
+
+$_SESSION['fbfirepixel'] = 0;
+}
 include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php';
+
 ?>
