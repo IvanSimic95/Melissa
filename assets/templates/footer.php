@@ -12,6 +12,20 @@ t.src=v;s=b.getElementsByTagName(e)[0];
 s.parentNode.insertBefore(t,s)}(window, document,'script',
 'https://connect.facebook.net/en_US/fbevents.js');
 
+<?php 
+if($_SESSION['PixelDATA'] == 1){
+?>
+fbq('init', '<?php echo $FBPixel; ?>', {
+em: '<?php echo $_SESSION['Pixelemail']; ?>',        
+fn: '<?php echo $_SESSION['Pixelfname']; ?>',    
+ln: '<?php echo $_SESSION['Pixellname']; ?>',
+bd: '<?php echo $_SESSION['Pixeldob']; ?>',
+ge: '<?php echo $_SESSION['Pixelgender']; ?>',
+external_id: '<?php echo $_SESSION['PixelID']; ?>'
+});
+<?php 
+}else{ 
+?>
 fbq('init', '<?php echo $FBPixel; ?>');
 fbq('track', 'PageView');
 </script>
@@ -20,7 +34,7 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=<?php echo $FBPixel; ?>&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
-<?php } ?>
+<?php }} ?>
 
 <?php echo $FBPurchasePixel; ?>
 

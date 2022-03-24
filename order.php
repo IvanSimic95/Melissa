@@ -5,11 +5,15 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 // set parameters and execute
 $cookie_id = $_GET['cookie_id'];
 $user_age = $_GET['form_year'];
+$user_birthday = $_GET['form_day']."-".$_GET['form_month']."-".$_GET['form_year'];
 $user_name = $_GET['form_name'];
 $order_product = $_GET['product'];
 $order_priority = $_GET['priority'];
 $order_date = date('Y-m-d H:i:s');
 $partnerGender = "male";
+
+isset($_GET['fbp']) ? $uFBP = $_GET['fbp'] : $uFBP = "";
+isset($_GET['fbc']) ? $uFBC = $_GET['fbc'] : $uFBC = "";
 
 //Full name -> First and Last Name
 $parser = new TheIconic\NameParser\Parser();
@@ -22,6 +26,8 @@ $_SESSION['orderFName'] = $fName;
 $_SESSION['orderLName'] = $lName;
 
 $_SESSION['orderAge'] = $user_age;
+
+$_SESSION['orderBirthday'] = $user_birthday;
 
 //Find User Gender
 function findGender($name) {
@@ -51,8 +57,8 @@ if($user_name ) {
 
 
 
-    $sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, order_status, order_date, order_email, order_product, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex)
-                          VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', 'pending', '$order_date', '', '$order_product', '$order_priority', '', '', '$userGender', '$userGenderAcc', '$partnerGender')";
+    $sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, birthday, order_status, order_date, order_email, order_product, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, fbc, fbp)
+                          VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', '$user_birthday', 'pending', '$order_date', '', '$order_product', '$order_priority', '', '', '$userGender', '$userGenderAcc', '$partnerGender', '$uFBC', '$uFBP')";
 
     
     if ($conn->query($sql) === TRUE) {
@@ -111,7 +117,7 @@ var product = getUrlParameter('product');
 
 document.addEventListener("DOMContentLoaded", function(event) {
     setTimeout(function(){
-      window.location.href = "https://www.buygoods.com/secure/checkout.html?account_id=6274&product_codename=" + product + prio + "&subid=<?php echo $cookie_id; ?>&subid2=<?php echo $lastRowInsert; ?>&redirect=<?php echo $returnEncoded; ?>";
+      window.location.href = "https://www.buygoods.com/secure/checkout.html?account_id=6274&product_codename=" + product + prio + "&subid=<?php echo $cookie_id; ?>&subid2=<?php echo $lastRowInsert; ?>&subid3=<?php echo $uFBC; ?>&subid4=<?php echo $uFBP; ?>&redirect=<?php echo $returnEncoded; ?>";
      }, 1000);
   });
 </script>

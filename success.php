@@ -26,11 +26,22 @@ if(isset($_GET['emailaddress'])) {
   $genderAcc = $row['genderAcc'];
 
 
+  $_SESSION['fbc'] = $row['fbc'];
+  $_SESSION['fbp'] = $row['fbp'];
+
   $_SESSION['fbfirepixel'] = 1;
   $_SESSION['fborderID'] = $orderID;
   $_SESSION['fborderPrice'] = $order_price;
   $_SESSION['fbproduct'] = $product;
 
+
+  $_SESSION['PixelDATA'] = "1";
+  $_SESSION['Pixelemail'] = $row['order_email'];
+  $_SESSION['Pixelfname'] = $row['first_name'];
+  $_SESSION['Pixellname'] = $row['last_name'];
+  $_SESSION['Pixelgender']= $row['user_sex'];
+  $_SESSION['Pixeldob']   = date("Ymd", strtotime($row['birthday']));
+  $_SESSION['PixelID']    = $row['order_id'];
 
   $sql = "UPDATE `orders` SET `order_email`='$order_email', `order_price`='$order_price', `buygoods_order_id`='$order_buygoods', `order_status`='paid' WHERE order_id='$orderID'";
   $result = $conn->query($sql);
