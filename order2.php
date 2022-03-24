@@ -5,6 +5,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 
 if(isset($_GET['skip'])){ 
   if($_GET['skip']=="yes"){ 
+  $_SESSION['fbfireUpsellpixel'] = 0;
   header('Location: /future-baby.php');
   die();
   }
