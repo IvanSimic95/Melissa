@@ -269,7 +269,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 								var me = new Talk.User("administrator");
 								var other = new Talk.User(<?php echo $orderID; ?>);
 								window.talkSession = new Talk.Session({
-										appId: "t2X08S4H",
+										appId: "ArJWsup2",
 										me: me
 								});
 								var conversation = talkSession.getOrCreateConversation("<?php echo $orderID; ?>");
@@ -316,8 +316,8 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
 
 							$ch = curl_init();
-							$authorization = "Bearer sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL";
-							curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/t2X08S4H/files');
+							$authorization = "Bearer sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98";
+							curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/ArJWsup2/files');
 							curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 							curl_setopt($ch, CURLOPT_POST, 1);
 							$target = '/home/melissapsychic/public_html/assets/mail/delivery-images/' . $newImagename;
@@ -348,11 +348,11 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 								];
 
 
-									fetch("https://api.talkjs.com/v1/t2X08S4H/conversations/<?php echo $orderID; ?>/messages", {
+									fetch("https://api.talkjs.com/v1/ArJWsup2/conversations/<?php echo $orderID; ?>/messages", {
 										method: "POST",
 										headers: {
 												'Content-Type' : "application/json",
-												'Authorization': 'Bearer sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL'
+												'Authorization': 'Bearer sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98'
 											},
 										body: JSON.stringify(data<?php echo $orderID; ?>image)
 									}).then(res => {
@@ -406,11 +406,11 @@ $noter = sb_add_note($orderChatID, 1, "Order Finished", "Image Sent");
 					];
 
 
-						fetch("https://api.talkjs.com/v1/t2X08S4H/conversations/<?php echo $orderID; ?>/messages", {
+						fetch("https://api.talkjs.com/v1/ArJWsup2/conversations/<?php echo $orderID; ?>/messages", {
 							method: "POST",
 							headers: {
 									'Content-Type' : "application/json",
-									'Authorization': 'Bearer sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL'
+									'Authorization': 'Bearer sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98'
 								},
 							body: JSON.stringify(data<?php echo $orderID; ?>text)
 						}).then(res => {

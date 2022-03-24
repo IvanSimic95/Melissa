@@ -16,7 +16,7 @@ Talk.ready.then(function () {
     });
 
     talkSession = new Talk.Session({
-        appId: "t2X08S4H",  // <---- put your appId here. It can be found in your dashboard
+        appId: "ArJWsup2",  // <---- put your appId here. It can be found in your dashboard
         me: me
     });
     

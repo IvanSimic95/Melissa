@@ -7,9 +7,15 @@
   <div class="container">
     <div class="sides">
       <div class="left">
-	   <div class="gradient-border" style="margin-top:0;">
-        <div class="product_box"  style="background-image:url('<?php echo $t_product_image; ?>')">
+	
+        <div class="product_box">
+            <img src="<?php echo $t_product_image; ?>" />
 		</div>
+		
+		<div class="product_box_pc">
+            <img src="<?php echo $t_product_image_pc; ?>" />
+		</div>
+		
           <span class="product_code" style="display:none;"><?php echo $t_product_form_name; ?></span>
           <!-- <div class="hover_box">
             <div class="paragraph">
@@ -23,9 +29,9 @@
             </div>
           </div> -->
         </div>
-      </div>
+      
       <div class="right">
-	   <div class="gradient-border" style="margin-top:0;">
+	   
 	  <div class="product-purchase">
         <h1><?php echo $t_product_title; ?></h1>
         <!--<span class="bestseller">Bestseller</span>-->
@@ -44,7 +50,7 @@
           </div> -->
       </div>
 	  </div>
-	  </div>
+
     </div>
     <!-- <div class="icons_product">
       <div class="sides">
@@ -68,7 +74,7 @@
     </div> -->
   </div>
 </div>
-<div class="container">
+<div class="container" style="margin-top:20px;">
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/review-total.php'; ?>
 </div>
 

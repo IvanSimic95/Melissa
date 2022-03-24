@@ -26,6 +26,8 @@ case "all":
 }
 
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+    $dateoffset = rand(60,180);
+	$newdate = date('Y-m-d H:i:s', strtotime("-$dateoffset minutes"));
 	
 	if($product == "ALL PRODUCTS"){
 	$newdate1 = date('Y-m-d H:i:s');

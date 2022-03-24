@@ -6,7 +6,8 @@
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
 <?php
 $t_product_name = "SOULMATE";
-$t_product_image = '/assets/img/da1.jpg';
+$t_product_image = '/assets/img/ptsite.jpg';
+$t_product_image_pc = '/assets/img/dskt.jpg';
 $t_product_form_name = "soulmate";
 $t_product_hover_text = "I will connect with your higher soul, discover accurate and comprehensive information about your destiny, and explore the blockages you may have in your love life, career, health, or relationships with others. I will use your energies and frequencies so I can identify your strength, weaknesses and offer you guidance and clarity for a better and happier life.";
 $t_product_sales = "8700";
@@ -28,7 +29,8 @@ $t_about_content = "
 <p>Throughout my journey I’ve helped tens of thousands of people find their true love, and seeing others be happy and fulfilled is what makes me keep going. </p>
 <p>This is your special chance to be closer than ever to your soulmate and finally know when your life will become the love story that you deserve!</p>
 
-<p>Due to my countless TV apparitions and excellent feedback from stars and celebrities, I have limited the number of sales to 10/day.</p>
+<b> <p>DUE TO MY COUNTLESS TV APPARITIONS AND EXCELLENT FEEDBACK FROM STARS AND CELEBRITIES, I HAVE LIMITED THE NUMBER OF SALES TO 10/DAY</p> </b>
+<p><img src='/assets/img/20tv.jpg'></p>
 ";?>
 
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/product_template.php'; ?>

@@ -1,6 +1,6 @@
 <?php
 
-    $url = "https://api.talkjs.com/v1/t2X08S4H/users/53";
+    $url = "https://api.talkjs.com/v1/ArJWsup2/users/53";
 
     $curl = curl_init($url);
     curl_setopt($curl, CURLOPT_URL, $url);
@@ -9,7 +9,7 @@
 
     $headers = array(
        "Content-Type: application/json",
-       "Authorization: Bearer sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL",
+       "Authorization: Bearer sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98",
     );
     $adminData = json_encode(array(
         "name"  => "Melissa Psychic",

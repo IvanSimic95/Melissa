@@ -124,8 +124,8 @@ text-align:center;
 
 <div class="general_section upsale_page">
   <div class="container">
-  <div class="white-wrapper col-md-10 offset-md-2"> <h1>Final Chance!</h1>
-    <img src="/assets/img/psychic.jpg" alt="upsell">
+  <div class="white-wrapper col-md-10 offset-md-2"> <h1>Final step!</h1>
+    <img src="/assets/img/babyyyyy.jpg" alt="upsell">
     <form class="readings" action="/order3.php" method="get">
       <h2>Future Baby Reading + Portrait</h2>
     

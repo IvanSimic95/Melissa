@@ -48,7 +48,7 @@
 						var me = new Talk.User("administrator");
 						var other = new Talk.User(<?php echo $orderId; ?>);
 						window.talkSession = new Talk.Session({
-								appId: "t2X08S4H",
+								appId: "ArJWsup2",
 								me: me
 						});
 						var conversation = talkSession.getOrCreateConversation("<?php echo $orderId; ?>");
@@ -71,11 +71,11 @@
 				];
 
 
-					fetch("https://api.talkjs.com/v1/t2X08S4H/conversations/<?php echo $row["order_id"]; ?>/messages", {
+					fetch("https://api.talkjs.com/v1/ArJWsup2/conversations/<?php echo $row["order_id"]; ?>/messages", {
 						method: "POST",
 						headers: {
 								'Content-Type' : "application/json",
-								'Authorization': 'Bearer sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL'
+								'Authorization': 'Bearer sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98'
         			},
 						body: JSON.stringify(data<?php echo $row["order_id"]; ?>)
 					}).then(res => {

@@ -2,10 +2,10 @@
 var fs = require('fs');
 const options = {
   method: "POST",
-  url: "https://api.talkjs.com/v1/t2X08S4H/conversations/files",
+  url: "https://api.talkjs.com/v1/ArJWsup2/conversations/files",
   // port: 443,
   headers: {
-      'Authorization': 'Bearer sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL',
+      'Authorization': 'Bearer sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98',
       "Content-Type": "multipart/form-data"
   },
   formData : {

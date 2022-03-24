@@ -68,7 +68,7 @@ $order_product = "Soulmate Drawing & Reading";
      console.log(admin);
 
      window.talkSession = new Talk.Session({
-         appId: "t2X08S4H",
+         appId: "ArJWsup2",
          me: admin
      });
      var conversation = talkSession.getOrCreateConversation("<?php echo $order_id; ?>");

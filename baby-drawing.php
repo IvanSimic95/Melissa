@@ -6,7 +6,8 @@
 
 <?php
 $t_product_name = "FUTURE BABY";
-$t_product_image = '/assets/img/da4.jpg';
+$t_product_image = '/assets/img/baby-mob.jpg';
+$t_product_image_pc = '/assets/img/baby-dsk.jpg';
 $t_product_form_name = "baby";
 $t_product_hover_text = "I will connect with your higher soul, discover accurate and comprehensive information about your destiny, and explore the blockages you may have in your love life, career, health, or relationships with others. I will use your energies and frequencies so I can identify your strength, weaknesses and offer you guidance and clarity for a better and happier life.";
 $t_product_sales = "2300";

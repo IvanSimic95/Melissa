@@ -7,7 +7,8 @@
 
 <?php
 $t_product_name = "TWIN FLAME";
-$t_product_image = '/assets/img/da2.jpg';
+$t_product_image = '/assets/img/tf-mob.jpg';
+$t_product_image_pc = '/assets/img/tf-dsk.jpg';
 $t_product_form_name = "twinflame";
 $t_product_hover_text = "I will connect with your higher soul, discover accurate and comprehensive information about your destiny, and explore the blockages you may have in your love life, career, health, or relationships with others. I will use your energies and frequencies so I can identify your strength, weaknesses and offer you guidance and clarity for a better and happier life.";
 $t_product_sales = "9800";

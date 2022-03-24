@@ -1,8 +1,8 @@
 <?php
 
 //SecretKey and AppId can both be found inside your TalkJS dashboard. https://talkjs.com/dashboard/
-$secretKey = "sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL";
-$appId = "t2X08S4H";
+$secretKey = "sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98";
+$appId = "ArJWsup2";
 
 //Encodes the user userId and email as token and sends it with the rest of the data to the API.
 //Saving the user and sending a system message to the conversation.
@@ -70,7 +70,7 @@ function _curlExecParallel(array $handles) {
 // returns a prepared curl handle; either curl_exec it or use curl_multi_*
 function _apiRequest($verb, $path, $data, $secretKey, $appId) {
 
-    $url = 'https://api.talkjs.com' . '/' . 'v1' . '/' . 't2X08S4H' . '/' . $path;;
+    $url = 'https://api.talkjs.com' . '/' . 'v1' . '/' . 'ArJWsup2' . '/' . $path;;
     $payload = json_encode($data);
     $headers = [
         'Content-Type: application/json',

@@ -52,7 +52,7 @@ echo "Starting start-orders.php...<br><br>";
 			
 			$data1 = json_encode($data);
 
-			curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/t2X08S4H/conversations/' . $orderId . '/messages');
+			curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/ArJWsup2/conversations/' . $orderId . '/messages');
 			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
 
@@ -60,7 +60,7 @@ echo "Starting start-orders.php...<br><br>";
 
 			$headers = array();
 			$headers[] = 'Content-Type: application/json';
-			$headers[] = 'Authorization: Bearer sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL';
+			$headers[] = 'Authorization: Bearer sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98';
 			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
 			$result = curl_exec($ch);
@@ -82,7 +82,7 @@ $data = [
 ];
 $data1 = json_encode($data);
 print_r($data1);
-curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/t2X08S4H/conversations/'.$orderId);
+curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/ArJWsup2/conversations/'.$orderId);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
 
@@ -90,7 +90,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $data1);
 
 $headers = array();
 $headers[] = 'Content-Type: application/json';
-$headers[] = 'Authorization: Bearer sk_test_dmh9xKYFEPiN2BxC0Z9GuAlrdEe6kRKL';
+$headers[] = 'Authorization: Bearer sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98';
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
 $result = curl_exec($ch);
