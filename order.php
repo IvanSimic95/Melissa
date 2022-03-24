@@ -69,7 +69,9 @@ if($user_name ) {
 <?php $title = "Order | Melissa Psychic"; ?>
 <?php $description = "Order"; ?>
 <?php $menu_order="men_0_0"; ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
+<?php 
+include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
 
 <div class="breadcrumbs">
   <div class="container">

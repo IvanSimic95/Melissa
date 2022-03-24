@@ -1,14 +1,14 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php'; ?>
-<?php $title = "Future Husband/Wife Drawing | Melissa Psychic"; ?>
-<?php $description = "I will draw your FUTURE HUSBAND/WIFE with 100% accuracy"; ?>
-<?php $menu_order="men_2_0"; ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php';
 
-<?php
+$title = "Future Husband/Wife Drawing | Melissa Psychic";
+$description = "I will draw your FUTURE HUSBAND/WIFE with 100% accuracy";
+$menu_order="men_2_0";
+
 $t_product_name = "FUTURE HUSBAND/WIFE";
 $t_product_image = '/assets/img/hsb-mob.jpg';
 $t_product_image_pc = '/assets/img/hsb-dsk.jpg';
 $t_product_form_name = "husband";
+
 $t_product_hover_text = "I will connect with your higher soul, discover accurate and comprehensive information about your destiny, and explore the blockages you may have in your love life, career, health, or relationships with others. I will use your energies and frequencies so I can identify your strength, weaknesses and offer you guidance and clarity for a better and happier life.";
 $t_product_sales = "6300";
 $t_product_title = "I will use my Psychic Abilities to draw your Future Husband or Wife within 48 hours with 100% accuracy";
@@ -33,6 +33,22 @@ This is your special chance to be closer than ever to your future husband and fi
 </p><p>
 Due to my countless TV apparitions and excellent feedback from stars and celebrities, I have limited the number of sales to 10/day.
 </p>";
+
+$PRurl = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]".strtok($_SERVER["REQUEST_URI"],'?');
+
+$productMETA = <<<EOT
+    <!-- Meta Catalog Tags --> 
+    <meta property="product:brand" content="Melissa Psychic">
+    <meta property="product:availability" content="in stock">
+    <meta property="product:condition" content="new">
+    <meta property="product:price:amount" content="29.99">
+    <meta property="product:price:currency" content="USD">
+    <meta property="product:retailer_item_id" content="$t_product_form_name">
+
+    
+EOT;
+
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/product_template.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; 
 ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/product_template.php'; ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>

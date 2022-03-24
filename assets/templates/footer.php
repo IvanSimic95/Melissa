@@ -15,6 +15,7 @@ s.parentNode.insertBefore(t,s)}(window, document,'script',
 fbq('init', '<?php echo $FBPixel; ?>');
 fbq('track', 'PageView');
 </script>
+
 <noscript><img height="1" width="1" style="display:none"
 src="https://www.facebook.com/tr?id=<?php echo $FBPixel; ?>&ev=PageView&noscript=1"
 /></noscript>
@@ -22,6 +23,8 @@ src="https://www.facebook.com/tr?id=<?php echo $FBPixel; ?>&ev=PageView&noscript
 <?php } ?>
 
 <?php echo $FBPurchasePixel; ?>
+
+<?php echo $FBViewContent; ?>
 
 
     <footer>

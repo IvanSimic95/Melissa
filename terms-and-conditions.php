@@ -1,7 +1,9 @@
 <?php $title = "Terms & Conditions | Melissa Psychic"; ?>
 <?php $description = "Terms & Conditions"; ?>
 <?php $menu_order="0_0"; ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
+<?php 
+include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
 
 <div class="breadcrumbs">
   <div class="container">

@@ -1,10 +1,10 @@
-<?php header('Content-type: text/html; charset=utf-8') ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php'; ?>
-<?php $title = "Soulmate Drawing | Melissa Psychic"; ?>
-<?php $description = "I will draw your SOULMATE with 100% accuracy"; ?>
-<?php $menu_order="men_2_0"; ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
-<?php
+<?php 
+header('Content-type: text/html; charset=utf-8');
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php';
+$title = "Soulmate Drawing | Melissa Psychic";
+$description = "I will draw your SOULMATE with 100% accuracy";
+$menu_order="men_2_0"; 
+
 $t_product_name = "SOULMATE";
 $t_product_image = '/assets/img/ptsite.jpg';
 $t_product_image_pc = '/assets/img/dskt.jpg';
@@ -31,7 +31,22 @@ $t_about_content = "
 
 <b> <p>DUE TO MY COUNTLESS TV APPARITIONS AND EXCELLENT FEEDBACK FROM STARS AND CELEBRITIES, I HAVE LIMITED THE NUMBER OF SALES TO 10/DAY</p> </b>
 <p><img src='/assets/img/20tv.jpg'></p>
-";?>
+";
 
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/product_template.php'; ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>
+$PRurl = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]".strtok($_SERVER["REQUEST_URI"],'?');
+
+$productMETA = <<<EOT
+    <!-- Meta Catalog Tags --> 
+    <meta property="product:brand" content="Melissa Psychic">
+    <meta property="product:availability" content="in stock">
+    <meta property="product:condition" content="new">
+    <meta property="product:price:amount" content="29.99">
+    <meta property="product:price:currency" content="USD">
+    <meta property="product:retailer_item_id" content="$t_product_form_name">
+
+
+EOT;
+
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/product_template.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php';

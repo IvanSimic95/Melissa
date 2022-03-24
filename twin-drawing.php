@@ -1,11 +1,9 @@
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php'; ?>
-<?php $title = "Twin Flame Drawing | Melissa Psychic"; ?>
-<?php $description = "I will draw your TWIN FLAME with 100% accuracy"; ?>
-<?php $menu_order="men_2_0"; ?>
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php';
 
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
+$title = "Twin Flame Drawing | Melissa Psychic";
+$description = "I will draw your TWIN FLAME with 100% accuracy";
+$menu_order="men_2_0";
 
-<?php
 $t_product_name = "TWIN FLAME";
 $t_product_image = '/assets/img/tf-mob.jpg';
 $t_product_image_pc = '/assets/img/tf-dsk.jpg';
@@ -34,6 +32,22 @@ This is your special chance to be closer than ever to your twin flame and finall
 </p><p>
 Due to my countless TV apparitions and excellent feedback from stars and celebrities, I have limited the number of sales to 10/day.
 </p>";
+
+$PRurl = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]".strtok($_SERVER["REQUEST_URI"],'?');
+
+$productMETA = <<<EOT
+    <!-- Meta Catalog Tags --> 
+    <meta property="product:brand" content="Melissa Psychic">
+    <meta property="product:availability" content="in stock">
+    <meta property="product:condition" content="new">
+    <meta property="product:price:amount" content="29.99">
+    <meta property="product:price:currency" content="USD">
+    <meta property="product:retailer_item_id" content="$t_product_form_name">
+
+
+EOT;
+
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/product_template.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; 
 ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/product_template.php'; ?>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>

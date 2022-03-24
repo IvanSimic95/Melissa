@@ -2,7 +2,9 @@
 <?php $description = "I can read anything for you with my psychic abilities"; ?>
 <?php $menu_order = "men_1_0"; ?>
 
-<?php include_once $_SERVER['DOCUMENT_ROOT'] . '/assets/templates/header.php'; ?>
+<?php 
+include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/assets/templates/header.php'; ?>
 
 <section class="hero_slider">
   <div class="dark_bg"></div>

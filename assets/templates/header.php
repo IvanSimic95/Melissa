@@ -23,6 +23,8 @@ $metatags
 <meta name="google-site-verification" content="08uItPxLqgddTP0orZfHcGBG_3QXJ8rzjGcRodl60dE" />
 <meta name="facebook-domain-verification" content="pnd39b2n6q4mvif6jzpt86uhft5loa" />
 
+<?php echo $productMETA; ?>
+
   <!-- Preconnect & Preload -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
