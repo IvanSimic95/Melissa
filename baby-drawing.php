@@ -37,6 +37,9 @@ $PRurl = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]
 
 $productMETA = <<<EOT
     <!-- Meta Catalog Tags --> 
+    <meta property="og:url" content="$PRurl" />
+    <meta property="og:type" content="website" />
+
     <meta property="product:brand" content="Melissa Psychic">
     <meta property="product:availability" content="in stock">
     <meta property="product:condition" content="new">
@@ -44,7 +47,7 @@ $productMETA = <<<EOT
     <meta property="product:price:currency" content="USD">
     <meta property="product:retailer_item_id" content="$t_product_form_name">
 
-    
+
 EOT;
 
 include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php';
