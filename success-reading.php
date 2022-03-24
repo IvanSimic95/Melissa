@@ -10,7 +10,6 @@ if(isset($_GET['emailaddress']))$order_email = $_GET['emailaddress'];
 if(isset($_GET['total']))$order_price = $_GET['total'];
 if(isset($_GET['order_id']))$order_buygoods = $_GET['order_id'];
 $cookie_id = $_SESSION['user_cookie_id2'];
-$cookie_id = "545741992";
 $createChat = "";
 
 
