@@ -213,9 +213,7 @@ $FirePixel = $_SESSION['fbfirepixel'];
 if($FirePixel == 1){
   $orderID = $_SESSION['fborderID'];
   $orderPrice = $_SESSION['fborderPrice'];
-  $first_name = $_SESSION['fbname'];
   $product = $_SESSION['fbproduct'];
-  $genderAcc = $_SESSION['fbgender'];
 
 $FBPurchasePixel = <<<EOT
 <script>
