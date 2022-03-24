@@ -14,8 +14,8 @@ $t_product_sales = "6300";
 $t_product_title = "I will use my Psychic Abilities to draw your Future Husband or Wife within 48 hours with 100% accuracy";
 $t_about_title = "I will use my Psychic Abilities to draw your Future Husband or Wife within 48 hours with 100% accuracy";
 $t_about_content = "<p>
-My name is Melissa, and I feel honored to guide you through the beautiful love journey that is waiting for you. My dear, meeting your future husband and accepting the feelings of true love embrace your whole being is one of the most special gifts life will offer you.
-From a very young age, I practiced and developed the special gifts I am happy to share with you – a unique combination of artistic talents, empathic projection, clairsentience and clairvoyance, resulting in a beautiful portrait of your future husband, as well as a detailed description of their characteristics and personality traits. 
+My name is Melissa, and I feel honored to guide you through the beautiful love journey that is waiting for you. My dear, meeting your future husband or wife and accepting the feelings of true love embrace your whole being is one of the most special gifts life will offer you.
+From a very young age, I practiced and developed the special gifts I am happy to share with you – a unique combination of artistic talents, empathic projection, clairsentience and clairvoyance, resulting in a beautiful portrait of your future husband or wife, as well as a detailed description of their characteristics and personality traits. 
 </p><p>
 A deep connection to your pure soul energy will help me see the exact timeframe for when you and your future husband will meet. For this to happen, you only have to tell me your date of birth and your name. 
 </p><p>
