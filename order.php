@@ -123,7 +123,7 @@ var product = getUrlParameter('product');
 
 document.addEventListener("DOMContentLoaded", function(event) {
     setTimeout(function(){
-      window.location.href = "https://www.buygoods.com/secure/checkout.html?account_id=6274&product_codename=" + product + prio + "&subid=<?php echo $cookie_id; ?>&subid2=<?php echo $lastRowInsert; ?>&subid3=<?php echo $uFBC; ?>&subid4=<?php echo $uFBP; ?>&redirect=<?php echo $returnEncoded; ?>";
+      window.location.href = "https://www.buygoods.com/secure/checkout.html?account_id=6274&product_codename=" + product + prio + "&subid=<?php echo $cookie_id; ?>&subid2=<?php echo $lastRowInsert; ?>&subid3=<?php echo $uFBC; ?>&subid4=<?php echo $uFBP; ?>&subid5=<?php echo $user_birthday; ?>&redirect=<?php echo $returnEncoded; ?>";
      }, 1000);
   });
 </script>
