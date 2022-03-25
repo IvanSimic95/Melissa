@@ -35,8 +35,8 @@ border-radius:8px;
           </div>
           <div class="sides">
             <div class="price_box">
-              <span class="new_prce">$29.99</span>
-              <span class="old_price"><del>$299.90<del></span>
+              <span class="new_prce">$19.99</span>
+              <span class="old_price"><del>$200<del></span>
 
             </div>
             <a class="btn" href="/soulmate-drawing.php">Buy Now</a>
@@ -63,8 +63,8 @@ border-radius:8px;
           </div>
           <div class="sides">
             <div class="price_box">
-              <span class="new_prce">$29.99</span>
-              <span class="old_price"><del>$299.90<del></span>
+              <span class="new_prce">$19.99</span>
+              <span class="old_price"><del>$200<del></span>
 
             </div>
             <a class="btn" href="/twin-drawing.php">Buy Now</a>
@@ -91,8 +91,8 @@ border-radius:8px;
           </div>
           <div class="sides">
             <div class="price_box">
-              <span class="new_prce">$29.99</span>
-              <span class="old_price"><del>$299.90<del></span>
+              <span class="new_prce">$19.99</span>
+              <span class="old_price"><del>$200<del></span>
 
             </div>
             <a class="btn" href="/wife-husband-drawing.php">Buy Now</a>
@@ -119,8 +119,8 @@ border-radius:8px;
           </div>
           <div class="sides">
             <div class="price_box">
-              <span class="new_prce">$29.99</span>
-              <span class="old_price"><del>$299.90<del></span>
+              <span class="new_prce">$19.99</span>
+              <span class="old_price"><del>$200<del></span>
 
             </div>
             <a class="btn" href="/baby-drawing.php">Buy Now</a>
