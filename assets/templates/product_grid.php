@@ -35,7 +35,7 @@ border-radius:8px;
           </div>
           <div class="sides">
             <div class="price_box">
-              <span class="new_prce">$4.99</span>
+              <span class="new_prce">$19.99</span>
               <span class="old_price"><del>$200<del></span>
 
             </div>
