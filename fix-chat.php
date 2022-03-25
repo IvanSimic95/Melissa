@@ -52,7 +52,7 @@ $errorDisplay .= "Any missing variable = script can't fix up chat!";
           conversation.setAttributes({
           subject: "<?php echo "Order #" . $orderID . " | " .$product; ?>",
           custom: { 
-          category: "<?php echo $order_product_codename; ?>", 
+          category: "<?php echo $codename; ?>", 
           status: "Paid"
           }
       });
