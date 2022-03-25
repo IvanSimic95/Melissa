@@ -73,7 +73,7 @@ if(isset($_GET['emailaddress'])) {
   </div>
 </div>
 
-<?php if($_GET['item'] == "baby12" OR $_GET['item'] == "baby24" OR $_GET['item'] == "baby48"){ ?>
+<?php if($product == "baby"){ ?>
   <div class="general_section">
   <div class="container" >
   <div class="white-wrapper col-md-8 offset-md-4"style="min-height:300px;padding:20px 30px 20px 30px;"> <h1>Thank you for your order!</h1>
