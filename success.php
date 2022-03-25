@@ -9,6 +9,10 @@ if(isset($_GET['order_id']))$order_buygoods = $_GET['order_id'];
 $cookie_id = $_SESSION['user_cookie_id'];
 $createChat = $genderAcc =   $skipSelect = "";
 
+$logArray[] = $_SESSION;
+formLogNew($logArray);
+
+
 if(isset($_GET['emailaddress'])) {
 
   
