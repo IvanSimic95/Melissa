@@ -89,7 +89,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 						$age_max = 24;
 					}
 
-					$sql_pick = "SELECT * FROM orders_image WHERE age < '$age_max' AND age > '$age_min' AND sex = 'male' order by RAND() limit 1";
+					$sql_pick = "SELECT * FROM orders_image WHERE age < '$age_max' AND age > '$age_min' AND sex = '$orderSex' order by RAND() limit 1";
 					$sql_pick_res = $conn->query($sql_pick);
 					if($sql_pick_res->num_rows == 0) {
 							 $image_name = "";
@@ -100,7 +100,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 					}
 
 
-					$sql_text = "SELECT * FROM orders_text WHERE product = 'soulmate' order by RAND() limit 1";
+					$sql_text = "SELECT * FROM orders_text WHERE product = 'soulmate' AND sex = '$orderSex' order by RAND() limit 1";
 					$sql_text_res = $conn->query($sql_text);
 					if($sql_text_res->num_rows == 0) {
 							 $email_text = "";
