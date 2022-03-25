@@ -66,6 +66,9 @@ $errorDisplay .= "Any missing variable = script can't fix up chat!";
 
 </script>
 
+<div id="talkjs-container-<?php echo $orderID; ?>">
+
+</div>
 <?php
 
 }
