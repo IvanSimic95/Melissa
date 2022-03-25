@@ -5,6 +5,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 
 if(isset($_GET['skip'])){ 
   if($_GET['skip']=="yes"){ 
+  $_SESSION['fbfireUpsellpixel'] = 0;
   header('Location: /future-baby.php');
   die();
   }
@@ -28,6 +29,10 @@ $lName = $_SESSION['orderLName'];
 $user_name = $fName . $lName;
 
 $user_age = $_SESSION['orderAge'];
+$user_birthday = $_SESSION['orderBirthday'];
+
+$fbc = $_SESSION['fbc'];
+$fbp = $_SESSION['fbp'];
 
 $order_priority = "24";
 
@@ -50,15 +55,15 @@ $userGenderAcc = $findGenderFunc['0']['accuracy'];
 if($userGender=="male"){$partnerGender = "female";}
 if($userGender=="female"){$partnerGender = "male";}
 
-$returnURL = "https://melissa-psychic.com/future-baby.php";
+$returnURL = "https://melissa-psychic.com/success-reading.php";
 $returnEncoded = base64_encode($returnURL);
 
 if($cookie_id) {
 
   
 
-  $sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, order_status, order_date, order_email, order_product, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex)
-  VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', 'pending', '$order_date', '', '$order_product', '$order_priority', '', '', '$userGender', '$userGenderAcc', '$partnerGender')";
+  $sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, birthday, order_status, order_date, order_email, order_product, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, fbc, fbp)
+  VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', '$user_birthday', 'pending', '$order_date', '', '$order_product', '$order_priority', '', '', '$userGender', '$userGenderAcc', '$partnerGender', '$fbc', '$fbp')";
 
 
     if ($conn->query($sql) === TRUE) {

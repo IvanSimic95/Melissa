@@ -20,6 +20,22 @@ if(!isset($_SESSION['user_cookie_id3'])) {
 $_SESSION['user_cookie_id3'] = $randomNumber2;
 }
 
+$cFBC = "_fbc";
+$cFBP = "_fbp";
+
+if(isset($_COOKIE[$cFBC])){
+  $UserFBC = $_COOKIE[$cFBC];
+}else{
+  $UserFBC = "";
+}
+
+if(isset($_COOKIE[$cFBP])){
+  $UserFBP = $_COOKIE[$cFBP];
+}else{
+  $UserFBP = "";
+}
+
+
 //Check if funnel page is set, if not set a new one
 if(!isset($_SESSION['funnel_page'])) {
 $_SESSION['funnel_page'] = "main";

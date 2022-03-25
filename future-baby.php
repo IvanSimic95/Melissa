@@ -1,45 +1,14 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
-
 $title = "Future Baby Drawing | Melissa Psychic";
 $description = "Future Baby Drawing"; 
 $menu_order="men_0_0"; 
+$cookie_id = $_SESSION['user_cookie_id3'];
 
-
-// set parameters and execute
-if(isset($_GET['emailaddress']))$order_email = $_GET['emailaddress'];
-if(isset($_GET['total']))$order_price = $_GET['total'];
-if(isset($_GET['order_id']))$order_buygoods = $_GET['order_id'];
-$cookie_id = $_SESSION['user_cookie_id2'];
-$createChat = "";
-
-
-if(isset($_GET['emailaddress'])) {
-
-  //Find Correct Order
-  $sql = "SELECT * FROM `orders` WHERE `cookie_id` = '$cookie_id' ORDER BY  `order_id` DESC LIMIT 1";
-  $result = $conn->query($sql);
-  $count = $result->num_rows;
-
-  //If order is found input data from BG and update status to paid
-  if($result->num_rows != 0) {
-  $row = $result->fetch_assoc();
-  $orderID = $row['order_id'];
-  $first_name = $row['first_name'];
-  $product = $row['order_product'];
-
-  $sql = "UPDATE `orders` SET `order_email`='$order_email', `order_price`='$order_price', `buygoods_order_id`='$order_buygoods', `order_status`='paid' WHERE order_id='$orderID'";
-  $result = $conn->query($sql);
-
-  $createChat = 1;
-  }
-
-}
 
 
 
 include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; 
-include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/create_chat.php';
 ?>
 <style>
     @media only screen and (min-width: 768px) {
@@ -389,4 +358,24 @@ input[type=radio]:checked ~ label {
 
 
 
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>
+<?php 
+$FirePixelUP = $_SESSION['fbfireUpsellpixel'];
+
+if($FirePixelUP == 1){
+  $orderID = $_SESSION['fborderID'];
+  $orderPrice = $_SESSION['fborderPrice'];
+  $product = $_SESSION['fbproduct'];
+
+$FBPurchasePixel = <<<EOT
+<script>
+fbq('trackCustom', 'Upsell', {
+  value: $orderPrice , 
+  currency: 'USD'
+}, 
+{eventID: '$orderID'});
+</script>
+EOT;
+
+$_SESSION['fbfireUpsellpixel'] = 0;
+}
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>

@@ -1,27 +1,45 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php';
 require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
-
 use Melbahja\Seo\MetaTags;
+if(isset($t_product_name)){
 $metatags = new MetaTags();
 $metatags
         ->title($title)
         ->description($description)
         ->meta('author', 'Melissa Psychic')
-        ->image('https://melissa-psychic.com/assets/img/good-logo.jpg')
-        ->mobile('https://melissa-psychic.com/assets/img/good-logo.jpg');
+        ->image('https://melissa-psychic.com/assets/img/products/'.$t_product_form_name.'.jpg')
+        ->mobile('https://melissa-psychic.com/assets/img/products/'.$t_product_form_name.'.jpg');
+
+
+}else{
+$metatags = new MetaTags();
+$metatags
+          ->title($title)
+          ->description($description)
+          ->meta('author', 'Melissa Psychic')
+          ->image('https://melissa-psychic.com/assets/img/good-logo.jpg')
+          ->mobile('https://melissa-psychic.com/assets/img/good-logo.jpg');
+}
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-
 <head>
-<!-- Meta Tags --> 
-<meta charset="utf-8">
-<?php echo $metatags; ?>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<link rel="icon" type="image/png" href="/assets/img/favicon.png" />
-<meta name="google-site-verification" content="08uItPxLqgddTP0orZfHcGBG_3QXJ8rzjGcRodl60dE" />
-	
+
+    <!-- Meta Tags --> 
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <?php echo $metatags; ?>
+
+    <!-- Verification Tags -->
+    <meta name="google-site-verification" content="08uItPxLqgddTP0orZfHcGBG_3QXJ8rzjGcRodl60dE" />
+    <meta name="facebook-domain-verification" content="pnd39b2n6q4mvif6jzpt86uhft5loa" />
+
+    <link rel="icon" type="image/png" href="/assets/img/favicon.png" />
+
+
+  <?php echo $productMETA; ?>
+
   <!-- Preconnect & Preload -->
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
@@ -48,6 +66,9 @@ ust_s.appendChild(document.createTextNode('body {opacity: 0}'));document.head.ap
 setTimeout(function(){ var el = document.getElementById('ust_body_style'); el && el.remove()}, 800);</script>
 <script src="https://cdn.psychic-artist.com/server/ab/melissa-psychic.com.ab.js?v=4.2.0" defer></script>
 <script src="https://cdn.psychic-artist.com/server/ust-rr.min.js?v=4.2.0" async></script>
+
+
+
 
 <!-- Pixel Code for https://66analytics.com/demo/ -->
   <script defer src="https://66analytics.com/demo/pixel/5QbjnE32nSjw5plP"></script>

@@ -117,3 +117,18 @@ jQuery('input[name="priority"]').change(function(){
     }
 })
 </script>
+
+<?php
+
+$FBViewContent = <<<EOT
+<script>
+fbq('track', 'ViewContent', {
+  value: 29.99, 
+  currency: 'USD',
+  content_type: 'product', 
+  content_ids: '$t_product_form_name'
+});
+</script>
+EOT;
+
+?>

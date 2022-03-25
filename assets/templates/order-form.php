@@ -74,7 +74,7 @@
            $ending_year = date('Y', strtotime('-18 year'));
            $current_year = date('Y');
            for($starting_year; $starting_year <= $ending_year; $starting_year++) {
-               echo '<option value="'. ( $current_year - $starting_year ).'"';
+               echo '<option value="'.$starting_year.'"';
                echo ' >'.$starting_year.'</option>';
            }
            ?>
@@ -109,6 +109,10 @@
 	  
   <input class="product" type="hidden" name="product" value="">
   <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['user_cookie_id']; ?>">
+  
+  <input class="fbp" type="hidden" name="fbp" value="<?php echo $UserFBP; ?>">
+  <input class="fbc" type="hidden" name="fbc" value="<?php echo $UserFBC; ?>">
+
   <div class="form_box">
     <input type="submit" name="form_submit" value="Place an order">
   </div>
