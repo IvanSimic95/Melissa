@@ -1,13 +1,15 @@
 <?php
 $errorDisplay = "";
 
-$signature = hash_hmac('sha256', strval($orderID), 'sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98');
 
 isset($_GET['order']) ? $orderID        = $_GET['order']    : $errorDisplay .= " Missing Order ID <br>";
 isset($_GET['order']) ? $first_name     = $_GET['name']     : $errorDisplay .= " Missing Name <br>";
 isset($_GET['order']) ? $order_email    = $_GET['email']    : $errorDisplay .= " Missing Email <br>";
 isset($_GET['order']) ? $product        = $_GET['product']  : $errorDisplay .= " Missing Product <br>";
 isset($_GET['order']) ? $codename       = $_GET['codename'] : $errorDisplay .= " Missing Codename <br>";
+
+
+$signature = hash_hmac('sha256', strval($orderID), 'sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98');
 
 empty($errorDisplay) ?  $testError = FALSE : $testError = TRUE;
 if($testError == TRUE){
