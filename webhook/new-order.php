@@ -92,7 +92,6 @@ if (curl_errno($ch2)) {
 }
 curl_close($ch2);
 echo $result2;
-}
 
 
 
