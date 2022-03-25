@@ -1,4 +1,4 @@
-  <?php
+f  <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 	
 	$sql = "SELECT * FROM reviews WHERE review_moderated = 'approved' AND product = '".$t_product_name."' ORDER BY review_date DESC";
@@ -263,7 +263,7 @@ $product->description = $t_about_title;
 $product->offers = new Thing('Offer', [
     'availability' => 'https://schema.org/InStock',
     'priceCurrency' => 'USD',
-    "price" => "29.99",
+    "price" => "19.99",
     'url' => 'https://melissa-psychic.com/soulmate-drawing.php',
     "itemCondition" => "https://schema.org/NewCondition",
 ]);
