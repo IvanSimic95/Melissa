@@ -34,10 +34,6 @@ $_SESSION['orderAge'] = $user_age;
 
 $_SESSION['orderBirthday'] = $user_birthday;
 
-echo "<pre>";
-var_dump($_SESSION);
-echo "</pre";
-
 //Find User Gender
 function findGender($name) {
 $apiKey = 'Whc29bSnvP3zrQG3hYCwXKMoYu5h4ZQukS6n'; //Your API Key
