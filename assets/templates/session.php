@@ -35,6 +35,9 @@ if(isset($_COOKIE[$cFBP])){
   $UserFBP = "";
 }
 
+if(!isset($_SESSION['fbfirepixel'])){
+    $_SESSION['fbfirepixel'] = 0;
+}
 
 //Check if funnel page is set, if not set a new one
 if(!isset($_SESSION['funnel_page'])) {
