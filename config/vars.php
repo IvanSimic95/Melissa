@@ -56,7 +56,7 @@ function formLog($array) {
   //Save to order log function
 function formLogNew($array) {
   $dataToLog = $array;
-  $data = implode(" | ", $dataToLog);
+  $data = json_encode($dataToLog);
   $data .= PHP_EOL;
   $pathToFile = $_SERVER['DOCUMENT_ROOT']."/logs/test.log";
   $success = file_put_contents($pathToFile, $data, FILE_APPEND);

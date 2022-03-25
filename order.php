@@ -10,7 +10,6 @@ $birthday = new DateTime($user_birthday);
 $interval = $birthday->diff(new DateTime);
 
 $user_age = $interval->y;
-echo $user_age;
 
 $user_name = $_GET['form_name'];
 $order_product = $_GET['product'];
