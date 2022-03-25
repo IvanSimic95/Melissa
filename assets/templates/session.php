@@ -1,6 +1,7 @@
 <?php
-session_start();
-
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
 //Check if user cookie ID is set, if not set a new one
 $randomNumber = rand(155654654,955654654);
 if(!isset($_SESSION['user_cookie_id'])) {
@@ -12,7 +13,7 @@ if(!isset($_SESSION['user_cookie_id2'])) {
 $_SESSION['user_cookie_id2'] = $randomNumber2;
 }
 
-$randomNumber3 = rand(155654654,955654654);
+$randomNumber3 = rand(155654654,955123454);
 if(!isset($_SESSION['user_cookie_id3'])) {
 $_SESSION['user_cookie_id3'] = $randomNumber3;
 }

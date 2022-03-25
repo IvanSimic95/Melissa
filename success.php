@@ -8,6 +8,8 @@ if(isset($_GET['total']))$order_price = $_GET['total'];
 if(isset($_GET['order_id']))$order_buygoods = $_GET['order_id'];
 $cookie_id = $_SESSION['user_cookie_id'];
 $createChat = $genderAcc =   $skipSelect = "";
+$lastOrderID = $_SESSION['lastorder'];
+
 
 $logArray[] = $_SESSION;
 formLogNew($logArray);
@@ -17,7 +19,7 @@ if(isset($_GET['emailaddress'])) {
 
   
   //Find Correct Order
-  $sql = "SELECT * FROM `orders` WHERE `cookie_id` = '$cookie_id' ORDER BY  `order_id` DESC LIMIT 1";
+  $sql = "SELECT * FROM `orders` WHERE `order_id` = '$lastOrderID' ORDER BY  `order_id` DESC LIMIT 1";
   $result = $conn->query($sql);
   $count = $result->num_rows;
 
@@ -61,6 +63,9 @@ if(isset($_GET['emailaddress'])) {
 
   //Enable Chat Creation
   $createChat = 1;
+  }else{
+    $logaArray[] = "Error updating order on success page, session data saved to other log file.";
+    formLogNewAgain($logaArray);
   }
 
 if(!isset($product)){
@@ -182,7 +187,7 @@ $(".label-woman").click(function(){
 
 <?php 
     }  
-  }  
+  }
 
 }else{
   header('Location: /');

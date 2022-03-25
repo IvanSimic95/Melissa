@@ -57,8 +57,8 @@ include_once $_SERVER['DOCUMENT_ROOT'] . '/config/vars.php';
 
 
     // echo "Update successfully";
-    session_unset();
-    session_destroy();
+   // session_unset();
+   // session_destroy();
   //unset($_COOKIE['user_cookie_id']);
   }
   else {

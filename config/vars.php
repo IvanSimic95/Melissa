@@ -10,7 +10,9 @@ if(!isset($_SESSION['PixelDATA'])){
 $_SESSION['PixelDATA'] = 0;
 }
 
-
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 
 //START Order Messages
@@ -65,7 +67,16 @@ function formLogNew($array) {
   }
 }
 
-
+function formLogNewAgain($array){
+  $dataToLog = $array;
+  $data = implode(" | ", $dataToLog);
+  $data .= PHP_EOL;
+  $pathToFile = $_SERVER['DOCUMENT_ROOT']."/logs/paid.log";
+  $success = file_put_contents($pathToFile, $data, FILE_APPEND);
+  if ($success === TRUE){
+    echo "log saved";
+  }
+}
 
 //START Database Configuration
 $domain = $_SERVER['HTTP_HOST'];
