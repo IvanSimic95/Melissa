@@ -14,7 +14,7 @@ $_SESSION['user_cookie_id2'] = $randomNumber2;
 
 $randomNumber3 = rand(155654654,955654654);
 if(!isset($_SESSION['user_cookie_id3'])) {
-$_SESSION['user_cookie_id3'] = $randomNumber2;
+$_SESSION['user_cookie_id3'] = $randomNumber3;
 }
 
 $cFBC = "_fbc";
