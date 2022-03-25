@@ -23,6 +23,9 @@ bd: '<?php echo $_SESSION['Pixeldob']; ?>',
 ge: '<?php echo $_SESSION['Pixelgender']; ?>',
 external_id: '<?php echo $_SESSION['PixelID']; ?>'
 });
+fbq('track', 'PageView');
+</script>
+
 <?php 
 }else{ 
 ?>

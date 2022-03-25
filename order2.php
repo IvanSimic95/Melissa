@@ -11,6 +11,10 @@ if(isset($_GET['skip'])){
   }
 }
 
+echo '<pre>';
+var_dump($_SESSION);
+echo '</pre>';
+
 // set parameters and execute
 if(isset($_GET['general'])) {$general = $_GET['general'];}else{$general = "";}
 if(isset($_GET['love'])) {$love = $_GET['love'];}else{$love = "";}

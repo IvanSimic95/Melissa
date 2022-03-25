@@ -58,6 +58,10 @@ if(isset($_GET['emailaddress'])) {
   //Enable Chat Creation
   $createChat = 1;
   }
+
+if(!isset($product)){
+  $product="soulmate";
+}
 ?>
 
 

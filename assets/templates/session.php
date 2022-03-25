@@ -1,8 +1,5 @@
 <?php
-//Check if session is set, if not set a new one
-if(session_id() == '' || !isset($_SESSION) || session_status() === PHP_SESSION_NONE) {
 session_start();
-}
 
 //Check if user cookie ID is set, if not set a new one
 $randomNumber = rand(155654654,955654654);

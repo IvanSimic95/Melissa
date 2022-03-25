@@ -53,6 +53,18 @@ function formLog($array) {
     }
   }
 
+  //Save to order log function
+function formLog($array) {
+  $dataToLog = $array;
+  $data = implode(" | ", $dataToLog);
+  $data .= PHP_EOL;
+  $pathToFile = $_SERVER['DOCUMENT_ROOT']."/logs/order.log";
+  $success = file_put_contents($pathToFile, $data, FILE_APPEND);
+  if ($success === TRUE){
+    echo "log saved";
+  }
+}
+
 
 
 //START Database Configuration
