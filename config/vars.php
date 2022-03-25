@@ -54,11 +54,11 @@ function formLog($array) {
   }
 
   //Save to order log function
-function formLog($array) {
+function formLogNew($array) {
   $dataToLog = $array;
   $data = implode(" | ", $dataToLog);
   $data .= PHP_EOL;
-  $pathToFile = $_SERVER['DOCUMENT_ROOT']."/logs/order.log";
+  $pathToFile = $_SERVER['DOCUMENT_ROOT']."/logs/test.log";
   $success = file_put_contents($pathToFile, $data, FILE_APPEND);
   if ($success === TRUE){
     echo "log saved";

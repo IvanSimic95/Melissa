@@ -8,6 +8,11 @@ if(isset($_GET['skip'])){
   die();
   }
 }
+
+$logArray[] = $_SESSION;
+formLogNew($logArray);
+
+
 $cookie_id = $_GET['cookie_id'];
 
 $order_product = "baby";

@@ -10,10 +10,8 @@ if(isset($_GET['skip'])){
   die();
   }
 }
-
-echo '<pre>';
-var_dump($_SESSION);
-echo '</pre>';
+$logArray[] = $_SESSION;
+formLogNew($logArray);
 
 // set parameters and execute
 if(isset($_GET['general'])) {$general = $_GET['general'];}else{$general = "";}
