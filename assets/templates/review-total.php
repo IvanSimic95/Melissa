@@ -1,4 +1,4 @@
-f  <?php
+<?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 	
 	$sql = "SELECT * FROM reviews WHERE review_moderated = 'approved' AND product = '".$t_product_name."' ORDER BY review_date DESC";
