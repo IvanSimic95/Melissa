@@ -100,7 +100,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 					}
 
 
-					$sql_text = "SELECT * FROM orders_text WHERE product = 'soulmate' AND sex = '$orderSex' order by RAND() limit 1";
+					$sql_text = "SELECT * FROM orders_text WHERE product = 'soulmate' AND gender = '$orderSex' order by RAND() limit 1";
 					$sql_text_res = $conn->query($sql_text);
 					if($sql_text_res->num_rows == 0) {
 							 $email_text = "";
