@@ -13,6 +13,7 @@ $t_product_hover_text = "I will connect with your higher soul, discover accurate
 $t_product_sales = "8700";
 $t_product_title = "I will use my Psychic Abilities to draw your Soulmate with 100% accuracy";
 $t_about_title = "I WILL USE MY PSYCHIC ABILITIES TO DRAW YOUR SOULMATE  WITH 100% ACCURACY";
+<b> <p> IF MY PREDICTIONS DON’T COME TRUE WITHIN THE TIME FRAME I PROVIDE, YOU WILL RECEIVE A FULL REFUND, NO QUESTION ASKED! </p> </b>
 $t_about_content = "
 <p>My name is Melissa, and I feel honored to guide you through the beautiful love journey that is waiting for you. My dear, meeting your soulmate and accepting the feelings of true love embrace your whole being is one of the most special gifts life will offer you.</p>
 <p>From a very young age, I practiced and developed the special gifts I am happy to share with you – a unique combination of artistic talents, empathic projection, clairsentience and clairvoyance, resulting in a beautiful portrait of your true soulmate, as well as a detailed description of their characteristics and personality traits. </p>
@@ -32,7 +33,6 @@ $t_about_content = "
 <b> <p>DUE TO MY COUNTLESS TV APPARITIONS AND EXCELLENT FEEDBACK FROM STARS AND CELEBRITIES, I HAVE LIMITED THE NUMBER OF SALES TO 10/DAY</p> </b>
 <b> <p> <center> 100% ACCURACY OR MONEY BACK </center> </p> </b>
 
-<b> <p> IF MY PREDICTIONS DON’T COME TRUE WITHIN THE TIME FRAME I PROVIDE, YOU WILL RECEIVE A FULL REFUND, NO QUESTION ASKED! </p> </b>
 
 ";
 
