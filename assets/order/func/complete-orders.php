@@ -96,6 +96,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 					} else {
 						while($rowImages = $sql_pick_res->fetch_assoc()) {
 							$image_name = $rowImages["name"];
+							echo $image_name;
 						}
 						echo $sql_pick;
 					}
@@ -113,7 +114,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 					}
 					
 				//START IF PRODUCT = FUTURE BABY
-			    }elseif ($orderProduct == "baby")  { 
+			    }elseif ($orderProduct == "baby")  {
 				$image_send = 1;
 				$prod_type = "baby";
 				$img_folder_name = "baby";
@@ -243,8 +244,6 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 			$message = str_replace("%FIRSTNAME%", $fName, $message);
 			$message = escapeJsonString($message);
 			$logArray[] = $message;
-			$logArray[] = $OrderCompleteMessage;
-			$logArray[] = $ContinueConvoMsg;
 			if ($image_send == "1") { //SEND IMAGE START
 						// define image name and new path
 							$rootDir = $_SERVER['DOCUMENT_ROOT'];
