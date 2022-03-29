@@ -1,5 +1,5 @@
 <?php
-include_once  '/home/melissapsychic/public_html/config/vars.php';
+include_once  $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
 echo "Starting start-orders.php...<br><br>";
     
