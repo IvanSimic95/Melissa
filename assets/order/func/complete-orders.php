@@ -97,6 +97,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 						while($rowImages = $sql_pick_res->fetch_assoc()) {
 							$image_name = $rowImages["name"];
 						}
+						echo $sql_pick;
 					}
 
 
