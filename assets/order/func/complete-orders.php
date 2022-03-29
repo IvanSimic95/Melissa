@@ -242,7 +242,6 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 			
 
 			$message = str_replace("%FIRSTNAME%", $fName, $message);
-			$message = escapeJsonString($message);
 			$logArray[] = $message;
 			if ($image_send == "1") { //SEND IMAGE START
 						// define image name and new path
