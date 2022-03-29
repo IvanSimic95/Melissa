@@ -203,7 +203,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 				}
 				
 				$message = $theader.$email_text.$tfooter;
-				echo $message;
+				
 
 			}elseif ($orderProduct == "past") {
 				$image_send = 1;
@@ -239,8 +239,11 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 		//If trigger is set to 1 (order is ready to be delivered)
 		if ($trigger == 1) {
 			
-			$message = str_replace("'", "", $message);
+			$message = str_replace("'", '', $message);
+			$message = str_replace("”", '', $message);
+			$message = str_replace("“", '', $message);
 			$message = str_replace("%FIRSTNAME%", $fName, $message);
+			echo $message;
 			$logArray[] = $message;
 			$logArray[] = $OrderCompleteMessage;
 			$logArray[] = $ContinueConvoMsg;
