@@ -16,7 +16,7 @@ border-radius:8px;
     <div class="sides">
       <div class="product_wrapper">
        <div class="product_box">
-            <img src="/assets/img/ptmob.png" />
+            <img src="/assets/img/mobonly.jpg" />
 		</div>
 		
 		<div class="product_box_pc">

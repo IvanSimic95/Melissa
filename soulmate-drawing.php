@@ -6,7 +6,7 @@ $description = "I will draw your SOULMATE with 100% accuracy";
 $menu_order="men_2_0"; 
 
 $t_product_name = "SOULMATE";
-$t_product_image = '/assets/img/ptmob.png';
+$t_product_image = '/assets/img/mobonly.jpg';
 $t_product_image_pc = '/assets/img/ptdsk.png';
 $t_product_form_name = "soulmate";
 $t_product_hover_text = "I will connect with your higher soul, discover accurate and comprehensive information about your destiny, and explore the blockages you may have in your love life, career, health, or relationships with others. I will use your energies and frequencies so I can identify your strength, weaknesses and offer you guidance and clarity for a better and happier life.";
