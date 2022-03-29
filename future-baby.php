@@ -95,12 +95,26 @@ text-align:center;
   <div class="container">
   <div class="white-wrapper col-md-10 offset-md-2"> <h1>Final step!</h1>
     <img src="/assets/img/babyyyyy.jpg" alt="upsell">
-    <form class="readings" action="/order3.php" method="get">
+    <form id="ajax-form" class="form-order" name="order_form" action="javascript:void(0)" method="post">
       <h2>Future Baby Reading + Portrait</h2>
     
-      <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['user_cookie_id3']; ?>">
+      <input class="customer_name" type="hidden" id="fullname" name="form_name" value="<?php echo $_SESSION['orderFName'].' '.$_SESSION['orderLName']; ?>">
+        <input class="customer_name" type="hidden" id="firstname" name="first_name" value="<?php echo $_SESSION['orderFName']; ?>">
+        <input class="customer_name" type="hidden" id="lastname" name="last_name" value="<?php echo $_SESSION['orderLName']; ?>">
+        <input class="birthday" type="hidden" id="birthday" name="form_birthday" value="<?php echo $_SESSION['orderBirthday']; ?>">
+        <input class="userage" type="hidden" id="userage" name="form_age" value="<?php echo $_SESSION['orderAge']; ?>">
+        <input class="usergender" type="hidden" id="usergender" name="usergender" value="<?php echo $_SESSION['orderGender']; ?>">
+        <input class="partnergender" type="hidden" id="partnergender" name="partnergender" value="<?php echo $_SESSION['orderGender']; ?>">
+        <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['user_cookie_id3']; ?>">
+        <input class="email" type="hidden" name="bgemail" value="<?php echo $_SESSION['BGEmail']; ?>">
+        <input class="price" type="hidden" id="product_price" name="price" value="19.99">
+        <input class="fbp" type="hidden" name="fbp" value="<?php echo $UserFBP; ?>">
+        <input class="fbc" type="hidden" name="fbc" value="<?php echo $UserFBC; ?>">
+        <input class="submitbtnselect" type="hidden" name="submitbtnselect" id="submitbtnselect" value="submit">
+        <div id="error" class="alert alert-danger" style="display: none"></div>
       <div class="meta_part">
-
+      <div id="purchasedupsell" class="alert alert-succes">Awesome! We will use same payment method as for your previous order.<br> Redirecting to payment page now...</div>
+      <div class="onsubmithide">
         <div class="sides">
           <div class="price_box">
             <span class="new_prce">$19.99</span>
@@ -121,33 +135,90 @@ text-align:center;
           
           <br> 
           <div class="gradient">This reading will let you know when you will become pregnant, as well as an in-depth description about your future baby's gender, passions, skills, talents, and much more. Knowing more about your future baby will help you make sure that everything will be going well with your pregnancy, and prepare for the most wonderful experience your life has to offer!</div>
-          <input type="submit" name="future_baby" value="Yes i want my future baby drawing">
-
+          <button id="addtopurchase" type="submit" name="submit" value="Add to my Purchase">Yes i want my future baby drawing</button>
         </div>
-      </div>
+   
       
-      <a class="nothanks" href="/order3.php?skip=yes">No thanks</a>
+      <button id="nothanks" class="nothanks" type="submit" name="submit" value="No Thanks">No Thanks!</button>
+</div>   </div>
     </form>
   </div>
 </div>
 <script>
 jQuery('input[name="priority"]').change(function(){
     if (this.value == '12') {
-        jQuery('.new_prce').animate({'opacity' : 0}, 200, function(){jQuery('.new_prce').html('$39.99').animate({'opacity': 1}, 200);});
+    jQuery('.new_prce').animate({'opacity' : 0}, 200, function(){jQuery('.new_prce').html('$39.99').animate({'opacity': 1}, 200);});
 		jQuery('.old_price del').animate({'opacity' : 0}, 300, function(){jQuery('.old_price del').html('$399.99').animate({'opacity': 1}, 300);});
 		jQuery('.saveda').animate({'opacity' : 0}, 400, function(){jQuery('.saveda').html('$450 (90%)').animate({'opacity': 1}, 400);});	
+    jQuery('#product_price').val('39.99');
     }
     if (this.value == '24') {
 		jQuery('.new_prce').animate({'opacity' : 0}, 200, function(){jQuery('.new_prce').html('$29.99').animate({'opacity': 1}, 200);});
 		jQuery('.old_price del').animate({'opacity' : 0}, 300, function(){jQuery('.old_price del').html('$299.99').animate({'opacity': 1}, 300);});
 		jQuery('.saveda').animate({'opacity' : 0}, 400, function(){jQuery('.saveda').html('$360 (90%)').animate({'opacity': 1}, 400);});
+    jQuery('#product_price').val('29.99');
     }
     if (this.value == '48') {
 		jQuery('.new_prce').animate({'opacity' : 0}, 200, function(){jQuery('.new_prce').html('$19.99').animate({'opacity': 1}, 200);});
 		jQuery('.old_price del').animate({'opacity' : 0}, 300, function(){jQuery('.old_price del').html('$199.99').animate({'opacity': 1}, 300);});
 		jQuery('.saveda').animate({'opacity' : 0}, 400, function(){jQuery('.saveda').html('$270 (90%)').animate({'opacity': 1}, 400);});
+    jQuery('#product_price').val('19.99');
     }
 })
+
+
+
+$(document).ready(function($){
+		 
+     $("#addtopurchase").click(function(){
+     $("#submitbtnselect").val("submit")
+     });
+
+     $("#nothanks").click(function(){
+     $("#submitbtnselect").val("NoThanks")
+     });
+
+  // hide messages 
+  $("#error").hide();
+
+  // on submit...
+  $('#ajax-form').submit(function(e){
+      e.preventDefault();
+      $(".onsubmithide").fadeOut();
+
+      $.ajax({
+          type:"POST",
+          url: "/ajax/baby.php",
+          dataType: 'json',
+          data: $(this).serialize(),
+          success: function(data){
+            var SubmitStatus = data[0];
+            if (SubmitStatus == "Success"){
+           var DataMSG = data[1];
+            var Redirect = data[2];
+            $("#purchasedupsell").fadeIn();
+            setTimeout(function(){
+            window.location.href = Redirect;
+            }, 2000);
+            }else if(SubmitStatus == "NoThanks"){
+             var Redirect = data[1];
+             $("#purchasedupsell").html("You have choosen to skip this offer, redirecting you...");
+             $("#purchasedupsell").fadeIn();
+
+           setTimeout(function(){
+            window.location.href = Redirect;
+            }, 2000);
+            }else{
+           var DataMSG = data[1];
+            $("#error").html(DataMSG);
+            $("#error").fadeIn();
+            }
+
+          }
+      });
+  });  
+  return false;
+});
 </script>
 <script>
 

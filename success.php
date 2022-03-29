@@ -2,24 +2,20 @@
 include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 $_SESSION['fbfirepixel'] = 0;
-// set parameters and execute
-if(isset($_GET['emailaddress']))$order_email = $_GET['emailaddress'];
-if(isset($_GET['total']))$order_price = $_GET['total'];
-if(isset($_GET['order_id']))$order_buygoods = $_GET['order_id'];
-$cookie_id = $_SESSION['user_cookie_id'];
 $createChat = $genderAcc =   $skipSelect = "";
+// set parameters and execute
+isset($_GET['emailaddress']) ? $order_email = $_GET['emailaddress'] : $order_email = "";
+isset($_GET['order_id']) ? $order_buygoods = $_GET['order_id'] : $order_buygoods = "";
+isset($_GET['total']) ? $order_price = $_GET['total'] : $order_price = "19.99";
+
+$cookie_id = $_SESSION['user_cookie_id'];
 $lastOrderID = $_SESSION['lastorder'];
 
+$_SESSION['BGEmail'] = $order_email;
 
-$logArray[] = $_SESSION;
-formLogNew($logArray);
-
-
-if(isset($_GET['emailaddress'])) {
-
-  
+if(isset($cookie_id)) {
   //Find Correct Order
-  $sql = "SELECT * FROM `orders` WHERE `order_id` = '$lastOrderID' ORDER BY  `order_id` DESC LIMIT 1";
+  $sql = "SELECT * FROM `orders` WHERE `cookie_id` = '$cookie_id' ORDER BY  `order_id` DESC LIMIT 1";
   $result = $conn->query($sql);
   $count = $result->num_rows;
 
@@ -42,8 +38,8 @@ if(isset($_GET['emailaddress'])) {
 
 
   $_SESSION['PixelDATA'] = "1";
-  $_SESSION['Pixelemail'] = $row['order_email'];
-  $_SESSION['Pixelfname'] = $row['first_name'];
+  $_SESSION['Pixelemail'] = $order_email;
+  $_SESSION['Pixelfname'] = $first_name;
   $_SESSION['Pixellname'] = $row['last_name'];
   $_SESSION['Pixelgender']= $row['user_sex'];
   $_SESSION['Pixeldob']   = date("Ymd", strtotime($row['birthday']));
@@ -111,7 +107,7 @@ if(!isset($product)){
 <script>
   document.addEventListener("DOMContentLoaded", function(event) {
     setTimeout(function(){
-      window.location.href = "https://melissa-psychic.com/readings.php";
+      window.location.href = "https://<?php echo $domain; ?>/readings.php";
      }, 3000);
   });
 

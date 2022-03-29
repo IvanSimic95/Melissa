@@ -2,14 +2,13 @@
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
 // set parameters and execute
-if(isset($_GET['emailaddress']))$order_email = $_GET['emailaddress'];
-if(isset($_GET['total']))$order_price = $_GET['total'];
-if(isset($_GET['order_id']))$order_buygoods = $_GET['order_id'];
+isset($_GET['emailaddress']) ? $order_email = $_GET['emailaddress'] : $order_email = "";
+isset($_GET['order_id']) ? $order_buygoods = $_GET['order_id'] : $order_buygoods = "N/A";
+isset($_GET['total']) ? $order_price = $_GET['total'] : $order_price = "19.99";
 $cookie_id = $_SESSION['user_cookie_id3'];
 $createChat = "";
 
-if(isset($_GET['emailaddress'])) {
-
+if(isset($cookie_id)) {
   //Find Correct Order
   $sql = "SELECT * FROM `orders` WHERE `cookie_id` = '$cookie_id' ORDER BY  `order_id` DESC LIMIT 1";
   $result = $conn->query($sql);

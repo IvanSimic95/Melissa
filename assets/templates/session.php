@@ -33,6 +33,10 @@ if(isset($_COOKIE[$cFBP])){
   $UserFBP = "";
 }
 
+if(!isset($_SESSION['BGEmail'])){
+  $_SESSION['BGEmail'] = "";
+}
+
 if(!isset($_SESSION['fbfirepixel'])){
     $_SESSION['fbfirepixel'] = 0;
 }

@@ -1,5 +1,9 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php';
+
+error_reporting(E_ALL);
+ini_set('display_errors', '1');
+
 $startpixel = 1;
 $FBPixel = "849174466483788";
 $FBPurchasePixel = "";
@@ -76,6 +80,30 @@ function formLogNewAgain($array){
     echo "log saved";
   }
 }
+
+
+
+//Find First and Last name
+function splitNames($name) {
+  $apiKey = 'Whc29bSnvP3zrQG3hYCwXKMoYu5h4ZQukS6n'; //Your API Key
+  $getNames = json_decode(file_get_contents('https://gender-api.com/get?key=' . $apiKey . '&split=' . urlencode($name)));
+  $data = [[
+          "fname" => $getNames->first_name,
+          "lname"  => $getNames->last_name
+          ]];
+  return $data;
+  }
+  
+  //Find User Gender
+  function findGender($name) {
+  $apiKey = 'Whc29bSnvP3zrQG3hYCwXKMoYu5h4ZQukS6n'; //Your API Key
+  $getGender = json_decode(file_get_contents('https://gender-api.com/get?key=' . $apiKey . '&name=' . urlencode($name)));
+  $data = [[
+          "gender" => $getGender->gender,
+          "accuracy"  => $getGender->accuracy
+          ]];
+  return $data;
+  }
 
 //START Database Configuration
 $domain = $_SERVER['HTTP_HOST'];

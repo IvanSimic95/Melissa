@@ -1,11 +1,10 @@
 
 
 
-<form id="ajax-form" class="form-order" name="order_form" action="javascript:void(0)" method="post">
-  
+<form class="form-order" name="order_form" action="/order.php" method="get">
   <div class="form_box">
     <label for="form_name">Your Name*</label>
-    <input class="customer_name" type="text" id="fullname" name="form_name" value="" required>
+    <input class="customer_name" type="text" name="form_name" value="" required>
   </div>
   <div class="form_box">
     <span>Your Birth Date*</span>
@@ -14,15 +13,15 @@
        <!-- <label for="form_day">Day*</label>-->
         <select class="" name="form_day" required>
 		<option value="" disabled selected hidden>Day</option>
-          <option value="01">1</option>
-          <option value="02">2</option>
-          <option value="03">3</option>
-          <option value="04">4</option>
-          <option value="05">5</option>
-          <option value="06">6</option>
-          <option value="07">7</option>
-          <option value="08">8</option>
-          <option value="09">9</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
           <option value="10">10</option>
           <option value="11">11</option>
           <option value="12">12</option>
@@ -51,15 +50,15 @@
        <!-- <label for="form_month">Month*</label>-->
         <select class="" name="form_month" required>
 		<option value="" disabled selected hidden>Month</option>
-          <option value="01">January</option>
-          <option value="02">February</option>
-          <option value="03">March</option>
-          <option value="04">April</option>
-          <option value="05">May</option>
-          <option value="06">June</option>
-          <option value="07">July</option>
-          <option value="08">August</option>
-          <option value="09">Septemer</option>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">Septemer</option>
           <option value="10">October</option>
           <option value="11">Novemer</option>
           <option value="12">December</option>
@@ -71,10 +70,10 @@
         <select class="form_year" name="form_year" required>
 		<option value="" disabled selected hidden>Year</option>
           <?php
-           $ending_year  =date('Y', strtotime('-85 year'));
-           $starting_year = date('Y', strtotime('-16 year'));
+          $starting_year  =date('Y', strtotime('-85 year'));
+           $ending_year = date('Y', strtotime('-18 year'));
            $current_year = date('Y');
-           for($starting_year; $starting_year >= $ending_year; $starting_year--) {
+           for($starting_year; $starting_year <= $ending_year; $starting_year++) {
                echo '<option value="'.$starting_year.'"';
                echo ' >'.$starting_year.'</option>';
            }
@@ -114,20 +113,9 @@
   <input class="fbp" type="hidden" name="fbp" value="<?php echo $UserFBP; ?>">
   <input class="fbc" type="hidden" name="fbc" value="<?php echo $UserFBC; ?>">
 
-
-  <div id="show_message" class="alert alert-success" style="display: none">Loading..</div>
-   <div id="error" class="alert alert-danger" style="display: none"></div>
-
   <div class="form_box">
-    <button type="submit" name="form_submit" id="submitbtn" value="Place an order">Place an order</button>
+    <input type="submit" name="form_submit" value="Place an order">
   </div>
-
-
-  
-
-</form>
-
-
 <style>@media(max-width: 1080px) {
 	
 	
@@ -196,65 +184,17 @@ select:invalid { color: gray; }
   border-color: #bd8200;
 }
 </style>
+
+
+
+
+
   <script>
 
 
     var product_code = $('.product_code').text()
     $('.product').val(product_code);
 
-            $(document).ready(function($){
-		 
-            // hide messages 
-            $("#error").hide();
-            $("#show_message").hide();
-		 
-            // on submit...
-            $('#ajax-form').submit(function(e){
-		 
-                e.preventDefault();
-		 
-                $("#error").hide();
-                $("#submitbtn").html('<i class="fas fa-spinner fa-pulse"></i> Loading...');
-		 
-               //First name required
-               var name = $("input#fullname").val();
-               if(name == ""){
-                    $("#error").fadeIn().text("First & Last Name Field required.");
-                    $("input#fname").focus();
-                    return false;
-                }		 
-                // ajax
-                $.ajax({
-                    type:"POST",
-                    url: "/ajax/order.php",
-                    dataType: 'json',
-                    data: $(this).serialize(),
-                    success: function(data){
-                      var SubmitStatus = data[0];
-                      var DataMSG = data[1];
-         
-                      if (SubmitStatus == "Success"){
-                      var Redirect = data[2];
-                      $("#show_message").html(DataMSG);
-                      $("#show_message").fadeIn();
-                      $("#submitbtn").html('<i class="fas fa-spinner fa-pulse"></i> Redirecting...');
-                      
-                      setTimeout(function(){
-                        window.location.href = Redirect;
-                      }, 2000);
-
-                      }else{
-                      $("#error").html(DataMSG);
-                      $("#error").fadeIn();
-                      $("#submitbtn").html("Error Occured!");
-                      }
-  
-                    }
-                });
-            });  
-		 
-            return false;
-        });
-
-
   </script>
+
+</form>

@@ -1,6 +1,10 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
-
+/*
+unset($_SESSION['user_cookie_id1']);
+unset($_SESSION['user_cookie_id2']);
+unset($_SESSION['user_cookie_id3']);
+*/
 ?>
 
 
@@ -30,7 +34,11 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
   </div>
 
     
-     <h3>Your order is now complete & you will receive an email with your order details and dashboard login link.</h3>
+     <h3 id="finalnotice">Your order is now complete & you will receive an email with your order details and dashboard login link.</h3>
+
+     <?php if($_SESSION['BGEmail'] != ""){ ?>
+     <a style="margin-top:15px; padding:15px; width:100%; font-size:130%; font-weight:bold;" class="btn" href="/dashboard.php?check_email=<?php echo $_SESSION['BGEmail']; ?>"><i class="fas fa-user-shield" aria-hidden="true"></i> Check your Account</a>
+     <?php } ?>
 </div>
 </div>
 </div>

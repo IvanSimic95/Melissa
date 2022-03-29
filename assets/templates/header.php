@@ -64,8 +64,7 @@ $metatags
 (function() {var ust_s = document.createElement('STYLE');ust_s.id = 'ust_body_style';
 ust_s.appendChild(document.createTextNode('body {opacity: 0}'));document.head.appendChild(ust_s);})();
 setTimeout(function(){ var el = document.getElementById('ust_body_style'); el && el.remove()}, 800);</script>
-<script src="https://cdn.psychic-artist.com/server/ab/melissa-psychic.com.ab.js?v=4.2.0" defer></script>
-<script src="https://cdn.psychic-artist.com/server/ust-rr.min.js?v=4.2.0" async></script>
+
 
 
 

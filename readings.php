@@ -13,6 +13,7 @@ if ($sex_picked==1) {
     $sql = "UPDATE `orders` SET `pick_sex`='$pick_sex' WHERE cookie_id='$order_id'";
     $result = $conn->query($sql);
 
+    $_SESSION['orderPartnerGender'] = $pick_sex;
     $conn->close();
 }
 
@@ -114,7 +115,7 @@ text-align:center;
     
   </div>
   <div class="white-wrapper col-md-10 offset-md-2">
-  <form class="readings" action="/order2.php" method="get">
+  <form id="ajax-form" class="form-order" name="order_form" action="javascript:void(0)" method="post">
       <h1>Personal Psychic Reading</h1>
     
  <br>
@@ -125,6 +126,8 @@ text-align:center;
             
                    <div class="gradient"> You will receive your reading within 24 hours with everything you need to find out about yourself. </div>
                    <br>
+                   <div id="purchasedupsell" class="alert alert-succes">Awesome! We will use same payment method as for your previous order.<br> Redirecting to payment page now...</div>
+                   <div class="onsubmithide">
                    <center> 
       <ul class="list-group list-group-flush">
           <li class="list-group-control">
@@ -156,21 +159,36 @@ text-align:center;
 		      </label>
 					</li>
           
-				</ul></center>
-        <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['user_cookie_id2']; ?>">
+				</ul>
+      </center>
 
+        <input class="customer_name" type="hidden" id="fullname" name="form_name" value="<?php echo $_SESSION['orderFName'].' '.$_SESSION['orderLName']; ?>">
+        <input class="customer_name" type="hidden" id="firstname" name="first_name" value="<?php echo $_SESSION['orderFName']; ?>">
+        <input class="customer_name" type="hidden" id="lastname" name="last_name" value="<?php echo $_SESSION['orderLName']; ?>">
+        <input class="birthday" type="hidden" id="birthday" name="form_birthday" value="<?php echo $_SESSION['orderBirthday']; ?>">
+        <input class="userage" type="hidden" id="userage" name="form_age" value="<?php echo $_SESSION['orderAge']; ?>">
+        <input class="usergender" type="hidden" id="usergender" name="usergender" value="<?php echo $_SESSION['orderGender']; ?>">
+        <input class="partnergender" type="hidden" id="partnergender" name="partnergender" value="<?php echo $_SESSION['orderGender']; ?>">
+        <input class="email" type="hidden" name="bgemail" value="<?php echo $_SESSION['BGEmail']; ?>">
+        <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['user_cookie_id2']; ?>">
+        <input class="price" type="hidden" id="product_price" name="price" value="19.99">
+        <input class="fbp" type="hidden" name="fbp" value="<?php echo $UserFBP; ?>">
+        <input class="fbc" type="hidden" name="fbc" value="<?php echo $UserFBC; ?>">
+        <input class="submitbtnselect" type="hidden" name="submitbtnselect" id="submitbtnselect" value="submit">
+        <div id="error" class="alert alert-danger" style="display: none"></div>
       <div class="meta_part">
 
         <div class="sides">
           <div class="price_box">
             <span class="new_prce">$19.99</span>
           </div>
-          <input type="submit" name="form_submit" value="Add to my Purchase">
+          <div class="smallerText">Choose at least one option to Proceed!</div>
+          <button id="addtopurchase" type="submit" name="submit" value="Add to my Purchase">Add to my Purchase</button>
 
         </div>
       </div>
-     
-      <a class="nothanks" href="/order2.php?skip=yes">No thanks</a>
+      <button id="nothanks" class="nothanks" type="submit" name="submit" value="No Thanks">No Thanks!</button>
+</div>
       </div></div>
     </form>
    
@@ -187,25 +205,93 @@ text-align:center;
         var countCheckedCheckboxes = $boxes.length;
         if (countCheckedCheckboxes == 1) {
           $('.new_prce').text('$19.99');
-          $('input[type="submit"]').show();
+          $('#product_price').val('19.99');
+          $('.new_prce').show();
+          $('.smallerText').hide();
+          $('#addtopurchase').prop("disabled",false);
         }
         if (countCheckedCheckboxes == 2) {
           $('.new_prce').text('$29.99');
-          $('input[type="submit"]').show();
+          $('#product_price').val('29.99');
+          $('.new_prce').show();
+          $('.smallerText').hide();
+          $('#addtopurchase').prop("disabled",false);
         }
         if (countCheckedCheckboxes == 3) {
           $('.new_prce').text('$39.99');
-          $('input[type="submit"]').show();
+          $('#product_price').val('39.99');
+          $('.new_prce').show();
+          $('.smallerText').hide();
+          $('#addtopurchase').prop("disabled",false);
         }
         if (countCheckedCheckboxes == 4) {
           $('.new_prce').text('$49.99');
-          $('input[type="submit"]').show();
+          $('#product_price').val('49.99');
+          $('.new_prce').show();
+          $('.smallerText').hide();
+          $('#addtopurchase').prop("disabled",false);
         }
         if (countCheckedCheckboxes == 0) {
-          $('.new_prce').text('');
-          $('input[type="submit"]').hide();
+          $('.new_prce').hide();
+          $('#product_price').val('00.00');
+          $('.smallerText').show();
+          $('#addtopurchase').prop("disabled",true);
         }
       });
+
+
+      $(document).ready(function($){
+		 
+        $("#addtopurchase").click(function(){
+        $("#submitbtnselect").val("submit")
+        });
+
+        $("#nothanks").click(function(){
+        $("#submitbtnselect").val("NoThanks")
+        });
+
+     // hide messages 
+     $("#error").hide();
+
+     // on submit...
+     $('#ajax-form').submit(function(e){
+         e.preventDefault();
+         $(".onsubmithide").fadeOut();
+         //$("#submitbtn").html('<i class="fas fa-spinner fa-pulse"></i> Loading...');
+
+         $.ajax({
+             type:"POST",
+             url: "/ajax/readings.php",
+             dataType: 'json',
+             data: $(this).serialize(),
+             success: function(data){
+               var SubmitStatus = data[0];
+               if (SubmitStatus == "Success"){
+              var DataMSG = data[1];
+               var Redirect = data[2];
+               $("#purchasedupsell").fadeIn();
+               setTimeout(function(){
+               window.location.href = Redirect;
+               }, 2000);
+               }else if(SubmitStatus == "NoThanks"){
+                var Redirect = data[1];
+                $("#purchasedupsell").html("You have choosen to skip this offer, redirecting you...");
+                $("#purchasedupsell").fadeIn();
+
+              setTimeout(function(){
+               window.location.href = Redirect;
+               }, 2000);
+               }else{
+              var DataMSG = data[1];
+               $("#error").html(DataMSG);
+               $("#error").fadeIn();
+               }
+
+             }
+         });
+     });  
+     return false;
+ });
     </script>
 <?php 
 $FirePixel = $_SESSION['fbfirepixel'];
