@@ -203,6 +203,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 				}
 				
 				$message = $theader.$email_text.$tfooter;
+				echo $message;
 
 			}elseif ($orderProduct == "past") {
 				$image_send = 1;
