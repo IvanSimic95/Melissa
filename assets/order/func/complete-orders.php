@@ -98,6 +98,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 							$image_name = $rowImages["name"];
 						}
 					}
+					echo $sql_pick_res->num_rows;
 
 
 					$sql_text = "SELECT * FROM orders_text WHERE product = 'soulmate' AND gender = '$orderSex' order by RAND() limit 1";
