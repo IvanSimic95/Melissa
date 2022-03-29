@@ -238,13 +238,10 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 			
 		//If trigger is set to 1 (order is ready to be delivered)
 		if ($trigger == 1) {
-		
-			
+			$logArray[] = $sql_text;
 			$message = str_replace("%FIRSTNAME%", $fName, $message);
-			$message = htmlspecialchars($message);
 			echo $message;
 			$logArray[] = $message;
-			$logArray[] = $OrderCompleteMessage;
 			$logArray[] = $ContinueConvoMsg;
 			if ($image_send == "1") { //SEND IMAGE START
 						// define image name and new path
