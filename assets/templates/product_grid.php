@@ -16,11 +16,11 @@ border-radius:8px;
     <div class="sides">
       <div class="product_wrapper">
        <div class="product_box">
-            <img src="/assets/img/ptsite.jpg" />
+            <img src="/assets/img/ptmob.png" />
 		</div>
 		
 		<div class="product_box_pc">
-            <img src="/assets/img/sm-dsk.jpg" />
+            <img src="/assets/img/ptdsk.png" />
 		</div>
 		
         <div class="meta_part">
