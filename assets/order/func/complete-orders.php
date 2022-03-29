@@ -242,10 +242,9 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 			
 		//If trigger is set to 1 (order is ready to be delivered)
 		if ($trigger == 1) {
-
-			echo $rowText["id"];
 			$message = str_replace("%FIRSTNAME%", $fName, $message);
 			$message = escapeJsonString($message);
+			echo $message;
 			if ($image_send == "1") { //SEND IMAGE START
 						// define image name and new path
 							$rootDir = $_SERVER['DOCUMENT_ROOT'];
