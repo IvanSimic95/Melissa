@@ -238,10 +238,8 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 			
 		//If trigger is set to 1 (order is ready to be delivered)
 		if ($trigger == 1) {
-			
-			$message = str_replace("'", '', $message);
-			$message = str_replace("”", '', $message);
-			$message = str_replace("“", '', $message);
+		
+			$message = htmlspecialchars($message);
 			$message = str_replace("%FIRSTNAME%", $fName, $message);
 			echo $message;
 			$logArray[] = $message;
