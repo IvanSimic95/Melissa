@@ -50,7 +50,7 @@ $oStatus = "pending";
 isset($_POST['fbp']) ? $uFBP = $_POST['fbp'] : $uFBP = "";
 isset($_POST['fbc']) ? $uFBC = $_POST['fbc'] : $uFBC = "";
 
-$returnURL = "https://".$domain."/success-reading.php";
+$returnURL = "https://".$domain."/success-final.php";
 $returnEncoded = base64_encode($returnURL);
 
 $redirectPayment = "https://www.buygoods.com/secure/upsell?account_id=6274&product_codename=".$order_product.$order_priority."&redirect=".$returnEncoded;

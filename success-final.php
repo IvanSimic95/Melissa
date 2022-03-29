@@ -50,7 +50,7 @@ $conn->close();
 <script>
   document.addEventListener("DOMContentLoaded", function(event) {
     setTimeout(function(){
-      window.location.href = "https://melissa-psychic.com/order-complete.php";
+      window.location.href = "https://<?php echo $domain; ?>/order-complete.php";
      }, 3000);
   });
 
