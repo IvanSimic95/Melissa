@@ -192,7 +192,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 					}
 				}
 				if (strpos($orderProduct, 'health') !== false) {
-					$sql_text = "SELECT * FROM orders_text WHERE product = 'health' order by RAND() limit 1";
+					$sql_text = "SELECT * FROM orders_text WHERE product = 'health2' order by RAND() limit 1";
 					$sql_text_res = $conn->query($sql_text);
 					if($sql_text_res->num_rows == 0) {
 					} else {
