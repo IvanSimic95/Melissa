@@ -12,7 +12,7 @@ $t_product_form_name = "soulmate";
 $t_product_hover_text = "I will connect with your higher soul, discover accurate and comprehensive information about your destiny, and explore the blockages you may have in your love life, career, health, or relationships with others. I will use your energies and frequencies so I can identify your strength, weaknesses and offer you guidance and clarity for a better and happier life.";
 $t_product_sales = "8700";
 $t_product_title = "I will use my Psychic Abilities to draw your Soulmate with 100% accuracy";
-$t_about_title = "I WILL USE MY PSYCHIC ABILITIES TO DRAW YOUR SOULMATE  WITH 100% ACCURACY";
+$t_about_title =  "<center>I WILL USE MY PSYCHIC ABILITIES TO DRAW YOUR SOULMATE  WITH 100% ACCURACY</center>";
 $t_about_content = "
 <p>My name is Melissa, and I feel honored to guide you through the beautiful love journey that is waiting for you. My dear, meeting your soulmate and accepting the feelings of true love embrace your whole being is one of the most special gifts life will offer you.</p>
 <p>From a very young age, I practiced and developed the special gifts I am happy to share with you – a unique combination of artistic talents, empathic projection, clairsentience and clairvoyance, resulting in a beautiful portrait of your true soulmate, as well as a detailed description of their characteristics and personality traits. </p>
@@ -30,7 +30,7 @@ $t_about_content = "
 <p>This is your special chance to be closer than ever to your soulmate and finally know when your life will become the love story that you deserve!</p>
 
 <b> <p>DUE TO MY COUNTLESS TV APPARITIONS AND EXCELLENT FEEDBACK FROM STARS AND CELEBRITIES, I HAVE LIMITED THE NUMBER OF SALES TO 10/DAY</p> </b>
-<b> <p> <center> 100% ACCURACY OR MONEY BACK </center> </p> </b>
+<b> <p> <center>  <h2> 100% ACCURACY OR MONEY BACK </h2> </center> </p> </b>
 
 <b> <p> IF MY PREDICTIONS DON’T COME TRUE WITHIN THE TIME FRAME I PROVIDE, YOU WILL RECEIVE A FULL REFUND, NO QUESTION ASKED! </p> </b>
 
