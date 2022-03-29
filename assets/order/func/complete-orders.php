@@ -111,6 +111,8 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 						}
 					}
 					
+					$logArray[] = $sql_text;
+					$logArray[] = $rowText["id"];
 				//START IF PRODUCT = FUTURE BABY
 			    }elseif ($orderProduct == "baby")  { 
 				$image_send = 1;
@@ -150,6 +152,8 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 						
 					}
 				}
+				$logArray[] = $sql_text;
+				$logArray[] = $rowText["id"];
 				//END IF PRODUCT = FUTURE BABY
 
 
@@ -157,7 +161,6 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 
 				}elseif (strpos($orderProduct, 'general') !== false || strpos($orderProduct, 'love') !== false || strpos($orderProduct, 'career') !== false || strpos($orderProduct, 'health') !== false) {
 				$image_send = 0;
-				$email_text = "";
 				$theader = $readingOrderHeader;
 				$tfooter = $readingOrderFooter;
 				if (strpos($orderProduct, 'general') !== false) {
@@ -204,6 +207,8 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 				
 				$message = $theader.$email_text.$tfooter;
 				
+				$logArray[] = $sql_text;
+				$logArray[] = $rowText["id"];
 
 			}elseif ($orderProduct == "past") {
 				$image_send = 1;
@@ -238,8 +243,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 			
 		//If trigger is set to 1 (order is ready to be delivered)
 		if ($trigger == 1) {
-			$logArray[] = $sql_text;
-			$logArray[] = $rowText["id"];
+
 			echo $rowText["id"];
 			$message = str_replace("%FIRSTNAME%", $fName, $message);
 			if ($image_send == "1") { //SEND IMAGE START
