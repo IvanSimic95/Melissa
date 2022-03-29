@@ -170,7 +170,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 					if($sql_text_res->num_rows == 0) {
 					} else {
 						while($rowText = $sql_text_res->fetch_assoc()) {
-							$email_text .= $rowText["text"] . "\n\n";
+							$email_text .= $rowText["text"];
 						}
 					}
 				}
@@ -180,7 +180,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 					if($sql_text_res->num_rows == 0) {
 					} else {
 						while($rowText = $sql_text_res->fetch_assoc()) {
-							$email_text .= $rowText["text"] . "\n\n";
+							$email_text .= $rowText["text"];
 						}
 					}
 				}
@@ -190,7 +190,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 					if($sql_text_res->num_rows == 0) {
 					} else {
 						while($rowText = $sql_text_res->fetch_assoc()) {
-							$email_text .= $rowText["text"] . "\n\n";
+							$email_text .= $rowText["text"];
 						}
 					}
 				}
@@ -200,7 +200,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 					if($sql_text_res->num_rows == 0) {
 					} else {
 						while($rowText = $sql_text_res->fetch_assoc()) {
-							$email_text .= $rowText["text"] . "\n\n";
+							$email_text .= $rowText["text"];
 						}
 					}
 				}
