@@ -1,5 +1,5 @@
 <?php
-include_once  $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include_once '/home/melissapsychic/public_html/config/vars.php';
 echo "Starting complete-orders.php...<br><br>";
 
 $logArray = array();
@@ -111,8 +111,6 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 						}
 					}
 					
-					$logArray[] = $sql_text;
-					$logArray[] = $rowText["id"];
 				//START IF PRODUCT = FUTURE BABY
 			    }elseif ($orderProduct == "baby")  { 
 				$image_send = 1;
@@ -141,7 +139,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 					$image_name = $rowImages['name'];
 					}
 				}
-				$sql_text = "SELECT * FROM orders_text WHERE product = 'baby' AND gender = '$babyGender' order by RAND() limit 1";
+				$sql_text = "SELECT * FROM orders_text WHERE product = 'baby2' AND gender = '$babyGender' order by RAND() limit 1";
 				$sql_text_res = $conn->query($sql_text);
 				if($sql_text_res->num_rows == 0) {
 						$email_text = "";
@@ -169,7 +167,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 					if($sql_text_res->num_rows == 0) {
 					} else {
 						while($rowText = $sql_text_res->fetch_assoc()) {
-							$email_text .= $rowText["text"];
+							$email_text .= $rowText["text"] . "\n\n";
 						}
 					}
 				}
@@ -179,7 +177,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 					if($sql_text_res->num_rows == 0) {
 					} else {
 						while($rowText = $sql_text_res->fetch_assoc()) {
-							$email_text .= $rowText["text"];
+							$email_text .= $rowText["text"] . "\n\n";
 						}
 					}
 				}
@@ -189,7 +187,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 					if($sql_text_res->num_rows == 0) {
 					} else {
 						while($rowText = $sql_text_res->fetch_assoc()) {
-							$email_text .= $rowText["text"];
+							$email_text .= $rowText["text"] . "\n\n";
 						}
 					}
 				}
@@ -199,15 +197,13 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 					if($sql_text_res->num_rows == 0) {
 					} else {
 						while($rowText = $sql_text_res->fetch_assoc()) {
-							$email_text .= $rowText["text"];
+							$email_text .= $rowText["text"] . "\n\n";
 						}
 					}
 				}
 				
 				$message = $theader.$email_text.$tfooter;
-				
-				$logArray[] = $sql_text;
-				$logArray[] = $rowText["id"];
+				echo $message;
 
 			}elseif ($orderProduct == "past") {
 				$image_send = 1;
@@ -242,11 +238,13 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 			
 		//If trigger is set to 1 (order is ready to be delivered)
 		if ($trigger == 1) {
+			
 
-			echo $rowText["id"];
 			$message = str_replace("%FIRSTNAME%", $fName, $message);
 			$message = escapeJsonString($message);
 			$logArray[] = $message;
+			$logArray[] = $OrderCompleteMessage;
+			$logArray[] = $ContinueConvoMsg;
 			if ($image_send == "1") { //SEND IMAGE START
 						// define image name and new path
 							$rootDir = $_SERVER['DOCUMENT_ROOT'];
@@ -344,10 +342,6 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
                 curl_close($ch);
 				$logArray[] = $result;
 				formLog($logArray);
-
-				unset($logArray);
-				$logArray = array();
-			
                 //SEND IMAGE END
                 	}else{//SEND ONLY TEXT START
 					  // curl implementation
@@ -386,9 +380,6 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 					  $logArray[] = $result;
 					  formLog($logArray);
 					  curl_close($ch);		
-
-					  unset($logArray);
-					  $logArray = array();
 				}
 
 
