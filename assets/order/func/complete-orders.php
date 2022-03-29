@@ -152,8 +152,6 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 						
 					}
 				}
-				$logArray[] = $sql_text;
-				$logArray[] = $rowText["id"];
 				//END IF PRODUCT = FUTURE BABY
 
 
@@ -161,6 +159,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 
 				}elseif (strpos($orderProduct, 'general') !== false || strpos($orderProduct, 'love') !== false || strpos($orderProduct, 'career') !== false || strpos($orderProduct, 'health') !== false) {
 				$image_send = 0;
+				$email_text = "";
 				$theader = $readingOrderHeader;
 				$tfooter = $readingOrderFooter;
 				if (strpos($orderProduct, 'general') !== false) {
@@ -173,6 +172,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 							$email_text .= $rowText["text"];
 						}
 					}
+					echo "general yes!";
 				}
 				if (strpos($orderProduct, 'love') !== false) {
 					$sql_text = "SELECT * FROM orders_text_new WHERE product = 'love' order by RAND() limit 1";
@@ -183,6 +183,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 							$email_text .= $rowText["text"];
 						}
 					}
+					echo "love yes!";
 				}
 				if (strpos($orderProduct, 'career') !== false) {
 					$sql_text = "SELECT * FROM orders_text_new WHERE product = 'career' order by RAND() limit 1";
@@ -193,6 +194,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 							$email_text .= $rowText["text"];
 						}
 					}
+					echo "career yes!";
 				}
 				if (strpos($orderProduct, 'health') !== false) {
 					$sql_text = "SELECT * FROM orders_text_new WHERE product = 'health' order by RAND() limit 1";
@@ -203,6 +205,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 							$email_text .= $rowText["text"];
 						}
 					}
+					echo "health yes!";
 				}
 				
 				$message = $theader.$email_text.$tfooter;
