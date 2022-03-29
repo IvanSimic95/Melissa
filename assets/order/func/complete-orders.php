@@ -339,6 +339,10 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
                 curl_close($ch);
 				$logArray[] = $result;
 				formLog($logArray);
+
+				unset($logArray);
+				$logArray = array();
+			
                 //SEND IMAGE END
                 	}else{//SEND ONLY TEXT START
 					  // curl implementation
@@ -377,6 +381,9 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 					  $logArray[] = $result;
 					  formLog($logArray);
 					  curl_close($ch);		
+
+					  unset($logArray);
+					  $logArray = array();
 				}
 
 
