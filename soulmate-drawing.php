@@ -29,7 +29,7 @@ $t_about_content = "
 <p>Throughout my journey I’ve helped tens of thousands of people find their true love, and seeing others be happy and fulfilled is what makes me keep going. </p>
 <p>This is your special chance to be closer than ever to your soulmate and finally know when your life will become the love story that you deserve!</p>
 
- <div style='color:red;'> <b> <p> <center>  <h2> 100% ACCURACY OR MONEY BACK </h2> </center> </p> </b> 
+ <div style='color:#fe00c4;'> <b> <p> <center>  <h2> 100% ACCURACY OR MONEY BACK </h2> </center> </p> </b> 
 
 <b> <p> IF MY PREDICTIONS DON’T COME TRUE WITHIN THE TIME FRAME I PROVIDE, YOU WILL RECEIVE A FULL REFUND, NO QUESTION ASKED! </p> </b></div>
 
