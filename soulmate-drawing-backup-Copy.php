@@ -14,7 +14,7 @@ $t_product_sales = "8700";
 $t_product_title = "I will use my Psychic Abilities to draw your Soulmate with 100% accuracy";
 $t_about_title =  "<center><div style='color:#ff00f3;'> <b>I WILL USE MY PSYCHIC ABILITIES TO DRAW YOUR SOULMATE  WITH 100% ACCURACY</b></div></center>";
 $t_about_content = "
-<b> <p>My name is Melissa, and I feel honored to guide you through the beautiful love journey that is waiting for you. </p> </b>
+<div style='color:#a700f5;'> <b> <p>My name is Melissa, and I feel honored to guide you through the beautiful love journey that is waiting for you. </p> </b>
 <p> My dear, meeting your soulmate and accepting the feelings of true love embrace your whole being is one of the most special gifts life will offer you.</p>
 <p>From a very young age, I practiced and developed the special gifts I am happy to share with you – a unique combination of artistic talents, empathic projection, clairsentience and clairvoyance, resulting in a beautiful portrait of your true soulmate, as well as a detailed description of their characteristics and personality traits. </p>
 <p>A deep connection to your pure soul energy will help me see the exact timeframe for when you and your soulmate will meet. For this to happen, you only have to tell me your date of birth and your name. </p>
@@ -30,6 +30,10 @@ $t_about_content = "
 <p>Throughout my journey I’ve helped tens of thousands of people find their true love, and seeing others be happy and fulfilled is what makes me keep going. </p>
 <p>This is your special chance to be closer than ever to your soulmate and finally know when your life will become the love story that you deserve!</p>
 
+
+ <b> <p> <center>  <h2><div style='color:#ff00f3;'> <b>100% ACCURACY OR MONEY BACK  </b> </div> </h2> </center> </p> </b> 
+ 
+ <p><div style='color:#ff00f3;'> <center> IF MY PREDICTIONS DON’T COME TRUE WITHIN THE TIME FRAME I PROVIDE, YOU WILL RECEIVE A FULL REFUND, NO QUESTION ASKED! </center> </div> </p> 
 
 <b> <p>DUE TO MY COUNTLESS TV APPEARANCES AND EXCELLENT FEEDBACK FROM STARS AND CELEBRITIES, I HAVE LIMITED THE NUMBER OF SALES TO 10/DAY</p> </b> </div>
 
