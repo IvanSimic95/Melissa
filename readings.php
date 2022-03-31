@@ -108,9 +108,10 @@ text-align:center;
 <div class="general_section upsale_page">
   <div class="container">
   <div class="white-wrapper col-md-10 offset-md-2"> <h1>You Unlocked a Special Service!</h1>
-    
+      <h3>THIS IS AN EXCLUSIVE SERVICE WHICH I'M ONLY OFFERING A FEW TIMES A YEAR! </h3>
     <center> <img src="/assets/img/sitee91.jpg" alt="upsell"> </center>
-    <h3>This is an exclusive service which I'm only offering to a small number of customers. You can't get back to this page later!</h3>
+  
+	<h3>PLEASE BE AWARE YOU CAN'T GET BACK TO THIS PAGE LATER!</h3>
    
     
   </div>
