@@ -36,8 +36,8 @@
         <h1><?php echo $t_product_title; ?></h1>
         <!--<span class="bestseller">Bestseller</span>-->
         <div class="price_box">
-          <span class="new_prce">$19.99</span>
-          <span class="old_price"><del>$200<del></span>
+          <span class="new_prce">$29.99</span>
+          <span class="old_price"><del>$299.99<del></span>
 
         </div>
         <span class="saved"> <strong>You save <span class="saveda">$270 (90%)</p></strong> </span>
@@ -111,8 +111,8 @@ jQuery('input[name="priority"]').change(function(){
 		jQuery('.saveda').animate({'opacity' : 0}, 400, function(){jQuery('.saveda').html('$360 (90%)').animate({'opacity': 1}, 400);});
     }
     if (this.value == '48') {
-		jQuery('.new_prce').animate({'opacity' : 0}, 200, function(){jQuery('.new_prce').html('$19.99').animate({'opacity': 1}, 200);});
-		jQuery('.old_price del').animate({'opacity' : 0}, 300, function(){jQuery('.old_price del').html('$200').animate({'opacity': 1}, 300);});
+		jQuery('.new_prce').animate({'opacity' : 0}, 200, function(){jQuery('.new_prce').html('$29.99').animate({'opacity': 1}, 200);});
+		jQuery('.old_price del').animate({'opacity' : 0}, 300, function(){jQuery('.old_price del').html('$299.99').animate({'opacity': 1}, 300);});
 		jQuery('.saveda').animate({'opacity' : 0}, 400, function(){jQuery('.saveda').html('$270 (90%)').animate({'opacity': 1}, 400);});
     }
 })
@@ -123,7 +123,7 @@ jQuery('input[name="priority"]').change(function(){
 $FBViewContent = <<<EOT
 <script>
 fbq('track', 'ViewContent', {
-  value: 19.99, 
+  value: 29.99, 
   currency: 'USD',
   content_type: 'product', 
   content_ids: '$t_product_form_name'
