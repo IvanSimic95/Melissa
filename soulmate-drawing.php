@@ -12,9 +12,9 @@ $t_product_form_name = "soulmate";
 $t_product_hover_text = "I will connect with your higher soul, discover accurate and comprehensive information about your destiny, and explore the blockages you may have in your love life, career, health, or relationships with others. I will use your energies and frequencies so I can identify your strength, weaknesses and offer you guidance and clarity for a better and happier life.";
 $t_product_sales = "8700";
 $t_product_title = "I will use my Psychic Abilities to draw your Soulmate with 100% accuracy";
-$t_about_title =  "<center><div style='color:#a700f5;'>I WILL USE MY PSYCHIC ABILITIES TO DRAW YOUR SOULMATE  WITH 100% ACCURACY</div></center>";
+$t_about_title =  "<center><div style='color:#a700f5;'> <b>I WILL USE MY PSYCHIC ABILITIES TO DRAW YOUR SOULMATE  WITH 100% ACCURACY</b></div></center>";
 $t_about_content = "
-<div style='color:#fe00c4;'> <p>My name is Melissa, and I feel honored to guide you through the beautiful love journey that is waiting for you. My dear, meeting your soulmate and accepting the feelings of true love embrace your whole being is one of the most special gifts life will offer you.</p>
+<div style='color:#a700f5;'> <p>My name is Melissa, and I feel honored to guide you through the beautiful love journey that is waiting for you. My dear, meeting your soulmate and accepting the feelings of true love embrace your whole being is one of the most special gifts life will offer you.</p>
 <p>From a very young age, I practiced and developed the special gifts I am happy to share with you – a unique combination of artistic talents, empathic projection, clairsentience and clairvoyance, resulting in a beautiful portrait of your true soulmate, as well as a detailed description of their characteristics and personality traits. </p>
 <p>A deep connection to your pure soul energy will help me see the exact timeframe for when you and your soulmate will meet. For this to happen, you only have to tell me your date of birth and your name. </p>
 <p>Finding your soulmate will help you blossom beautifully, as your love will become more delicate and your joy will take over all the sadness you have felt in the past. You will be ready to pursue your dreams and ideals, with feelings of love and protection embracing your heart.</p>
