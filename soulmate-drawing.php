@@ -12,9 +12,9 @@ $t_product_form_name = "soulmate";
 $t_product_hover_text = "I will connect with your higher soul, discover accurate and comprehensive information about your destiny, and explore the blockages you may have in your love life, career, health, or relationships with others. I will use your energies and frequencies so I can identify your strength, weaknesses and offer you guidance and clarity for a better and happier life.";
 $t_product_sales = "8700";
 $t_product_title = "I will use my Psychic Abilities to draw your Soulmate with 100% accuracy";
-$t_about_title =  "<center>I WILL USE MY PSYCHIC ABILITIES TO DRAW YOUR SOULMATE  WITH 100% ACCURACY</center>";
+$t_about_title =  "<center><div style='color:a700f5;'>I WILL USE MY PSYCHIC ABILITIES TO DRAW YOUR SOULMATE  WITH 100% ACCURACY</div></center>";
 $t_about_content = "
-<p>My name is Melissa, and I feel honored to guide you through the beautiful love journey that is waiting for you. My dear, meeting your soulmate and accepting the feelings of true love embrace your whole being is one of the most special gifts life will offer you.</p>
+<div style='color:#fe00c4;'> <p>My name is Melissa, and I feel honored to guide you through the beautiful love journey that is waiting for you. My dear, meeting your soulmate and accepting the feelings of true love embrace your whole being is one of the most special gifts life will offer you.</p>
 <p>From a very young age, I practiced and developed the special gifts I am happy to share with you – a unique combination of artistic talents, empathic projection, clairsentience and clairvoyance, resulting in a beautiful portrait of your true soulmate, as well as a detailed description of their characteristics and personality traits. </p>
 <p>A deep connection to your pure soul energy will help me see the exact timeframe for when you and your soulmate will meet. For this to happen, you only have to tell me your date of birth and your name. </p>
 <p>Finding your soulmate will help you blossom beautifully, as your love will become more delicate and your joy will take over all the sadness you have felt in the past. You will be ready to pursue your dreams and ideals, with feelings of love and protection embracing your heart.</p>
@@ -29,11 +29,11 @@ $t_about_content = "
 <p>Throughout my journey I’ve helped tens of thousands of people find their true love, and seeing others be happy and fulfilled is what makes me keep going. </p>
 <p>This is your special chance to be closer than ever to your soulmate and finally know when your life will become the love story that you deserve!</p>
 
-<b> <p>DUE TO MY COUNTLESS TV APPARITIONS AND EXCELLENT FEEDBACK FROM STARS AND CELEBRITIES, I HAVE LIMITED THE NUMBER OF SALES TO 10/DAY</p> </b>
+<b> <p>DUE TO MY COUNTLESS TV APPEARANCES AND EXCELLENT FEEDBACK FROM STARS AND CELEBRITIES, I HAVE LIMITED THE NUMBER OF SALES TO 10/DAY</p> </b> </div>
 
- <b> <p> <center>  <h2> 100% ACCURACY OR MONEY BACK </h2> </center> </p> </b> 
+ <b> <p> <center>  <h2><div style='color:red;'> 100% ACCURACY OR MONEY BACK </div> </h2> </center> </p> </b> 
  
-<b> <p> IF MY PREDICTIONS DON’T COME TRUE WITHIN THE TIME FRAME I PROVIDE, YOU WILL RECEIVE A FULL REFUND, NO QUESTION ASKED! </p> </b>
+<b> <p><div style='color:red;'> IF MY PREDICTIONS DON’T COME TRUE WITHIN THE TIME FRAME I PROVIDE, YOU WILL RECEIVE A FULL REFUND, NO QUESTION ASKED! </div> </p> </b>
 
 
 ";
