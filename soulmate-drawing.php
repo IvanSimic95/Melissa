@@ -21,7 +21,7 @@ $t_about_content = "
 <p>Finding your soulmate will help you blossom beautifully, as your love will become more delicate and your joy will take over all the sadness you have felt in the past. You will be ready to pursue your dreams and ideals, with feelings of love and protection embracing your heart.</p>
 <p>My knowledge in clairvoyance, psychic art and spiritual healing allows me to connect with the purest vibrations of your Higher Self, helping me see essential parts of your future, such as when you will be ready to fully let true love into your life and how you can instantly heal any type of blockages you may have. </p>
 
-<p>The soulmate drawing I’m offering you is not just a simple sketch – It is an entirely difficult process that involves deep mediation, energy healing and profound introspection inside your Higher Soul.</p>
+<p>The soulmate drawing I’m offering you is not just a simple sketch – It is an entirely difficult process that involves deep meditation, energy healing and profound introspection inside your Higher Soul.</p>
 
 <p>First, I enter into a deep meditative trance state, where your Higher Self shows me the facial features and life details of the soul that is meant for you in this lifetime. With the help of automatic drawing, I then create a portrait and an in-depth description of their personality.</p>
 
@@ -29,6 +29,9 @@ $t_about_content = "
 
 <p>Throughout my journey I’ve helped tens of thousands of people find their true love, and seeing others be happy and fulfilled is what makes me keep going. </p>
 <p>This is your special chance to be closer than ever to your soulmate and finally know when your life will become the love story that you deserve!</p>
+ <b> <p> <center>  <h2><div style='color:#ff00f3;'> <b>100% ACCURACY OR MONEY BACK  </b> </div> </h2> </center> </p> </b> 
+ 
+ <p><div style='color:#ff00f3;'> <center> IF MY PREDICTIONS DON’T COME TRUE WITHIN THE TIME FRAME I PROVIDE, YOU WILL RECEIVE A FULL REFUND, NO QUESTION ASKED! </center> </div> </p> 
 
 
 <b> <p>DUE TO MY COUNTLESS TV APPEARANCES AND EXCELLENT FEEDBACK FROM STARS AND CELEBRITIES, I HAVE LIMITED THE NUMBER OF SALES TO 10/DAY</p> </b> </div>
