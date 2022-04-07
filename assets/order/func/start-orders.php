@@ -38,36 +38,7 @@ echo "Starting start-orders.php...<br><br>";
 			echo $orderPriority." | ";
 
 
-            //Send CURL for message -> TalkJS
-			$ch = curl_init();
-			$data = [[
-				"text" => $OrderProcessingMessage,
-				"type" => "SystemMessage"
-			],
-			[
-				"sender"  => "administrator",
-				"text" => $message,
-				"type" => "UserMessage"
-			]];
-			
-			$data1 = json_encode($data);
-
-			curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/ArJWsup2/conversations/' . $orderId . '/messages');
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-			curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $data1);
-
-			$headers = array();
-			$headers[] = 'Content-Type: application/json';
-			$headers[] = 'Authorization: Bearer sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98';
-			curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
-			$result = curl_exec($ch);
-			if (curl_errno($ch)) {
-			    echo 'Error:' . curl_error($ch);
-			}
-			curl_close($ch);
+          
 
 
 		 //	Update Order Status Processing
@@ -132,18 +103,49 @@ if (curl_errno($ch2)) {
 curl_close($ch2);
 echo $result2;			  
 
+  //Send CURL for message -> TalkJS
+  $ch = curl_init();
+  $data = [[
+	  "text" => $OrderProcessingMessage,
+	  "type" => "SystemMessage"
+  ],
+  [
+	  "sender"  => "administrator",
+	  "text" => $message,
+	  "type" => "UserMessage"
+  ]];
+  
+  $data1 = json_encode($data);
+
+  curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/ArJWsup2/conversations/' . $orderId . '/messages');
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+
+  curl_setopt($ch, CURLOPT_POSTFIELDS, $data1);
+
+  $headers = array();
+  $headers[] = 'Content-Type: application/json';
+  $headers[] = 'Authorization: Bearer sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98';
+  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+  $result = curl_exec($ch);
+  if (curl_errno($ch)) {
+	  echo 'Error:' . curl_error($ch);
+  }
+  curl_close($ch);
+
 			// curl implementation
 $ch = curl_init();
-$data = [
+$data3 = [
 "custom" => ["status" => "Processing"]
 ];
-$data1 = json_encode($data);
+$data33 = json_encode($data);
 print_r($data1);
 curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/ArJWsup2/conversations/'.$orderId);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
 
-curl_setopt($ch, CURLOPT_POSTFIELDS, $data1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data33);
 
 $headers = array();
 $headers[] = 'Content-Type: application/json';
