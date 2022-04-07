@@ -36,7 +36,7 @@ $productMETA = <<<EOT
     <meta property="product:brand" content="Melissa Psychic">
     <meta property="product:availability" content="in stock">
     <meta property="product:condition" content="new">
-    <meta property="product:price:amount" content="29.99">
+    <meta property="product:price:amount" content="19.99">
     <meta property="product:price:currency" content="USD">
     <meta property="product:retailer_item_id" content="$t_product_form_name">
 
