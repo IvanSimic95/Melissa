@@ -4,7 +4,7 @@ include_once  $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 echo "Starting start-orders.php...<br><br>";
     
 
-
+$customJS ="";
 
 
 
@@ -75,7 +75,52 @@ echo "Starting start-orders.php...<br><br>";
 			if ($conn->query($sqlupdate) === TRUE) {
       		echo "Updated";
 
+$ORDERIDN = $orderID;
+$signature = hash_hmac('sha256', strval($ORDERIDN), 'sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98');
 
+
+$customJS .= <<<EOT
+<script>  
+    Talk.ready.then(function() {
+      var other = new Talk.User({
+          id: "$ORDERIDN",
+          name: "$customerName",
+          email: "$orderEmail",
+          photoUrl: "https://avatars.dicebear.com/api/adventurer/$orderEmail.svg?skinColor=variant02",
+          role: "customer",
+          custom: {
+          email: "$orderEmail",
+          lastOrder: "$ORDERIDN"
+          }
+      });
+      var me = new Talk.User("administrator");
+      window.talkSession = new Talk.Session({
+          appId: "ArJWsup2",
+          me: other,
+          signature: "$signature"
+      });
+      var conversation = talkSession.getOrCreateConversation("$orderID");
+          conversation.setAttributes({
+          subject: "Order #$orderID | $orderProduct",
+          custom: { 
+          category: "$orderProduct", 
+          status: "Paid"
+          }
+      });
+
+      conversation.setParticipant(other);
+      conversation.setParticipant(me);
+
+        var chatbox = window.talkSession.createChatbox(conversation);
+        chatbox.mount(document.getElementById("talkjs-container-$orderID"));
+    })
+
+</script>
+
+<div id="talkjs-container-$orderID">
+
+</div>
+EOT;
 
 			// curl implementation
 $ch = curl_init();
@@ -108,10 +153,8 @@ curl_close($ch);
 		}
 	}
 	echo "<br><hr>";
-	$signature = hash_hmac('sha256', strval($orderID), 'sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98');
+	
  ?>
-
-
 <script>
     (function(t,a,l,k,j,s){
     s=a.createElement('script');s.async=1;s.src="https://cdn.talkjs.com/talk.js";a.head.appendChild(s)
@@ -119,44 +162,6 @@ curl_close($ch);
     .push([f])},catch:function(){return k&&new k()},c:l}};})(window,document,[]);
 </script>
 
-
-<script>  
-    Talk.ready.then(function() {
-      var other = new Talk.User({
-          id: "<?php echo $orderID; ?>",
-          name: "<?php echo $customerName; ?>",
-          email: "<?php echo $orderEmail; ?>",
-          photoUrl: "https://avatars.dicebear.com/api/adventurer/<?php echo $orderEmail; ?>.svg?skinColor=variant02",
-          role: "customer",
-          custom: {
-          email: "<?php echo $orderEmail; ?>",
-          lastOrder: "<?php echo $orderID; ?>"
-          }
-      });
-      var me = new Talk.User("administrator");
-      window.talkSession = new Talk.Session({
-          appId: "ArJWsup2",
-          me: other,
-          signature: "<?php echo $signature; ?>"
-      });
-      var conversation = talkSession.getOrCreateConversation("<?php echo $orderID; ?>");
-          conversation.setAttributes({
-          subject: "<?php echo "Order #" . $orderID . " | " .$orderProduct; ?>",
-          custom: { 
-          category: "<?php echo $orderProduct; ?>", 
-          status: "Paid"
-          }
-      });
-
-      conversation.setParticipant(other);
-      conversation.setParticipant(me);
-
-        var chatbox = window.talkSession.createChatbox(conversation);
-        chatbox.mount(document.getElementById("talkjs-container-<?php echo $orderID; ?>"));
-    })
-
-</script>
-
-<div id="talkjs-container-<?php echo $orderID; ?>">
-
-</div>
+<?php
+echo $customJS;
+?>
