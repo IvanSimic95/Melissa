@@ -77,27 +77,6 @@ echo "Starting start-orders.php...<br><br>";
 
 
 
-$ch = curl_init();
-$data = [
-"custom" => "",
-
-];
-$data1 = json_encode($data);
-print_r($data1);
-curl_setopt($ch, CURLOPT_URL, 'https://melissa-psychic.com/fix-chat.php?order='.$orderId.'&name='.$customerName.'&email='.$orderEmail.'&product='.$orderProduct.'&codename='.$orderProduct);
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
-$headers = array();
-$headers[] = 'Content-Type: application/json';
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
-$result = curl_exec($ch);
-if (curl_errno($ch)) {
-    echo 'Error:' . curl_error($ch);
-}
-curl_close($ch);
-//Change chat order status
-
 			// curl implementation
 $ch = curl_init();
 $data = [
@@ -129,4 +108,55 @@ curl_close($ch);
 		}
 	}
 	echo "<br><hr>";
+	$signature = hash_hmac('sha256', strval($orderID), 'sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98');
  ?>
+
+
+<script>
+    (function(t,a,l,k,j,s){
+    s=a.createElement('script');s.async=1;s.src="https://cdn.talkjs.com/talk.js";a.head.appendChild(s)
+    ;k=t.Promise;t.Talk={v:3,ready:{then:function(f){if(k)return new k(function(r,e){l.push([f,r,e])});l
+    .push([f])},catch:function(){return k&&new k()},c:l}};})(window,document,[]);
+</script>
+
+
+<script>  
+    Talk.ready.then(function() {
+      var other = new Talk.User({
+          id: "<?php echo $orderID; ?>",
+          name: "<?php echo $customerName; ?>",
+          email: "<?php echo $orderEmail; ?>",
+          photoUrl: "https://avatars.dicebear.com/api/adventurer/<?php echo $orderEmail; ?>.svg?skinColor=variant02",
+          role: "customer",
+          custom: {
+          email: "<?php echo $orderEmail; ?>",
+          lastOrder: "<?php echo $orderID; ?>"
+          }
+      });
+      var me = new Talk.User("administrator");
+      window.talkSession = new Talk.Session({
+          appId: "ArJWsup2",
+          me: other,
+          signature: "<?php echo $signature; ?>"
+      });
+      var conversation = talkSession.getOrCreateConversation("<?php echo $orderID; ?>");
+          conversation.setAttributes({
+          subject: "<?php echo "Order #" . $orderID . " | " .$orderProduct; ?>",
+          custom: { 
+          category: "<?php echo $orderProduct; ?>", 
+          status: "Paid"
+          }
+      });
+
+      conversation.setParticipant(other);
+      conversation.setParticipant(me);
+
+        var chatbox = window.talkSession.createChatbox(conversation);
+        chatbox.mount(document.getElementById("talkjs-container-<?php echo $orderID; ?>"));
+    })
+
+</script>
+
+<div id="talkjs-container-<?php echo $orderID; ?>">
+
+</div>
