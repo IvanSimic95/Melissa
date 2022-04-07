@@ -4,7 +4,7 @@ include_once  $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 echo "Starting start-orders.php...<br><br>";
     
 
-$customJS ="";
+
 
 
 
@@ -75,52 +75,62 @@ $customJS ="";
 			if ($conn->query($sqlupdate) === TRUE) {
       		echo "Updated";
 
-$ORDERIDN = $orderID;
-$signature = hash_hmac('sha256', strval($ORDERIDN), 'sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98');
+
+//First create TalkJS User with same ID as conversation
+$ch = curl_init();
+$data = [
+"id" => $orderId,
+"name" => $customerName,
+"email" => [$orderEmail],
+"role" => "customer",
+"photoUrl" => "https://avatars.dicebear.com/api/adventurer/".$orderEmail.".svg?skinColor=variant02",
+"custom" => ["email" => $orderEmail, "lastOrder" => $orderId]
+];
+$data1 = json_encode($data);
+curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/ArJWsup2/users/'.$orderId);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+    
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data1);
+    
+$headers = array();
+$headers[] = 'Content-Type: application/json';
+$headers[] = 'Authorization: Bearer sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98';
+curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    
+$result = curl_exec($ch);
+if (curl_errno($ch)) {
+echo 'Error:' . curl_error($ch);
+}
+curl_close($ch);
+echo $result;
 
 
-$customJS .= <<<EOT
-<script>  
-    Talk.ready.then(function() {
-      var other = new Talk.User({
-          id: "$ORDERIDN",
-          name: "$customerName",
-          email: "$orderEmail",
-          photoUrl: "https://avatars.dicebear.com/api/adventurer/$orderEmail.svg?skinColor=variant02",
-          role: "customer",
-          custom: {
-          email: "$orderEmail",
-          lastOrder: "$ORDERIDN"
-          }
-      });
-      var me = new Talk.User("administrator");
-      window.talkSession = new Talk.Session({
-          appId: "ArJWsup2",
-          me: other,
-          signature: "$signature"
-      });
-      var conversation = talkSession.getOrCreateConversation("$orderID");
-          conversation.setAttributes({
-          subject: "Order #$orderID | $orderProduct",
-          custom: { 
-          category: "$orderProduct", 
-          status: "Paid"
-          }
-      });
+//Now create new conversation
+$ch2 = curl_init();
+$data2 = [
+"subject" => "Order #".$orderId,
+"participants" => ["administrator", $orderId],
+"custom" => ["status" => "Paid"]
+];
+$data22 = json_encode($data2);
+curl_setopt($ch2, CURLOPT_URL, 'https://api.talkjs.com/v1/ArJWsup2/conversations/'.$orderId);
+curl_setopt($ch2, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch2, CURLOPT_CUSTOMREQUEST, 'PUT');
 
-      conversation.setParticipant(other);
-      conversation.setParticipant(me);
+curl_setopt($ch2, CURLOPT_POSTFIELDS, $data22);
 
-        var chatbox = window.talkSession.createChatbox(conversation);
-        chatbox.mount(document.getElementById("talkjs-container-$orderID"));
-    })
+$headers = array();
+$headers[] = 'Content-Type: application/json';
+$headers[] = 'Authorization: Bearer sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98';
+curl_setopt($ch2, CURLOPT_HTTPHEADER, $headers);
 
-</script>
-
-<div id="talkjs-container-$orderID">
-
-</div>
-EOT;
+$result2 = curl_exec($ch2);
+if (curl_errno($ch2)) {
+    echo 'Error:' . curl_error($ch2);
+}
+curl_close($ch2);
+echo $result2;			  
 
 			// curl implementation
 $ch = curl_init();
@@ -153,15 +163,4 @@ curl_close($ch);
 		}
 	}
 	echo "<br><hr>";
-	
  ?>
-<script>
-    (function(t,a,l,k,j,s){
-    s=a.createElement('script');s.async=1;s.src="https://cdn.talkjs.com/talk.js";a.head.appendChild(s)
-    ;k=t.Promise;t.Talk={v:3,ready:{then:function(f){if(k)return new k(function(r,e){l.push([f,r,e])});l
-    .push([f])},catch:function(){return k&&new k()},c:l}};})(window,document,[]);
-</script>
-
-<?php
-echo $customJS;
-?>
