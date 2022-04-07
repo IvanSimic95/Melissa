@@ -23,8 +23,9 @@ $t_about_content = "
 <p><b> Due to my excellent feedback from stars and celebritries, thousands of people came to me for help with finding their soulmate, and I did my best to help everyone, as each of us deserve to be fulfilled and know what true love feels like. If you choose to work with me, I will be alongside you and guide you throughout the whole process, making sure that you receive exactly what you wish for. </p>
 <br> </div>
 <center> <p> <h2> <div style='color:#ff00f3;'> GUARANTEED 100% ACCURACY OR MONEY BACK </div> </h2> </p> </b> </center> 
-
+<center> <img src='/assets/img/26down.png'> </center>
 ";
+
 
 $PRurl = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]".strtok($_SERVER["REQUEST_URI"],'?');
 
