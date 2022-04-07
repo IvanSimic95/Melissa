@@ -11,28 +11,25 @@ $t_product_form_name = "husband";
 
 $t_product_hover_text = "I will connect with your higher soul, discover accurate and comprehensive information about your destiny, and explore the blockages you may have in your love life, career, health, or relationships with others. I will use your energies and frequencies so I can identify your strength, weaknesses and offer you guidance and clarity for a better and happier life.";
 $t_product_sales = "6300";
-$t_product_title = "I will use my Psychic Abilities to draw your Future Husband or Wife within 48 hours with 100% accuracy";
-$t_about_title = "I will use my Psychic Abilities to draw your Future Husband or Wife within 48 hours with 100% accuracy";
+$t_product_title = "I will use my Psychic Abilities to draw your Future Husband or Wife with 100% accuracy";
+$t_about_title = " <center><div style='color:#ff00f3;'> <b>I will use my Psychic Abilities to draw your Future Husband or Wife with 100% accuracy </b></div></center>";
 $t_about_content = "<p>
-My name is Melissa, and I feel honored to guide you through the beautiful love journey that is waiting for you. My dear, meeting your future husband or wife and accepting the feelings of true love embrace your whole being is one of the most special gifts life will offer you.
-From a very young age, I practiced and developed the special gifts I am happy to share with you – a unique combination of artistic talents, empathic projection, clairsentience and clairvoyance, resulting in a beautiful portrait of your future husband or wife, as well as a detailed description of their characteristics and personality traits. 
-</p><p>
-A deep connection to your pure soul energy will help me see the exact timeframe for when you and your future husband will meet. For this to happen, you only have to tell me your date of birth and your name. 
-</p><p>
-Meeting your future husband will help you blossom beautifully, as your love will become more delicate and your joy will take over all the sadness you have felt in the past. You will be ready to pursue your dreams and ideals, with feelings of love and protection embracing your heart.
-My knowledge in clairvoyance, psychic art and spiritual healing allows me to connect with the purest vibrations of your Higher Self, helping me see essential parts of your future, such as when you will be ready to fully let true love into your life and how you can instantly heal any type of blockages you may have. 
-</p><p>
-The future husband drawing I’m offering you is not just a simple sketch – It is an entirely difficult process that involves deep mediation, energy healing and profound introspection inside your Higher Soul.
-</p><p>
-First, I enter into a deep meditative trance state, where your Higher Self shows me the facial features and life details of the soul that is meant for you in this lifetime. With the help of automatic drawing, I then create a portrait and an in-depth description of their personality.
-</p><p>
-After this, I connect to your aura frequencies, and I am able to see when in the future you are covered with the colors and vibrations of true romantic love, which is the exact moment when you and your future husband reunite in this lifetime.
-</p><p>
-Throughout my journey I’ve helped tens of thousands of people find their true love, and seeing others be happy and fulfilled is what makes me keep going. 
-This is your special chance to be closer than ever to your future husband and finally know when your life will become the love story that you deserve!
-</p><p>
-Due to my countless TV apparitions and excellent feedback from stars and celebrities, I have limited the number of sales to 10/day.
-</p>";
+<p> <b> <center> 100% ACCURACY OR MONEY BACK</p> </b> </center>
+<div style='color:#a700f5;'><p> <b> IF MY PREDICTIONS DON’T COME TRUE WITHIN THE TIME FRAME I PROVIDE, YOU WILL RECEIVE A FULL REFUND, NO QUESTION ASKED! </p> </b>
+<p> My name is Melissa, and I am known as the only Psychic Artist with 100% accuracy who can help you easily identify your future husband or wife when your paths cross. </p>
+
+<p> After years of practice, I managed to create a unique way to use my artistic talent and the skills born of Clairvoyance to give you a psychic portrait along with a detailed description of the cognitive-affective traits of your own soulmate. In addition, you will receive an exact record of the timeframe you and your future husband or wife are going to meet. And for all this, I just need you to tell me your date of birth and your full name. </p>
+<p> Finding your future husband/wife is important because it will bring significant changes in your life and guide you to reach a higher level of emotional and spiritual development. This person will not only be your romantic partner, but also your guide in the complex process of self-discovery and self-knowledge. </p>
+<p> My knowledge of numerology, astrology, and clairvoyance skills allow me to accurately read your vibrational energy and figure out what the ideal time is, and when you are ready to accept those changes in your life and meet your own soulmate. </p>
+<p> <b> BONUS: I will also perform a Psychic Connection between you two, to make sure that there will be no energy or other blockages between you two! </p> </b>
+<p> Additionally, my drawing talent and ability to see the facial features of your own husband/wife when I am in a meditative trance state allows me to create useful robot portraits, and give you the unique opportunity to easily identify the ideal person for your soul. </p>
+<p> Tens of thousands of orders and thousands of reviews say it all about my skills. </p>
+<p> Now you have the unique chance to be closer than ever before to meeting your partner and manifesting a sincere and genuine love in your life. For the first time, you will be able to know who to look for and when to do that, so you will have all the chances to meet them. </p>
+
+<p> In the e-mail you receive from me, you will find a drawing of your future partner’s appearance and a detailed description of their character, and your order will be completed within 24 hours. </p>
+<p>  <b> I decided to open this shop due to very high requests from people all around the world, after my countless appearances on TV and interviews, where everyone was convinced of the talent and accuracy of my predictions </p> </b> </div>
+
+";
 
 $PRurl = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]".strtok($_SERVER["REQUEST_URI"],'?');
 

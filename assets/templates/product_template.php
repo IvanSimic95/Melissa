@@ -94,7 +94,7 @@
 </div> -->
 <section class="reviews">
   <div class="container">
-    <h2>But dont take my word, here is what my past clients say:</h2>
+   
       <?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/reviews.php'; ?>
   </div>
 </section>
