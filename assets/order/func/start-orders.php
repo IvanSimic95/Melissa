@@ -76,27 +76,61 @@ echo "Starting start-orders.php...<br><br>";
       		echo "Updated";
 
 
-
+//First create TalkJS User with same ID as conversation
 $ch = curl_init();
 $data = [
-"custom" => "",
-
+"id" => $orderId,
+"name" => $customerName,
+"email" => [$orderEmail],
+"role" => "customer",
+"photoUrl" => "https://avatars.dicebear.com/api/adventurer/".$orderEmail.".svg?skinColor=variant02",
+"custom" => ["email" => $orderEmail, "lastOrder" => $orderId]
 ];
 $data1 = json_encode($data);
-print_r($data1);
-curl_setopt($ch, CURLOPT_URL, 'https://melissa-psychic.com/fix-chat.php?order='.$orderId.'&name='.$customerName.'&email='.$orderEmail.'&product='.$orderProduct.'&codename='.$orderProduct);
+curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/ArJWsup2/users/'.$orderId);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'GET');
+curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'PUT');
+    
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data1);
+    
 $headers = array();
 $headers[] = 'Content-Type: application/json';
+$headers[] = 'Authorization: Bearer sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98';
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-
+    
 $result = curl_exec($ch);
 if (curl_errno($ch)) {
-    echo 'Error:' . curl_error($ch);
+echo 'Error:' . curl_error($ch);
 }
 curl_close($ch);
-//Change chat order status
+echo $result;
+
+
+//Now create new conversation
+$ch2 = curl_init();
+$data2 = [
+"subject" => "Order #".$orderId,
+"participants" => ["administrator", $orderId],
+"custom" => ["status" => "Paid"]
+];
+$data22 = json_encode($data2);
+curl_setopt($ch2, CURLOPT_URL, 'https://api.talkjs.com/v1/ArJWsup2/conversations/'.$orderId);
+curl_setopt($ch2, CURLOPT_RETURNTRANSFER, 1);
+curl_setopt($ch2, CURLOPT_CUSTOMREQUEST, 'PUT');
+
+curl_setopt($ch2, CURLOPT_POSTFIELDS, $data22);
+
+$headers = array();
+$headers[] = 'Content-Type: application/json';
+$headers[] = 'Authorization: Bearer sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98';
+curl_setopt($ch2, CURLOPT_HTTPHEADER, $headers);
+
+$result2 = curl_exec($ch2);
+if (curl_errno($ch2)) {
+    echo 'Error:' . curl_error($ch2);
+}
+curl_close($ch2);
+echo $result2;			  
 
 			// curl implementation
 $ch = curl_init();
