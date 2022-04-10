@@ -28,7 +28,7 @@ $t_about_content = "<p>
 
 <p> In the e-mail you receive from me, you will find a drawing of your future partner’s appearance and a detailed description of their character, and your order will be completed within 24 hours. </p>
 <p>  <b> I decided to open this shop due to very high requests from people all around the world, after my countless appearances on TV and interviews, where everyone was convinced of the talent and accuracy of my predictions </p> </b> </div>
-<center> <img src='/assets/img/26down.png'> </center>
+
 ";
 
 $PRurl = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]".strtok($_SERVER["REQUEST_URI"],'?');
