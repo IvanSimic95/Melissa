@@ -40,9 +40,9 @@
             switch ($product) {
               case "Husband":
                 if($partnerGender=="male"){
-                  $order_product_nice = "Future Husband Drawing";
+                  $product  = "Future Husband Drawing";
                 }else{
-                  $order_product_nice = "Future Wife Drawing";
+                  $product  = "Future Wife Drawing";
                 }
                 break;
             case "Pastlife":
