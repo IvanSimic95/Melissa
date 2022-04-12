@@ -56,14 +56,37 @@ if($userGender=="female"){$partnerGender = "male";}
 $returnURL = "https://melissa-psychic.com/success.php";
 $returnEncoded = base64_encode($returnURL);
 
+$order_product_nice = "";
+
+
+switch ($order_product) {
+  case "soulmate":
+  $order_product_nice = "Soulmate Drawing";
+  break;
+  
+  case "twinflame":
+  $order_product_nice = "Twin Flame Drawing";
+  break;
+  
+  case "husband":
+
+  if($partnerGender=="male"){
+    $order_product_nice = "Future Husband Drawing";
+  }else{
+    $order_product_nice = "Future Wife Drawing";
+  }
+  
+  break;
+
+}
 
 if($user_name ) {
 
 
 
 
-    $sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, birthday, order_status, order_date, order_email, order_product, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, fbc, fbp)
-                          VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', '$user_birthday', 'pending', '$order_date', '', '$order_product', '$order_priority', '', '', '$userGender', '$userGenderAcc', '$partnerGender', '$uFBC', '$uFBP')";
+    $sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, birthday, order_status, order_date, order_email, order_product, order_product_nice, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, fbc, fbp)
+                          VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', '$user_birthday', 'pending', '$order_date', '', '$order_product', '$order_product_nice', '$order_priority', '', '', '$userGender', '$userGenderAcc', '$partnerGender', '$uFBC', '$uFBP')";
 
     
     if ($conn->query($sql) === TRUE) {
