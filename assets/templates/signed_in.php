@@ -36,9 +36,14 @@
           <?php
           while($row = $result->fetch_assoc()) {
             $product = ucwords($row["order_product"]);
+            $partnerGender = $row["pick_sex"];
             switch ($product) {
               case "Husband":
-               $product = "Future Husband Drawing";
+                if($partnerGender=="male"){
+                  $order_product_nice = "Future Husband Drawing";
+                }else{
+                  $order_product_nice = "Future Wife Drawing";
+                }
                 break;
             case "Pastlife":
                 $product = "Past Life Drawing";
