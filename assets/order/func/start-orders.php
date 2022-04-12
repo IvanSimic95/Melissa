@@ -38,7 +38,27 @@ echo "Starting start-orders.php...<br><br>";
 			echo $orderPriority." | ";
 
 
-          
+			switch ($orderProduct) {
+				case "husband":
+				  if($partnerGender=="male"){
+					$product  = "Future Husband Drawing";
+				  }else{
+					$product  = "Future Wife Drawing";
+				  }
+				  break;
+			  case "pastlife":
+				  $product = "Past Life Drawing";
+				  break;
+			  case "baby":
+				  $product = "Future Baby Drawing";
+				  break;
+			  case "soulmate":
+				  $product = "Soulmate Drawing";
+				  break;
+			  case "twinflame":
+					  $product = "Twin Flame Drawing";
+					  break;
+			  }
 
 
 		 //	Update Order Status Processing
@@ -80,7 +100,7 @@ echo $result;
 //Now create new conversation
 $ch2 = curl_init();
 $data2 = [
-"subject" => "Order #".$orderId,
+"subject" => "Order #".$orderId." | ".$product,
 "participants" => ["administrator", $orderId],
 "custom" => ["status" => "Paid"]
 ];
