@@ -8,14 +8,31 @@
     <div class="sides">
       <div class="left">
 	
-        <div class="product_box">
-            <img src="<?php echo $t_product_image; ?>" />
-		</div>
-		
-		<div class="product_box_pc">
-            <img src="<?php echo $t_product_image_pc; ?>" />
-		</div>
-		
+      <div class="product_box">
+        <ul id="lightSlider">
+            
+    <?php 
+$g = preg_grep('~\.(jpeg|jpg|png)$~', scandir($_SERVER['DOCUMENT_ROOT'].'/assets/img/products/'.$t_product_form_name.'/phone'));
+
+foreach ($g as $key=>$item){
+    echo ' <li data-thumb="/assets/img/products/'.$t_product_form_name.'/thumbs/'.$item.'"> <img src="/assets/img/products/'.$t_product_form_name.'/phone/'.$item.'" /> </li>';
+}
+?>
+</ul>
+</div>
+<div class="product_box_pc">
+<ul id="lightSliderPC">
+            
+            <?php 
+        $g = preg_grep('~\.(jpeg|jpg|png)$~', scandir($_SERVER['DOCUMENT_ROOT'].'/assets/img/products/'.$t_product_form_name));
+        
+        foreach ($g as $key=>$item){
+            echo ' <li data-thumb="/assets/img/products/'.$t_product_form_name.'/thumbs/'.$item.'"> <img src="/assets/img/products/'.$t_product_form_name.'/'.$item.'" /> </li>';
+        }
+        ?>
+        </ul>
+</div>
+
           <span class="product_code" style="display:none;"><?php echo $t_product_form_name; ?></span>
           <!-- <div class="hover_box">
             <div class="paragraph">

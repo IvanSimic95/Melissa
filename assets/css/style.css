@@ -296,15 +296,12 @@ margin-bottom:15px;
 
 .product_box_pc {
     position: relative;
-	border-radius:8px;
-	box-shadow: 0 8px 15px rgb(0 0 0 / 30%);
-	background: #a838fe;
 	display: flex;
     justify-content: center;
     align-items: center;
     min-height:600px;
 }
-.product_box img {
+.product_box img, .product_box_pc img {
     height:100%;
     border-radius:8px;
 }
@@ -1046,6 +1043,9 @@ label.inline {
 .live_support img {
     max-width: 200px;
     margin-bottom: 60px;
+}
+.lside > img{
+    border-radius:8px;
 }
 
 .form_box textarea {
