@@ -36,8 +36,8 @@
         <h1><?php echo $t_product_title; ?></h1>
         <!--<span class="bestseller">Bestseller</span>-->
         <div class="price_box">
-          <span class="new_prce">$19.99</span>
-          <span class="old_price"><del>$199.99<del></span>
+          <span class="new_prce">$29.99</span>
+          <span class="old_price"><del>$299.99<del></span>
 
         </div>
         <span class="saved"> <strong>You save <span class="saveda">$100 (90%)</p></strong> </span>
