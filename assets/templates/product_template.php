@@ -40,7 +40,7 @@
           <span class="old_price"><del>$299.99<del></span>
 
         </div>
-        <span class="saved"> <strong>You save <span class="saveda">$100 (90%)</p></strong> </span>
+        <span class="saved"> <strong>You save <span class="saveda">$270 (90%)</p></strong> </span>
         <h2>Sale ends in few hours</h2>
           <!--<span class="vat"> <strong>VAT included (where applicable)</strong> </span>-->
 
