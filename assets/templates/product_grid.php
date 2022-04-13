@@ -16,16 +16,16 @@ border-radius:8px;
     <div class="sides">
       <div class="product_wrapper">
        <div class="product_box">
-            <img src="/assets/img/mobonly.jpg" />
+            <img src="/assets/img/14mob.png" />
 		</div>
 		
 		<div class="product_box_pc">
-            <img src="/assets/img/ptdsk.png" />
+            <img src="/assets/img/14dk.jpg" />
 		</div>
 		
         <div class="meta_part">
           <div class="sides">
-            <h3><a class="title_url" href="/soulmate-drawing.php">I will draw your SOULMATE with 100% accuracy</a></h3>
+            <h3><a class="title_url" href="/soulmate-drawing.php">I Will Draw Your SOULMATE With 100% Accuracy</a></h3>
             <div class="sales">
               8700+ sales
               <div class="rating">
@@ -35,8 +35,8 @@ border-radius:8px;
           </div>
           <div class="sides">
             <div class="price_box">
-              <span class="new_prce">$19.99</span>
-              <span class="old_price"><del>$199.99<del></span>
+              <span class="new_prce">$29.99</span>
+              <span class="old_price"><del>$299.99<del></span>
 
             </div>
             <a class="btn" href="/soulmate-drawing.php">Buy Now</a>
@@ -63,8 +63,8 @@ border-radius:8px;
           </div>
           <div class="sides">
             <div class="price_box">
-              <span class="new_prce">$19.99</span>
-              <span class="old_price"><del>$199.99<del></span>
+              <span class="new_prce">$29.99</span>
+              <span class="old_price"><del>$299.99<del></span>
 
             </div>
             <a class="btn" href="/twin-drawing.php">Buy Now</a>
@@ -73,15 +73,15 @@ border-radius:8px;
       </div>
       <div class="product_wrapper">
            <div class="product_box">
-            <img src="/assets/img/hsb-mob.jpg" />
+            <img src="/assets/img/12mob.png" />
 		</div>
 		
 		<div class="product_box_pc">
-            <img src="/assets/img/hsb-dsk.jpg" />
+            <img src="/assets/img/fh24.jpg" />
 		</div>
         <div class="meta_part">
           <div class="sides">
-            <h3><a class="title_url" href="/wife-husband-drawing.php">I will draw your FUTURE HUSBAND/WIFE with 100% accuracy</a></h3>
+            <h3><a class="title_url" href="/FutureHusband.php">I Will Draw Your Future Husband With 100% Accuracy</a></h3>
             <div class="sales">
               6300+ sales
               <div class="rating">
@@ -91,11 +91,11 @@ border-radius:8px;
           </div>
           <div class="sides">
             <div class="price_box">
-              <span class="new_prce">$19.99</span>
-              <span class="old_price"><del>$199.99<del></span>
+              <span class="new_prce">$29.99</span>
+              <span class="old_price"><del>$299.99<del></span>
 
             </div>
-            <a class="btn" href="/wife-husband-drawing.php">Buy Now</a>
+            <a class="btn" href="/FutureHusband.php">Buy Now</a>
           </div>
         </div>
       </div>
@@ -119,8 +119,8 @@ border-radius:8px;
           </div>
           <div class="sides">
             <div class="price_box">
-              <span class="new_prce">$19.99</span>
-              <span class="old_price"><del>$199.99<del></span>
+              <span class="new_prce">$29.99</span>
+              <span class="old_price"><del>$299.99<del></span>
 
             </div>
             <a class="btn" href="/baby-drawing.php">Buy Now</a>
