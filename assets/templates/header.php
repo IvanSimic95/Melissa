@@ -53,7 +53,6 @@ $metatags
 	<link rel="stylesheet" href="/assets/css/lazyload.css">
 	<link rel="stylesheet" href="/assets/css/review.css">
   <link rel="stylesheet" href="/assets/css/style.css">
-  <link rel="stylesheet" href="/assets/css/lightslider.css">
 
   <!-- jQuery, Bootstrap & FontAwesome JS Files -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" crossorigin="anonymous"></script>

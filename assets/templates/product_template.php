@@ -8,31 +8,14 @@
     <div class="sides">
       <div class="left">
 	
-      <div class="product_box">
-        <ul id="lightSlider">
-            
-    <?php 
-$g = preg_grep('~\.(jpeg|jpg|png)$~', scandir($_SERVER['DOCUMENT_ROOT'].'/assets/img/products/'.$t_product_form_name.'/phone'));
-
-foreach ($g as $key=>$item){
-    echo ' <li data-thumb="/assets/img/products/'.$t_product_form_name.'/thumbs/'.$item.'"> <img src="/assets/img/products/'.$t_product_form_name.'/phone/'.$item.'" /> </li>';
-}
-?>
-</ul>
-</div>
-<div class="product_box_pc">
-<ul id="lightSliderPC">
-            
-            <?php 
-        $g = preg_grep('~\.(jpeg|jpg|png)$~', scandir($_SERVER['DOCUMENT_ROOT'].'/assets/img/products/'.$t_product_form_name));
-        
-        foreach ($g as $key=>$item){
-            echo ' <li data-thumb="/assets/img/products/'.$t_product_form_name.'/thumbs/'.$item.'"> <img src="/assets/img/products/'.$t_product_form_name.'/'.$item.'" /> </li>';
-        }
-        ?>
-        </ul>
-</div>
-
+        <div class="product_box">
+            <img src="<?php echo $t_product_image; ?>" />
+		</div>
+		
+		<div class="product_box_pc">
+            <img src="<?php echo $t_product_image_pc; ?>" />
+		</div>
+		
           <span class="product_code" style="display:none;"><?php echo $t_product_form_name; ?></span>
           <!-- <div class="hover_box">
             <div class="paragraph">
@@ -53,11 +36,11 @@ foreach ($g as $key=>$item){
         <h1><?php echo $t_product_title; ?></h1>
         <!--<span class="bestseller">Bestseller</span>-->
         <div class="price_box">
-          <span class="new_prce">$29.99</span>
-          <span class="old_price"><del>$299.99<del></span>
+          <span class="new_prce">$19.99</span>
+          <span class="old_price"><del>$199.99<del></span>
 
         </div>
-        <span class="saved"> <strong>You save <span class="saveda">$270 (90%)</p></strong> </span>
+        <span class="saved"> <strong>You save <span class="saveda">$100 (90%)</p></strong> </span>
         <h2>Sale ends in few hours</h2>
           <!--<span class="vat"> <strong>VAT included (where applicable)</strong> </span>-->
 

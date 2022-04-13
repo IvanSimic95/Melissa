@@ -98,34 +98,6 @@ src="https://www.facebook.com/tr?id=<?php echo $FBPixel; ?>&ev=PageView&noscript
       <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
       <script src="/assets/js/scripts.js"></script>
 	    <script src="/assets/js/lazyload.js"></script>
-      <script src="/assets/js/lightslider.js"></script>
-      <script>
-        
-$(window).on("load", function() {
-    $('#lightSlider').lightSlider({
-        gallery: true,
-        item: 1,
-        loop: true,
-        slideMargin: 0,
-        thumbItem: 6,
-      controls:true,
-     
-    });
-  })
-
-  $(window).on("load", function() {
-    $('#lightSliderPC').lightSlider({
-        gallery: true,
-        item: 1,
-        loop: true,
-        slideMargin: 0,
-        thumbItem: 6,
-      controls:true,
-     
-    });
-  })
-
-  </script>
     </footer>
   </body>
 </html>
