@@ -49,7 +49,6 @@ $partnerGender = "male";
 $returnURL = "https://".$domain."/success.php";
 $returnEncoded = base64_encode($returnURL);
 
-$redirectPayment = "https://www.buygoods.com/secure/checkout.html?account_id=6274&product_codename=".$order_product.$order_priority."&subid=".$cookie_id."&subid2=".$lastRowInsert."&subid3=".$uFBC."&subid4=".$uFBP."&subid5=".$user_birthday."&redirect=".$returnEncoded;
 
 
 $_SESSION['orderFName'] = $fName;
@@ -65,6 +64,7 @@ if(mysqli_query($conn,$sql)){
 $lastRowInsert = mysqli_insert_id($conn);
 $submitStatus = "Success";
 $SuccessMessage = "Information saved, Redirecting you to Payment Page Now!";
+$redirectPayment = "https://www.buygoods.com/secure/checkout.html?account_id=6274&product_codename=".$order_product.$order_priority."&subid=".$cookie_id."&subid2=".$lastRowInsert."&subid3=".$uFBC."&subid4=".$uFBP."&subid5=".$user_birthday."&redirect=".$returnEncoded;
 $returnData = [$submitStatus,$SuccessMessage,$redirectPayment];
 echo json_encode($returnData);
 } else {
@@ -75,6 +75,7 @@ $returnData = [$submitStatus,$ErrorMessage];
 echo json_encode($returnData);
 }
 $_SESSION['lastorder'] = $lastRowInsert;
+
 $conn->close();
 
 
