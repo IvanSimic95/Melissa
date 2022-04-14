@@ -14,8 +14,8 @@ $t_product_sales = "6300";
 $t_product_title = "I Will Use My Psychic Abilities To Draw Your Future Husband";
 $t_about_title = " <center><div style='color:#ff00f3;'> <b>I will use my Psychic Abilities to draw your Future Husband </b></div></center>";
 $t_about_content = "<p>
-<p> <b> <center> GUARANTEED 100% ACCURACY OR MONEY BACK</p> </b> </center>
-<div style='color:#a700f5;'><p> <b> IF MY PREDICTIONS DON’T COME TRUE WITHIN THE TIME FRAME I PROVIDE, YOU WILL RECEIVE A FULL REFUND, NO QUESTION ASKED! </p> </b>
+<div style='color:#a700f5;'><p> <b> <center> GUARANTEED 100% ACCURACY OR MONEY BACK</p> </b> </center></div>
+<b><p> <b> IF MY PREDICTIONS DON’T COME TRUE WITHIN THE TIME FRAME I PROVIDE, YOU WILL RECEIVE A FULL REFUND, NO QUESTION ASKED! </p> </b>
 <p> My name is Melissa, and I am known as the only Psychic Artist with 100% accuracy who can help you easily identify your future husband when your paths cross. </p>
 
 <p> After years of practice, I managed to create a unique way to use my artistic talent and the skills born of Clairvoyance to give you a psychic portrait along with a detailed description of the cognitive-affective traits of your own soulmate. In addition, you will receive an exact record of the timeframe you and your future husband are going to meet. And for all this, I just need you to tell me your date of birth and your full name. </p>
@@ -28,8 +28,8 @@ $t_about_content = "<p>
 
 <p> In the e-mail you receive from me, you will find a drawing of your future partner’s appearance and a detailed description of their character, and your order will be completed within 24 hours. </p>
 <p>  <b> I decided to open this shop due to very high requests from people all around the world, after my countless appearances on TV and interviews, where everyone was convinced of the talent and accuracy of my predictions </p> </b> </div>
-<b>MAXIMUM DISCRETION AND CONFIDENTIALITY: DIGITAL DELIVERY ONLY! </p>
-<p>All orders are delivered to the provided email address and also can be accessed from user dashboard. Nothing will be shipped to your home address! </b>
+<div style='color:#a700f5;'><b>MAXIMUM DISCRETION AND CONFIDENTIALITY: DIGITAL DELIVERY ONLY! </p>
+<p>All orders are delivered to the provided email address and also can be accessed from user dashboard. Nothing will be shipped to your home address! </b></div>
 ";
 
 $PRurl = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]".strtok($_SERVER["REQUEST_URI"],'?');
