@@ -5,7 +5,7 @@ $description = "I will draw your FUTURE HUSBAND/WIFE with 100% accuracy";
 $menu_order="men_2_0";
 
 $t_product_name = "FUTURE HUSBAND/WIFE";
-$t_product_image = '/assets/img/13mob.png';
+$t_product_image = '/assets/img/13mob1.png';
 $t_product_image_pc = '/assets/img/wifed.jpg';
 $t_product_form_name = "husband";
 
