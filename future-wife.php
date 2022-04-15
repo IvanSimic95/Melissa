@@ -28,7 +28,7 @@ $t_about_content = "<p>
 <p>  <b> I decided to open this shop due to very high requests from people all around the world, after my countless appearances on TV and interviews, where everyone was convinced of the talent and accuracy of my predictions </p> </b> 
 <br> 
 <center> <p> <div style='color:#a700f5;'> <b> IF MY PREDICTIONS DON’T COME TRUE WITHIN THE TIME FRAME I PROVIDE, YOU WILL RECEIVE A FULL REFUND, NO QUESTION ASKED! </p> </b> <center></div> </div>
-<div style='font-size:110%'><div style='color:#a700f5;'><center>  <b>MAXIMUM DISCRETION: DIGITAL DELIVERY ONLY! </p> </center>
+</div> <br> <div style='font-size:110%'><div style='color:#a700f5;'><center>  <b>MAXIMUM DISCRETION: DIGITAL DELIVERY ONLY! </p> </center>
 <p>All orders are delivered to the provided email address and also can be accessed from user dashboard. Nothing will be shipped to your home address! </b></div>
 ";
 
