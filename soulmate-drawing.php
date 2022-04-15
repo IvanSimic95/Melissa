@@ -14,7 +14,7 @@ $t_product_sales = "8700";
 $t_product_title = "I Will Use My Psychic Abilities To Draw Your Soulmate";
 $t_about_title =  "<center><div style='color:#ff00f3;'> <b>I WILL USE MY PSYCHIC ABILITIES TO DRAW YOUR SOULMATE  WITH 100% ACCURACY</b></div></center>";
 $t_about_content = "
-<b> <p> I am <b>Melissa</b>, the most renowned psychic artist in the world, and I guarantee that I will find your true soulmate in this lifetime and reunite both of you, as well as make sure that you two will live a life full of joy and fulfillment on all plans. </p>
+<div style='font-size:130%'><p> I am <b>Melissa</b>, the most renowned psychic artist in the world, and I guarantee that I will find your true soulmate in this lifetime and reunite both of you, as well as make sure that you two will live a life full of joy and fulfillment on all plans. </p>
 <br>
 <p> My soulmate drawings have 100% accuracy, as I am using a unique combination of psychic techniques, involving empathic projection, clairsentience and clairvoyance. My knowledge in psychic art and spiritual healing allows me to see essential parts of your future, such as when you will be ready to fully let true love into your life and how you can instantly heal any type of blockages you may have. </p>
 <p> Thus, I will tell you exactly when you will meet your soulmate and many important traits and characteristics about their personality and physical appearance. All I need from you is your name and your date of birth, and I will take care of everything else. </p>
