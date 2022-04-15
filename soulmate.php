@@ -14,7 +14,7 @@ $t_product_sales = "8700";
 $t_product_title = "I Will Use my Psychic Abilities To Draw Your Soulmate ";
 $t_about_title =  "<center><div style='color:#ff00f3;'> <b>I WILL USE MY PSYCHIC ABILITIES TO DRAW YOUR SOULMATE  WITH 100% ACCURACY</b></div></center>";
 $t_about_content = "
- <b><p> I am <b>Melissa</b>, the most renowned psychic artist in the world, and I guarantee that I will find your true soulmate in this lifetime and reunite both of you, as well as make sure that you two will live a life full of joy and fulfillment on all plans. </p>
+<div style='font-size:120%'><p> I am <b>Melissa</b>, the most renowned psychic artist in the world, and I guarantee that I will find your true soulmate in this lifetime and reunite both of you, as well as make sure that you two will live a life full of joy and fulfillment on all plans. </p>
 <br>
 <p> My soulmate drawings have 100% accuracy, as I am using a unique combination of psychic techniques, involving empathic projection, clairsentience and clairvoyance. My knowledge in psychic art and spiritual healing allows me to see essential parts of your future, such as when you will be ready to fully let true love into your life and how you can instantly heal any type of blockages you may have. </p>
 <p> Thus, I will tell you exactly when you will meet your soulmate and many important traits and characteristics about her personality and physical appearance. All I need from you is your name and your date of birth! </p>
@@ -24,7 +24,7 @@ $t_about_content = "
 <p><b> Due to my excellent feedback from stars and celebritries, thousands of people came to me for help with finding their soulmate, and I did my best to help everyone, as each of us deserve to be fulfilled and know what true love feels like. If you choose to work with me, I will be alongside you and guide you throughout the whole process, making sure that you receive exactly what you wish for. </p>
 <center> <p> <h2> <div style='color:#ff00f3;'> IF MY PREDICTIONS DON’T COME TRUE WITHIN THE TIME FRAME I PROVIDE, YOU WILL RECEIVE A FULL REFUND, NO QUESTION ASKED!  </div> </h2> </p> </b> </center> </div>
 <br>
-<div style='color:#a700f5;'><center>  <b>MAXIMUM DISCRETION: DIGITAL DELIVERY ONLY! </p> </center>
+<div style='color:#a700f5;'><div style='font-size:110%'><center>  <b>MAXIMUM DISCRETION: DIGITAL DELIVERY ONLY! </p> </center>
 <p>All orders are delivered to the provided email address and also can be accessed from user dashboard. Nothing will be shipped to your home address! </b></div>
 ";
 

@@ -15,7 +15,7 @@ $t_product_title = "I Will Use My Psychic Abilities To Draw Your Future Wife";
 $t_about_title = " <center><div style='color:#ff00f3;'> <b>I Will Use My Psychic Abilities To Draw Your Future Wife </b></div></center>";
 $t_about_content = "<p>
 <p> <b> <div style='color:#a700f5;'>  <center> GUARANTEED 100% ACCURACY OR MONEY BACK</p> </b> </div> </center>
-<b> <p> My name is Melissa, and I am known as the only Psychic Artist with 100% accuracy who can help you easily identify your future wife when your paths cross. </p>
+<div style='font-size:120%'> <p> My name is <b>Melissa</b>, and I am known as the only Psychic Artist with 100% accuracy who can help you easily identify your future wife when your paths cross. </p>
 
 <p> After years of practice, I managed to create a unique way to use my artistic talent and the skills born of Clairvoyance to give you a psychic portrait along with a detailed description of the cognitive-affective traits of your future partner. In addition, you will receive an exact record of the timeframe you are going to meet her. And for all this, I just need you to tell me your date of birth and your full name. </p>
 <p> Finding your future partner is important because it will bring significant changes in your life and guide you to reach a higher level of emotional and spiritual development. This person will not only be your romantic partner, but also your guide in the complex process of self-discovery and self-knowledge. </p>
@@ -28,7 +28,7 @@ $t_about_content = "<p>
 <p>  <b> I decided to open this shop due to very high requests from people all around the world, after my countless appearances on TV and interviews, where everyone was convinced of the talent and accuracy of my predictions </p> </b> 
 <br> 
 <center> <p> <div style='color:#a700f5;'> <b> IF MY PREDICTIONS DON’T COME TRUE WITHIN THE TIME FRAME I PROVIDE, YOU WILL RECEIVE A FULL REFUND, NO QUESTION ASKED! </p> </b> <center></div> </div>
-<div style='color:#a700f5;'><center>  <b>MAXIMUM DISCRETION: DIGITAL DELIVERY ONLY! </p> </center>
+<div style='font-size:110%'><div style='color:#a700f5;'><center>  <b>MAXIMUM DISCRETION: DIGITAL DELIVERY ONLY! </p> </center>
 <p>All orders are delivered to the provided email address and also can be accessed from user dashboard. Nothing will be shipped to your home address! </b></div>
 ";
 
