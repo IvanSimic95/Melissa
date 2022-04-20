@@ -4,7 +4,7 @@
 <form id="ajax-form" class="form-order" name="order_form" action="javascript:void(0)" method="post">
   
   <div class="form_box">
-    <label for="form_name">Your Name*</label>
+    <label for="form_name">Your First and Last Name*</label>
     <input class="customer_name" type="text" id="fullname" name="form_name" value="" required>
   </div>
   <div class="form_box">
