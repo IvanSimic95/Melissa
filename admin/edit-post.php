@@ -1,4 +1,10 @@
-<?php/
+<?php
+session_start();
+$email_address= !empty($_SESSION['email'])?$_SESSION['email']:'';
+if(empty($email_address))
+{
+  header("location:index.php");
+}
 include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/head.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
 if (isset($_GET['id'])) {

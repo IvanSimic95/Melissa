@@ -1,4 +1,10 @@
 <?php
+session_start();
+$email_address= !empty($_SESSION['email'])?$_SESSION['email']:'';
+if(empty($email_address))
+{
+  header("location:index.php");
+}
 include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/head.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
 $signature = hash_hmac('sha256', 'administrator', 'sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98');
