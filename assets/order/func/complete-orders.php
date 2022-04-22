@@ -2,9 +2,7 @@
 include_once '/home/melissapsychic/public_html/config/vars.php';
 echo "Starting complete-orders.php...<br><br>";
 
-$logArray = array();
-$logArray['1'] = date("d-m-Y H:i:s");
-$logArray['2'] = $_SERVER['REMOTE_ADDR'];
+
 
 
 	// Create connection
@@ -23,6 +21,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 	} else {
 		echo "Processing Orders: ".$sqlResoult->num_rows."<br><br>";
 		while($row = $sqlResoult->fetch_assoc()) {
+			$logArray = array();
 			$orderDate = $row["order_date"];
 			$orderName = $row["user_name"];
 			$ex = explode(" ",$orderName);
@@ -435,6 +434,7 @@ curl_close($ch);
 }
 if($trigger==1){
 formLog($logArray);
+$logArray = "";
 }
 
 
