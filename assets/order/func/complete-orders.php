@@ -48,8 +48,8 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 			$randomDelay = rand(0,3);
 
 			echo "".$orderID." | ";
-			$logArray[] = "
-			".$orderID." | ";
+$logArray[] = "
+".$orderID." | ";
 			
 
 			if ($hours >= ($orderPrio - $randomDelay )) {
@@ -401,12 +401,12 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 			$sqlupdate = "UPDATE `orders` SET `order_status`='shipped' WHERE order_id='$orderID'";
 			if ($conn->query($sqlupdate) === TRUE) {
 		    echo "<br> Updated";
-			$logArray[] = "
-			Updated";
+$logArray[] = "
+Updated";
 		}else{
 			echo "<br> Order NOT Updated!";
-			$logArray[] = "
-			Order NOT Updated!";
+$logArray[] = "
+Order NOT Updated!";
 		}
 
 	
@@ -433,7 +433,10 @@ $result = curl_exec($ch);
 curl_close($ch);
 //Change chat order status
 }
+if($trigger==1){
 formLog($logArray);
+}
+
 
 		    	} else {
 					echo "Error";
