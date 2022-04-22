@@ -139,7 +139,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 					$image_name = $rowImages['name'];
 					}
 				}
-				$sql_text = "SELECT * FROM orders_text_updated WHERE product = 'baby2' AND gender = '$babyGender' order by RAND() limit 1";
+				$sql_text = "SELECT * FROM orders_text_updated WHERE product = 'baby' AND gender = '$babyGender' order by RAND() limit 1";
 				$sql_text_res = $conn->query($sql_text);
 				if($sql_text_res->num_rows == 0) {
 						$email_text = "";
