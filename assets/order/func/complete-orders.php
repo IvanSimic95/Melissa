@@ -400,11 +400,13 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 			if($updateOrder==1){
 			$sqlupdate = "UPDATE `orders` SET `order_status`='shipped' WHERE order_id='$orderID'";
 			if ($conn->query($sqlupdate) === TRUE) {
-		    echo "Updated";
-			$logArray[] = "Updated";
+		    echo "<br> Updated";
+			$logArray[] = "
+			Updated";
 		}else{
-			echo "Order NOT Updated!";
-			$logArray[] = "Order NOT Updated!";
+			echo "<br> Order NOT Updated!";
+			$logArray[] = "
+			Order NOT Updated!";
 		}
 
 	
