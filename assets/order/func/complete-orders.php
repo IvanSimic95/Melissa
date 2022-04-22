@@ -21,6 +21,7 @@ echo "Starting complete-orders.php...<br><br>";
 	} else {
 		echo "Processing Orders: ".$sqlResoult->num_rows."<br><br>";
 		while($row = $sqlResoult->fetch_assoc()) {
+			$logArray = "";
 			$logArray = array();
 			$orderDate = $row["order_date"];
 			$orderName = $row["user_name"];
@@ -434,7 +435,6 @@ curl_close($ch);
 }
 if($trigger==1){
 formLog($logArray);
-$logArray = "";
 }
 
 
