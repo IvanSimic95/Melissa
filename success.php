@@ -27,6 +27,7 @@ if(isset($cookie_id)) {
   $product = $row['order_product'];
   $genderAcc = $row['genderAcc'];
 
+  $_SESSION['UserEmail'] = $order_email;
 
   $_SESSION['fbc'] = $row['fbc'];
   $_SESSION['fbp'] = $row['fbp'];

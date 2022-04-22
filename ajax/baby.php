@@ -23,8 +23,8 @@ if ($request === 'POST') {
     }else{
 
 $user_name = $_POST['form_name'];
-$fName = $_SESSION['orderFName'];
-$lName = $_SESSION['orderLName'];
+$fName = $_POST['last_name'];
+$lName = $_POST['last_name'];
 
 $cookie_id = $_POST['cookie_id'];
 $birthday = $_POST['form_birthday'];
