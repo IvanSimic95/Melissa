@@ -48,7 +48,8 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 			$randomDelay = rand(0,3);
 
 			echo "".$orderID." | ";
-			$logArray[] = $orderID." | ";
+			$logArray[] = "
+			".$orderID." | ";
 			
 
 			if ($hours >= ($orderPrio - $randomDelay )) {
