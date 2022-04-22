@@ -48,13 +48,16 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 			$randomDelay = rand(0,3);
 
 			echo "".$orderID." | ";
+			$logArray[] = $orderID." | ";
 			
 
 			if ($hours >= ($orderPrio - $randomDelay )) {
 				echo "Active | ";
+				$logArray[] = "Active | ";
 				 $trigger = 1;
 			}else {
 				echo "Waiting | ";
+				$logArray[] = "Waiting | ";
 			}
 			
 			echo ""  . $hours . " hours | <br>";
@@ -241,8 +244,6 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 
 			$message = str_replace("%FIRSTNAME%", $fName, $message);
 			$logArray[] = $message;
-			$logArray[] = $OrderCompleteMessage;
-			$logArray[] = $ContinueConvoMsg;
 			if ($image_send == "1") { //SEND IMAGE START
 						// define image name and new path
 							$rootDir = $_SERVER['DOCUMENT_ROOT'];
@@ -341,6 +342,14 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
                 $result = curl_exec($ch);
 				//$logArray['4'] = $message;
 				
+
+				if (curl_errno($ch)) {
+					echo 'Error:' . curl_error($ch);
+					$updateOrder = 0;
+				}else{
+					$updateOrder = 1;
+				}
+
                 curl_close($ch);
 				$logArray[] = $result;
 				formLog($logArray);
@@ -380,16 +389,24 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 	  
 					  $result = curl_exec($ch);
 					  $logArray[] = $result;
-					  formLog($logArray);
+					  
 					  curl_close($ch);		
 				}
 
 
 
 				// Set order to shipped
+			if($updateOrder==1){
 			$sqlupdate = "UPDATE `orders` SET `order_status`='shipped' WHERE order_id='$orderID'";
 			if ($conn->query($sqlupdate) === TRUE) {
 		    echo "Updated";
+			$logArray[] = "Updated";
+		}else{
+			echo "Order NOT Updated!";
+			$logArray[] = "Order NOT Updated!";
+		}
+
+	
 
 // curl implementation
 $ch = curl_init();
@@ -410,12 +427,10 @@ $headers[] = 'Authorization: Bearer sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98';
 curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 
 $result = curl_exec($ch);
-if (curl_errno($ch)) {
-    echo 'Error:' . curl_error($ch);
-}
 curl_close($ch);
 //Change chat order status
 }
+formLog($logArray);
 
 		    	} else {
 					echo "Error";
