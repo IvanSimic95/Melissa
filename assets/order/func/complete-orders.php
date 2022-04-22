@@ -295,6 +295,9 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
 							$attachment = curl_exec($ch);
 							if (curl_errno($ch)) {
 							    echo 'Error:' . curl_error($ch);
+								$finishOrder = 0;
+							}else{
+								$finishOrder = 1;
 							}
 							curl_close ($ch);
 						    //echo $attachment;
@@ -302,6 +305,7 @@ $logArray['2'] = $_SERVER['REMOTE_ADDR'];
                             $Atoken_key = $token->attachmentToken;
 
 
+				if($finishOrder == 1){
                 // curl implementation
                 $ch = curl_init();
                 $data = [[
@@ -411,6 +415,7 @@ if (curl_errno($ch)) {
 }
 curl_close($ch);
 //Change chat order status
+}
 
 		    	} else {
 					echo "Error";
