@@ -23,7 +23,7 @@ if ($request === 'POST') {
     }else{
 
 $user_name = $_POST['form_name'];
-$fName = $_POST['last_name'];
+$fName = $_POST['first_name'];
 $lName = $_POST['last_name'];
 
 $pricenow = $_POST['price'];
