@@ -29,4 +29,6 @@ $sqlResoult = $conn->query($sql);
 			$hours = iterator_count($periods);
             echo $orderID."<br>";
         }
+
+    }
 ?>
