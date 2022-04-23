@@ -3,7 +3,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 $parser = new TheIconic\NameParser\Parser();
 
-$sql = "SELECT * FROM orders WHERE first_name = '' && order_status = 'processing' ORDER BY order_id DESC LIMIT 1";
+$sql = "SELECT * FROM orders WHERE first_name = '' && order_status = 'processing' ORDER BY order_id DESC LIMIT 100";
 $sqlResoult = $conn->query($sql);
 
 	if($sqlResoult->num_rows == 0) {
