@@ -32,7 +32,7 @@ while($row = $sqlResoult->fetch_assoc()) {
             echo $orderID."<br>";
 
 
-            $sql2 = "SELECT * FROM orders WHERE order_id = '$orderID' ORDER BY order_id ASC LIMIT 1";
+            $sql2 = "SELECT * FROM orders WHERE order_email = '$orderEmail' ORDER BY order_id ASC LIMIT 1";
             $sqlResoult2 = $conn->query($sql2);
 
             while($row2 = $sqlResoult2->fetch_assoc()) {
