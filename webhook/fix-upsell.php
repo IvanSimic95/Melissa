@@ -55,8 +55,8 @@ $partnerGender = "female";
 }else{
 $partnerGender = "male";
 }
-
-    $sqlupdate = "UPDATE `orders` SET `first_name`='$fName', `last_name`='$lName',`user_sex`='$userGender',`pick_sex`='$partnerGender',`genderAcc`='$userGenderAcc' WHERE order_id='$orderID'";
+$newUserName = $fName." ".$lName;
+    $sqlupdate = "UPDATE `orders` SET `first_name`='$fName', `last_name`='$lName',`user_name`='$newUserName',`user_sex`='$userGender',`pick_sex`='$partnerGender',`genderAcc`='$userGenderAcc' WHERE order_id='$orderID'";
 		if ($conn->query($sqlupdate) === TRUE) {
 		    echo "Updated";
 		}else{
