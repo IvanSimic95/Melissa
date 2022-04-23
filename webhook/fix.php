@@ -3,7 +3,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 $parser = new TheIconic\NameParser\Parser();
 
-$sql = "SELECT * FROM orders WHERE first_name = '' ORDER BY order_id DESC LIMIT 5";
+$sql = "SELECT * FROM orders WHERE first_name = '' ORDER BY order_id DESC LIMIT 25";
 $sqlResoult = $conn->query($sql);
 
 	if($sqlResoult->num_rows == 0) {
@@ -31,7 +31,7 @@ while($row = $sqlResoult->fetch_assoc()) {
             echo $orderID."<br>";
 
 
-            if($user_name != ""){
+if($user_name != ""){
 
 $name = $parser->parse($user_name);
 
