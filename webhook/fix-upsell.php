@@ -33,7 +33,7 @@ while($row = $sqlResoult->fetch_assoc()) {
 
 
             $sql2 = "SELECT * FROM orders WHERE order_id = '$orderID' ORDER BY order_id DESC LIMIT 1";
-            $sqlResoult2 = $conn->query($sql)2;
+            $sqlResoult2 = $conn->query($sql2);
 
             while($row2 = $sqlResoult2->fetch_assoc()) {
                 $user_name = $row2["user_name"];
