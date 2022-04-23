@@ -1,5 +1,6 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 
 if(!$conn){ //CHECK DB CONNECTION FIRST
 $submitStatus = "Database Error!";
@@ -29,9 +30,11 @@ $order_date = date('Y-m-d H:i:s');
 isset($_POST['fbp']) ? $uFBP = $_POST['fbp'] : $uFBP = "";
 isset($_POST['fbc']) ? $uFBC = $_POST['fbc'] : $uFBC = "";
 
-$splitNamesFunc = splitNames($user_name);
-$fName = $splitNamesFunc['0']['fname'];
-$lName = $splitNamesFunc['0']['lname'];
+$parser = new TheIconic\NameParser\Parser();
+$name = $parser->parse($user_name);
+
+$fName = $name->getFirstname();
+$lName = $name->getLastname();
 
 $oStatus = "pending";
     
