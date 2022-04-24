@@ -443,7 +443,7 @@ formLog($logArray);
 }
 
 
-		    	 else {
+	}else {
 					echo "Error";
 					//   echo "Error: " . $sql . "<br>" . $conn->error;
 					}
