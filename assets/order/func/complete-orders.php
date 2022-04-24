@@ -398,7 +398,7 @@ $logArray[] = "
 						$updateOrder = 1;
 					}
 					  curl_close($ch);		
-				}
+			}
 			
 
 
@@ -444,17 +444,10 @@ formLog($logArray);
 }
 
 
-	}else {
-					echo "Error";
-					//   echo "Error: " . $sql . "<br>" . $conn->error;
-					}
-			}
-
-
+	}
 		} 	// end of loop
 
 
 
-	}
 	 // end of processing
 ?>
