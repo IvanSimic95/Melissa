@@ -164,6 +164,7 @@ $logArray[] = "
 				$email_text = "";
 				$theader = $readingOrderHeader;
 				$tfooter = $readingOrderFooter;
+				$finishOrder = 1;
 				if (strpos($orderProduct, 'general') !== false) {
 
 					$sql_text = "SELECT * FROM orders_text_updated WHERE product = 'general' order by RAND() limit 1";
@@ -305,7 +306,7 @@ $logArray[] = "
 						    //echo $attachment;
 						    $token = json_decode($attachment);
                             $Atoken_key = $token->attachmentToken;
-
+						}
 
 				if($finishOrder == 1){
                 // curl implementation
@@ -393,7 +394,7 @@ $logArray[] = "
 					  
 					  curl_close($ch);		
 				}
-
+			
 
 
 				// Set order to shipped
@@ -438,7 +439,7 @@ formLog($logArray);
 }
 
 
-		    	} else {
+		    	 else {
 					echo "Error";
 					//   echo "Error: " . $sql . "<br>" . $conn->error;
 					}
