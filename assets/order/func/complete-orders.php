@@ -355,6 +355,7 @@ $logArray[] = "
                 curl_close($ch);
 				$logArray[] = $result;
                 //SEND IMAGE END
+			}
                 	
 			}else{//SEND ONLY TEXT START
 					  // curl implementation
