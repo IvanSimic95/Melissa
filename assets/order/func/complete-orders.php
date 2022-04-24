@@ -245,7 +245,6 @@ $logArray[] = "
 			
 
 			$message = str_replace("%FIRSTNAME%", $fName, $message);
-			$logArray[] = $message;
 			if ($image_send == "1") { //SEND IMAGE START
 						// define image name and new path
 							$rootDir = $_SERVER['DOCUMENT_ROOT'];
@@ -328,7 +327,6 @@ $logArray[] = "
 				]];
 
                 $data1 = json_encode($data);
-				var_dump($data);
 
                 curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/ArJWsup2/conversations/' . $row["order_id"] . '/messages');
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
