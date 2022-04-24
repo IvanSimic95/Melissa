@@ -306,7 +306,7 @@ $logArray[] = "
 						    //echo $attachment;
 						    $token = json_decode($attachment);
                             $Atoken_key = $token->attachmentToken;
-						}
+						
 
 				if($finishOrder == 1){
                 // curl implementation
@@ -354,10 +354,13 @@ $logArray[] = "
 
                 curl_close($ch);
 				$logArray[] = $result;
-				formLog($logArray);
                 //SEND IMAGE END
-                	}else{//SEND ONLY TEXT START
+                	
+			}else{//SEND ONLY TEXT START
 					  // curl implementation
+
+					$finishOrder = 1;
+
 					$ch = curl_init();
 					$data = [[
 					"text" => $message,
@@ -370,12 +373,8 @@ $logArray[] = "
 					"text" => $ContinueConvoMsg,
 					"type" => "SystemMessage"
 					]];
-						
-				
-				
 
 					$data1 = json_encode($data);
-					print_r($data1);
 				  
 	  
 					  curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/ArJWsup2/conversations/' . $row["order_id"] . '/messages');
@@ -391,7 +390,12 @@ $logArray[] = "
 	  
 					  $result = curl_exec($ch);
 					  $logArray[] = $result;
-					  
+					  if (curl_errno($ch)) {
+						echo 'Error:' . curl_error($ch);
+						$updateOrder = 0;
+					}else{
+						$updateOrder = 1;
+					}
 					  curl_close($ch);		
 				}
 			
