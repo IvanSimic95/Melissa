@@ -346,8 +346,10 @@ $logArray[] = "
 				if (curl_errno($ch)) {
 					echo 'Error:' . curl_error($ch);
 					$updateOrder = 0;
+					$logArray[] = "Order NOT Updated!";
 				}else{
 					$updateOrder = 1;
+					$logArray[] = "Updated";
 				}
 
                 curl_close($ch);
@@ -392,8 +394,10 @@ $logArray[] = "
 					  if (curl_errno($ch)) {
 						echo 'Error:' . curl_error($ch);
 						$updateOrder = 0;
+						$logArray[] = "Order NOT Updated!";
 					}else{
 						$updateOrder = 1;
+						$logArray[] = "Updated";
 					}
 					  curl_close($ch);		
 			}
@@ -405,12 +409,10 @@ $logArray[] = "
 			$sqlupdate = "UPDATE `orders` SET `order_status`='shipped' WHERE order_id='$orderID'";
 			if ($conn->query($sqlupdate) === TRUE) {
 		    echo "<br> Updated";
-$logArray[] = "
-Updated";
+
 		}else{
 			echo "<br> Order NOT Updated!";
-$logArray[] = "
-Order NOT Updated!";
+
 		}
 
 	

@@ -1,10 +1,46 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
-/*
-unset($_SESSION['user_cookie_id1']);
-unset($_SESSION['user_cookie_id2']);
-unset($_SESSION['user_cookie_id3']);
-*/
+
+$showError = 0;
+$succesStatus = 0;
+$showSuccess = 1;
+$successMSG = "Your order is now complete & you will receive an email with your order details and dashboard login link.";
+if(isset($_POST['form_submit'])){
+
+  isset($_POST['orderID']) ? $orderID = $_POST['orderID'] : $errorDisplay .= "<li>Missing Order ID </li>";
+  isset($_POST['gender'])  ? $newGender  = $_POST['gender']  : $errorDisplay .= "<li>Missing User Gender </li>";
+  isset($_POST['pgender']) ? $newPGender = $_POST['pgender'] : $errorDisplay .= "<li>Missing Partner Gender </li>";
+  $genderAcc = "101";
+
+  //Check if any errors are present
+  empty($errorDisplay) ?  $testError = FALSE : $testError = TRUE;
+  if($testError == TRUE){ //Errors found, activate error message and display it
+  $showError = 1;
+  $showErrorText = $errorDisplay;
+  $showSuccess = 0;
+  }else{ //No errors found, proceed with updating order data
+
+    $succesStatus = 1;
+    $_SESSION['orderGender'] = $_POST['gender'];
+    $_SESSION['orderPartnerGender'] = $_POST['pgender'];
+
+    //Update order in DB
+    $sql2 = "UPDATE `orders` SET `user_sex`='$newGender',`pick_sex`='$newPGender',`genderAcc`='$genderAcc' WHERE `order_id`='$orderID'" ;
+
+    if ($conn->query($sql2) === TRUE) {
+      $showError = 0;
+      $successMSG = "Changes saved to your order!";
+      $showSuccess = 1;
+      $succesStatus = 1;
+    } else {
+      $showError = 1;
+      $showErrorText = "Error: " . $sql2->error . "<br>" . $conn->error;
+      $showSuccess = 0;
+    }
+
+  }
+
+}
 ?>
 
 
@@ -21,6 +57,7 @@ unset($_SESSION['user_cookie_id3']);
 <div class="container">
 
 <div class="row">
+
       <div class="col-md-8 col-md-offset-2">
    <div class="white-wrapper" style="padding:30px;">
 
@@ -34,11 +71,69 @@ unset($_SESSION['user_cookie_id3']);
   </div>
 
     
-     <h3 id="finalnotice">Your order is now complete & you will receive an email with your order details and dashboard login link.</h3>
+   
 
-     <?php if($_SESSION['BGEmail'] != ""){ ?>
-     <a style="margin-top:15px; padding:15px; width:100%; font-size:130%; font-weight:bold;" class="btn" href="/dashboard.php?check_email=<?php echo $_SESSION['BGEmail']; ?>"><i class="fas fa-user-shield" aria-hidden="true"></i> Check your Account</a>
-     <?php } ?>
+    <?php 
+    if(isset($_SESSION['lastorder'])){
+      if($_SESSION['lastorder'] != ""){
+        
+    ?>
+    
+    <?php if($showSuccess==1){ ?>
+<h3 id="finalnotice"><?php echo $successMSG; ?></h3>
+
+<hr>
+<?php 
+} 
+if($succesStatus == 0){
+?>
+
+    
+<form id="completeOrder" class="form-order needs-validation display-block text-start" name="completeOrder" action="?updateInfo=Yes" method="post">
+
+<div class="form_box" style="text-align:start">
+<label for="SelectGender" style="left: 0;">Your Gender</label>
+  <select class="form-select" id="SelectGender" aria-label="SelectGender" required="" name="gender">
+    <option <?php if($_SESSION['orderGender']=="male")echo 'selected=""'; ?> value="male"><span class="fa fa-user"></span> Male</option>
+    <option <?php if($_SESSION['orderGender']=="female")echo 'selected=""'; ?>value="female">Female</option>
+  </select>
+  
+  </div>
+
+  <div class="form_box" style="text-align:start">
+  <label for="SelectPGender" style="left: 0;">Preffered Partner Gender</label>
+  <select class="form-select" id="SelectPGender" aria-label="SelectPGender" required="" name="pgender">
+    <option <?php if($_SESSION['orderPartnerGender']=="male")echo 'selected=""'; ?> value="male"><span class="fa fa-user"></span> Male</option>
+    <option <?php if($_SESSION['orderPartnerGender']=="female")echo 'selected=""'; ?>value="female"><span class="fa fa-user"></span> Female</option>
+  </select>
+  
+  </div>
+
+<hr class="mb-3">
+<div class="error-container">
+<ol class="<?php if($showError == 1)echo "alert-danger rounded-3 px-5 py-3"; ?>">
+<?php if($showError == 1)echo "<p class='h4' style='margin-left:-1.5rem'>Errors Detected!</p>"; ?>
+<?php if($showError == 1)echo $showErrorText; ?>
+</ol>
+</div>
+
+<input class="orderID" type="hidden" name="orderID" value="<?php echo $_SESSION['lastorder']; ?>">
+<button style="margin-top:15px; padding:15px; width:100%; font-size:130%; font-weight:bold;" id="SaveChanges" type="submit" name="form_submit" class="btn" value="Save Changes!"><i class="fa fa-square-check"></i> Save Changes!</button>
+<hr class="mb-3">
+    <?php } ?>
+      <?php if($_SESSION['BGEmail'] != ""){ ?>
+      <a style="margin-top:15px; padding:15px; width:100%; font-size:130%; font-weight:bold;" id="#SkipChanges" class="btn" href="/dashboard.php?check_email=<?php echo $_SESSION['BGEmail']; ?>"><i class="fas fa-user-shield" aria-hidden="true"></i> Proceed to User Dashboard!</a>
+      <?php } ?>
+</form>
+
+    <?php 
+      }
+    }else{ 
+    ?>
+<h3 id="finalnotice"><?php echo $successMSG; ?></h3>
+<?php } ?>
+
+    
 </div>
 </div>
 </div>
@@ -118,6 +213,7 @@ margin-bottom:0!important;
 color: #fff!important;
 text-align: center;
 text-transform:uppercase;
+padding:10px;
 }
 h3{
 font-size: 20px;
@@ -158,4 +254,6 @@ padding-top: 50px;
 padding-bottom: 150px;
 }
 </style>
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php';
+
+
+<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>

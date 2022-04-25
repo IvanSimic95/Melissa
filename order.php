@@ -30,6 +30,8 @@ $lName = $name->getLastname();
 $_SESSION['orderFName'] = $fName;
 $_SESSION['orderLName'] = $lName;
 
+$_SESSION['orderName'] = $fName." ".$lName;
+
 $_SESSION['orderAge'] = $user_age;
 
 $_SESSION['orderBirthday'] = $user_birthday;
@@ -52,6 +54,9 @@ $userGenderAcc = $findGenderFunc['0']['accuracy'];
 
 if($userGender=="male"){$partnerGender = "female";}
 if($userGender=="female"){$partnerGender = "male";}
+
+$_SESSION['userGender'] = $userGender;
+$_SESSION['partnerGender'] = $partnerGender;
 
 $returnURL = "https://melissa-psychic.com/success.php";
 $returnEncoded = base64_encode($returnURL);
