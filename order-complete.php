@@ -101,7 +101,7 @@ if($succesStatus == 0){
   </div>
 
   <div class="form_box" style="text-align:start">
-  <label for="SelectPGender" style="left: 0;">Preffered Partner Gender</label>
+  <label for="SelectPGender" style="left: 0;">Preferred Partner Gender</label>
   <select class="form-select" id="SelectPGender" aria-label="SelectPGender" required="" name="pgender">
     <option <?php if($_SESSION['orderPartnerGender']=="male")echo 'selected=""'; ?> value="male"><span class="fa fa-user"></span> Male</option>
     <option <?php if($_SESSION['orderPartnerGender']=="female")echo 'selected=""'; ?>value="female"><span class="fa fa-user"></span> Female</option>
