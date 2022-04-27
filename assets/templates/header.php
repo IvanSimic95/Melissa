@@ -107,7 +107,7 @@ setTimeout(function(){ var el = document.getElementById('ust_body_style'); el &&
                 <ul class="sub-menu collapse" id="products">
                     <li class="men_2_1"> <a href="/soulmate-drawing.php">Soulmate Drawing</a> </li>
 					<li class="men_2_2"> <a href="/twin-drawing.php">Twin Flame Drawing</a> </li>
-					<li class="men_2_3"> <a href="/FutureHusband.php">Future Husband/Wife Drawing</a> </li>
+					<li class="men_2_3"> <a href="/wife-husband-drawing.php">Future Husband/Wife Drawing</a> </li>
 					<li class="men_2_4"> <a href="/baby-drawing.php">Future Baby Drawing</a> </li>
                  </ul>
 
