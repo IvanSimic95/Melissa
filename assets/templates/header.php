@@ -18,8 +18,8 @@ $metatags
           ->title($title)
           ->description($description)
           ->meta('author', 'Melissa Psychic')
-          ->image('https://melissa-psychic.com/assets/img/good-logo.jpg')
-          ->mobile('https://melissa-psychic.com/assets/img/good-logo.jpg');
+          ->image('https://melissa-psychic.com/assets/img/new4.jpg')
+          ->mobile('https://melissa-psychic.com/assets/img/new4.jpg');
 }
 ?>
 <!DOCTYPE html>
@@ -92,7 +92,7 @@ setTimeout(function(){ var el = document.getElementById('ust_body_style'); el &&
       </div>
 	  <div id="mobile-menu" class="nav-side-menu">
     <a href="/index.php" class="logo">
-                <img src="/assets/img/good-logo.jpg" alt="Melissa">
+                <img src="/assets/img/new4.jpg" alt="Melissa">
               </a>
     <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 
@@ -134,7 +134,7 @@ setTimeout(function(){ var el = document.getElementById('ust_body_style'); el &&
           <div class="sides">
             <div class="left">
               <a href="/index.php" class="logo">
-                <img src="/assets/img/good-logo.jpg" alt="Melissa">
+                <img src="/assets/img/new4.jpg" alt="Melissa">
               </a>
             </div>
             <div class="right">
