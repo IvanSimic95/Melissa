@@ -104,7 +104,7 @@ $logArray[] = "
 					}
 
 
-					$sql_text = "SELECT * FROM orders_text_updated WHERE product = 'soulmate' AND gender = '$orderSex' order by RAND() limit 1";
+					$sql_text = "SELECT * FROM orders_text WHERE product = 'soulmate' AND gender = '$orderSex' AND user_gender='$userSex' order by RAND() limit 1";
 					$sql_text_res = $conn->query($sql_text);
 					if($sql_text_res->num_rows == 0) {
 							 $email_text = "";
@@ -143,7 +143,7 @@ $logArray[] = "
 					$image_name = $rowImages['name'];
 					}
 				}
-				$sql_text = "SELECT * FROM orders_text_updated WHERE product = 'baby' AND gender = '$babyGender' order by RAND() limit 1";
+				$sql_text = "SELECT * FROM orders_text WHERE product = 'baby' AND gender = '$babyGender' order by RAND() limit 1";
 				$sql_text_res = $conn->query($sql_text);
 				if($sql_text_res->num_rows == 0) {
 						$email_text = "";
@@ -167,7 +167,7 @@ $logArray[] = "
 				$finishOrder = 1;
 				if (strpos($orderProduct, 'general') !== false) {
 
-					$sql_text = "SELECT * FROM orders_text_updated WHERE product = 'general' order by RAND() limit 1";
+					$sql_text = "SELECT * FROM orders_text WHERE product = 'general' order by RAND() limit 1";
 					$sql_text_res = $conn->query($sql_text);
 					if($sql_text_res->num_rows == 0) {
 					} else {
@@ -177,7 +177,7 @@ $logArray[] = "
 					}
 				}
 				if (strpos($orderProduct, 'love') !== false) {
-					$sql_text = "SELECT * FROM orders_text_updated WHERE product = 'love' order by RAND() limit 1";
+					$sql_text = "SELECT * FROM orders_text WHERE product = 'love' order by RAND() limit 1";
 					$sql_text_res = $conn->query($sql_text);
 					if($sql_text_res->num_rows == 0) {
 					} else {
@@ -187,7 +187,7 @@ $logArray[] = "
 					}
 				}
 				if (strpos($orderProduct, 'career') !== false) {
-					$sql_text = "SELECT * FROM orders_text_updated WHERE product = 'career' order by RAND() limit 1";
+					$sql_text = "SELECT * FROM orders_text WHERE product = 'career' order by RAND() limit 1";
 					$sql_text_res = $conn->query($sql_text);
 					if($sql_text_res->num_rows == 0) {
 					} else {
@@ -197,7 +197,7 @@ $logArray[] = "
 					}
 				}
 				if (strpos($orderProduct, 'health') !== false) {
-					$sql_text = "SELECT * FROM orders_text_updated WHERE product = 'health' order by RAND() limit 1";
+					$sql_text = "SELECT * FROM orders_text WHERE product = 'health' order by RAND() limit 1";
 					$sql_text_res = $conn->query($sql_text);
 					if($sql_text_res->num_rows == 0) {
 					} else {
@@ -227,7 +227,7 @@ $logArray[] = "
 					}
 				}
 
-				$sql_text = "SELECT * FROM orders_text_updated WHERE product = 'past' order by RAND() limit 1";
+				$sql_text = "SELECT * FROM orders_text WHERE product = 'past' order by RAND() limit 1";
 				$sql_text_res = $conn->query($sql_text);
 				if($sql_text_res->num_rows == 0) {
 						$email_text = "";
