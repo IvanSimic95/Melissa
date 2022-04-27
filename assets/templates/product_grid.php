@@ -81,7 +81,7 @@ border-radius:8px;
 		</div>
         <div class="meta_part">
           <div class="sides">
-            <h3><a class="title_url" href="/FutureHusband.php">I Will Draw Your Future Husband With 100% Accuracy</a></h3>
+            <h3><a class="title_url" href="/Future2Husband.php">I Will Draw Your Future Husband With 100% Accuracy</a></h3>
             <div class="sales">
               6300+ sales
               <div class="rating">
