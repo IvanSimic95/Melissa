@@ -1,4 +1,10 @@
-
+<?php
+  if(isset($_GET['affid'])){
+    $affID = $_GET['affid'];
+  }else{
+    $affID = "";
+  }
+  ?>
 
 
 <form id="ajax-form" class="form-order" name="order_form" action="javascript:void(0)" method="post">

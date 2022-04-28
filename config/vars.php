@@ -179,9 +179,5 @@ if(isset($_GET['utm_campaign'])){
   
   }
   
-  if(isset($_GET['affid'])){
-    $affID = $_GET['affid'];
-  }else{
-    $affID = "";
-  }
+
 ?>
