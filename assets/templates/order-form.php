@@ -114,6 +114,8 @@
   <input class="fbp" type="hidden" name="fbp" value="<?php echo $UserFBP; ?>">
   <input class="fbc" type="hidden" name="fbc" value="<?php echo $UserFBC; ?>">
 
+  <input class="affid" type="hidden" name="affid" value="<?php echo $affID; ?>">
+
 
   <div id="show_message" class="alert alert-success" style="display: none">Loading..</div>
    <div id="error" class="alert alert-danger" style="display: none"></div>

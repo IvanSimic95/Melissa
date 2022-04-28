@@ -16,6 +16,7 @@ $order_product = $_GET['product'];
 $order_priority = $_GET['priority'];
 $order_date = date('Y-m-d H:i:s');
 $partnerGender = "male";
+$affid = $_GET['affid'];
 
 isset($_GET['fbp']) ? $uFBP = $_GET['fbp'] : $uFBP = "";
 isset($_GET['fbc']) ? $uFBC = $_GET['fbc'] : $uFBC = "";
@@ -156,7 +157,7 @@ var product = getUrlParameter('product');
 
 document.addEventListener("DOMContentLoaded", function(event) {
     setTimeout(function(){
-      window.location.href = "https://www.buygoods.com/secure/checkout.html?account_id=6274&product_codename=" + product + prio + "&subid=<?php echo $cookie_id; ?>&subid2=<?php echo $lastRowInsert; ?>&subid3=<?php echo $uFBC; ?>&subid4=<?php echo $uFBP; ?>&subid5=<?php echo $user_birthday; ?>&redirect=<?php echo $returnEncoded; ?>";
+      window.location.href = "https://www.buygoods.com/secure/checkout.html?account_id=6274&product_codename=" + product + prio + "&affid=<?php echo $affID; ?>&subid=<?php echo $cookie_id; ?>&subid2=<?php echo $lastRowInsert; ?>&subid3=<?php echo $uFBC; ?>&subid4=<?php echo $uFBP; ?>&subid5=<?php echo $user_birthday; ?>&redirect=<?php echo $returnEncoded; ?>";
      }, 1000);
   });
 </script>
