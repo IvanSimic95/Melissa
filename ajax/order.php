@@ -27,6 +27,7 @@ $order_product = $_POST['product'];
 $order_priority = $_POST['priority'];
 $order_date = date('Y-m-d H:i:s');
 $affid = $_POST['affid'];
+$subid = $_POST['subid'];
 
 isset($_POST['fbp']) ? $uFBP = $_POST['fbp'] : $uFBP = "";
 isset($_POST['fbc']) ? $uFBC = $_POST['fbc'] : $uFBC = "";
@@ -71,7 +72,7 @@ if(mysqli_query($conn,$sql)){
 $lastRowInsert = mysqli_insert_id($conn);
 $submitStatus = "Success";
 $SuccessMessage = "Information saved, Redirecting you to Payment Page Now!";
-$redirectPayment = "https://www.buygoods.com/secure/checkout.html?account_id=6274&product_codename=".$order_product.$order_priority."&affid=".$affid."&subid=".$cookie_id."&subid2=".$lastRowInsert."&subid3=".$uFBC."&subid4=".$uFBP."&subid5=".$user_birthday."&redirect=".$returnEncoded;
+$redirectPayment = "https://www.buygoods.com/secure/checkout.html?account_id=6274&product_codename=".$order_product.$order_priority."&aff_id=".$affid."&subid=".$subid."&subid2=".$lastRowInsert."&subid3=".$uFBC."&subid4=".$uFBP."&subid5=".$user_birthday."&redirect=".$returnEncoded;
 $returnData = [$submitStatus,$SuccessMessage,$redirectPayment];
 echo json_encode($returnData);
 } else {

@@ -1,6 +1,12 @@
 <?php
-  if(isset($_GET['affid'])){
-    $affID = $_GET['affid'];
+  if(isset($_GET['aff_id'])){
+    $affID = $_GET['aff_id'];
+  }else{
+    $affID = "";
+  }
+
+  if(isset($_GET['subid'])){
+    $affID = $_GET['subid'];
   }else{
     $affID = "";
   }
