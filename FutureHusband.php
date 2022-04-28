@@ -3,6 +3,7 @@
 $title = "Future Husband/Wife Drawing | Melissa Psychic";
 $description = "I will draw your FUTURE HUSBAND/WIFE with 100% accuracy";
 $menu_order="men_2_0";
+$bgproduct = "husband48";
 
 $t_product_name = "FUTURE HUSBAND/WIFE";
 $t_product_image = '/assets/img/12mob1.png';

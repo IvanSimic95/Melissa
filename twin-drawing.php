@@ -3,6 +3,7 @@
 $title = "Twin Flame Drawing | Melissa Psychic";
 $description = "I will draw your TWIN FLAME with 100% accuracy";
 $menu_order="men_2_0";
+$bgproduct = "";
 
 $t_product_name = "TWIN FLAME";
 $t_product_image = '/assets/img/tf-mob.jpg';

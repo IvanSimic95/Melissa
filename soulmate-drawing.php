@@ -4,6 +4,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php';
 $title = "Soulmate Drawing | Melissa Psychic";
 $description = "I will draw your SOULMATE with 100% accuracy";
 $menu_order="men_2_0"; 
+$bgproduct = "soulmate48";
 
 $t_product_name = "SOULMATE";
 $t_product_image = '/assets/img/14mob1.png';
