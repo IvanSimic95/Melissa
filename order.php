@@ -36,6 +36,11 @@ $_SESSION['orderAge'] = $user_age;
 
 $_SESSION['orderBirthday'] = $user_birthday;
 
+
+$fbCampaign = $_SESSION['fbCampaign'];
+$fbAdset = $_SESSION['fbAdset'];
+$fbAd = $_SESSION['fbAd'];
+
 //Find User Gender
 function findGender($name) {
 $apiKey = 'Whc29bSnvP3zrQG3hYCwXKMoYu5h4ZQukS6n'; //Your API Key

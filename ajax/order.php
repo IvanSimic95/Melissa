@@ -42,6 +42,9 @@ $findGenderFunc = findGender($fName);
 $userGender = $findGenderFunc['0']['gender'];
 $userGenderAcc = $findGenderFunc['0']['accuracy'];
 
+$fbCampaign = $_SESSION['fbCampaign'];
+$fbAdset = $_SESSION['fbAdset'];
+$fbAd = $_SESSION['fbAd'];
 
 if($userGender=="male"){
 $partnerGender = "female";
@@ -61,7 +64,7 @@ $_SESSION['orderBirthday'] = $user_birthday;
 $_SESSION['orderGender'] = $userGender;
 $_SESSION['orderPartnerGender'] = $partnerGender;
 
-$sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, birthday, order_status, order_date, order_email, order_product, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, fbc, fbp) VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', '$user_birthday', '$oStatus', '$order_date', '', '$order_product', '$order_priority', '', '', '$userGender', '$userGenderAcc', '$partnerGender', '$uFBC', '$uFBP')";
+$sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, birthday, order_status, order_date, order_email, order_product, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, fbc, fbp, fbCampaign, fbAdset, fbAd) VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', '$user_birthday', '$oStatus', '$order_date', '', '$order_product', '$order_priority', '', '', '$userGender', '$userGenderAcc', '$partnerGender', '$uFBC', '$uFBP', '$fbCampaign', '$fbAdset', '$fbAd')";
 
 if(mysqli_query($conn,$sql)){
 $lastRowInsert = mysqli_insert_id($conn);

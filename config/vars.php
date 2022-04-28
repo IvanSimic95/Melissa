@@ -141,4 +141,41 @@ $conn->set_charset('utf8mb4');
 // Check connection
 if ($conn->connect_error) {die("Connection failed: " . $conn->connect_error);}
 //END Database Configuration
+
+
+
+if(isset($_GET['utm_campaign'])){
+  $fbTrack = 1;
+  
+  $fbVariable = $_GET['utm_campaign'];
+  $ex = explode(" ",$fbVariable);
+  
+  $fbCampaign = $ex["0"];
+  $fbAdset = $ex["1"];
+  $fbAd = $ex["2"];
+  
+  //Set fb ads session variables
+  $_SESSION['fbCampaign'] = $fbCampaign;
+  $_SESSION['fbAdset'] = $fbAdset;
+  $_SESSION['fbAd'] = $fbAd;
+  }else{
+  $fbTrack = 0;
+  
+    $fbCampaign = "";
+    $fbAdset = "";
+    $fbAd = "";
+  
+    if(!isset($_SESSION['fbCampaign'])){
+      $_SESSION['fbCampaign'] = $fbCampaign;
+    }
+  
+    if(!isset($_SESSION['fbAdset'])){
+      $_SESSION['fbAdset'] = $fbAdset;
+    }
+  
+    if(!isset($_SESSION['fbAd'])){
+      $_SESSION['fbAd'] = $fbAd;
+    }
+  
+  }
 ?>
