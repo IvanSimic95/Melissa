@@ -6,9 +6,9 @@
   }
 
   if(isset($_GET['subid'])){
-    $affID = $_GET['subid'];
+    $subid = $_GET['subid'];
   }else{
-    $affID = "";
+    $subid = "";
   }
   ?>
 
@@ -127,6 +127,7 @@
   <input class="fbc" type="hidden" name="fbc" value="<?php echo $UserFBC; ?>">
 
   <input class="affid" type="hidden" name="affid" value="<?php echo $affID; ?>">
+  <input class="subid" type="hidden" name="subid" value="<?php echo $subid; ?>">
 
 
   <div id="show_message" class="alert alert-success" style="display: none">Loading..</div>
