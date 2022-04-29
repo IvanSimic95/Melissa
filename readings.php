@@ -213,11 +213,7 @@ text-align:center;
    
 </div>
 
-<?php if($fireIframe==1){ ?>
 
-<iframe src="https://newrideanddrive.com/p.ashx?a=177&e=180&f=pb&r=<?php echo $s2; ?>&t=<?php echo $lastOrderID; ?>" height="1" width="1" frameborder="0"></iframe>
-
-<?php } ?>
 
 
 

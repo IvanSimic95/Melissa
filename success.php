@@ -26,6 +26,15 @@ if(isset($cookie_id)) {
   $first_name = $row['first_name'];
   $product = $row['order_product'];
   $genderAcc = $row['genderAcc'];
+  $affid = $row['affid'];
+  $s1 = $row['s1'];
+  $s2 = $row['s2'];
+
+  if($affid==1){
+    $fireiframe = 1;
+  }else{
+    $fireiframe = 0;
+  }
 
   $_SESSION['UserEmail'] = $order_email;
 
@@ -82,6 +91,12 @@ if(!isset($product)){
     <a href="/index.php">Melissa</a> > Success
   </div>
 </div>
+
+<?php if($fireiframe==1){ ?>
+
+<iframe src="https://newrideanddrive.com/p.ashx?a=177&e=180&f=pb&r=<?php echo $s2; ?>&t=<?php echo $orderID; ?>" height="1" width="1" frameborder="0"></iframe>
+
+<?php } ?>
 
 <?php if($product == "baby"){ ?>
   <div class="general_section">
