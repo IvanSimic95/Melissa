@@ -10,6 +10,24 @@
   }else{
     $subid = "";
   }
+
+  if(isset($_GET['affid'])){
+    $newaffID = $_GET['affid'];
+  }else{
+    $newaffID = "0";
+  }
+
+  if(isset($_GET['s1'])){
+    $s1 = $_GET['s1'];
+  }else{
+    $s1 = "0";
+  }
+
+  if(isset($_GET['s2'])){
+    $s2 = $_GET['s2'];
+  }else{
+    $s2 = "0";
+  }
   ?>
 
 
@@ -126,8 +144,12 @@
   <input class="fbp" type="hidden" name="fbp" value="<?php echo $UserFBP; ?>">
   <input class="fbc" type="hidden" name="fbc" value="<?php echo $UserFBC; ?>">
 
-  <input class="affid" type="hidden" name="affid" value="<?php echo $affID; ?>">
+  <input class="affid" type="hidden" name="aff_id" value="<?php echo $affID; ?>">
   <input class="subid" type="hidden" name="subid" value="<?php echo $subid; ?>">
+
+  <input class="affid" type="hidden" name="affid" value="<?php echo $newaffID; ?>">
+  <input class="subid" type="hidden" name="s1" value="<?php echo $s1; ?>">
+  <input class="affid" type="hidden" name="s2" value="<?php echo $s2; ?>">
 
 
   <div id="show_message" class="alert alert-success" style="display: none">Loading..</div>

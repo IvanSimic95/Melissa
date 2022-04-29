@@ -1,5 +1,6 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+$fireIframe = 0;
 //Check if partner sex was manually picked by user
 $sex_picked = "";
 if(isset($_POST['pick_sex'])){
@@ -14,7 +15,24 @@ if ($sex_picked==1) {
     $result = $conn->query($sql);
 
     $_SESSION['orderPartnerGender'] = $pick_sex;
-    $conn->close();
+}
+
+$lastOrderID = $_SESSION['lastorder'];
+$sql = "SELECT * FROM `orders` WHERE `order_id` = '$lastOrderID' ORDER BY `order_id` DESC LIMIT 1";
+$result = $conn->query($sql);
+$count = $result->num_rows;
+
+//If order is found input data from BG and update status to paid
+if($result->num_rows != 0) {
+
+  $affid = $row['affid'];
+  $s1 = $row['s1'];
+  $s2 = $row['s2'];
+
+  if($affid == 1){
+    $fireIframe = 1;
+  }
+
 }
 
 $title = "Readings | Melissa Psychic";
@@ -195,6 +213,11 @@ text-align:center;
    
 </div>
 
+<?php if($fireIframe==1){ ?>
+
+<iframe src="https://newrideanddrive.com/p.ashx?a=177&e=180&f=pb&r=<?php echo $s2; ?>&t=<?php echo $lastOrderID; ?>" height="1" width="1" frameborder="0"></iframe>
+
+<?php } ?>
 
 
 

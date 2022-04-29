@@ -26,8 +26,12 @@ $user_name = $_POST['form_name'];
 $order_product = $_POST['product'];
 $order_priority = $_POST['priority'];
 $order_date = date('Y-m-d H:i:s');
-$affid = $_POST['affid'];
+$affid = $_POST['aff_id'];
 $subid = $_POST['subid'];
+
+$newaffid = $_POST['affid'];
+$s1 = $_POST['s1'];
+$s2 = $_POST['s2'];
 
 isset($_POST['fbp']) ? $uFBP = $_POST['fbp'] : $uFBP = "";
 isset($_POST['fbc']) ? $uFBC = $_POST['fbc'] : $uFBC = "";
@@ -66,7 +70,7 @@ $_SESSION['orderBirthday'] = $user_birthday;
 $_SESSION['orderGender'] = $userGender;
 $_SESSION['orderPartnerGender'] = $partnerGender;
 
-$sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, birthday, order_status, order_date, order_email, order_product, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, fbc, fbp, fbCampaign, fbAdset, fbAd) VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', '$user_birthday', '$oStatus', '$order_date', '', '$order_product', '$order_priority', '', '', '$userGender', '$userGenderAcc', '$partnerGender', '$uFBC', '$uFBP', '$fbCampaign', '$fbAdset', '$fbAd')";
+$sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, birthday, order_status, order_date, order_email, order_product, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, fbc, fbp, fbCampaign, fbAdset, fbAd, affid, s1, s2) VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', '$user_birthday', '$oStatus', '$order_date', '', '$order_product', '$order_priority', '', '', '$userGender', '$userGenderAcc', '$partnerGender', '$uFBC', '$uFBP', '$fbCampaign', '$fbAdset', '$fbAd', '$newaffid', '$s1', '$s2')";
 
 if(mysqli_query($conn,$sql)){
 $lastRowInsert = mysqli_insert_id($conn);
