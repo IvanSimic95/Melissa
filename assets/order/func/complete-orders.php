@@ -63,7 +63,7 @@ $logArray[] = "
 			
 			echo ""  . $hours . " hours | <br>";
 			
-				if ($orderProduct == "soulmate" || $orderProduct == "nothing" || $orderProduct =="twinflame") {
+				if ($orderProduct == "soulmate" || $orderProduct == "futurespouse" || $orderProduct =="twinflame") {
 				    $image_send = 1;
 					$prod_type = "";
 					$img_folder_name = "general";
@@ -74,7 +74,7 @@ $logArray[] = "
 					if ($orderProduct == "soulmate") {
 						$prod_type = "1";
 					
-					}elseif($orderProduct == "husband"){
+					}elseif($orderProduct == "futurespouse"){
 						$prod_type = "2";
 					
 					}elseif($orderProduct =="twinflame"){
