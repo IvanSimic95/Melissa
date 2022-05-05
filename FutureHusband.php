@@ -8,7 +8,7 @@ $bgproduct = "husband48";
 $t_product_name = "FUTURE HUSBAND/WIFE";
 $t_product_image = '/assets/img/12mob1.png';
 $t_product_image_pc = '/assets/img/fh24.jpg';
-$t_product_form_name = "futurespouse";
+$t_product_form_name = "husband";
 
 $t_product_hover_text = "I will connect with your higher soul, discover accurate and comprehensive information about your destiny, and explore the blockages you may have in your love life, career, health, or relationships with others. I will use your energies and frequencies so I can identify your strength, weaknesses and offer you guidance and clarity for a better and happier life.";
 $t_product_sales = "6300";
