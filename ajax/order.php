@@ -74,7 +74,39 @@ $_SESSION['orderBirthday'] = $user_birthday;
 $_SESSION['orderGender'] = $userGender;
 $_SESSION['orderPartnerGender'] = $partnerGender;
 
-$sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, birthday, order_status, order_date, order_email, order_product, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, fbc, fbp, fbCampaign, fbAdset, fbAd, affid, s1, s2) VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', '$user_birthday', '$oStatus', '$order_date', '', '$order_product', '$order_priority', '', '', '$userGender', '$userGenderAcc', '$partnerGender', '$uFBC', '$uFBP', '$fbCampaign', '$fbAdset', '$fbAd', '$newaffid', '$s1', '$s2')";
+$order_product_nice = "Soulmate Drawing";
+
+$order_product_test = ucwords($order_product);
+switch ($order_product_test) {
+  case "Husband":
+    if($partnerGender=="male"){
+      $order_product_nice  = "Future Husband Drawing";
+    }else{
+        $order_product_nice  = "Future Wife Drawing";
+    }
+    break;
+    case "Futurespouse":
+      if($partnerGender=="male"){
+        $order_product_nice  = "Future Husband Drawing";
+      }else{
+        $order_product_nice  = "Future Wife Drawing";
+      }
+      break;
+case "Pastlife":
+    $order_product_nice = "Past Life Drawing";
+    break;
+case "Baby":
+    $order_product_nice = "Future Baby Drawing";
+    break;
+case "Soulmate":
+    $order_product_nice = "Soulmate Drawing";
+    break;
+case "Twinflame":
+    $order_product_nice = "Twin Flame Drawing";
+        break;
+}
+
+$sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, birthday, order_status, order_date, order_email, order_product, order_product_nice, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, fbc, fbp, fbCampaign, fbAdset, fbAd, affid, s1, s2) VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', '$user_birthday', '$oStatus', '$order_date', '', '$order_product', '$order_product_nice', '$order_priority', '', '', '$userGender', '$userGenderAcc', '$partnerGender', '$uFBC', '$uFBP', '$fbCampaign', '$fbAdset', '$fbAd', '$newaffid', '$s1', '$s2')";
 
 if(mysqli_query($conn,$sql)){
 $lastRowInsert = mysqli_insert_id($conn);
