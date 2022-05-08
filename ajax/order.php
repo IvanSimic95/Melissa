@@ -52,6 +52,10 @@ $fbCampaign = $_SESSION['fbCampaign'];
 $fbAdset = $_SESSION['fbAdset'];
 $fbAd = $_SESSION['fbAd'];
 
+if($userGender=="unknown"){
+    $userGender = "female";
+}
+
 if($userGender=="male"){
 $partnerGender = "female";
 }else{

@@ -21,8 +21,12 @@ echo "Starting complete-orders.php...<br><br>";
 	} else {
 		echo "Processing Orders: ".$sqlResoult->num_rows."<br><br>";
 		while($row = $sqlResoult->fetch_assoc()) {
+			$logError = "";
 			$logArray = "";
 			$logArray = array();
+			$logError = array();
+			$message = "";
+			$missingTest = 0;
 			$orderDate = $row["order_date"];
 			$orderName = $row["user_name"];
 			$ex = explode(" ",$orderName);
@@ -97,6 +101,11 @@ $logArray[] = "
 					$sql_pick_res = $conn->query($sql_pick);
 					if($sql_pick_res->num_rows == 0) {
 							 $image_name = "";
+							 $logError[] = "Missing Image";
+							 $logError[] = $orderID;
+							 $logError[] = $orderEmail;
+							 missingLog($logArray);
+
 					} else {
 						while($rowImages = $sql_pick_res->fetch_assoc()) {
 							$image_name = $rowImages["name"];
@@ -108,6 +117,10 @@ $logArray[] = "
 					$sql_text_res = $conn->query($sql_text);
 					if($sql_text_res->num_rows == 0) {
 							 $email_text = "";
+							 $logError[] = "Missing Text";
+							 $logError[] = $orderID;
+							 $logError[] = $orderEmail;
+							 missingLog($logArray);
 					} else {
 						while($rowText = $sql_text_res->fetch_assoc()) {
 							$email_text = $rowText["text"];
@@ -138,6 +151,11 @@ $logArray[] = "
 				
 				if($sql_pick_res->num_rows == 0) {
 					$image_name = "";
+					$missingTest = 1;
+					$logError[] = "Missing Image";
+					$logError[] = $orderID;
+					$logError[] = $orderEmail;
+					missingLog($logArray);
 				} else {
 					while($rowImages = $sql_pick_res->fetch_assoc()) {
 					$image_name = $rowImages['name'];
@@ -147,6 +165,11 @@ $logArray[] = "
 				$sql_text_res = $conn->query($sql_text);
 				if($sql_text_res->num_rows == 0) {
 						$email_text = "";
+						$missingTest = 1;
+						$logError[] = "Missing Text";
+						$logError[] = $orderID;
+						$logError[] = $orderEmail;
+						missingLog($logArray);
 				} else {
 					while($rowText = $sql_text_res->fetch_assoc()) {
 						$email_text = $rowText['text'];
@@ -206,6 +229,13 @@ $logArray[] = "
 						}
 					}
 				}
+				if($email_text == ""){
+					$missingTest = 1;
+					$logError[] = "Missing Text";
+					$logError[] = $orderID;
+					$logError[] = $orderEmail;
+					missingLog($logArray);
+				}
 				
 				$message = $theader.$email_text.$tfooter;
 
@@ -220,6 +250,11 @@ $logArray[] = "
 				$sql_pick_res = $conn->query($sql_pick);
 				if($sql_pick_res->num_rows == 0) {
 					 $image_name = "";
+					 $missingTest = 1;
+					 $logError[] = "Missing Image";
+					 $logError[] = $orderID;
+					 $logError[] = $orderEmail;
+					 missingLog($logArray);
 				} else {
 					while($rowImages = $sql_pick_res->fetch_assoc()) {
 						$image_name = $rowImages["name"];
@@ -231,6 +266,11 @@ $logArray[] = "
 				$sql_text_res = $conn->query($sql_text);
 				if($sql_text_res->num_rows == 0) {
 						$email_text = "";
+						$missingTest = 1;
+						$logError[] = "Missing Text";
+						$logError[] = $orderID;
+						$logError[] = $orderEmail;
+						missingLog($logArray);
 				} else {
 					while($rowText = $sql_text_res->fetch_assoc()) {
 						$email_text = $rowText["text"];
@@ -307,7 +347,7 @@ $logArray[] = "
                             $Atoken_key = $token->attachmentToken;
 						
 
-				if($finishOrder == 1){
+				if($finishOrder == 1 && $missingTest == 0){
                 // curl implementation
                 $ch = curl_init();
                 $data = [[
@@ -362,6 +402,7 @@ $logArray[] = "
 
 					$finishOrder = 1;
 
+					if($missingTest == 0){
 					$ch = curl_init();
 					$data = [[
 					"text" => $message,
@@ -400,12 +441,13 @@ $logArray[] = "
 						$logArray[] = "Updated";
 					}
 					  curl_close($ch);		
+					}
 			}
 			
 
 
 				// Set order to shipped
-			if($updateOrder==1){
+			if($updateOrder==1 && $missingTest == 0){
 			$sqlupdate = "UPDATE `orders` SET `order_status`='shipped' WHERE order_id='$orderID'";
 			if ($conn->query($sqlupdate) === TRUE) {
 		    echo "<br> Updated";
