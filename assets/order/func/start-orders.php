@@ -74,10 +74,9 @@ echo "Starting start-orders.php...<br><br>";
 
 			  $logArray[] = $orderId." | ". $orderEmail." | ".$product." | ".$orderPriority." | ";
 			  $logArray[] = "
+".$message."
 			  
-			  ".$message."
-			  
-			 ";
+";
 
 		 //	Update Order Status Processing
 			$sqlupdate = "UPDATE `orders` SET `order_status`='processing' WHERE order_id='$orderId'";
