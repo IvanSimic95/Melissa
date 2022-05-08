@@ -10,13 +10,17 @@ echo "Starting start-orders.php...<br><br>";
 
 // 1. Check and select paid orders.
 
-	$sqlpending = "SELECT * FROM `orders` WHERE `order_status` = 'paid'";
+	$sqlpending = "SELECT * FROM `orders` WHERE `order_status` = 'paid' LIMIT 20";
 	$resultpending = $conn->query($sqlpending);
 	if($resultpending->num_rows == 0) {
 	   echo "No Orders with STATUS = PAID found in database.";
 	}else{
 		while($row = $resultpending->fetch_assoc()) {
 			echo "Paid Orders: ".$resultpending->num_rows."<br><br>";
+
+			$orderName = $orderID = $orderId = $orderProduct = $orderPriority = $emailLink = $message = $orderPriority = $ch = "";
+			$logArray = "";
+			$logArray = array();
 			
 			$orderName = $row["user_name"];
 		    $ex = explode(" ",$orderName);
@@ -36,7 +40,7 @@ echo "Starting start-orders.php...<br><br>";
 			echo $orderEmail." | ";
 			echo $orderProduct." | ";
 			echo $orderPriority." | ";
-
+			
 
 			switch ($orderProduct) {
 				case "husband":
@@ -46,6 +50,13 @@ echo "Starting start-orders.php...<br><br>";
 					$product  = "Future Wife Drawing";
 				  }
 				  break;
+				  case "futurespouse":
+					if($partnerGender=="male"){
+					  $product  = "Future Husband Drawing";
+					}else{
+					  $product  = "Future Wife Drawing";
+					}
+					break;
 			  case "pastlife":
 				  $product = "Past Life Drawing";
 				  break;
@@ -60,6 +71,13 @@ echo "Starting start-orders.php...<br><br>";
 					  break;
 			  }
 
+
+			  $logArray[] = $orderId." | ". $orderEmail." | ".$product." | ".$orderPriority." | ";
+			  $logArray[] = "
+			  
+			  ".$message."
+			  
+			 ";
 
 		 //	Update Order Status Processing
 			$sqlupdate = "UPDATE `orders` SET `order_status`='processing' WHERE order_id='$orderId'";
@@ -95,6 +113,7 @@ echo 'Error:' . curl_error($ch);
 }
 curl_close($ch);
 echo $result;
+$logArray[] = $result;
 
 
 //Now create new conversation
@@ -121,7 +140,8 @@ if (curl_errno($ch2)) {
     echo 'Error:' . curl_error($ch2);
 }
 curl_close($ch2);
-echo $result2;			  
+echo $result2;		
+$logArray[] = $result2;	  
 
   //Send CURL for message -> TalkJS
   $ch = curl_init();
@@ -153,6 +173,7 @@ echo $result2;
 	  echo 'Error:' . curl_error($ch);
   }
   curl_close($ch);
+  $logArray[] = $result;
 
 			// curl implementation
 $ch = curl_init();
@@ -177,6 +198,7 @@ if (curl_errno($ch)) {
     echo 'Error:' . curl_error($ch);
 }
 curl_close($ch);
+$logArray[] = $result;
 //Change chat order status
 
       		} else {
