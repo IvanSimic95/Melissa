@@ -15,7 +15,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
 
 
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/admin/scripts/charts.php'; ?>
-    <div class="row justify-content-center" style="margin-top:20px;">
+    <div class="row justify-content-center" style="margin-top:20px;min-height:800px;">
         <div class="col-xl-9 col-md-8">
             <div class="card mb-4">
                 <div class="card-header">
