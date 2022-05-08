@@ -86,8 +86,8 @@ $logArray[] = "
 					
 					}
 
-					$age_max = $orderAge + 7;
-					$age_min = $orderAge + 2;
+					$age_max = $orderAge + 1;
+					$age_min = $orderAge - 4;
 					if ($age_max > 67) {
 						$age_min = 63;
 						$age_max = 67;
