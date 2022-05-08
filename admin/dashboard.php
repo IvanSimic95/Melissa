@@ -61,10 +61,11 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
                     <?php echo time_ago(date('F jS, Y, H:i:s')); ?> </div>
             </div>
         </div>
+        <div class="col-xl-3 col-lg-2">
 
  
 
-        <div class="chat_box" style="width: 420px; margin: 0px; height: 500px; position:fixed;bottom:0;right:0;z-index:999;">
+        <div class="chat_box" style="width: 450px; margin: 0px; height: 800px; position:fixed;bottom:0;right:0;z-index:999;">
         <div class="card mb-4">
                 <div class="card-header">
                     <i class="fa fa-comment"></i>
