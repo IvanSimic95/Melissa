@@ -25,7 +25,7 @@ echo "Starting complete-orders.php...<br><br>";
 			$logArray = "";
 			$logArray = array();
 			$logError = array();
-			$message = "";
+			$message = $email_text = "";
 			$missingTest = 0;
 			$orderDate = $row["order_date"];
 			$orderName = $row["user_name"];
