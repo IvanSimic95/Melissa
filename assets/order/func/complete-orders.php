@@ -104,7 +104,7 @@ $logArray[] = "
 							 $logError[] = "Missing Image";
 							 $logError[] = $orderID;
 							 $logError[] = $orderEmail;
-							 missingLog($logArray);
+							 missingLog($logError);
 
 					} else {
 						while($rowImages = $sql_pick_res->fetch_assoc()) {
@@ -120,7 +120,7 @@ $logArray[] = "
 							 $logError[] = "Missing Text";
 							 $logError[] = $orderID;
 							 $logError[] = $orderEmail;
-							 missingLog($logArray);
+							 missingLog($logError);
 					} else {
 						while($rowText = $sql_text_res->fetch_assoc()) {
 							$email_text = $rowText["text"];
@@ -155,7 +155,7 @@ $logArray[] = "
 					$logError[] = "Missing Image";
 					$logError[] = $orderID;
 					$logError[] = $orderEmail;
-					missingLog($logArray);
+					missingLog($logError);
 				} else {
 					while($rowImages = $sql_pick_res->fetch_assoc()) {
 					$image_name = $rowImages['name'];
@@ -169,7 +169,7 @@ $logArray[] = "
 						$logError[] = "Missing Text";
 						$logError[] = $orderID;
 						$logError[] = $orderEmail;
-						missingLog($logArray);
+						missingLog($logError);
 				} else {
 					while($rowText = $sql_text_res->fetch_assoc()) {
 						$email_text = $rowText['text'];
@@ -234,7 +234,7 @@ $logArray[] = "
 					$logError[] = "Missing Text";
 					$logError[] = $orderID;
 					$logError[] = $orderEmail;
-					missingLog($logArray);
+					missingLog($logError);
 				}
 				
 				$message = $theader.$email_text.$tfooter;
@@ -254,7 +254,7 @@ $logArray[] = "
 					 $logError[] = "Missing Image";
 					 $logError[] = $orderID;
 					 $logError[] = $orderEmail;
-					 missingLog($logArray);
+					 missingLog($logError);
 				} else {
 					while($rowImages = $sql_pick_res->fetch_assoc()) {
 						$image_name = $rowImages["name"];
@@ -270,7 +270,7 @@ $logArray[] = "
 						$logError[] = "Missing Text";
 						$logError[] = $orderID;
 						$logError[] = $orderEmail;
-						missingLog($logArray);
+						missingLog($logError);
 				} else {
 					while($rowText = $sql_text_res->fetch_assoc()) {
 						$email_text = $rowText["text"];
