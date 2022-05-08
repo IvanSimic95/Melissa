@@ -16,7 +16,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
 
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/admin/scripts/charts.php'; ?>
     <div class="row justify-content-center" style="margin-top:20px;min-height:800px;">
-        <div class="col-xl-9 col-12">
+        <div class="col-xl-9 col-lg-10">
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
@@ -62,8 +62,10 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
             </div>
         </div>
 
-        <div class="col-xl-3 col-12">
-            <div class="card mb-4">
+ 
+
+        <div class="chat_box" style="width: 420px; margin: 0px; height: 500px; position:fixed;bottom:0;right:0;z-index:999;">
+        <div class="card mb-4">
                 <div class="card-header">
                     <i class="fa fa-comment"></i>
                     Orders Chat
@@ -78,6 +80,8 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
                     <?php echo time_ago(date('F jS, Y, H:i:s')); ?> </div>
             </div>
         </div>
+
+</div>
     </div>
 </div>
 </div>
