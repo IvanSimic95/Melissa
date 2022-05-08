@@ -204,6 +204,8 @@ $logArray[] = $result;
       		} else {
 			echo "Error";
 			}
+
+			startLog($logArray);
 		}
 	}
 	echo "<br><hr>";
