@@ -45,6 +45,13 @@
                   $product  = "Future Wife Drawing";
                 }
                 break;
+                case "Futurespouse":
+                  if($partnerGender=="male"){
+                    $product  = "Future Husband Drawing";
+                  }else{
+                    $product  = "Future Wife Drawing";
+                  }
+                  break;
             case "Pastlife":
                 $product = "Past Life Drawing";
                 break;
