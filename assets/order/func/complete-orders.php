@@ -66,7 +66,7 @@ $logArray[] = "
 			}
 			
 			echo ""  . $hours . " hours | <br>";
-			
+			if ($trigger == 1) {
 				if ($orderProduct == "soulmate" || $orderProduct == "futurespouse" || $orderProduct =="twinflame") {
 				    $image_send = 1;
 					$prod_type = "";
@@ -279,7 +279,7 @@ $logArray[] = "
 				}
 			}
 			// end of past life
-			
+		}
 		//If trigger is set to 1 (order is ready to be delivered)
 		if ($trigger == 1) {
 			
