@@ -65,7 +65,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
 
  
 
-        <div class="chat_box" style="width: 450px; margin: 0px; height: 800px; position:fixed;bottom:0;right:0;z-index:999;">
+        <div class="chat_box" style="width: 450px; margin: 0px; max-height:60vw; height: 800px; position:fixed;bottom:0;right:0;z-index:999;">
         <div class="card mb-4">
                 <div class="card-header">
                     <i class="fa fa-comment"></i>
