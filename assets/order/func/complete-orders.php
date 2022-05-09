@@ -109,6 +109,7 @@ $logArray[] = "
 					} else {
 						while($rowImages = $sql_pick_res->fetch_assoc()) {
 							$image_name = $rowImages["name"];
+							$missingTest = 0;
 						}
 					}
 
@@ -125,6 +126,7 @@ $logArray[] = "
 						while($rowText = $sql_text_res->fetch_assoc()) {
 							$email_text = $rowText["text"];
 						    $message = $theader.$email_text.$tfooter;
+							$missingTest = 0;
 						}
 					}
 					
@@ -159,6 +161,7 @@ $logArray[] = "
 				} else {
 					while($rowImages = $sql_pick_res->fetch_assoc()) {
 					$image_name = $rowImages['name'];
+					$missingTest = 0;
 					}
 				}
 				$sql_text = "SELECT * FROM orders_text WHERE product = 'baby' AND gender = '$babyGender' order by RAND() limit 1";
@@ -174,6 +177,7 @@ $logArray[] = "
 					while($rowText = $sql_text_res->fetch_assoc()) {
 						$email_text = $rowText['text'];
 						$message = $theader.$email_text.$tfooter;
+						$missingTest = 0;
 						
 					}
 				}
@@ -196,6 +200,7 @@ $logArray[] = "
 					} else {
 						while($rowText = $sql_text_res->fetch_assoc()) {
 							$email_text .= $rowText["text"] . "\n\n";
+							
 						}
 					}
 				}
@@ -229,6 +234,9 @@ $logArray[] = "
 						}
 					}
 				}
+				$message = $theader.$email_text.$tfooter;
+				$missingTest = 0;
+
 				if($email_text == ""){
 					$missingTest = 1;
 					$logError[] = "Missing Text";
@@ -237,7 +245,7 @@ $logArray[] = "
 					missingLog($logError);
 				}
 				
-				$message = $theader.$email_text.$tfooter;
+				
 
 			}elseif ($orderProduct == "past") {
 				$image_send = 1;
@@ -258,6 +266,7 @@ $logArray[] = "
 				} else {
 					while($rowImages = $sql_pick_res->fetch_assoc()) {
 						$image_name = $rowImages["name"];
+						$missingTest = 0;
 						 //echo $image_name . " </br>";
 					}
 				}
@@ -275,6 +284,7 @@ $logArray[] = "
 					while($rowText = $sql_text_res->fetch_assoc()) {
 						$email_text = $rowText["text"];
 						$message = $theader.$email_text.$tfooter;
+						$missingTest = 0;
 					}
 				}
 			}
@@ -347,7 +357,7 @@ $logArray[] = "
                             $Atoken_key = $token->attachmentToken;
 						
 
-				if($finishOrder == 1 && $missingTest == 0){
+				if($finishOrder == 1 AND $missingTest == 0){
                 // curl implementation
                 $ch = curl_init();
                 $data = [[
