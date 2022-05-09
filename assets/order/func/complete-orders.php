@@ -25,7 +25,7 @@ echo "Starting complete-orders.php...<br><br>";
 			$logArray = "";
 			$logArray = array();
 			$logError = array();
-			$message = $email_text = "";
+			$message = "";
 			$missingTest = 0;
 			$orderDate = $row["order_date"];
 			$orderName = $row["user_name"];
@@ -66,7 +66,10 @@ $logArray[] = "
 			}
 			
 			echo ""  . $hours . " hours | <br>";
-			if ($trigger == 1) {
+
+		//If trigger is set to 1 (order is ready to be delivered)
+		if ($trigger == 1) {
+			
 				if ($orderProduct == "soulmate" || $orderProduct == "futurespouse" || $orderProduct =="twinflame") {
 				    $image_send = 1;
 					$prod_type = "";
@@ -87,7 +90,7 @@ $logArray[] = "
 					}
 
 					$age_max = $orderAge + 1;
-					$age_min = $orderAge - 4;
+					$age_min = $orderAge - 5;
 					if ($age_max > 67) {
 						$age_min = 63;
 						$age_max = 67;
@@ -109,7 +112,6 @@ $logArray[] = "
 					} else {
 						while($rowImages = $sql_pick_res->fetch_assoc()) {
 							$image_name = $rowImages["name"];
-							$missingTest = 0;
 						}
 					}
 
@@ -126,7 +128,6 @@ $logArray[] = "
 						while($rowText = $sql_text_res->fetch_assoc()) {
 							$email_text = $rowText["text"];
 						    $message = $theader.$email_text.$tfooter;
-							$missingTest = 0;
 						}
 					}
 					
@@ -161,7 +162,6 @@ $logArray[] = "
 				} else {
 					while($rowImages = $sql_pick_res->fetch_assoc()) {
 					$image_name = $rowImages['name'];
-					$missingTest = 0;
 					}
 				}
 				$sql_text = "SELECT * FROM orders_text WHERE product = 'baby' AND gender = '$babyGender' order by RAND() limit 1";
@@ -177,7 +177,6 @@ $logArray[] = "
 					while($rowText = $sql_text_res->fetch_assoc()) {
 						$email_text = $rowText['text'];
 						$message = $theader.$email_text.$tfooter;
-						$missingTest = 0;
 						
 					}
 				}
@@ -200,7 +199,6 @@ $logArray[] = "
 					} else {
 						while($rowText = $sql_text_res->fetch_assoc()) {
 							$email_text .= $rowText["text"] . "\n\n";
-							
 						}
 					}
 				}
@@ -234,9 +232,6 @@ $logArray[] = "
 						}
 					}
 				}
-				$message = $theader.$email_text.$tfooter;
-				$missingTest = 0;
-
 				if($email_text == ""){
 					$missingTest = 1;
 					$logError[] = "Missing Text";
@@ -245,7 +240,7 @@ $logArray[] = "
 					missingLog($logError);
 				}
 				
-				
+				$message = $theader.$email_text.$tfooter;
 
 			}elseif ($orderProduct == "past") {
 				$image_send = 1;
@@ -266,7 +261,6 @@ $logArray[] = "
 				} else {
 					while($rowImages = $sql_pick_res->fetch_assoc()) {
 						$image_name = $rowImages["name"];
-						$missingTest = 0;
 						 //echo $image_name . " </br>";
 					}
 				}
@@ -284,14 +278,12 @@ $logArray[] = "
 					while($rowText = $sql_text_res->fetch_assoc()) {
 						$email_text = $rowText["text"];
 						$message = $theader.$email_text.$tfooter;
-						$missingTest = 0;
 					}
 				}
 			}
 			// end of past life
-		}
-		//If trigger is set to 1 (order is ready to be delivered)
-		if ($trigger == 1) {
+			
+		
 			
 
 			$message = str_replace("%FIRSTNAME%", $fName, $message);
@@ -357,7 +349,7 @@ $logArray[] = "
                             $Atoken_key = $token->attachmentToken;
 						
 
-				if($finishOrder == 1 AND $missingTest == 0){
+				if($finishOrder == 1 && $missingTest == 0){
                 // curl implementation
                 $ch = curl_init();
                 $data = [[
@@ -396,10 +388,10 @@ $logArray[] = "
 				if (curl_errno($ch)) {
 					echo 'Error:' . curl_error($ch);
 					$updateOrder = 0;
-					$logArray[] = "Order NOT Updated!";
+					$logArray[] = "TalkJS NOT Updated!" . curl_error($ch);
 				}else{
 					$updateOrder = 1;
-					$logArray[] = "Updated";
+					$logArray[] = "TalkJS Updated";
 				}
 
                 curl_close($ch);
@@ -445,12 +437,13 @@ $logArray[] = "
 					  if (curl_errno($ch)) {
 						echo 'Error:' . curl_error($ch);
 						$updateOrder = 0;
-						$logArray[] = "Order NOT Updated!";
+						$logArray[] = "TalkJS NOT Updated!" . curl_error($ch);
 					}else{
 						$updateOrder = 1;
-						$logArray[] = "Updated";
+						$logArray[] = "TalkJS Updated";
 					}
-					  curl_close($ch);		
+					  curl_close($ch);	
+					  $logArray[] = $result;	
 					}
 			}
 			
