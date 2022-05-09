@@ -21,7 +21,7 @@ echo "Starting start-orders.php...<br><br>";
 			$orderName = $orderID = $orderId = $orderProduct = $orderPriority = $emailLink = $message = $orderPriority = $ch = "";
 			$logArray = "";
 			$logArray = array();
-			
+			$partnerGender = $row["pick_sex"];
 			$orderName = $row["user_name"];
 		    $ex = explode(" ",$orderName);
 			$customerName =  $ex["0"];
