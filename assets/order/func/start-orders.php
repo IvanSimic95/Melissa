@@ -45,16 +45,16 @@ echo "Starting start-orders.php...<br><br>";
 			switch ($orderProduct) {
 				case "husband":
 				  if($partnerGender=="male"){
-					$product  = "Future Husband Drawing";
+					$product  = "Future Spouse Drawing";
 				  }else{
-					$product  = "Future Wife Drawing";
+					$product  = "Future Spouse Drawing";
 				  }
 				  break;
 				  case "futurespouse":
 					if($partnerGender=="male"){
-					  $product  = "Future Husband Drawing";
+					  $product  = "Future Spouse Drawing";
 					}else{
-					  $product  = "Future Wife Drawing";
+					  $product  = "Future Spouse Drawing";
 					}
 					break;
 			  case "pastlife":
