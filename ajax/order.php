@@ -26,8 +26,10 @@ $user_name = $_POST['form_name'];
 $order_product = $_POST['product'];
 $order_priority = $_POST['priority'];
 $order_date = date('Y-m-d H:i:s');
+
 $affid = $_POST['aff_id'];
 $subid = $_POST['subid'];
+$subid2 = $_POST['subid2'];
 
 $newaffid = $_POST['affid'];
 $s1 = $_POST['s1'];
@@ -52,9 +54,6 @@ $fbCampaign = $_SESSION['fbCampaign'];
 $fbAdset = $_SESSION['fbAdset'];
 $fbAd = $_SESSION['fbAd'];
 
-if($userGender=="unknown"){
-    $userGender = "female";
-}
 
 if($userGender=="male"){
 $partnerGender = "female";
@@ -112,7 +111,7 @@ if(mysqli_query($conn,$sql)){
 $lastRowInsert = mysqli_insert_id($conn);
 $submitStatus = "Success";
 $SuccessMessage = "Information saved, Redirecting you to Payment Page Now!";
-$redirectPayment = "https://www.buygoods.com/secure/checkout.html?account_id=6274&product_codename=".$order_product.$order_priority."&aff_id=".$affid."&subid=".$subid."&subid2=".$lastRowInsert."&subid3=".$uFBC."&subid4=".$uFBP."&subid5=".$user_birthday."&redirect=".$returnEncoded;
+$redirectPayment = "https://www.buygoods.com/secure/checkout.html?account_id=6274&product_codename=".$order_product.$order_priority."&aff_id=".$affid."&subid=".$subid."&subid2=".$subid2."&subid3=".$uFBC."&subid4=".$uFBP."&subid5=".$lastRowInsert."&redirect=".$returnEncoded;
 $returnData = [$submitStatus,$SuccessMessage,$redirectPayment];
 echo json_encode($returnData);
 } else {

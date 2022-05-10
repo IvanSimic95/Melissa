@@ -11,6 +11,13 @@
     $subid = "";
   }
 
+  
+  if(isset($_GET['subid2'])){
+    $subid2 = $_GET['subid2'];
+  }else{
+    $subid2 = "";
+  }
+
   if(isset($_GET['affid'])){
     $newaffID = $_GET['affid'];
   }else{
@@ -146,6 +153,7 @@
 
   <input class="affid" type="hidden" name="aff_id" value="<?php echo $affID; ?>">
   <input class="subid" type="hidden" name="subid" value="<?php echo $subid; ?>">
+  <input class="subid2" type="hidden" name="subid2" value="<?php echo $subid2; ?>">
 
   <input class="affid" type="hidden" name="affid" value="<?php echo $newaffID; ?>">
   <input class="subid" type="hidden" name="s1" value="<?php echo $s1; ?>">
