@@ -5,6 +5,10 @@
     $affID = "";
   }
 
+  if(isset($_SESSION['aff_id'])){
+    $affID = $_SESSION['aff_id'];
+  }
+
   if(isset($_GET['subid'])){
     $subid = $_GET['subid'];
   }else{

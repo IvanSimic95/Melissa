@@ -50,4 +50,10 @@ if(isset($_GET['logout'])){
 $_SESSION = array();
 session_destroy();
 }
+
+if(isset($_GET['aff_id'])){
+  $_SESSION['aff_id'] = $_GET['aff_id'];
+}
+
+
 ?>
