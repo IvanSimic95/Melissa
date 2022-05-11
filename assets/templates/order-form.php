@@ -15,11 +15,19 @@
     $subid = "";
   }
 
+  if(isset($_SESSION['subid'])){
+    $affID = $_SESSION['subid'];
+  }
   
   if(isset($_GET['subid2'])){
     $subid2 = $_GET['subid2'];
   }else{
     $subid2 = "";
+  }
+
+  
+  if(isset($_SESSION['subid2'])){
+    $affID = $_SESSION['subid2'];
   }
 
   if(isset($_GET['affid'])){

@@ -55,5 +55,13 @@ if(isset($_GET['aff_id'])){
   $_SESSION['aff_id'] = $_GET['aff_id'];
 }
 
+if(isset($_GET['subid'])){
+  $_SESSION['subid'] = $_GET['subid'];
+}
 
+if(isset($_GET['subid2'])){
+  $_SESSION['subid2'] = $_GET['subid2'];
+}
+
+$bgproduct = "";
 ?>
