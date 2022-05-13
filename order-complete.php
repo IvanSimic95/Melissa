@@ -4,6 +4,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 $showError = 0;
 $succesStatus = 0;
 $showSuccess = 1;
+<<<<<<< HEAD
 
 $p  = $_SESSION['UserEmail'];
 $pieces = explode("@", $p);
@@ -12,6 +13,9 @@ echo $pieces[0];
 
 
 $successMSG = "Your order is now complete & you will receive an email with your order details and dashboard login link.<br>".$pieces[0];
+=======
+$successMSG = "Your order is now complete & you will receive an email with your order details and dashboard login link.";
+>>>>>>> parent of 8fdfe38 (Update order-complete.php)
 if(isset($_POST['form_submit'])){
 
   isset($_POST['orderID']) ? $orderID = $_POST['orderID'] : $errorDisplay .= "<li>Missing Order ID </li>";
