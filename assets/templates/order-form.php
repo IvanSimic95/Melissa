@@ -16,7 +16,7 @@
   }
 
   if(isset($_SESSION['subid'])){
-    $affID = $_SESSION['subid'];
+    $subid = $_SESSION['subid'];
   }
   
   if(isset($_GET['subid2'])){
@@ -27,7 +27,7 @@
 
   
   if(isset($_SESSION['subid2'])){
-    $affID = $_SESSION['subid2'];
+    $subid2 = $_SESSION['subid2'];
   }
 
   if(isset($_GET['affid'])){

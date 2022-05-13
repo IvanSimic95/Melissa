@@ -121,9 +121,6 @@ if($succesStatus == 0){
 <button style="margin-top:15px; padding:15px; width:100%; font-size:130%; font-weight:bold;" id="SaveChanges" type="submit" name="form_submit" class="btn" value="Save Changes!"><i class="fa fa-square-check"></i> Save Changes!</button>
 <hr class="mb-3">
     <?php } ?>
-      <?php if($_SESSION['BGEmail'] != ""){ ?>
-      <a style="margin-top:15px; padding:15px; width:100%; font-size:130%; font-weight:bold;" id="#SkipChanges" class="btn" href="/dashboard.php?check_email=<?php echo $_SESSION['BGEmail']; ?>"><i class="fas fa-user-shield" aria-hidden="true"></i> Proceed to User Dashboard!</a>
-      <?php } ?>
 </form>
 
     <?php 
