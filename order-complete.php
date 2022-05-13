@@ -14,9 +14,13 @@ echo $pieces[0];
 $successMSG = "Your order is now complete & you will receive an email with your order details and dashboard login link.<br>".$pieces[0];
 if(isset($_POST['form_submit'])){
 
-  isset($_POST['orderID']) ? $orderID = $_POST['orderID'] : $errorDisplay .= "<li>Missing Order ID </li>";
+  isset($_POST['cookie']) ? $cookieID = $_POST['cookie'] : $errorDisplay .= "<li>Missing Order ID </li>";
   isset($_POST['gender'])  ? $newGender  = $_POST['gender']  : $errorDisplay .= "<li>Missing User Gender </li>";
   isset($_POST['pgender']) ? $newPGender = $_POST['pgender'] : $errorDisplay .= "<li>Missing Partner Gender </li>";
+
+  $cookieID2 = $_POST['cookie2'];
+  $cookieID3 = $_POST['cookie3'];
+
   $genderAcc = "101";
 
   //Check if any errors are present
@@ -32,7 +36,9 @@ if(isset($_POST['form_submit'])){
     $_SESSION['orderPartnerGender'] = $_POST['pgender'];
 
     //Update order in DB
-    $sql2 = "UPDATE `orders` SET `user_sex`='$newGender',`pick_sex`='$newPGender',`genderAcc`='$genderAcc' WHERE `order_id`='$orderID'" ;
+    $sql2 = "UPDATE `orders` SET `user_sex`='$newGender',`pick_sex`='$newPGender',`genderAcc`='$genderAcc' WHERE `cookie_id`='$cookieID'";
+    $sql3 = "UPDATE `orders` SET `user_sex`='$newGender',`pick_sex`='$newPGender',`genderAcc`='$genderAcc' WHERE `cookie_id`='$cookieID2'";
+    $sql4 = "UPDATE `orders` SET `user_sex`='$newGender',`pick_sex`='$newPGender',`genderAcc`='$genderAcc' WHERE `cookie_id`='$cookieID3'";
 
     if ($conn->query($sql2) === TRUE) {
       $showError = 0;
@@ -45,6 +51,12 @@ if(isset($_POST['form_submit'])){
       $showSuccess = 0;
     }
 
+    if ($conn->query($sql3) === TRUE) {
+    } 
+
+    if ($conn->query($sql4) === TRUE) {
+    }
+
   }
 
 }
@@ -55,19 +67,6 @@ if(isset($_POST['form_submit'])){
 <?php $description = "Dashboard"; ?>
 <?php $menu_order="0_0"; ?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
-
-<!-- Hotjar Tracking Code for https://melissa-psychic.com/order-complete.php -->
-<script>
-    (function(h,o,t,j,a,r){
-        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-        h._hjSettings={hjid:2968579,hjsv:6};
-        a=o.getElementsByTagName('head')[0];
-        r=o.createElement('script');r.async=1;
-        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
-        a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
-
 
 <div class="breadcrumbs">
   <div class="container">
@@ -137,7 +136,10 @@ if($succesStatus == 0){
 </ol>
 </div>
 
-<input class="orderID" type="hidden" name="orderID" value="<?php echo $_SESSION['lastorder']; ?>">
+<input class="orderID" type="hidden" name="cookie" value="<?php echo $_SESSION['user_cookie_id']; ?>">
+<input class="orderID" type="hidden" name="cookie2" value="<?php echo $_SESSION['user_cookie_id2']; ?>">
+<input class="orderID" type="hidden" name="cookie3" value="<?php echo $_SESSION['user_cookie_id3']; ?>">
+
 <button style="margin-top:15px; padding:15px; width:100%; font-size:130%; font-weight:bold;" id="SaveChanges" type="submit" name="form_submit" class="btn" value="Save Changes!"><i class="fa fa-square-check"></i> Save Changes!</button>
 <hr class="mb-3">
     <?php } ?>
@@ -148,6 +150,9 @@ if($succesStatus == 0){
     }else{ 
     ?>
 <h3 id="finalnotice"><?php echo $successMSG; ?></h3>
+<?php if($_SESSION['BGEmail'] != ""){ ?>
+      <a style="margin-top:15px; padding:15px; width:100%; font-size:130%; font-weight:bold;" id="#SkipChanges" class="btn" href="/dashboard.php?check_email=<?php echo $_SESSION['BGEmail']; ?>"><i class="fas fa-user-shield" aria-hidden="true"></i> Proceed to User Dashboard!</a>
+      <?php } ?>
 <?php } ?>
 
     
