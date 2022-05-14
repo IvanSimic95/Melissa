@@ -68,6 +68,18 @@ if(isset($_POST['form_submit'])){
 <?php $menu_order="0_0"; ?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
 
+<!-- Hotjar Tracking Code for https://melissa-psychic.com/order-complete.php -->
+<script>
+    (function(h,o,t,j,a,r){
+        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+        h._hjSettings={hjid:2968579,hjsv:6};
+        a=o.getElementsByTagName('head')[0];
+        r=o.createElement('script');r.async=1;
+        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+        a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
 <div class="breadcrumbs">
   <div class="container">
     <a href="/index.php">Melissa</a> > Dashboard
