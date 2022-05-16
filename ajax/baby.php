@@ -38,7 +38,7 @@ $order_priority = $_POST['priority'];
 $pricenow = $_POST['price'];
 
 $bgemail = $_SESSION['BGEmail'];
-
+$order_product_nice = "Future Baby Reading";
 $order_date = date('Y-m-d H:i:s');
 
 $userGender = $_POST['usergender'];
@@ -56,7 +56,7 @@ $returnEncoded = base64_encode($returnURL);
 $redirectPayment = "https://www.buygoods.com/secure/upsell?account_id=6274&product_codename=".$order_product.$order_priority."&redirect=".$returnEncoded;
 
 
-$sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, birthday, order_status, order_date, order_email, order_product, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, fbc, fbp) VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', '$user_birthday', '$oStatus', '$order_date', '$bgemail', '$order_product', '$order_priority', '$pricenow', '', '$userGender', '$userGenderAcc', '$partnerGender', '$uFBC', '$uFBP')";
+$sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, birthday, order_status, order_date, order_email, order_product, order_product_nice, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, fbc, fbp) VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', '$user_birthday', '$oStatus', '$order_date', '$bgemail', '$order_product', '$order_product_nice', '$order_priority', '$pricenow', '', '$userGender', '$userGenderAcc', '$partnerGender', '$uFBC', '$uFBP')";
 
 if(mysqli_query($conn,$sql)){
 $submitStatus = "Success";

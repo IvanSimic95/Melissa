@@ -25,7 +25,7 @@ if(isset($cookie_id)) {
   $orderID = $row['order_id'];
   $first_name = $row['first_name'];
   $product = $row['order_product'];
-
+  $order_product_nice = $row['order_product_nice'];
 
   $_SESSION['fbfireUpsellpixel'] = 1;
   $_SESSION['fborderID'] = $orderID;

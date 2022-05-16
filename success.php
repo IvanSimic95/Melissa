@@ -29,6 +29,7 @@ if(isset($cookie_id)) {
   $affid = $row['affid'];
   $s1 = $row['s1'];
   $s2 = $row['s2'];
+  $order_product_nice = $row['order_product_nice'];
 
   if($affid==1){
     $fireiframe = 1;

@@ -104,7 +104,7 @@ $signature = hash_hmac('sha256', strval($orderID), 'sk_live_Ncow50B9RdRQFeXBsW45
       });
       var conversation = talkSession.getOrCreateConversation("<?php echo $orderID; ?>");
           conversation.setAttributes({
-          subject: "<?php echo "Order #" . $orderID . " | " .$product; ?>",
+          subject: "<?php echo "Order #" . $orderID . " | " .$order_product_nice; ?>",
           custom: { 
           category: "<?php echo $order_product_codename; ?>", 
           status: "Paid"

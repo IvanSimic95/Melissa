@@ -19,6 +19,7 @@ if(isset($cookie_id)) {
   $row = $result->fetch_assoc();
   $orderID = $row['order_id'];
   $first_name = $row['first_name'];
+  $order_product_nice = $row['order_product_nice'];
   $product = $row['order_product'];
   $sql = "UPDATE `orders` SET `order_email`='$order_email', `order_price`='$order_price', `buygoods_order_id`='$order_buygoods', `order_status`='paid' WHERE order_id='$orderID'";
   $result = $conn->query($sql);

@@ -31,6 +31,7 @@ echo "Starting start-orders.php...<br><br>";
 			$orderEmail = $row["order_email"];
 			$emailLink = $base_url ."/dashboard.php?check_email=" .$orderEmail;
 			$message = $processingWelcome;
+			$order_product_nice = $row["order_product_nice"];
 
 			$message = str_replace("%ORDERID%",   $orderId, $message);
 			$message = str_replace("%PRIORITY%",  $orderPriority, $message);
@@ -118,7 +119,7 @@ $logArray[] = $result;
 //Now create new conversation
 $ch2 = curl_init();
 $data2 = [
-"subject" => "Order #".$orderId." | ".$product,
+"subject" => "Order #".$orderId." | ".$order_product_nice,
 "participants" => ["administrator", $orderId],
 "custom" => ["status" => "Paid"]
 ];
