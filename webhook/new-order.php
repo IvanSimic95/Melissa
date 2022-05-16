@@ -32,7 +32,7 @@ formLogNewAgain($logArray);
     $row = $result->fetch_assoc();
     $orderStatus = $row['order_status'];
 
-        if($orderStatus=="pending"){
+        if($orderStatus=="pending" OR $orderStatus=="paid" OR $orderStatus=="processing"){
             $sql = "UPDATE `orders` SET `order_email`='$order_email', `order_price`='$order_price', `buygoods_order_id`='$bgOrderID', `order_status`='paid' WHERE order_id='$orderID'";
             $result = $conn->query($sql);
 
