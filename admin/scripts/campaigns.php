@@ -34,6 +34,7 @@
                                         $fetch3 = $r3->fetch_assoc();
                                         $sum = $fetch3['sum_quantity'];
                                         if($sum > 0){
+                                        $sum = $sum * 0.84;
                                         $sum = round($sum);
                                         }else{
                                         $sum = 0;
