@@ -75,6 +75,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
                         <thead>
                             <tr>
                                 <th>ID</th>
+                                <th>Name</th>
                                 <th>Sales Count</th>
                                 <th>Sales in $</th>
                             
@@ -91,6 +92,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/admin/partials/navbar.php';
                         <tfoot>
                             <tr>
                             <th>ID</th>
+                            <th>Name</th>
                                 <th>Sales Count</th>
                                 <th>Sales in $</th>
                             </tr>

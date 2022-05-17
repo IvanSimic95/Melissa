@@ -41,6 +41,7 @@
 
                                         echo '<tr id="' . $id . '">
                                         <td>' . $id . '</td>
+                                        <td>' . $name . '</td>
                                         <td>' . $countSales. '</td>
                                         <td>' . $sum. '</td>
                                         </tr>
