@@ -1,7 +1,7 @@
 <?php
 
 
-        $sql = "SELECT * FROM orders WHERE order_status = 'shipped' GROUP BY fbAd ORDER BY order_id DESC";
+        $sql = "SELECT * FROM orders WHERE order_status = 'shipped' OR order_status = 'processing' GROUP BY fbAd ORDER BY order_id DESC";
         $result = $conn->query($sql);
                 if ($result->num_rows == 0) {
                          echo "no results";
@@ -9,7 +9,7 @@
                         while ($row = $result->fetch_assoc()) {
                         $id = $row["fbAd"];
                                
-                        if($id == "domain_click" OR $id == "{{ad.id}}" OR $id == "" OR $id == "0"){
+                        if($id == "domain_click" OR $id == "{{ad.id}}" OR $id == "{{ad.id" OR $id == "" OR $id == "0"){
                         }else{
 
                                         //Find campaign name from DB
