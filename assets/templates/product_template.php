@@ -91,7 +91,7 @@
        webkit-playsinline 
        playsinline 
        data-video="/assets/img/videos/v2wht.mp4"
-       loop mute autoplay 
+       loop mute
        id="video3" 
        class="video" style="width:100%;"></video>
       <img id="video3play" src="/assets/img/play.png" style="cursor: pointer;width:80px;height:auto;position:absolute;left: calc(50% - 40px);top: calc(50% - 40px);">
@@ -101,7 +101,7 @@
        webkit-playsinline 
        playsinline 
        data-video="/assets/img/videos/gooddd.mp4"
-       loop mute autoplay 
+       loop mute
        id="video2" 
        class="video" style="width:100%;"></video>
        <img id="video2play" src="/assets/img/play.png" style="cursor: pointer;width:80px;height:auto;position:absolute;left: calc(50% - 40px);top: calc(50% - 40px);">
@@ -111,7 +111,7 @@
        webkit-playsinline 
        playsinline 
        data-video="/assets/img/videos/final.mp4"
-       loop mute autoplay 
+       loop mute
        id="video1" 
        class="video" style="width:100%;"></video>
        <img id="video1play" src="/assets/img/play.png" style="cursor: pointer;width:80px;height:auto;position:absolute;left: calc(50% - 40px);top: calc(50% - 40px);">
