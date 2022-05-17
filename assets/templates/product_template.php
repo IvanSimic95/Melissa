@@ -84,7 +84,7 @@
     <h2><?php echo $t_about_title; ?></h2>
     <?php echo $t_about_content; ?>
     <hr>
-    <h2>VIDEO TESTIMONIALS:</h2>
+    <h2 style="text-align:center">VIDEO TESTIMONIALS:</h2>
     <div class="sides" style="text-align:center;">
       <div class="third" style="position: relative;">
       <video src="/assets/img/videos/v2wht.mp4" 
