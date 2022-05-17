@@ -1,7 +1,7 @@
 <?php
 
 
-        $sql = "SELECT * FROM orders WHERE order_status = 'shipped' GROUP BY fbAdset ORDER BY order_id DESC";
+        $sql = "SELECT * FROM orders WHERE order_status = 'shipped' GROUP BY fbAd ORDER BY order_id DESC";
         $result = $conn->query($sql);
                 if ($result->num_rows == 0) {
                          echo "no results";

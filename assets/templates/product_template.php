@@ -83,6 +83,18 @@
   <div class="product_text">
     <h2><?php echo $t_about_title; ?></h2>
     <?php echo $t_about_content; ?>
+    <hr>
+    <div class="sides" style="text-align:center;">
+      <div class="third">
+      1
+      </div>
+      <div class="third">
+      2
+      </div>
+      <div class="third">
+      3
+      </div>
+    </div>
   </div>
  </div>
 </div>
@@ -90,6 +102,7 @@
   <div class="container">
     <h2><?php echo $t_about_title; ?></h2>
     <?php echo $t_about_content; ?>
+    
   </div>
 </div> -->
 <section class="reviews">
