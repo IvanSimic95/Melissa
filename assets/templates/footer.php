@@ -125,6 +125,57 @@ src="https://www.facebook.com/tr?id=<?php echo $FBPixel; ?>&ev=PageView&noscript
       <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
       <script src="/assets/js/scripts.js"></script>
 	    <script src="/assets/js/lazyload.js"></script>
+      <script src="/assets/js/jquery.popVideo.js"></script>
+      <script>
+  $('#video1').click(function () {
+  $('#video1').popVideo({
+    pauseOnClose: true,
+    title: 'Video Testimonial',
+    playOnOpen: true,
+  }).open()
+});
+
+$('#video1play').click(function () {
+  $('#video1').popVideo({
+    pauseOnClose: true,
+    title: 'Video Testimonial',
+    playOnOpen: true,
+  }).open()
+});
+
+$('#video2').click(function () {
+  $('#video2').popVideo({
+    pauseOnClose: true,
+    title: 'Video Testimonial',
+    playOnOpen: true,
+  }).open()
+});
+
+$('#video2play').click(function () {
+  $('#video2').popVideo({
+    pauseOnClose: true,
+    title: 'Video Testimonial',
+    playOnOpen: true,
+  }).open()
+});
+
+$('#video3').click(function () {
+  $('#video3').popVideo({
+    pauseOnClose: true,
+    title: 'Video Testimonial',
+    playOnOpen: true,
+  }).open()
+});
+
+$('#video3play').click(function () {
+  $('#video3').popVideo({
+    pauseOnClose: true,
+    title: 'Video Testimonial',
+    playOnOpen: true,
+  }).open()
+});
+
+</script>
     </footer>
   </body>
 </html>

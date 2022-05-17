@@ -85,14 +85,35 @@
     <?php echo $t_about_content; ?>
     <hr>
     <div class="sides" style="text-align:center;">
-      <div class="third">
-      1
+      <div class="third" style="position: relative;">
+      <video src="/assets/img/videos/v2wht.mp4" 
+       webkit-playsinline 
+       playsinline 
+       data-video="/assets/img/videos/v2wht.mp4"
+       loop autoplay 
+       id="video3" 
+       class="video" style="width:100%;"></video>
+      <img id="video3play" src="/assets/img/play.png" style="cursor: pointer;width:80px;height:auto;position:absolute;left: calc(50% - 40px);top: calc(50% - 40px);">
       </div>
-      <div class="third">
-      2
+      <div class="third" style="position: relative;">
+      <video src="/assets/img/videos/gooddd.mp4" 
+       webkit-playsinline 
+       playsinline 
+       data-video="/assets/img/videos/gooddd.mp4"
+       loop autoplay 
+       id="video2" 
+       class="video" style="width:100%;"></video>
+       <img id="video2play" src="/assets/img/play.png" style="cursor: pointer;width:80px;height:auto;position:absolute;left: calc(50% - 40px);top: calc(50% - 40px);">
       </div>
-      <div class="third">
-      3
+      <div class="third" style="position: relative;">
+      <video src="/assets/img/videos/final.mp4" 
+       webkit-playsinline 
+       playsinline 
+       data-video="/assets/img/videos/final.mp4"
+       loop autoplay 
+       id="video1" 
+       class="video" style="width:100%;"></video>
+       <img id="video1play" src="/assets/img/play.png" style="cursor: pointer;width:80px;height:auto;position:absolute;left: calc(50% - 40px);top: calc(50% - 40px);">
       </div>
     </div>
   </div>
