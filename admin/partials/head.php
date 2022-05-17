@@ -19,6 +19,8 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/admin/config/database.php';
         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
 	    <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap4.min.js"></script>
+        <link href="/admin/assets/datepicker.css" rel="stylesheet">
+
     </head>
     <script>
     (function(t,a,l,k,j,s){

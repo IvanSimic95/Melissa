@@ -33,6 +33,11 @@
                                 Orders
                             </a>
 
+                            <a class="nav-link" href="facebook.php">
+                                <div class="sb-nav-link-icon"><i class="fas fa-user-edit"></i></div>
+                                Facebook Ads
+                            </a>
+
 
                             <a class="nav-link" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="true" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-envelope"></i></div>
@@ -46,7 +51,7 @@
                                 </nav>
                             </div>
 
-
+                           
                             <a class="nav-link" href="reviews.php">
                                 <div class="sb-nav-link-icon"><i class="fas fa-user-edit"></i></div>
                                 Reviews
