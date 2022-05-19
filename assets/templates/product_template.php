@@ -87,34 +87,13 @@
     <h2 style="text-align:center">VIDEO TESTIMONIALS:</h2>
     <div class="sides" style="text-align:center;">
       <div class="third" style="position: relative;">
-      <video src="/assets/img/videos/v2wht.mp4" 
-       webkit-playsinline 
-       playsinline 
-       data-video="/assets/img/videos/v2wht.mp4"
-       loop mute
-       id="video3" 
-       class="video" style="width:100%;"></video>
-      <img id="video3play" src="/assets/img/play.png" style="cursor: pointer;width:80px;height:auto;position:absolute;left: calc(50% - 40px);top: calc(50% - 40px);">
+      <img id="video3" src="/assets/img/thumb1.png" data-video="/assets/img/videos/v2wht.mp4"> 
       </div>
       <div class="third" style="position: relative;">
-      <video src="/assets/img/videos/gooddd.mp4" 
-       webkit-playsinline 
-       playsinline 
-       data-video="/assets/img/videos/gooddd.mp4"
-       loop mute
-       id="video2" 
-       class="video" style="width:100%;"></video>
-       <img id="video2play" src="/assets/img/play.png" style="cursor: pointer;width:80px;height:auto;position:absolute;left: calc(50% - 40px);top: calc(50% - 40px);">
+      <img id="video2" src="/assets/img/thumb2.png" data-video="/assets/img/videos/gooddd.mp4">
       </div>
       <div class="third" style="position: relative;">
-      <video src="/assets/img/videos/final.mp4" 
-       webkit-playsinline 
-       playsinline 
-       data-video="/assets/img/videos/final.mp4"
-       loop mute
-       id="video1" 
-       class="video" style="width:100%;"></video>
-       <img id="video1play" src="/assets/img/play.png" style="cursor: pointer;width:80px;height:auto;position:absolute;left: calc(50% - 40px);top: calc(50% - 40px);">
+      <img id="video1" src="/assets/img/thumb3.png" data-video="/assets/img/videos/final.mp4">
       </div>
     </div>
   </div>
