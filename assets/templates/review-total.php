@@ -33,9 +33,12 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 	
 	$avgrate = $countfive*"5" + $countfour*"4" + $countthree*"3" + $counttwo*"2" + $countone*"1";
 	$avgratet = $countfive + $countfour + $countthree + $counttwo + $countone;
+    if($avgrate > 0 && $avgratet > 0){
 	$avgratefinal = $avgrate / $avgratet;
 	$avg = round($avgratefinal, "2");
-
+}else{
+    $avg = 0;
+}
 
 
 $avgsplit = explode(".", $avg);//Try splitting average rating number from its decimals

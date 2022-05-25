@@ -99,7 +99,7 @@ if(!isset($product)){
 
 <?php } ?>
 
-<?php if($product == "baby"){ ?>
+<?php if($product == "baby" OR $product == "pastlife" OR $product == "higherself" OR $product == "animal"){ ?>
   <div class="general_section">
   <div class="container" >
   <div class="white-wrapper col-md-8 offset-md-4"style="min-height:300px;padding:20px 30px 20px 30px;"> <h1>Thank you for your order!</h1>

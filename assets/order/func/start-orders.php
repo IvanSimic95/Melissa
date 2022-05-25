@@ -70,6 +70,13 @@ echo "Starting start-orders.php...<br><br>";
 			  case "twinflame":
 					  $product = "Twin Flame Drawing";
 					  break;
+				case "spiritguide":
+					$product = "Spirit Guide Drawing";
+					break;
+				case "higherself":
+					$product = "Higher Self Drawing";
+					break;
+
 			  }
 
 
