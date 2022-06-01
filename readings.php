@@ -309,6 +309,16 @@ text-align:center;
                $("#error").fadeIn();
                }
 
+             },
+             error:function(data){
+               var SubmitStatus = data[0];
+               if (SubmitStatus == "Success"){
+              var DataMSG = data[1];
+               var Redirect = data[2];
+               $("#purchasedupsell").fadeIn();
+               alert(SubmitStatus);
+               alert(DataMSG);
+
              }
          });
      });  
