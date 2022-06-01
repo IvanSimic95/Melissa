@@ -21,6 +21,7 @@ $lastOrderID = $_SESSION['lastorder'];
 $sql = "SELECT * FROM `orders` WHERE `order_id` = '$lastOrderID' ORDER BY `order_id` DESC LIMIT 1";
 $result = $conn->query($sql);
 $count = $result->num_rows;
+$row = $result->fetch_assoc();
 
 //If order is found input data from BG and update status to paid
 if($result->num_rows != 0) {
