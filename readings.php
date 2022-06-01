@@ -320,6 +320,7 @@ text-align:center;
                alert(DataMSG);
 
              }
+            }
          });
      });  
      return false;
