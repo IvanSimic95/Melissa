@@ -304,6 +304,7 @@ text-align:center;
                }, 2000);
                }else{
               var DataMSG = data[1];
+              alert(DataMSG);
                $("#error").html(DataMSG);
                $("#error").fadeIn();
                }
