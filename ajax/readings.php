@@ -67,7 +67,7 @@ $order_priority = "24";
 
 $order_date = date('Y-m-d H:i:s');
 
-$bgemail = $_POST['email'];
+$bgemail = $_POST['bgemail'];
 
 $userGender = $_POST['usergender'];
 $partnerGender = $_POST['partnergender'];
