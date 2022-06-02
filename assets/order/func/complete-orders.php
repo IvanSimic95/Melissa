@@ -47,7 +47,7 @@ echo "Starting complete-orders.php...<br><br>";
 			$hours = iterator_count($periods);
 			
 			$trigger = 0;
-			$trigger = 1;
+			#$trigger = 1;
 			$image_send = 0;
 			$randomDelay = rand(0,3);
 
