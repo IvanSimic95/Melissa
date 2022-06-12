@@ -23,7 +23,7 @@ function send($data, $domain) {
     return $sendData;
 }
     
-
+if(isset($_POST['action_type'])){
 $action = $_POST['action_type'];
 $product_codename = $_POST['product_codename'];
 $customer_emailaddress = $_POST['customer_emailaddress'];
@@ -64,6 +64,8 @@ echo send($data, $domain);
   f($error);
   echo $error;
 }
-
+}else{
+  echo "no action type detected";
+}
 
   ?>
