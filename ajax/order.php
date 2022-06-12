@@ -14,7 +14,9 @@ $request = $_SERVER['REQUEST_METHOD'];
 
 if ($request === 'POST') {
 
-$cookie_id = $_POST['cookie_id'];
+  $cookie_id = $_POST['cookie_id'];
+  $cookie_id2 = $_POST['cookie_id2'];
+  $cookie_id3 = $_POST['cookie_id3'];
 
 $user_birthday = $_POST['form_day']."-".$_POST['form_month']."-".$_POST['form_year'];
 $birthday = new DateTime($user_birthday);
@@ -115,9 +117,11 @@ $sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_nam
 
 if(mysqli_query($conn,$sql)){
 $lastRowInsert = mysqli_insert_id($conn);
+$subidfull5 = $lastRowInsert."|".$domain."|".$cookie_id."|".$cookie_id2."|".$cookie_id3;
+$subid5 = base64_encode($subidfull5);
 $submitStatus = "Success";
 $SuccessMessage = "Information saved, Redirecting you to Payment Page Now!";
-$redirectPayment = "https://www.buygoods.com/secure/checkout.html?account_id=6274&product_codename=".$order_product.$order_priority."&aff_id=".$affid."&subid=".$subid."&subid2=".$subid2."&subid3=".$uFBC."&subid4=".$uFBP."&subid5=".$lastRowInsert."&redirect=".$returnEncoded;
+$redirectPayment = "https://www.buygoods.com/secure/checkout.html?account_id=6274&product_codename=".$order_product.$order_priority."&aff_id=".$affid."&subid=".$subid."&subid2=".$subid2."&subid3=".$uFBC."&subid4=".$uFBP."&subid5=".$subid5."&redirect=".$returnEncoded;
 $returnData = [$submitStatus,$SuccessMessage,$redirectPayment];
 echo json_encode($returnData);
 } else {

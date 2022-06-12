@@ -10,7 +10,7 @@ function f($array) {
     $dataToLog = $array;
     $data = $dataToLog;
     $data .= PHP_EOL;
-    $pathToFile = $_SERVER['DOCUMENT_ROOT']."/logs/update.log";
+    $pathToFile = $_SERVER['DOCUMENT_ROOT']."/logs/m.log";
     $success = file_put_contents($pathToFile, $data, FILE_APPEND);
     if ($success === TRUE){
       echo "log saved";

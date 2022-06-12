@@ -159,6 +159,8 @@
 	  
   <input class="product" type="hidden" name="product" value="">
   <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['user_cookie_id']; ?>">
+  <input class="cookie" type="hidden" name="cookie_id2" value="<?php echo $_SESSION['user_cookie_id2']; ?>">
+  <input class="cookie" type="hidden" name="cookie_id3" value="<?php echo $_SESSION['user_cookie_id3']; ?>">
   
   <input class="fbp" type="hidden" name="fbp" value="<?php echo $UserFBP; ?>">
   <input class="fbc" type="hidden" name="fbc" value="<?php echo $UserFBC; ?>">
