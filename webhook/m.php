@@ -36,7 +36,7 @@ isset($_POST['action_type']) ? $action = $_POST['action_type'] : $action = "NONE
 
 isset($_POST['subid3']) ? $subid3 = $_POST['subid3'] : $subid3 = "";
 isset($_POST['subid4']) ? $subid4 = $_POST['subid4'] : $subid4 = "";
-isset($_POST['subid5']) ? $subid5 = base64_decode($_POST['subid5']) : $subid5 = "";
+isset($_POST['subid5']) ? $subid5 = $_POST['subid5'] : $subid5 = "";
 
 
 if (str_contains($subid5, '|')) { 
