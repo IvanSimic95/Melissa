@@ -57,7 +57,7 @@ if($error == ""){
 $data = $action."|".$product_codename."|".$customer_emailaddress."|".$customer_phone."|".$price."|".$bgOrderID."|".$subid3."|".$subid4."|".$subid5;
 $data = base64_encode($data);
 echo $data."<br><hr><br>";
-send($data, $domain);
+echo send($data, $domain);
 
 
 
