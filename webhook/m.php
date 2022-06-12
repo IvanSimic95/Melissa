@@ -56,7 +56,9 @@ if (str_contains($subid5, '|')) {
 if($error == ""){
 $data = $action."|".$product_codename."|".$customer_emailaddress."|".$customer_phone."|".$price."|".$bgOrderID."|".$subid3."|".$subid4."|".$subid5;
 $data = base64_encode($data);
-echo send($data, $domain);
+echo $data."<br><hr><br>";
+send($data, $domain);
+
 
 
 //Error Handling for action type and empty error variable
