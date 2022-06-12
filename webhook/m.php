@@ -38,9 +38,9 @@ isset($_POST['subid3']) ? $subid3 = $_POST['subid3'] : $subid3 = "";
 isset($_POST['subid4']) ? $subid4 = $_POST['subid4'] : $subid4 = "";
 isset($_POST['subid5']) ? $subid5 = $_POST['subid5'] : $subid5 = "";
 
-
-if (str_contains($subid5, '|')) { 
-  $clean = explode("|", $subid5);
+$subid5Decoded = base64_decode($subid5);
+if (str_contains($subid5Decoded, '|')) { 
+  $clean = explode("|", $subid5Decoded);
   $orderID  = $clean[0];
   $domain   = $clean[1];
   $c1       = $clean[2];
