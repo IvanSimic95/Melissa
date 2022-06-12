@@ -60,7 +60,7 @@ $return = send($data, $domain);
 echo $return;
 
 $success = $domain." - ".$return;
-f($return);
+f($success);
 
 
 
