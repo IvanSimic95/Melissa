@@ -19,7 +19,7 @@ function f($array) {
 
 //Send data function
 function send($data, $domain) {
-    $sendData = file_get_contents('https://'.$domain.'/update.php?data='.$data);
+    $sendData = file_get_contents('https://'.$domain.'/webhook/update.php?data='.$data);
     return $sendData;
 }
     
