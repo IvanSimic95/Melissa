@@ -55,6 +55,7 @@ if (str_contains($subid5, '|')) {
 
 if($error == ""){
 $data = $action."|".$product_codename."|".$customer_emailaddress."|".$customer_phone."|".$price."|".$bgOrderID."|".$subid3."|".$subid4."|".$subid5;
+$data = base64_encode($data);
 echo send($data, $domain);
 
 
