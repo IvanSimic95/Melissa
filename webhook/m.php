@@ -38,6 +38,9 @@ isset($_POST['subid3']) ? $subid3 = $_POST['subid3'] : $subid3 = "";
 isset($_POST['subid4']) ? $subid4 = $_POST['subid4'] : $subid4 = "";
 isset($_POST['subid5']) ? $subid5 = $_POST['subid5'] : $subid5 = "";
 
+$ip = $_POST['ipaddress'];
+$agent = $_POST['browser_user_agent'];
+
 $subid5Decoded = base64_decode($subid5);
 if (str_contains($subid5Decoded, '|')) { 
   $clean = explode("|", $subid5Decoded);
@@ -47,7 +50,7 @@ if (str_contains($subid5Decoded, '|')) {
   $c2       = $clean[3];
   $c3       = $clean[4];
 }else{
-  $error = "ERROR WITH SUBID5: ".$action. " | " .$product_codename. " | " .$customer_emailaddress. " | " .$customer_phone. " | " .$subid3. " | " .$subid4. " | " .$subid5;
+  $error = "ERROR WITH SUBID5: ".$action. " | " .$product_codename. " | " .$customer_emailaddress. " | " .$customer_phone. " | " .$subid3. " | " .$subid4. " | " .$subid5. " | " .$ip. " | " .$agent;
   f($error);
   echo $error;
 }

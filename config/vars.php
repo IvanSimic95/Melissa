@@ -10,6 +10,12 @@ $FBPurchasePixel = "";
 $FBViewContent = "";
 $productMETA = "";
 
+//Data for FB Conversions API
+$accessToken1 = "EAANkZAE7NSrEBACZCxPRaBYWxtoq9F47YiSMGxyMlWyYgybN7OfiFABNnhopAxC8oOtusaMPwUT4TtIo8oR";
+$accessToken2 = "8ZB8MNlmxy8b8Cu8Hyk6qLXtNShjfyH50k2ictZCjai4JzCocfImZAe8DjaF0m1kA74mxdANZB3ZBFeoxZAFDvP52ZCFgZC98d6S1qO";
+$fbAccessToken = $accessToken1.$accessToken2;
+$sendFBAPI = 0; #Set to 1 to send data via api
+
 if(!isset($_SESSION['PixelDATA'])){
 $_SESSION['PixelDATA'] = 0;
 }

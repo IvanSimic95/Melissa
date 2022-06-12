@@ -1,6 +1,6 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
-date_default_timezone_set('Europe/Bucharest');
+date_default_timezone_set('UTC');
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
@@ -30,6 +30,8 @@ $bgOrderID              = $d[5];
 $subid3                 = $d[6];
 $subid4                 = $d[7];
 $subid5                 = base64_decode($d[8]);
+$ip                     = $d[9];
+$agent                  = $d[9];
 
 if (str_contains($subid5, '|')) { 
   $clean = explode("|", $subid5);
@@ -73,9 +75,12 @@ if($action == "neworder" && $error == ""){
       $row = $result->fetch_assoc();
       $ForderID = $row['order_id'];
       $Ffirst_name = $row['first_name'];
+      $Flast_name = $row['last_name'];
       $Fproduct = $row['order_product'];
+      $Fsex = $row['user_sex'];
       $FgenderAcc = $row['genderAcc'];
       $Faffid = $row['affid'];
+      $Fbirthday = $row['birthday'];
       $Fs1 = $row['s1'];
       $Fs2 = $row['s2'];
       $Forder_product_nice = $row['order_product_nice'];
@@ -92,6 +97,61 @@ if($action == "neworder" && $error == ""){
       f($success);
       echo $success;
     }
+
+    //Facebook API conversion
+    if($sendFBAPI == 1){
+    $cleanPhone = preg_replace('/[^0-9]/', '', $customer_phone);
+    $fbc = $subid3;
+    $fbp = $subid4;
+    $fixedBirthday = date("Ymd", strtotime($birthday));
+    $data = array( // main object
+        "data" => array( // data array
+            array(
+                "event_name" => "Purchase",
+                "event_time" => time(),
+                "event_id" => $ForderID,
+                "user_data" => array(
+                    "client_ip_address" => $ip,
+                    "client_user_agent" => $agent,
+                    "fn" => hash('sha256', $Ffirst_name),
+                    "ln" => hash('sha256', $Flast_name),
+                    "em" => hash('sha256', $customer_emailaddress),
+                    "ph" => hash('sha256', $cleanPhone),
+                    "db" => hash('sha256', $fixedBirthday),
+                    "ge" => hash('sha256', $Fsex),
+                    "fbc" => $fbc,
+                    "fbp" => $fbp,
+                    "external_id" => hash('sha256', $ForderID),
+                ),
+                "contents" => array(
+                    "id" => $Fproduct,
+                    "quantity" => 1
+                ),
+                "custom_data" => array(
+                    "currency" => "USD",
+                    "value"    => $price,
+                ),
+                "action_source" => "website",
+                "event_source_url"  => $domain,
+           ),
+        ),
+           "access_token" => $fbAccessToken
+        );  
+        
+        
+        $dataString = json_encode($data);                                                                                                              
+        $ch = curl_init('https://graph.facebook.com/v11.0/{PIxel ID}/events');                                                                      
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $dataString);                                                                  
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
+            'Content-Type: application/json',                                                                                
+            'Content-Length: ' . strlen($dataString))                                                                       
+        );                                                                                                                                                                       
+        $response = curl_exec($ch);
+    }
+
+
     //Error Handling for not finding order with this Cookie ID
     }else{
       $error = "ORDER WITH THIS COOKIE ID NOT FOUND: ".$action. " | " .$product_codename. " | " .$customer_emailaddress. " | " .$customer_phone. " | " .$subid3. " | " .$subid4. " | " .$orderID. " | " .$domain. " | " .$c1. " | " .$c2. " | " .$c3;
