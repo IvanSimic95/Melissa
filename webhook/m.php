@@ -10,7 +10,7 @@ function f($array) {
     $dataToLog = $array;
     $data = $dataToLog;
     $data .= PHP_EOL;
-    $pathToFile = $_SERVER['DOCUMENT_ROOT']."/logs/t.log";
+    $pathToFile = $_SERVER['DOCUMENT_ROOT']."/logs/update.log";
     $success = file_put_contents($pathToFile, $data, FILE_APPEND);
     if ($success === TRUE){
       echo "log saved";
@@ -56,8 +56,11 @@ if (str_contains($subid5Decoded, '|')) {
 if($error == ""){
 $data = $action."|".$product_codename."|".$customer_emailaddress."|".$customer_phone."|".$price."|".$bgOrderID."|".$subid3."|".$subid4."|".$subid5;
 $data = base64_encode($data);
-echo $data."<br><hr><br>";
-echo send($data, $domain);
+$return = send($data, $domain);
+echo $return;
+
+$success = $domain." - ".$return;
+f($return);
 
 
 
