@@ -58,5 +58,5 @@ EOT;
 
 
 include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/product_template-new.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/product_template-upsells.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php';

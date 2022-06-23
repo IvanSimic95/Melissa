@@ -31,7 +31,7 @@ $subid3                 = $d[6];
 $subid4                 = $d[7];
 $subid5                 = base64_decode($d[8]);
 $ip                     = $d[9];
-$agent                  = $d[9];
+$agent                  = $d[10];
 
 if (str_contains($subid5, '|')) { 
   $clean = explode("|", $subid5);

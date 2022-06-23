@@ -57,7 +57,7 @@ if (str_contains($subid5Decoded, '|')) {
 
 
 if($error == ""){
-$data = $action."|".$product_codename."|".$customer_emailaddress."|".$customer_phone."|".$price."|".$bgOrderID."|".$subid3."|".$subid4."|".$subid5;
+$data = $action."|".$product_codename."|".$customer_emailaddress."|".$customer_phone."|".$price."|".$bgOrderID."|".$subid3."|".$subid4."|".$subid5. " | " .$ip. " | " .$agent;
 $data = base64_encode($data);
 $return = send($data, $domain);
 
@@ -70,7 +70,7 @@ echo $success;
 
 //Error Handling for action type and empty error variable
 }else{
-  $error = "ACTION WASNT NEWORDER OR ERROR VARIABLE WASNT EMPTY: ".$action. " | " .$product_codename. " | " .$customer_emailaddress. " | " .$customer_phone. " | " .$subid3. " | " .$subid4. " | " .$subid5;
+  $error = "ACTION WASNT NEWORDER OR ERROR VARIABLE WASNT EMPTY: ".$action. " | " .$product_codename. " | " .$customer_emailaddress. " | " .$customer_phone. " | " .$subid3. " | " .$subid4. " | " .$subid5. " | " .$ip. " | " .$agent;
   f($error);
   echo $error;
 }
