@@ -74,9 +74,6 @@
     </div> -->
   </div>
 </div>
-<div class="container" style="margin-top:20px;">
-<?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/review-total.php'; ?>
-</div>
 
 <div class="container" style="margin-top:30px;">
  <div class="gradient-border">
