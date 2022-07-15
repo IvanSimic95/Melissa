@@ -71,7 +71,7 @@ src="https://www.facebook.com/tr?id=<?php echo $FBPixel; ?>&ev=PageView&noscript
       Disclaimer: The information contained herein should not be used as a substitute for the advice of appropriately qualified and licensed person. According to the laws in force, I must state that my services are for entertainments purposes only. I have no liability and/or responsibility for any actions and/or decisions any buyer/client chooses to take or make based on his/her consultation. You  acknowledge that I am not a licensed psychologist, lawyer, or health care professional and my services do not replace the care of lawyers, psychologists, or other healthcare professionals. Tarot and numerology are in no way to be construed or substituted as psychological counseling or any other type of therapy or medical advice. I will at all times exercise my best professional efforts, skills, and care.</div>
       <hr>
       <span id=disclaimer-bg></span>
-<script src="https://display.buygoods.com/v1/disclaimer?id=disclaimer-bg&account_id=6274"></script>
+      ClickBank is the retailer of products on this site. CLICKBANK® is a registered trademark of Click Sales, Inc., a Delaware corporation located at 1444 S. Entertainment Ave., Suite 410 Boise, ID 83709, USA and used by permission. ClickBank's role as retailer does not constitute an endorsement, approval or review of these products or any claim, statement or opinion used in promotion of these products.
 <hr>
 <style>
   #disclaimer-bg > div > div{
@@ -80,9 +80,10 @@ src="https://www.facebook.com/tr?id=<?php echo $FBPixel; ?>&ev=PageView&noscript
   </style>
       <div class="sides">
           <div class="quarter">
-            <h3>From Melissa</h3>
+            <h3>Help & Support</h3>
             <div class="paragraph">
-              Wouldn’t Be Great To Permanently Stop Your Problems, Even if You’ve Tried Everything Before?
+            For Product Support, please contact the seller <a target="_blank" href="https://melissa-psychic.com/contact.php">HERE</a>
+            For Order Support, please contact ClickBank <a target="_blank" href="https://melissa-psychic.com/contact.php">HERE</a>
             </div>
           </div>
           <div class="quarter">

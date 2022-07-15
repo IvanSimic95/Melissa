@@ -45,9 +45,9 @@
           <!--<span class="vat"> <strong>VAT included (where applicable)</strong> </span>-->
 
           <?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/order-form.php'; ?>
-          <!-- <div class="disclamer">
-            I will use my Psychic Abilities to draw your <?php echo $t_product_name; ?> within 48 hours with 100% accuracy, All i need is your full name and birth date!
-          </div> -->
+          <div class="disclamer">
+         
+          </div> 
       </div>
 	  </div>
 

@@ -5,13 +5,9 @@ $showError = 0;
 $succesStatus = 0;
 $showSuccess = 1;
 
-$p  = $_SESSION['UserEmail'];
-$pieces = explode("@", $p);
-echo $pieces[0];
 
 
-
-$successMSG = "Your order is now complete & you will receive an email with your order details and dashboard login link.<br>".$pieces[0];
+$successMSG = "Your order is now paid for & you will receive an email with your order details and dashboard login link.<br>";
 if(isset($_POST['form_submit'])){
 
   isset($_POST['cookie']) ? $cookieID = $_POST['cookie'] : $errorDisplay .= "<li>Missing Order ID </li>";
@@ -68,7 +64,7 @@ if(isset($_POST['form_submit'])){
 <?php $menu_order="0_0"; ?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
 
-
+<script src='//cbtb.clickbank.net/?vendor=melissapsy'></script>
 <div class="breadcrumbs">
   <div class="container">
     <a href="/index.php">Melissa</a> > Dashboard
@@ -102,9 +98,14 @@ if(isset($_POST['form_submit'])){
     <?php if($showSuccess==1){ ?>
 <h3 id="finalnotice"><?php echo $successMSG; ?></h3>
 
+
 <hr>
 <?php 
-} 
+} ?>
+
+<h3>Please note that your Purchase Will Be Reflected as "ClickBank or "CLKBANK*COM" </h3>
+<?php
+
 if($succesStatus == 0){
 ?>
 
@@ -151,6 +152,8 @@ if($succesStatus == 0){
     }else{ 
     ?>
 <h3 id="finalnotice"><?php echo $successMSG; ?></h3>
+<h3 id="finalnotice"> Once complete, your order will also be emailed to you!</h3>
+<h4>Please note that your Purchase Will Be Reflected as "ClickBank or "CLKBANK*COM" </h4>
 <?php if($_SESSION['BGEmail'] != ""){ ?>
       <a style="margin-top:15px; padding:15px; width:100%; font-size:130%; font-weight:bold;" id="#SkipChanges" class="btn" href="/dashboard.php?check_email=<?php echo $_SESSION['BGEmail']; ?>"><i class="fas fa-user-shield" aria-hidden="true"></i> Proceed to User Dashboard!</a>
       <?php } ?>
