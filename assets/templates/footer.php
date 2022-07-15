@@ -82,8 +82,8 @@ src="https://www.facebook.com/tr?id=<?php echo $FBPixel; ?>&ev=PageView&noscript
           <div class="quarter">
             <h3>Help & Support</h3>
             <div class="paragraph">
-            For Product Support, please contact the seller <a target="_blank" href="https://melissa-psychic.com/contact.php">HERE</a>
-            For Order Support, please contact ClickBank <a target="_blank" href="https://melissa-psychic.com/contact.php">HERE</a>
+            For Product Support, please contact the seller <a target="_blank" href="https://melissa-psychic.com/contact.php">HERE</a><hr>
+            For Order Support, please contact ClickBank <a target="_blank" href="https://clkbank.com">HERE</a>
             </div>
           </div>
           <div class="quarter">
