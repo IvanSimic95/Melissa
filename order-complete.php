@@ -64,7 +64,7 @@ if(isset($_POST['form_submit'])){
 <?php $menu_order="0_0"; ?>
 <?php include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php'; ?>
 
-<script src='//cbtb.clickbank.net/?vendor=melissapsy'></script>
+
 <div class="breadcrumbs">
   <div class="container">
     <a href="/index.php">Melissa</a> > Dashboard

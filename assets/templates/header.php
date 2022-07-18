@@ -79,13 +79,10 @@ $metatags
 ust_s.appendChild(document.createTextNode('body {opacity: 0}'));document.head.appendChild(ust_s);})();
 setTimeout(function(){ var el = document.getElementById('ust_body_style'); el && el.remove()}, 800);</script>
 
+<script src='//cbtb.clickbank.net/?vendor=melissapsy'></script>
 
 
 
-
-<!-- Pixel Code for https://66analytics.com/demo/ -->
-  <script defer src="https://66analytics.com/demo/pixel/5QbjnE32nSjw5plP"></script>
-<!-- END Pixel Code -->
   </head>
 
   <body id="<?php echo $menu_order; ?>">
