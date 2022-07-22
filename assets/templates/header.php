@@ -91,7 +91,7 @@ setTimeout(function(){ var el = document.getElementById('ust_body_style'); el &&
         <div class="container">
           <div class="sides">
             <div class="left">
-              <a href="mailto:contact@melissa-psychic.com"><i class="fas fa-envelope"></i> contact@melissa-psychic.com</a>
+              
             </div>
             <div class="right">
                 <a href="#"><i class="fab fa-facebook"></i></a>
