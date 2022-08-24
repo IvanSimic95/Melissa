@@ -25,6 +25,7 @@ $interval = $birthday->diff(new DateTime);
 $user_age = $interval->y;
 
 $user_name = $_POST['form_name'];
+$user_email = $_POST['form_email'];
 $order_product = $_POST['product'];
 $order_priority = $_POST['priority'];
 $order_date = date('Y-m-d H:i:s');
@@ -121,7 +122,8 @@ $subidfull5 = $lastRowInsert."|".$domain."|".$cookie_id."|".$cookie_id2."|".$coo
 $subid5 = base64_encode($subidfull5);
 $submitStatus = "Success";
 $SuccessMessage = "Information saved, Redirecting you to Payment Page Now!";
-$redirectPayment = "https://melissapsy.pay.clickbank.net/?cbitems=1";
+$redirectPayment = "https://melissapsy.pay.clickbank.net/?cbitems=1&name=".$user_name."&email=".$user_email."&cookie_ID=".$cookie_id."&order_ID=".$lastRowInsert;
+#$redirectPayment = "https://melissapsy.pay.clickbank.net/order/orderform.html?time=1661350269&vvvv=6163646e71&cbskin=32971&cbtimer=874&cbfid=45991&cbf=X5XRKAHW9C&cbitems=SOULMATEDRAWINGS&emal=test%40test.com&ctry=US&vvar=cbitems%3DSOULMATEDRAWINGS%26cbfid%3D45991%26cbskin%3D32971%26cbtimer%3D874%26email%3Dtest%40test.com%26country%3DUS&oaref=01.3016AE12D133BF44610891FAC578E354570CED7871298747944E25F824CF230897D61519&corid=2d9954cf-67c8-40ed-a8e4-e6222b5bb211
 $returnData = [$submitStatus,$SuccessMessage,$redirectPayment];
 echo json_encode($returnData);
 } else {

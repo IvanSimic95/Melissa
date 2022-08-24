@@ -57,6 +57,10 @@
     <input class="customer_name" type="text" id="fullname" name="form_name" value="" required>
   </div>
   <div class="form_box">
+<label for="form_email">Your Email*</label>
+<input class="customer_email" type="email" id="email" name="form_email" value="" required="">
+</div>
+  <div class="form_box">
     <span>Your Birth Date*</span>
     <div class="sides">
       <div class="third">

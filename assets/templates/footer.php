@@ -73,11 +73,6 @@ src="https://www.facebook.com/tr?id=<?php echo $FBPixel; ?>&ev=PageView&noscript
       <span id=disclaimer-bg></span>
       ClickBank is the retailer of products on this site. CLICKBANK® is a registered trademark of Click Sales, Inc., a Delaware corporation located at 1444 S. Entertainment Ave., Suite 410 Boise, ID 83709, USA and used by permission. ClickBank's role as retailer does not constitute an endorsement, approval or review of these products or any claim, statement or opinion used in promotion of these products.
 <hr>
-<style>
-  #disclaimer-bg > div > div{
-    background:transparent!important;
-  }
-  </style>
       <div class="sides">
           <div class="quarter">
             <h3>Help & Support</h3>
