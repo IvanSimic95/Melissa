@@ -39,6 +39,10 @@ $mOrderID = $obj->vendorVariables->order_ID;
 $cName = $obj->customer->fullname;
 $productImage = "https://soulmate-artist.com/assets/img/14dk.jpg";
 $productFullTitle = $obj->lineItems[0]->productTitle;
+
+error_log("Order ID: $mOrderID");
+error_log("Order ID: $order_email");
+error_log("Order ID: $order_buygoods");
 $logaArray[] = "Order #".$mOrderID;
 $logaArray[] = $order_email;
 $logaArray[] = $productFullTitle;
