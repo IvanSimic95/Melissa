@@ -76,6 +76,23 @@ $_SESSION['orderBirthday'] = $user_birthday;
 $_SESSION['orderGender'] = $userGender;
 $_SESSION['orderPartnerGender'] = $partnerGender;
 
+switch ($order_priority){
+  case "48":
+    $cbproduct = "1";
+    $cbprice = "29.99";
+  break;
+
+  case "24":
+    $cbproduct = "2";
+    $cbprice = "39.99";
+  break;
+
+  case "12":
+    $cbproduct = "3";
+    $cbprice = "49.99";
+  break;
+}
+
 $order_product_nice = "Soulmate Drawing";
 
 $order_product_test = ucwords($order_product);
@@ -114,7 +131,7 @@ case "Twinflame":
                     break;
 }
 
-$sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, birthday, order_status, order_date, order_email, order_product, order_product_nice, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, fbc, fbp, fbCampaign, fbAdset, fbAd, affid, s1, s2) VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', '$user_birthday', '$oStatus', '$order_date', '', '$order_product', '$order_product_nice', '$order_priority', '', '', '$userGender', '$userGenderAcc', '$partnerGender', '$uFBC', '$uFBP', '$fbCampaign', '$fbAdset', '$fbAd', '$newaffid', '$s1', '$s2')";
+$sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, birthday, order_status, order_date, order_email, order_product, order_product_nice, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, fbc, fbp, fbCampaign, fbAdset, fbAd, affid, s1, s2) VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', '$user_birthday', '$oStatus', '$order_date', '', '$order_product', '$order_product_nice', '$order_priority', '$cbprice', '', '$userGender', '$userGenderAcc', '$partnerGender', '$uFBC', '$uFBP', '$fbCampaign', '$fbAdset', '$fbAd', '$newaffid', '$s1', '$s2')";
 
 if(mysqli_query($conn,$sql)){
 $lastRowInsert = mysqli_insert_id($conn);
@@ -122,7 +139,7 @@ $subidfull5 = $lastRowInsert."|".$domain."|".$cookie_id."|".$cookie_id2."|".$coo
 $subid5 = base64_encode($subidfull5);
 $submitStatus = "Success";
 $SuccessMessage = "Information saved, Redirecting you to Payment Page Now!";
-$redirectPayment = "https://melissapsy.pay.clickbank.net/?cbitems=1&name=".$user_name."&email=".$user_email."&cookie_ID=".$cookie_id."&order_ID=".$lastRowInsert;
+$redirectPayment = "https://melissapsy.pay.clickbank.net/?cbitems=".$cbproduct."&name=".$user_name."&email=".$user_email."&cookie_ID=".$cookie_id."&order_ID=".$lastRowInsert;
 #$redirectPayment = "https://melissapsy.pay.clickbank.net/order/orderform.html?time=1661350269&vvvv=6163646e71&cbskin=32971&cbtimer=874&cbfid=45991&cbf=X5XRKAHW9C&cbitems=SOULMATEDRAWINGS&emal=test%40test.com&ctry=US&vvar=cbitems%3DSOULMATEDRAWINGS%26cbfid%3D45991%26cbskin%3D32971%26cbtimer%3D874%26email%3Dtest%40test.com%26country%3DUS&oaref=01.3016AE12D133BF44610891FAC578E354570CED7871298747944E25F824CF230897D61519&corid=2d9954cf-67c8-40ed-a8e4-e6222b5bb211
 $returnData = [$submitStatus,$SuccessMessage,$redirectPayment];
 echo json_encode($returnData);
