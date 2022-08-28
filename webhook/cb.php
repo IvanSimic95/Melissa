@@ -57,7 +57,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
       error_log("Order Updated to Paid");
     } else {
         $logaArray[] = "Error Updating: " . $sql . "<br>" . $conn->error;
-        error_log("Error Updating: " . $sql . "<br>" . $conn->error");
+        error_log("Error Updating: $sql <br> $conn->error");
       //echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
