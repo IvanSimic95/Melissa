@@ -31,32 +31,33 @@ $type = $obj->transactionType;
 if($type == "SALE"){
 
 
-$order_email = $obj->customer->email;
+$order_email = $obj->customer->shipping->email;
 $order_price = $obj->totalOrderAmount;
 $order_buygoods = $obj->receipt;
 $cookie_id = $obj->vendorVariables->cookie_ID;
 $mOrderID = $obj->vendorVariables->order_ID;
-$cName = $obj->customer->fullname;
+$cName = $obj->customer->shipping->fullname;
 $productImage = "https://soulmate-artist.com/assets/img/14dk.jpg";
 $productFullTitle = $obj->lineItems[0]->productTitle;
 
 error_log("Order ID: $mOrderID");
-error_log("Order ID: $order_email");
-error_log("Order ID: $order_buygoods");
+error_log("Order Email: $order_email");
+error_log("CB order ID: $order_buygoods");
 $logaArray[] = "Order #".$mOrderID;
 $logaArray[] = $order_email;
 $logaArray[] = $productFullTitle;
-$logaArray[] = $json;
 if($order_email) {
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
-    $sql = "UPDATE `orders` SET `order_status`='paid',`order_email`='$order_email',`order_price`='$order_price',`buygoods_order_id`='$order_buygoods' WHERE order_id='$mOrderID'" ;
+    $sql = "UPDATE `orders` SET `order_status`='paid',`order_email`='$order_email',`buygoods_order_id`='$order_buygoods' WHERE order_id='$mOrderID'" ;
 
     if ($conn->query($sql) === TRUE) {
       //echo "Order Status updated to Paid succesfully!";
       $logaArray[] = "Order Updated";
+      error_log("Order Updated to Paid");
     } else {
         $logaArray[] = "Error Updating: " . $sql . "<br>" . $conn->error;
+        error_log("Error Updating: " . $sql . "<br>" . $conn->error");
       //echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
@@ -123,8 +124,9 @@ $logaArray[] = $result2;
 
 formLogNewAgain($logaArray);
 
-
+error_log("------------------------------");
 }
 
 }
+
 ?>
