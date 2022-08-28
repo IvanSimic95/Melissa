@@ -28,7 +28,7 @@ $obj = json_decode($decrypted);
 
 $type = $obj->transactionType;
 
-if($type == "SALE"){
+if($type == "SALE" OR $type == "TEST_SALE"){
 
 
 $order_email = $obj->customer->shipping->email;
