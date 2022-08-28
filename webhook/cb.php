@@ -31,12 +31,12 @@ $type = $obj->transactionType;
 if($type == "SALE" OR $type == "TEST_SALE"){
 
 
-$order_email = $obj->customer->shipping->email;
+$order_email = $obj->customer->billing->email;
 $order_price = $obj->totalOrderAmount;
 $order_buygoods = $obj->receipt;
 $cookie_id = $obj->vendorVariables->cookie_ID;
 $mOrderID = $obj->vendorVariables->order_ID;
-$cName = $obj->customer->shipping->fullname;
+$cName = $obj->customer->billing->fullName;
 $productImage = "https://soulmate-artist.com/assets/img/14dk.jpg";
 $productFullTitle = $obj->lineItems[0]->productTitle;
 
