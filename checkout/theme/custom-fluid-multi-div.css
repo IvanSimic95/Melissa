@@ -1,0 +1,178 @@
+/* Styles that are common between all "optional" containers, can be changed in one place */
+div#header-custom-2,
+div#pay-now-footer,
+div#billing-info-footer,
+div#customer-info-header {
+    display: block;
+    min-height: 40px;
+    margin: 5px 0 5px 0;
+
+    content: "";
+
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+body{
+color: #333;
+    background-image: url(img/background.gif);
+}
+
+.bump-box {
+    border: 1px dashed #ea08ec;
+    background-color: #fff!important;
+}
+div#pay-now-footer{
+    background-image: url(img/secure.gif);
+    height: 50px;
+    width: 244px;
+    background-repeat: no-repeat;
+
+
+}
+.copyright {
+    color: #fff;
+}
+
+
+div#customer-info-header{
+    background-image: url(img/social.gif);
+    height: 258px;
+    background-repeat: no-repeat;
+    }
+    
+
+    div#billing-info-footer{
+        background-image: url(img/social2.gif);
+        height: 208px;
+        background-repeat: no-repeat;
+    }
+/* 
+   Since the application is responsive by design, the styling changes at various breakpoints (browser widths).  The
+   following @media queries update the css in each container for the device requesting the orderform.  This improves
+   performance by only having a device request the image sizes it needs, and allows for font sizes to vary according
+   to the screen size.
+*/
+@media screen and (min-width: 1200px) {
+    /* Initial text size for the custom content in the header */
+
+
+#header-custom-2{
+    background-image: url(img/header-max.jpg);
+    height:250px;
+}
+
+}
+  
+
+
+ 
+
+@media screen and (max-width: 1199px) {
+
+
+    #header-custom-2{
+        background-image: url(img/header991.jpg);
+        height:250px;
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+
+    #header-custom-2{
+        background-image: url(img/header768.jpg);
+        height:250px;
+    }
+
+    div#customer-info-header{
+        height: 190px;
+    }
+
+    div#billing-info-footer{
+        height: 150px;
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+
+    #header-custom-2{
+        background-image: url(img/header430.jpg);
+        height:250px;
+    }
+
+    div#customer-info-header{
+        height: 275px;
+    }
+
+    div#billing-info-footer{
+        height: 225px;
+    }
+
+
+}
+
+
+@media screen and (max-width: 467px) {
+
+  
+
+    div#customer-info-header{
+        height: 200px;
+    }
+
+    div#billing-info-footer{
+        height: 190px;
+    }
+
+
+}
+
+@media screen and (max-width: 300px) {
+
+  
+
+    div#customer-info-header{
+        display:none;
+    }
+
+    div#billing-info-footer{
+        display:none;
+    }
+
+
+}
+
+
+
+.digital-only {
+    margin-left: 0 !important;
+}
+input[type="checkbox"]:before {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    margin: 0 .25em 0 0;
+
+    font: 16px/1em sans-serif;
+
+    content: "";
+    vertical-align: top;
+}
+input[type="checkbox"]:checked :before {
+    content: "";
+    text-align: center;
+
+    color: #333;
+    background: blue;
+}
+input[type="checkbox"]:checked :after {
+    font-weight: bold;
+}
+
+/* gdpr */
+#gdpr-wrapper {
+    background-color: #F7F7F7;
+}

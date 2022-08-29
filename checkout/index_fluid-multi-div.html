@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Secure Checkout</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="icon" type="image/x-icon" href="dist/assets/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="dist/layout.css" />
+    <link rel="stylesheet" type="text/css" href="dist/components.css" />
+    <link rel="stylesheet" type="text/css" href="theme/custom-fluid-multi-div.css" />
+    <script type="text/javascript" src="dist/framework.js"></script>
+    <script type="text/javascript" src="dist/app.js"></script>
+    <script type="text/javascript" src="dist/tpl.js"></script>
+</head>
+
+<body>
+    <main id="main"
+          ng-app="Orders"
+          ng-strict-di
+          ng-cloak
+          ng-jq>
+        <order-form></order-form>
+    </main>
+    <script type="text/javascript">
+        // Break frame
+        if (self != top) {
+            var topHostname = 'unknown';
+
+            try {
+                window.top.postMessage({MessageType: 'GET_HOSTNAME'}, "*");
+
+                var eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+                var eventListener = window[eventMethod];
+                var messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
+                eventListener(messageEvent, function (event) {
+                    if (event.data.MessageType === 'TOP_HOSTNAME') {
+                        topHostname = encodeURIComponent(event.data.HostName);
+                    }
+                }, false);
+            } catch (ex) {
+                console.log('Error with postMessage: ' + ex);
+            }
+
+            if (navigator.userAgent.indexOf("MSIE ") === -1 && navigator.userAgent.indexOf('Trident/') === -1 && navigator.userAgent.indexOf('Edge/') === -1) {
+                window.stop();
+            }
+
+            function breakFrame() {
+                top.location.replace(self.location.href + '&iFrameReload=true&pitchPageHost=' + topHostname);
+            }
+
+            setTimeout(breakFrame, 100);
+        }
+
+        window.onload = function() {
+            document.getElementsByTagName("html")[0].setAttribute('lang', 'en');
+            document.getElementsByTagName("html")[0].setAttribute('xml:lang', 'en');
+        };
+
+        (function() {
+            angular
+                    .module('Orders')
+                    .run(['$window', 'OrderFormService$', loadJSON])
+                    .constant('OrderFormMeta', {
+                        ctx: 'http://www.mik.clickbank.local/orders',
+                        vendor: 'testacct',
+                        story: '1F30E674',
+                        nojs: true,
+
+                        
+
+                        lifetimeCommissionEnabled: true,
+
+                        
+                            img: "dist/assets/physical-product.png",
+                        
+
+                        
+                        sessionId: 'F24B4F099114F635ADDF2F4A79967958',
+                        hopId: '',
+                        storyName: 'newOrderForm',
+                        
+
+                        
+                        couponFromPaylink: 'false',
+                        
+
+                        
+                        affiliateMessage: 'none',
+                        
+
+                        languages: [
+                            
+                                { code: 'DE', lang: 'Deutsch' },
+                            
+                                { code: 'EN', lang: 'English' },
+                            
+                                { code: 'ES', lang: 'Español' },
+                            
+                                { code: 'FR', lang: 'Français' },
+                            
+                                { code: 'IT', lang: 'Italiano' },
+                            
+                                { code: 'PT', lang: 'Português' },
+                            
+                        ],
+
+                        currencies: [
+                            
+                                { code: 'ARS', name: 'Argentinean Peso' },
+                            
+                                { code: 'AUD', name: 'Australian Dollar' },
+                            
+                                { code: 'BRL', name: 'Brazilian Real' },
+                            
+                                { code: 'CAD', name: 'Canadian Dollar' },
+                            
+                                { code: 'CHF', name: 'Swiss Franc' },
+                            
+                                { code: 'CLP', name: 'Chilean Peso' },
+                            
+                                { code: 'CNY', name: 'Chinese Yuan' },
+                            
+                                { code: 'COP', name: 'Columbian Peso' },
+                            
+                                { code: 'CZK', name: 'Czech Koruna' },
+                            
+                                { code: 'DKK', name: 'Danish Krone' },
+                            
+                                { code: 'EUR', name: 'Euro' },
+                            
+                                { code: 'GBP', name: 'British Pound' },
+                            
+                                { code: 'HKD', name: 'Hong Kong Dollar' },
+                            
+                                { code: 'HUF', name: 'Hungarian Forint' },
+                            
+                                { code: 'IDR', name: 'Indonesian Rupiah' },
+                            
+                                { code: 'INR', name: 'Indian Rupee' },
+                            
+                                { code: 'JPY', name: 'Japanese Yen' },
+                            
+                                { code: 'KRW', name: 'South Korean Won' },
+                            
+                                { code: 'MXN', name: 'Mexican Peso' },
+                            
+                                { code: 'MYR', name: 'Malaysian Ringgit' },
+                            
+                                { code: 'NOK', name: 'Norwegian Krone' },
+                            
+                                { code: 'NZD', name: 'New Zealand Dollar' },
+                            
+                                { code: 'PHP', name: 'Philippines Peso' },
+                            
+                                { code: 'PLN', name: 'Polish Zloty' },
+                            
+                                { code: 'RUB', name: 'Russian Ruble' },
+                            
+                                { code: 'SEK', name: 'Swedish Krona' },
+                            
+                                { code: 'SGD', name: 'Singapore Dollar' },
+                            
+                                { code: 'THB', name: 'Thai Baht' },
+                            
+                                { code: 'TRY', name: 'Turkish Lira' },
+                            
+                                { code: 'USD', name: 'US Dollar' },
+                            
+                                { code: 'ZAR', name: 'South African Rand' },
+                            
+                        ],
+
+                        selectedCurrency: { code: 'USD', name: 'US Dollar' },
+
+                        
+                        header: '/order/c/testacct/img/',
+                        
+
+                        kaptchaUrl: 'https://tst.kaptcha.com/',
+                        orderFormKaptcha: '',
+                        aostatus: false,
+                        upsell: false,
+                        maxQuantity: '99',
+                        sid: 'ZRCOHT66N66666',
+                        psid: 'F24B4F099114F635ADDF2F4A79967958',
+                        physical: true,
+
+                        isEuropeanUnion: 'false',
+                        country: '--'
+                    });
+
+            function loadJSON($window, OrderFormService$) {
+                
+
+                var jsonString = "{\"order\\\\.shipTo\\\\.zip\":\"80021\",\"couponAttempted\":null,\"order\\\\.shipTo\\\\.country\":\"US\",\"euddAccepted\":true,\"isFreeCart\":false,\"discount\":\"$0.00\",\"order\\\\.shipTo\\\\.county\":\"BROOMFIELD\",\"summaryImageStyle\":\"productImage\",\"enableAddOnSubtotal\":false,\"order\\\\.shipTo\\\\.city\":\"BROOMFIELD\",\"couponFromPaylink\":false,\"preDiscountShipping\":\"$15.99\",\"order\\\\.shipTo\\\\.countryId\":1,\"shipping\":\"$15.99\",\"countyRequired\":true,\"hasCouponError\":false,\"initv\":\"01.54F352890A733F7F4ABA9F4B1ADEF8F4CDBF65057BF154D1D5141B8E222D3459E0BAFD421DECFBB7EDD3F1641EDD888F5A467448C2825251B656AFEDC14CB3BCDB6BFD9D807CD1037BB277C11D514280894CEF8B1BE5DFDBF0EDEC87B554D62817BBB931CFCC8FBD55216280157A45C64E1C1DAD0E0BACD3B148C2899DEB3A6B5A0BA36671EEB0F6D0A64FA3847DDA02887B618D870B35220D21C4240EEE2A3557214EC36850C6E99F4E0D98207FD80F4D02B6D803510DFF75E91D89D091E7F4BB26818C19CEE1B7B4175BA7C852C1A5290171F75022B4EDBB4678AA968A3AB807A9B228A932B0EFE6122012C1DEAB93EBFAAC9982FFEF2BB7012AFADEFB2BE0B304DA55F595CDCEB9E8EAA7C9DCACEAA55C88CEAEEAC31B9EF0B1DEDC9FAACAAF86AF3C1F078B30469973241A52D7EC9091C43AA1F89BFC9AFE65354766DABA2F4739F0FDA0B3FD109BD71F5543D5B763BC3F0DFC01AA84EFF30EA3C99CB40EA7531F128BCB23CF9B70B6B14E43183C04F0C256269EE906EC754CA6700B23BB85996ED889216B9951D5D9E936C8FE2F860A3849C4B5187E8F2E90DF83601B4BE8AF946F335F995F02ABB80A08EAE8717AECB1F9017F8F08ADCC6025A237E0B527D3104A89BEED2C09FB654A73ACBF31BB9D907A5C05C9F3358E26CA1F06E24EDFB6F529C814ECBD2701DDFD0A64C2CF629DAB3501376FFE689EC4A1D43E9492488E5C4637A44F3D42C677A65824AF754FDF08B8F1818B4711BE25AC33709647A1FEB75A272312FE152AA3AB869B9406785EAF3FB4866F2D5D9ED2B0E5D62932A6AB40CAF1F8E55212EB1D2C2EC3A8D74764F0BED17C17B0F61956E0B23FC3A6854B22C308668792096545C6F85B0516F99DDD33944F866C4F493933659B1C3795485A006A95A7A5EDFB4193689D6B325D20C63937C970EEC4CF8A218198684FC7A7150D2A52DC5821E1D51324FEB9051FAA20D4EA3D04629303A572E8E1D953EF2AB7157B9D7F20D650C8691DA3BA2934ECF050D5BEB4318F099D9AB50B4A2C38942433930EDA2FF2529082C576DE99CFB19DA0389EF29179FE776A4E78D06E1A1C36456AD18AA213C9D75A4D8470CA6295BFED0D6C503693CF55B2B72D52E93DD9337F002C84C070C251536920A02F05C6535246433A4E081CDF537D71392BCBFEDD27369B6455C24679E1026D1D9EA928C99576388C7A98AEAFAC5600BDD05F5BA3C02A75EC640D281BBDD046779E88146CC618F001F60E4BDC7F24B727496316810D0AD683D77EB42973510B60321E87C2E89BF0548807DB9AA67CC28D67F6457B92DF8EE469F7839D0DEE6EB78B4E7DAB3E0ACCC1AF38A44105A42ECD7997513F9E0DCC475F96A018A025294CBEFC620A7DF11B694E144F056F08E510843CCB3A8AAC4E8012CD11BED5FFB9A41947F4B92F113C8F5E429EDB6AE291F03FB6DE9D300D64E269DA6BC721B5C9DF5904BC458A2E88D7485A22244E28259BC8C770D065E5E5CDFB3276623D58C1A37C8A9F92D6744235CB138E4C8EB138368A6DDCBEFA6D4759D225BBEA50885419D878F92AA9A595AE2BAD90904E5F7D72BE1928A0F35E368F7BA8DCC6F3823F601177478DD61752F1FBBD00CD265E0E0D5C7F360652C8EB94B25500C34F774CB115D302F5F7236808784396DD1ADD377E29D4A0AF0E0B4A1AE075E6D42C4265FDEB7599FE69FF079B3AE259D0B79076F71C7587B1AC2D0A9F2A591A06CD255426F1FDC9BABE4544D25F4D901C669F3672D45C2C4C8DF10AD3EACE8317A5488E40315B62BA4DB69A052A29CF8507E4031F29A1140A8886C8A8B0BBEE22DACF6A560BD2314639EC61876BC8DB8B085876E748103624479C4D5F502B64415ABCFE3617A630288B8C00A17CA08022508D987E13B0F3DDCC3EC6D8BA38E968B9D97A442EFC26598D1554A629062C2D6E61748CE45D1D051B139B5B9FB83143EB005CB1AEF3AE4B7181DE8E29729711AC735397BC1C4DA8728272ED8FEE41798742B7B6A971BA622F23B01D9C717282D8CEDFFA30E54D51635EB2294108FF23F30A1CF7B7CCEFF6497D7AAAC05D1F4A127728DE4B38092946405AD9CADEBA66269274C8F37EBF3027F3CF3705F19C7A5935D0DE400DF8363AC0E76D007EAED4222116C2F0F71EE59CE19F422FC0A49159C5DEA877AC3A5C487CED6D2D60895A1CA7986A53C191B9073AB285CA39257FD361BFA1A4FD66A0987EAF3E24675944EC658F9CEFA82DD9F20615E655DF75D88BCDD9CF9A4C9EBCA72BFF32EBDF48B25A9605F5B313719C5D02C154376A4C593AEC5025DFF8DF6CB0DB413735EC5EB85130F22565676059AC98352E252C46EA243679488921D9468360069B659D4D40FBE6E3750E151FB0C40722973828CEC718BD12D64ADF59B96DEBD9C6784FC46AD1505BA59306FE10B6F0F29D5B42E0CA58DAEA14BBC459DE28CB56A0BCC559731AEE8EF7D7AE141E0785B907AF84A0189BA065A19A5AC1972B0E8012E5E56F1EA413E717F75A85D11F837306D42DA54C32C62297EA48DE6B7AF90A31A83D2176B41D3EEFBD671FF128281D6055B20FC0F2F9B4B52FFDACFD1A749FB0E1CC20C2836D7BB74F5E71ED221BA47619850FC3BE9C6D8EA8C87521AA2B3214524EE2F3EFCF731C96495803B7\",\"order\\\\.shipTo\\\\.state\":\"CO\",\"avail_brands\":[\"visa\",\"mastercard\",\"diners\",\"amex\",\"discover\",\"jcb\"],\"cityRequired\":true,\"enableEmailDomainValidation\":true,\"cities\":[\"ARVADA\",\"BROOMFIELD\",\"UNINCORPORATED\",\"WESTMINSTER\"],\"order\\\\.shipTo\\\\.fullName\":\"\",\"recurring\":true,\"digitalRecurring\":true,\"order\\\\.shipTo\\\\.address2\":null,\"firstRequest\":true,\"currencyList\":{},\"order\\\\.shipTo\\\\.address1\":null,\"physicalRecurring\":false,\"tax\":\"$6.19\",\"countries\":[{\"sortPriority\":1,\"translatedAlias\":\"United States\",\"code\":\"US\",\"alias\":\"United States\",\"id\":1,\"translationLocale\":\"en\"},{\"sortPriority\":50,\"translatedAlias\":\"APO/FPO\",\"code\":\"US\",\"alias\":\"APO/FPO\",\"id\":248,\"translationLocale\":\"en\"},{\"sortPriority\":50,\"translatedAlias\":\"United States\",\"code\":\"US\",\"alias\":\"United States\",\"id\":256,\"translationLocale\":\"en\"}],\"wamBaseUrl\":\"www.mik.clickbank.local\",\"phoneNumberRequired\":false,\"couponDiscount\":\"$0.00\",\"showSolo\":false,\"tax_type\":\"tax\",\"hasTax\":true,\"couponEnabled\":true,\"subtotal\":\"$59.99\",\"billToNamePath\":\"billTo.fullName\",\"paymentMethod\":\"CARD\",\"isTestPurchaseOnly\":false,\"counties\":[\"BROOMFIELD\",\"JEFFERSON\"],\"items\":[{\"futurePaymentsTitle\":\"Future Payments\",\"orig_productPrice\":\"\",\"productid\":1182198,\"maxQuantity\":null,\"discount\":\"$0.00\",\"futureRebillDate\":\"* Next payment will be billed on Feb 18, 2018.\",\"billedFrequency\":\"\",\"remove\":false,\"productImagePath\":\"theme/img/physical-product.png\",\"preDiscountShipping\":\"$15.99\",\"rebillTax\":\"$0.81\",\"shipping\":\"$15.99\",\"negatedCouponDiscount\":\"$0.00\",\"product_is_free\":false,\"sku\":\"78\",\"orderItemTitle\":\"Hybrid recurring shippable with digital subscription\",\"isShippable\":true,\"futureTermsDescription\":\"The amount billed includes taxes and shipping and handling. Total amount subject to change based on customer location and rate adjustments.\",\"quantity\":1,\"isDigital\":true,\"rebillPayments\":998,\"orderItemType\":\"CART\",\"recurring\":true,\"tax\":\"$6.19\",\"futurePayments\":\"Monthly Payment of $9.99 *\",\"initialOffsetValue\":31,\"couponDiscount\":\"$0.00\",\"itemTotal\":\"$82.17\",\"preDiscountAmount\":\"$59.99\",\"rebillTotal\":\"$10.80\",\"rebillFrequency\":\"MONTHLY\",\"couponEnabled\":true,\"subtotal\":\"$75.98\",\"estimatedShipDate\":null,\"maxPayments\":999,\"orderItemDescription\":\"This is some fluffy text explaining what this product is. It is truly a wonderful product you and your family will enjoy for years.\",\"productPrice\":\"$59.99\",\"rebill\":\"$9.99\",\"delayedDelivery\":false,\"freeStandardShippable\":false}],\"isProAccount\":false,\"errors\":[],\"couponApplied\":false,\"activeCouponCode\":null,\"editItems\":false,\"orderSize\":1,\"formTitle\":\"Secure Checkout\",\"paypalAdaptiveAccepted\":false,\"locale\":\"EN\",\"states\":[\"CO\"],\"physicalUpsell\":false,\"total\":\"$82.17\",\"reload\":false,\"flexibleRefundEnabled\":false,\"baseOrderSize\":1,\"bumpItems\":[{\"obrt.future\":null,\"obrt.description\":null,\"ob.recurring\":false,\"ob.text\":\"Yes! I&#39;d like to add <span class='cb_bump_product'>Generic Physical Product<\/span> to my order for <span id='ob_product_1181417_price'>$50.00<\/span>.\",\"ob.cPrice\":\"$50.00\",\"ob.price\":\"$50.00\",\"obrt.acceptance\":null,\"obp.itemNo\":\"14\",\"obp.id\":1181417,\"ob.cSubsequentPrice\":\"$0.00\",\"ob.isShippable\":true,\"nextRebillDate\":null,\"obrt.billedOn\":null,\"ob.delayedDeliveryText\":null,\"ob.initialPrice\":\"$50.00\",\"ob.subsequentPrice\":\"$0.00\",\"obrt.terms\":null,\"ob.delayedDelivery\":false,\"ob.isDigital\":true,\"selected\":false,\"ob.p.id\":1181417,\"ob.id\":528,\"ob.cInitialPrice\":\"$50.00\"},{\"obrt.future\":\"Future Payment\",\"obrt.description\":\"1 Payment of <span id='ob_product_756388_rebillTotal'><span id='ob_product_756388_rebill'>$45.99<\/span><\/span> *\",\"ob.recurring\":true,\"ob.text\":\"Yes! I&#39;d like to add <span class='cb_bump_product'>$0 Shippable<\/span> to my order for <span id='ob_product_756388_price'>$0.00<\/span>.\",\"ob.cPrice\":\"$0.00\",\"ob.price\":\"$0.00\",\"obrt.acceptance\":\"By accepting this offer, I agree to the payment terms as stated above.\",\"obp.itemNo\":\"51\",\"obp.id\":756388,\"ob.cSubsequentPrice\":\"$45.99\",\"ob.isShippable\":true,\"nextRebillDate\":1518979917224,\"obrt.billedOn\":\"* Payment will be billed on Feb 18, 2018.\",\"ob.delayedDeliveryText\":null,\"ob.initialPrice\":\"$0.00\",\"ob.subsequentPrice\":\"$45.99\",\"obrt.terms\":\"Amount includes taxes subject to change based on customer location and rate adjustments.\",\"ob.delayedDelivery\":false,\"ob.isDigital\":true,\"selected\":false,\"ob.p.id\":756388,\"ob.id\":529,\"ob.cInitialPrice\":\"$0.00\"}],\"negatedCouponDiscount\":\"$0.00\",\"card_brand\":null,\"currency\":\"USD\",\"correlationId\":\"96e065d8-2c12-484f-a5bb-ee60afccecfb\",\"physical\":true,\"cartOrder\":false,\"disableRemove\":true,\"digital\":true,\"product\":{\"digital\":true,\"imageId\":70474,\"shippable\":true,\"productId\":1182198,\"digitalRecurring\":true,\"description\":\"This is some fluffy text explaining what this product is. It is truly a wonderful product you and your family will enjoy for years.\",\"physicalRecurring\":false,\"title\":\"Hybrid recurring shippable with digital subscription\",\"imageAltTag\":\"ebook\"},\"cardAccepted\":true,\"stateRequired\":true,\"stripeAccepted\":false,\"order\\\\.shipTo\\\\.phoneNumber\":null,\"preDiscountAmount\":\"$59.99\",\"order\\\\.shipTo\\\\.email\":null,\"paypalAccepted\":true,\"hasAnyDelayedDeliveryItems\":false,\"addOnSubtotal\":\"$0.00\",\"story\":\"A848D863\"}";
+                OrderFormService$.setJSON(JSON.parse(jsonString));
+            }
+        })();
+    </script>
+</body>
+
+</html>
