@@ -19,14 +19,22 @@ color: #333;
 }
 
 .bump-box {
-    border: 1px dashed #ea08ec;
-    background-color: #fff!important;
+    border: dashed 3px #e836ba;
+    border-width: 3px;
+    border-radius: 6px;
+}
+#submitButton{
+    background-image: linear-gradient(90deg, #ec38bc 10%, #7303c0 80%, #03001e 100%);
+    box-shadow: 0 0.5rem 1.125rem -0.5rem #7303c0;
+    padding: 0.625rem 1.375rem;
+    height: 60px;
 }
 div#pay-now-footer{
     background-image: url(img/secure.gif);
     height: 50px;
     width: 244px;
     background-repeat: no-repeat;
+    margin-top:15px;
 
 
 }
@@ -124,6 +132,22 @@ div#customer-info-header{
 
     div#billing-info-footer{
         height: 190px;
+    }
+
+
+}
+
+
+@media screen and (max-width: 400px) {
+
+  
+
+    div#customer-info-header{
+        height: 170px;
+    }
+
+    div#billing-info-footer{
+        height: 150px;
     }
 
 
