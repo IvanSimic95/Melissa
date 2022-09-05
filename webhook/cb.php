@@ -40,6 +40,13 @@ $cName = $obj->customer->billing->fullName;
 $productImage = "https://soulmate-artist.com/assets/img/14dk.jpg";
 $productFullTitle = $obj->lineItems[0]->productTitle;
 
+$countPurchase = count($obj->lineItems);
+if($countPurchase > 1){
+  $premiumReading = 1;
+}else{
+  $premiumReading = 0;
+}
+
 error_log("Order ID: $mOrderID");
 error_log("Order Email: $order_email");
 error_log("CB order ID: $order_buygoods");
@@ -49,7 +56,7 @@ $logaArray[] = $productFullTitle;
 if($order_email) {
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
-    $sql = "UPDATE `orders` SET `order_status`='paid',`order_email`='$order_email',`buygoods_order_id`='$order_buygoods' WHERE order_id='$mOrderID'" ;
+    $sql = "UPDATE `orders` SET `order_status`='paid',`order_email`='$order_email',`premium`='$premiumReading',`buygoods_order_id`='$order_buygoods' WHERE order_id='$mOrderID'" ;
 
     if ($conn->query($sql) === TRUE) {
       //echo "Order Status updated to Paid succesfully!";

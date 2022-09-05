@@ -45,6 +45,7 @@ echo "Starting complete-orders.php...<br><br>";
 			$interval = new \DateInterval('PT1H');
 			$periods = new \DatePeriod($start, $interval, $end);
 			$hours = iterator_count($periods);
+			$premium = $row["premium"];
 			
 			$trigger = 0;
 			#$trigger = 1;
@@ -72,7 +73,7 @@ $logArray[] = "
 
 
 			
-			if($premium == "yes"){
+			if($premium == 1){
 
 				$sql_pick = "SELECT * FROM premium WHERE category = 'initials' order by RAND() limit 1";
 				$sql_pick_res = $conn->query($sql_pick);
