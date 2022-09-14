@@ -98,11 +98,11 @@ $logArray[] = "
 				}
 
 
-				$minMonth = rand(1,3);
-				$maxMonth = rand(4,7);
+				$minMonth = rand(3,4);
+				$maxMonth = rand(5,6);
 				$meetTime = $minMonth." - ".$maxMonth;
 
-				$premiumText = "<br><br><b>Your soulmate's initials: ".$initials."<br> You will meet at ".$place." in about ".$meetTime." months</b>";
+				$premiumText = "\n\nYour soulmate's initials: *".$initials."*\nYou will meet at *".$place."* in about *".$meetTime."* months\n";
 
 			}else{
 				$premiumText = "";
