@@ -291,9 +291,10 @@ text-align:center;
               var DataMSG = data[1];
                var Redirect = data[2];
                $("#purchasedupsell").fadeIn();
+               alert(Redirect);
                setTimeout(function(){
                window.location.href = Redirect;
-               }, 2000);
+               }, 12000);
                }else if(SubmitStatus == "NoThanks"){
                 var Redirect = data[1];
                 $("#purchasedupsell").html("You have choosen to skip this offer, redirecting you...");
