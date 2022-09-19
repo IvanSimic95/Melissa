@@ -19,7 +19,8 @@ color: #333;
 }
 
 .bump-box {
-    border: dashed 3px #e836ba;
+    border: 3px dashed #000;
+    background-color: #fcf8e3!important;
     border-width: 3px;
     border-radius: 6px;
 }
