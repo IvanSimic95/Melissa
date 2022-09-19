@@ -69,8 +69,9 @@ div#customer-info-header{
 
 
 #header-custom-2{
-    background-image: url(img/hdmax.jpg);
+    /* background-image: url(img/hdmax.jpg);*/
     height:250px;
+    display:none!important;
 }
 
 }
@@ -83,8 +84,9 @@ div#customer-info-header{
 
 
     #header-custom-2{
-        background-image: url(img/hd994.jpg);
+        /*background-image: url(img/hd994.jpg);*/
         height:250px;
+
     }
 
 }
@@ -92,8 +94,9 @@ div#customer-info-header{
 @media screen and (max-width: 991px) {
 
     #header-custom-2{
-        background-image: url(img/hd768.jpg);
+        /*background-image: url(img/hd768.jpg);*/
         height:250px;
+        display:none;
     }
 
     div#customer-info-header{
@@ -109,8 +112,9 @@ div#customer-info-header{
 @media screen and (max-width: 767px) {
 
     #header-custom-2{
-        background-image: url(img/hd430.jpg);
+        /*background-image: url(img/hd430.jpg);*/
         height:250px;
+        display:none;
     }
 
     div#customer-info-header{
