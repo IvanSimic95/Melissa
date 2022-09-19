@@ -90,7 +90,7 @@ $sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_nam
 
 if(mysqli_query($conn,$sql)){
     $lastRowInsert = mysqli_insert_id($conn);
-$redirectPayment = "https://melissapsy.pay.clickbank.net/cbitems=5&cbur=a&order_ID=".$lastRowInsert;
+$redirectPayment = "https://melissapsy.pay.clickbank.net/cbur=a&cbfid=52075&cbitems=5.".$quantity."&order_ID=".$lastRowInsert;
 $submitStatus = "Success";
 $SuccessMessage = "Information saved, Redirecting you to Payment Page Now!";
 $returnData = [$submitStatus,$SuccessMessage,$redirectPayment];
