@@ -80,17 +80,35 @@ $oStatus = "pending";
 isset($_POST['fbp']) ? $uFBP = $_POST['fbp'] : $uFBP = "";
 isset($_POST['fbc']) ? $uFBC = $_POST['fbc'] : $uFBC = "";
 
-$returnURL = "https://".$domain."/success-reading.php";
-$returnEncoded = base64_encode($returnURL);
+switch ($ReadingsCounter) {
+    case 1:
+        $personalIDcount = "5";
+        break;
 
-$redirectPayment = "https://www.buygoods.com/secure/upsell?account_id=6274&product_codename=".$ReadingsCounter."xreadings&redirect=".$returnEncoded;
-$redirectPayment = "https://melissapsy.pay.clickbank.net/cbur=a&cbskin=3867&cbitems=5.".$quantity."&order_ID=.";
+        case 2:
+            $personalIDcount = "6";
+            break;
+
+            case 3:
+                $personalIDcount = "7";
+                break;
+
+                case 4:
+                    $personalIDcount = "8";
+                    break;
+    
+    default:
+    $personalIDcount = "5";
+    break;
+
+}
+
 
 $sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, birthday, order_status, order_date, order_email, order_product, order_product_nice, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, fbc, fbp) VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', '$user_birthday', '$oStatus', '$order_date', '$bgemail', '$order_product', '$order_product_nice', '$order_priority', '$pricenow', '', '$userGender', '$userGenderAcc', '$partnerGender', '$uFBC', '$uFBP')";
 
 if(mysqli_query($conn,$sql)){
     $lastRowInsert = mysqli_insert_id($conn);
-$redirectPayment = "https://melissapsy.pay.clickbank.net/?cbur=a&cbfid=52075&cbitems=5.".$quantity."&order_ID=".$lastRowInsert;
+$redirectPayment = "https://melissapsy.pay.clickbank.net/?cbur=a&cbfid=52075&cbitems=".$personalIDcount."&order_ID=".$lastRowInsert;
 $submitStatus = "Success";
 $SuccessMessage = "Information saved, Redirecting you to Payment Page Now!";
 $returnData = [$submitStatus,$SuccessMessage,$redirectPayment];
