@@ -14,7 +14,7 @@ $productMETA = "";
 $accessToken1 = "EAAxkvwzdc3kBAM3YGxUaEygEr7cdXJ9bxE8hGZC2tfmkW9BXAWZA67HcZB0SyoDYrMLs9Afgp086Yqm55zDg";
 $accessToken2 = "DZAdoLErhsa7kHwFJVZA7C6HBMqdIsERWoJ8zXZAeaQtDqFgAMCTa8K0kVMdp3EPZBYGhnOjPjTOg9KkjPelq9Mu1qmvU9iTZBrm";
 $fbAccessToken = $accessToken1.$accessToken2;
-$sendFBAPI = 0; #Set to 1 to send data via api
+$sendFBAPI = 1; #Set to 1 to send data via api
 
 if(!isset($_SESSION['PixelDATA'])){
 $_SESSION['PixelDATA'] = 0;

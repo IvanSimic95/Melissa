@@ -77,7 +77,9 @@ echo "Starting start-orders.php...<br><br>";
 				case "higherself":
 					$product = "Higher Self Drawing";
 					break;
-
+default:
+$product = $orderProduct;
+break;
 			  }
 
 
