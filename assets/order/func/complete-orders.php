@@ -102,7 +102,7 @@ $logArray[] = "
 				$maxMonth = rand(5,6);
 				$meetTime = $minMonth." - ".$maxMonth;
 
-				$premiumText = "\n\nYour soulmate's initials: *".$initials."*\nYou will meet at *".$place."* in about *".$meetTime."* months\n";
+				$premiumText = "\n\nYour soulmate's initials: *".$initials."*\nYou will meet at *".$place."*\n";
 
 			}else{
 				$premiumText = "";
