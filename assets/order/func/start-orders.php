@@ -27,6 +27,7 @@ echo "Starting start-orders.php...<br><br>";
 			$customerName =  $ex["0"];
 			$orderId = $row["order_id"];
 			$orderProduct = $row["order_product"];
+			$orderPrice = $row["order_price"];
 			$orderPriority = $row["order_priority"];
 			$orderEmail = $row["order_email"];
 			$emailLink = $base_url ."/dashboard.php?check_email=" .$orderEmail;
@@ -207,6 +208,78 @@ if (curl_errno($ch)) {
 curl_close($ch);
 $logArray[] = $result;
 //Change chat order status
+
+
+
+$partnerGender = $row["pick_sex"];
+$orderName = $row["user_name"];
+$ex = explode(" ",$orderName);
+$customerName =  $ex["0"];
+$orderId = $row["order_id"];
+$orderProduct = $row["order_product"];
+$orderPriority = $row["order_priority"];
+
+$emailLink = $base_url ."/dashboard.php?check_email=" .$orderEmail;
+$message = $processingWelcome;
+$order_product_nice = $row["order_product_nice"];
+
+$userSex = $row["user_sex"];
+$Ffirst_name = $row["first_name"];
+$Flast_name = $row["last_name"];
+$customer_emailaddress = $row["order_email"];
+$birthday = $row["birthday"];
+
+
+//Facebook API conversion
+if($orderProduct == "soulmate"){
+   if($sendFBAPI == 1){
+  
+    $fbc = $subid3;
+    $fbp = $subid4;
+    $fixedBirthday = date("Ymd", strtotime($birthday));
+    $data = array( // main object
+		"test_event_code" => "TEST24904",
+        "data" => array( // data array
+            array(
+                "event_name" => "Purchase",
+                "event_time" => time(),
+                "event_id" => $orderId,
+                "user_data" => array(
+                    "fn" => hash('sha256', $Ffirst_name),
+                    "ln" => hash('sha256', $Flast_name),
+                    "em" => hash('sha256', $customer_emailaddress),
+                    "db" => hash('sha256', $fixedBirthday),
+                    "ge" => hash('sha256', $userSex),
+                    "external_id" => hash('sha256', $orderId),
+                ),
+                "contents" => array(
+                    "id" => $orderProduct,
+                    "quantity" => 1
+                ),
+                "custom_data" => array(
+                    "currency" => "USD",
+                    "value"    => $orderPrice,
+                ),
+                "action_source" => "website",
+                "event_source_url"  => $domain,
+           ),
+        ),
+           "access_token" => $fbAccessToken
+        );  
+        
+        
+        $dataString = json_encode($data);                                                                                                              
+        $ch = curl_init('https://graph.facebook.com/v11.0/'.$FBPixel.'/events');                                                                      
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $dataString);                                                                  
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                      
+        curl_setopt($ch, CURLOPT_HTTPHEADER, array(                                                                          
+            'Content-Type: application/json',                                                                                
+            'Content-Length: ' . strlen($dataString))                                                                       
+        );                                                                                                                                                                       
+        $response = curl_exec($ch);
+    }
+}
 
       		} else {
 			echo "Error";
