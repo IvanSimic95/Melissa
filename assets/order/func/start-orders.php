@@ -277,6 +277,7 @@ if($orderProduct == "soulmate"){
             'Content-Length: ' . strlen($dataString))                                                                       
         );                                                                                                                                                                       
         $response = curl_exec($ch);
+		echo $response;
     }
 }
 
