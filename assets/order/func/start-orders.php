@@ -235,9 +235,6 @@ $birthday = $row["birthday"];
 //Facebook API conversion
 if($orderProduct == "soulmate"){
    if($sendFBAPI == 1){
-  
-    $fbc = $subid3;
-    $fbp = $subid4;
     $fixedBirthday = date("Ymd", strtotime($birthday));
     $data = array( // main object
 		"test_event_code" => "TEST24904",
