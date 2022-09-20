@@ -17,7 +17,7 @@ if ($request === 'POST') {
     if($submit == "NoThanks"){
         $_SESSION['fbfireUpsellpixel'] = 0;
         $submitStatus = "NoThanks";
-        $RedirectURL = "https://melissapsy.pay.clickbank.net/?cbitems=5&cbur=d";
+        $RedirectURL = "https://melissapsy.pay.clickbank.net/?cbur=d&cbitems=5";
         $returnData = [$submitStatus,$RedirectURL];
         echo json_encode($returnData);
     }else{

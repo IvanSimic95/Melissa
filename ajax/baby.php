@@ -17,7 +17,7 @@ if ($request === 'POST') {
     if($submit == "NoThanks"){
         $_SESSION['fbfireUpsellpixel'] = 0;
         $submitStatus = "NoThanks";
-        $RedirectURL = "https://".$domain."/success-final.php";
+        $RedirectURL = "https://melissapsy.pay.clickbank.net/?cbur=d&cbitems=9";
         $returnData = [$submitStatus,$RedirectURL];
         echo json_encode($returnData);
     }else{
@@ -50,17 +50,34 @@ $oStatus = "pending";
 isset($_POST['fbp']) ? $uFBP = $_POST['fbp'] : $uFBP = "";
 isset($_POST['fbc']) ? $uFBC = $_POST['fbc'] : $uFBC = "";
 
-$returnURL = "https://".$domain."/success-final.php";
-$returnEncoded = base64_encode($returnURL);
+switch ($order_priority) {
+    case "48":
+    $babyPriority = "9";
+    break;
 
-$redirectPayment = "https://www.buygoods.com/secure/upsell?account_id=6274&product_codename=".$order_product.$order_priority."&redirect=".$returnEncoded;
+    case "24":
+    $babyPriority = "10";
+    break;
+
+    case "12":
+    $babyPriority = "11";
+    break;
+    
+    default:
+    $babyPriority = "9";
+    break;
+
+}
+
 
 
 $sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, birthday, order_status, order_date, order_email, order_product, order_product_nice, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, fbc, fbp) VALUES ('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', '$user_birthday', '$oStatus', '$order_date', '$bgemail', '$order_product', '$order_product_nice', '$order_priority', '$pricenow', '', '$userGender', '$userGenderAcc', '$partnerGender', '$uFBC', '$uFBP')";
 
 if(mysqli_query($conn,$sql)){
+$lastRowInsert = mysqli_insert_id($conn);
 $submitStatus = "Success";
 $SuccessMessage = "Information saved, Redirecting you to Payment Page Now!";
+$redirectPayment = "https://melissapsy.pay.clickbank.net/?cbur=a&cbfid=52075&cbitems=".$babyPriority."&cbskin=39040&order_ID=".$lastRowInsert;
 $returnData = [$submitStatus,$SuccessMessage,$redirectPayment];
 echo json_encode($returnData);
 } else {
