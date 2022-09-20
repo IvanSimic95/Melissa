@@ -165,7 +165,7 @@ $_SESSION['Pixelemail'] = $user_email;
 $_SESSION['Pixelfname'] = $fName;
 $_SESSION['Pixellname'] = $lName;
 $_SESSION['Pixelgender']= $userGender;
-$_SESSION['Pixeldob']   = date("Ymd", strtotime($birthday));
+$_SESSION['Pixeldob']   = date("Ymd", strtotime($user_birthday));
 $_SESSION['PixelID']    = $lastRowInsert;
 
 echo json_encode($returnData);
