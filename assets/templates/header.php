@@ -73,11 +73,15 @@ $metatags
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   <script src="https://kit.fontawesome.com/699dff544d.js" crossorigin="anonymous"></script>
 
-  <!-- Heatmap & Visitor Stats -->
-<script>UST_CT = [];UST = { s: Date.now(), addTag: function(tag) { UST_CT.push(tag) } };UST.addEvent = UST.addTag;
-(function() {var ust_s = document.createElement('STYLE');ust_s.id = 'ust_body_style';
-ust_s.appendChild(document.createTextNode('body {opacity: 0}'));document.head.appendChild(ust_s);})();
-setTimeout(function(){ var el = document.getElementById('ust_body_style'); el && el.remove()}, 800);</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RQ9Y632P67"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-RQ9Y632P67');
+</script>
 
 <script src='//cbtb.clickbank.net/?vendor=melissapsy'></script>
 
