@@ -252,8 +252,10 @@ if($orderProduct == "soulmate"){
                     "external_id" => hash('sha256', $orderId),
                 ),
                 "contents" => array(
+					array(
                     "id" => $orderProduct,
                     "quantity" => 1
+					),
                 ),
                 "custom_data" => array(
                     "currency" => "USD",
