@@ -430,23 +430,4 @@ input[type=radio]:checked ~ label {
 
 
 <?php 
-$FirePixelUP = $_SESSION['fbfireUpsellpixel'];
-
-if($FirePixelUP == 1){
-  $orderID = $_SESSION['fborderID'];
-  $orderPrice = $_SESSION['fborderPrice'];
-  $product = $_SESSION['fbproduct'];
-
-$FBPurchasePixel = <<<EOT
-<script>
-fbq('trackCustom', 'Upsell', {
-  value: $orderPrice , 
-  currency: 'USD'
-}, 
-{eventID: '$orderID'});
-</script>
-EOT;
-
-$_SESSION['fbfireUpsellpixel'] = 0;
-}
 include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php'; ?>

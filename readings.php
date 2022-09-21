@@ -17,6 +17,7 @@ if ($sex_picked==1) {
     $_SESSION['orderPartnerGender'] = $pick_sex;
 }
 
+if(isset($_SESSION['lastorder'])){
 $lastOrderID = $_SESSION['lastorder'];
 $sql = "SELECT * FROM `orders` WHERE `order_id` = '$lastOrderID' ORDER BY `order_id` DESC LIMIT 1";
 $result = $conn->query($sql);
@@ -35,6 +36,46 @@ if($result->num_rows != 0) {
   }
 
 }
+}else{
+  if(isset($_GET['order_ID'])){
+
+$sql = "SELECT * FROM `orders` WHERE `order_id` = '$_GET['order_ID']' ORDER BY `order_id` DESC LIMIT 1";
+$result = $conn->query($sql);
+$count = $result->num_rows;
+$row = $result->fetch_assoc();
+
+//If order is found input data from BG and update status to paid
+if($result->num_rows != 0) {
+
+  $affid = $row['affid'];
+  $s1 = $row['s1'];
+  $s2 = $row['s2'];
+
+$_SESSION['lastorder'] = $_GET['order_ID'];
+$_SESSION['orderFName'] = $row['first_name'];
+$_SESSION['orderLName'] = $row['last_name'];
+$_SESSION['orderBirthday'] = $row['birthday'];
+$_SESSION['orderAge'] = $row['user_age'];
+$_SESSION['orderGender'] = $row['user_sex'];
+$_SESSION['orderPartnerGender'] = $row['pick_sex'];
+$_SESSION['BGEmail'] = $row['order_email']
+
+$_SESSION['fbfirepixel'] = 1;
+$_SESSION['fborderID'] = $_GET['order_ID'];
+$_SESSION['fborderPrice'] = $row['order_price'];
+$_SESSION['fbproduct'] = $row['order_product'];
+  if($affid == 1){
+    $fireIframe = 1;
+  }
+
+}
+
+
+
+
+  }
+}
+
 
 $title = "Readings | Melissa Psychic";
 $description = "Readings";
