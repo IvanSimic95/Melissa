@@ -58,7 +58,7 @@ $_SESSION['orderBirthday'] = $row['birthday'];
 $_SESSION['orderAge'] = $row['user_age'];
 $_SESSION['orderGender'] = $row['user_sex'];
 $_SESSION['orderPartnerGender'] = $row['pick_sex'];
-$_SESSION['BGEmail'] = $row['order_email']
+$_SESSION['BGEmail'] = $row['order_email'];
 
 $_SESSION['fbfirepixel'] = 1;
 $_SESSION['fborderID'] = $_GET['order_ID'];
