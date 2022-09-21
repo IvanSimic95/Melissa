@@ -38,8 +38,8 @@ if($result->num_rows != 0) {
 }
 }else{
   if(isset($_GET['order_ID'])){
-
-$sql = "SELECT * FROM `orders` WHERE `order_id` = '$_GET['order_ID']' ORDER BY `order_id` DESC LIMIT 1";
+$ord = $_GET['order_ID'];
+$sql = "SELECT * FROM `orders` WHERE `order_id` = '$ord' ORDER BY `order_id` DESC LIMIT 1";
 $result = $conn->query($sql);
 $count = $result->num_rows;
 $row = $result->fetch_assoc();
