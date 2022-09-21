@@ -28,7 +28,7 @@ $obj = json_decode($decrypted);
 
 $type = $obj->transactionType;
 
-if($type == "SALE" OR $type == "TEST_SALE"){
+if($type == "SALE" OR $type == "TEST_SALE" OR $type == "TEST"){
 
 $token = "aj2zskw799ncm7rh2x2f6vs7k6ezud";
 $utoken = "u24izth113b2jc8jwt4g68vvzppk12";
