@@ -69,6 +69,7 @@ echo 'Error:' . curl_error($ch);
 curl_close($ch);
 echo $result;
 
+error_log("Pushover: $result");
 }
 
 ?>
