@@ -48,7 +48,7 @@ $message = "Name: ".$cName." | Email: ".$order_email." | Product: ".$productFull
 $ch = curl_init();
 $data = [
 "token" => $token,
-"user" => $token,
+"user" => $utoken,
 "title" => $title,
 "message" => $message
 ];
