@@ -16,6 +16,7 @@ if ($sex_picked==1) {
 
     $_SESSION['orderPartnerGender'] = $pick_sex;
 }
+$_SESSION['fbfirepixel'] = 1;
 
 if(isset($_SESSION['lastorder'])){
 $lastOrderID = $_SESSION['lastorder'];
@@ -377,7 +378,9 @@ if($FirePixel == 1){
   $product = $_SESSION['fbproduct'];
 
 $FBPurchasePixel = <<<EOT
+
 <script>
+fbq('init', '$FBPixel');
 fbq('track', 'Purchase', {
   value: $orderPrice , 
   currency: 'USD',
@@ -386,6 +389,29 @@ fbq('track', 'Purchase', {
 }, 
 {eventID: '$orderID'});
 </script>
+
+<script>
+fbq('init', '$FBPixel2');
+fbq('track', 'Purchase', {
+  value: $orderPrice , 
+  currency: 'USD',
+  content_type: 'product', 
+  content_ids: '$product'
+}, 
+{eventID: '$orderID'});
+</script>
+
+<script>
+fbq('init', '$FBPixel3');
+fbq('track', 'Purchase', {
+  value: $orderPrice , 
+  currency: 'USD',
+  content_type: 'product', 
+  content_ids: '$product'
+}, 
+{eventID: '$orderID'});
+</script>
+
 EOT;
 
 $_SESSION['fbfirepixel'] = 0;

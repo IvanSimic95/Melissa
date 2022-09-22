@@ -4,8 +4,12 @@ date_default_timezone_set('Europe/Bucharest');
 error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
-$startpixel = 1;
-$FBPixel = "3290293207717814";
+$startpixel  = 1;
+$startpixel2 = 1;
+$startpixel3 = 1;
+$FBPixel  = "3290293207717814";
+$FBPixel2 = "849174466483788";
+$FBPixel3 = "792407324843664";
 $FBPurchasePixel = "";
 $FBViewContent = "";
 $productMETA = "";
