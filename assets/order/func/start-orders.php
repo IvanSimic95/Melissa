@@ -237,7 +237,6 @@ if($orderProduct == "soulmate"){
    if($sendFBAPI == 1){
     $fixedBirthday = date("Ymd", strtotime($birthday));
     $data = array( // main object
-		"test_event_code" => "TEST24904",
         "data" => array( // data array
             array(
                 "event_name" => "Purchase",
