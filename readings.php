@@ -7,7 +7,31 @@ if(isset($_POST['pick_sex'])){
   $pick_sex = $_POST['pick_sex'];
   $sex_picked = "1";
 }
+if(isset($_GET['order_ID'])){
+  $order_ID = $_GET['order_ID'];
+}else{
+  $order_ID = "";
+}
+if(isset($_GET['updateInfo'])){
+  $showPopup = "No";
+}else{
+  $showPopup = "Yes";
+}
+if(isset($_POST['form_submit'])){
 
+$newGender = $_POST['gender'];
+$newPGender = $_POST['pgender'];
+$genderAcc = "101";
+$orderPID = $_POST['order_ID'];
+
+
+$_SESSION['orderGender'] = $newGender;
+$_SESSION['orderPartnerGender'] = $newPGender;
+
+
+$sql2 = "UPDATE `orders` SET `user_sex`='$newGender',`pick_sex`='$newPGender',`genderAcc`='$genderAcc' WHERE `order_id`='$orderPID'";
+$result = $conn->query($sql2);
+}
 //If sex was picked manually by user update it in order info
 if ($sex_picked==1) {
     $order_id = $_POST['cookie_id'];
@@ -31,6 +55,20 @@ if($result->num_rows != 0) {
   $affid = $row['affid'];
   $s1 = $row['s1'];
   $s2 = $row['s2'];
+
+  $_SESSION['lastorder'] = $_GET['order_ID'];
+$_SESSION['orderFName'] = $row['first_name'];
+$_SESSION['orderLName'] = $row['last_name'];
+$_SESSION['orderBirthday'] = $row['birthday'];
+$_SESSION['orderAge'] = $row['user_age'];
+$_SESSION['orderGender'] = $row['user_sex'];
+$_SESSION['orderPartnerGender'] = $row['pick_sex'];
+$_SESSION['BGEmail'] = $row['order_email'];
+
+$_SESSION['fbfirepixel'] = 1;
+$_SESSION['fborderID'] = $_GET['order_ID'];
+$_SESSION['fborderPrice'] = $row['order_price'];
+$_SESSION['fbproduct'] = $row['order_product'];
 
   if($affid == 1){
     $fireIframe = 1;
@@ -168,10 +206,64 @@ text-align:center;
 
 <div class="general_section upsale_page">
   <div class="container">
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLabel">Before Proceeding Please Select Your & Partners Gender!</h3>
+    
+      </div>
+      <div class="modal-body">
+
+
+      <form id="completeOrder" class="form-order needs-validation display-block text-start" name="completeOrder" action="?order_ID=<?php echo $order_ID; ?>&updateInfo=Yes" method="post">
+
+<div class="form_box" style="text-align:start">
+<label for="SelectGender" style="left: 0;">Your Gender</label>
+  <select class="form-select" id="SelectGender" aria-label="SelectGender" required="" name="gender">
+    <option <?php if($_SESSION['orderGender']=="male")echo 'selected=""'; ?> value="male"><span class="fa fa-user"></span> Male</option>
+    <option <?php if($_SESSION['orderGender']=="female")echo 'selected=""'; ?>value="female">Female</option>
+  </select>
+  
+  </div>
+
+  <div class="form_box" style="text-align:start">
+  <label for="SelectPGender" style="left: 0;">Preferred Partner Gender</label>
+  <select class="form-select" id="SelectPGender" aria-label="SelectPGender" required="" name="pgender">
+    <option <?php if($_SESSION['orderPartnerGender']=="male")echo 'selected=""'; ?> value="male"><span class="fa fa-user"></span> Male</option>
+    <option <?php if($_SESSION['orderPartnerGender']=="female")echo 'selected=""'; ?>value="female"><span class="fa fa-user"></span> Female</option>
+  </select>
+  
+  </div>
+
+<hr class="mb-3">
+<div class="error-container">
+</div>
+
+<input class="orderID" type="hidden" name="order_ID" value="<?php echo $_GET['order_ID']; ?>">
+
+<button style="margin-top:15px; padding:15px; width:100%; font-size:130%; font-weight:bold;" id="SaveChanges" type="submit" name="form_submit" class="btn" value="Save Changes!"><i class="fa fa-square-check"></i> Save Changes!</button>
+<hr class="mb-3">
+
+</form>
+
+
+      </div>
+    </div>
+  </div>
+</div>
   <div class="white-wrapper col-md-10 offset-md-2"> <h1>You Unlocked a Special Service!</h1>
       <h3>THIS IS AN EXCLUSIVE SERVICE WHICH I'M ONLY OFFERING A FEW TIMES A YEAR! </h3>
     <center> <img src="/assets/img/sitee91.jpg" alt="upsell"> </center>
-  
+<?php if($showPopup == "Yes"){ ?>
+<script>
+    $( document ).ready(function() {
+      $('#exampleModal').modal('show')
+});
+</script>
+<?php } ?>
 	<h3>PLEASE BE AWARE YOU CAN'T GET BACK TO THIS PAGE LATER!</h3>
    
     
