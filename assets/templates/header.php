@@ -1,5 +1,5 @@
 <?php
-include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 use Melbahja\Seo\MetaTags;
 if(isset($t_product_name)){

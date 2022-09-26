@@ -1,7 +1,7 @@
 <?php 
 header('Content-type: text/html; charset=utf-8');
 include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/session.php';
-$title = "Spirit Guide | Melissa Psychic";
+$title = "Spirit Guide Weekly | Melissa Psychic";
 $description = "I will draw your Higher Self with 100% accuracy";
 $menu_order="men_2_0"; 
 $bgproduct = "spiritguide12";
@@ -20,8 +20,8 @@ $t_product_image_pc = '/assets/img/da105.jpg';
 $t_product_form_name = "spiritguide";
 $t_product_hover_text = "I will connect with your higher soul, discover accurate and comprehensive information about your destiny, and explore the blockages you may have in your love life, career, health, or relationships with others. I will use your energies and frequencies so I can identify your strength, weaknesses and offer you guidance and clarity for a better and happier life.";
 $t_product_sales = "8700";
-$t_product_title = "SPIRIT GUIDE READING";
-$t_about_title =  "<center><div style='color:#ff00f3;'> <b> SPIRIT GUIDE READING</b></div></center>";
+$t_product_title = "SPIRIT GUIDE WEEKLY READING";
+$t_about_title =  "<center><div style='color:#ff00f3;'> <b> SPIRIT GUIDE WEEKLY READING</b></div></center>";
 $t_about_content = "
 <div style='font-size:120%'><p> <b> Wonder what your spirit guides want to tell you?  </b> </p>
 <br>
