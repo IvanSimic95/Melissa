@@ -24,7 +24,9 @@ $interval = $birthday->diff(new DateTime);
 
 $user_age = $interval->y;
 
+
 $user_name = $_POST['form_name'];
+$user_name = normalizeChars($user_name);
 $user_email = $_POST['form_email'];
 $order_product = $_POST['product'];
 $order_priority = $_POST['priority'];

@@ -26,6 +26,10 @@ $user_name = $_POST['form_name'];
 $fName = $_POST['first_name'];
 $lName = $_POST['last_name'];
 
+$user_name = normalizeChars($user_name);
+$fName = normalizeChars($fName);
+$lName = normalizeChars($lName);
+
 $pricenow = $_POST['price'];
 
 $cookie_id = $_POST['cookie_id'];
