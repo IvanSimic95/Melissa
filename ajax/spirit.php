@@ -27,7 +27,7 @@ $user_age = $interval->y;
 $user_name = $_POST['form_name'];
 $user_email = $_POST['form_email'];
 $order_product = $_POST['product'];
-$order_priority = $_POST['priority'];
+$order_priority = "48";
 $order_date = date('Y-m-d H:i:s');
 
 $affid = $_POST['aff_id'];
@@ -80,22 +80,8 @@ $_SESSION['orderPartnerGender'] = $partnerGender;
 
 
 
-switch ($order_priority){
-  case "48":
-    $cbproduct = "1";
-    $cbprice = "29.99";
-  break;
-
-  case "24":
-    $cbproduct = "2";
-    $cbprice = "39.99";
-  break;
-
-  case "12":
-    $cbproduct = "3";
-    $cbprice = "49.99";
-  break;
-}
+$cbproduct = "12";
+$cbprice = "3.80";
 
 $order_product_nice = "Soulmate Drawing";
 
