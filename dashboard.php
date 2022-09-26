@@ -21,7 +21,7 @@ $order_name = str_replace('%20', ' ', $_GET['username']);}
 
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 $startpixel = 0;
-$sql = "SELECT * FROM orders WHERE order_email = '$order_email' ORDER BY order_id DESC";
+$sql = "SELECT * FROM orders WHERE (order_email = '$order_email' && order_status = 'processing') OR (order_email = '$order_email' && order_status = 'shipped') ORDER BY order_id DESC";
 
 $result = $conn->query($sql);
 
