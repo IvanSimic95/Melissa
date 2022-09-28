@@ -17,12 +17,21 @@ if(isset($_GET['updateInfo'])){
 }else{
   $showPopup = "Yes";
 }
+$FirePixel = $_SESSION['fbfirepixel'];
+
+if(isset($_GET['email'])){
+  $FirePixel = 0;
+  header("Location: https://".$domain."/readings.php?order_ID=".$order_ID);
+  die();
+}
+
 if(isset($_POST['form_submit'])){
 
 $newGender = $_POST['gender'];
 $newPGender = $_POST['pgender'];
 $genderAcc = "101";
 $orderPID = $_POST['order_ID'];
+
 
 
 $_SESSION['orderGender'] = $newGender;
@@ -462,7 +471,7 @@ text-align:center;
  });
     </script>
 <?php 
-$FirePixel = $_SESSION['fbfirepixel'];
+
 
 if($FirePixel == 1){
   $orderID = $_SESSION['fborderID'];
