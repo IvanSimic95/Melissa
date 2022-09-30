@@ -250,6 +250,7 @@ text-align:center;
     text-align: center;
     color: white;
     width: 100%;
+    line-height:1;
 }
 
 .smallerText {
