@@ -237,6 +237,7 @@ if($orderProduct == "soulmate"){
    if($sendFBAPI == 1){
     $fixedBirthday = date("Ymd", strtotime($birthday));
     $data = array( // main object
+		"test_event_code" => "TEST33434",
         "data" => array( // data array
             array(
 				
@@ -262,11 +263,11 @@ if($orderProduct == "soulmate"){
                     "value"    => $orderPrice,
                 ),
                 "action_source" => "website",
-                "event_source_url"  => $domain,
+                "event_source_url"  => "https://".$domain."/readings.php",
            ),
         ),
            "access_token" => $fbAccessToken,
-		   "test_event_code" => "TEST33434"
+		   
         );  
         
         
