@@ -391,29 +391,7 @@ text-align:center;
  });
     </script>
 
-<?php 
-$FirePixel = $_SESSION['fbfirepixel'];
-
-if($FirePixel == 1){
-  $orderID = $_SESSION['fborderID'];
-  $orderPrice = $_SESSION['fborderPrice'];
-  $product = $_SESSION['fbproduct'];
-
-$FBPurchasePixel = <<<EOT
-
-<script>
-fbq('track', 'Purchase', {
-  value: $orderPrice , 
-  currency: 'USD',
-  content_type: 'product', 
-  content_ids: '$product'
-}, 
-{eventID: '$orderID'});
-</script>
-EOT;
-
-$_SESSION['fbfirepixel'] = 0;
-}
+<?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php';
 
 ?>
