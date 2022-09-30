@@ -18,13 +18,13 @@ $order_ID = $_POST['order_id'];
     if($submit == "NoThanks"){
         $_SESSION['fbfireUpsellpixel'] = 0;
         $submitStatus = "NoThanks";
-        $RedirectURL = "https://soulmateps.pay.clickbank.net/?cbur=d&cbitems=17";
+        $RedirectURL = "https://soulmateps.pay.clickbank.net/?cbur=d&cbitems=14";
         $returnData = [$submitStatus,$RedirectURL];
         echo json_encode($returnData);
     }else{
 
 
-$redirectPayment = "https://melissapsy.pay.clickbank.net/?cbur=a&cbfid=52260&cbitems=17&cbskin=39040&order_ID=".$order_ID;
+$redirectPayment = "https://melissapsy.pay.clickbank.net/?cbur=a&cbfid=52260&cbitems=14&cbskin=39040&order_ID=".$order_ID."&main_ID="".$order_ID;
 $submitStatus = "Success";
 $SuccessMessage = "Redirecting you to Payment Page Now!";
 $returnData = [$submitStatus,$SuccessMessage,$redirectPayment];
