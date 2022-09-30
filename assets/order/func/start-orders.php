@@ -239,6 +239,7 @@ if($orderProduct == "soulmate"){
     $data = array( // main object
         "data" => array( // data array
             array(
+				"test_event_code" => "TEST33434",
                 "event_name" => "Purchase",
                 "event_time" => time(),
                 "event_id" => $orderId,
