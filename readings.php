@@ -15,6 +15,7 @@ if(isset($_GET['updateInfo'])){
 
 if(isset($_GET['order_ID'])){
   $order_ID = $_GET['order_ID'];
+  $main_ID = $_GET['main_ID'];
 
 
 }else{
@@ -25,7 +26,7 @@ $FirePixel = $_SESSION['fbfirepixel'];
 
 if(isset($_GET['email'])){
   $FirePixel = 0;
-  header("Location: https://".$domain."/readings.php?order_ID=".$order_ID);
+  header("Location: https://".$domain."/readings.php?order_ID=".$order_ID."&main_ID=".$main_ID);
   die();
 }
 
