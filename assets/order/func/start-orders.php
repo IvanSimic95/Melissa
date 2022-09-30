@@ -239,7 +239,7 @@ if($orderProduct == "soulmate"){
     $data = array( // main object
         "data" => array( // data array
             array(
-				"test_event_code" => "TEST33434",
+				
                 "event_name" => "Purchase",
                 "event_time" => time(),
                 "event_id" => $orderId,
@@ -265,7 +265,8 @@ if($orderProduct == "soulmate"){
                 "event_source_url"  => $domain,
            ),
         ),
-           "access_token" => $fbAccessToken
+           "access_token" => $fbAccessToken,
+		   "test_event_code" => "TEST33434"
         );  
         
         
