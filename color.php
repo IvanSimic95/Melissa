@@ -287,6 +287,9 @@ text-align:center;
     width: 100%;
     line-height:1;
 }
+.upsale_page h1{
+  font-size:22px;
+}
 }
 
 .modal-content {
