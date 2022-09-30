@@ -17,7 +17,7 @@ if(isset($_SESSION['lastorder'])){
     $s1 = $row['s1'];
     $s2 = $row['s2'];
   
-    $_SESSION['lastorder'] = $_GET['order_ID'];
+
   $_SESSION['orderFName'] = $row['first_name'];
   $_SESSION['orderLName'] = $row['last_name'];
   $_SESSION['orderBirthday'] = $row['birthday'];
@@ -27,7 +27,7 @@ if(isset($_SESSION['lastorder'])){
   $_SESSION['BGEmail'] = $row['order_email'];
   
   $_SESSION['fbfirepixel'] = 1;
-  $_SESSION['fborderID'] = $_GET['order_ID'];
+  $_SESSION['fborderID'] = $_SESSION['lastorder'];
   $_SESSION['fborderPrice'] = $row['order_price'];
   $_SESSION['fbproduct'] = $row['order_product'];
   
