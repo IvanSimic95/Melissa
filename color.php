@@ -260,6 +260,35 @@ text-align:center;
     display:none;
 }
 
+@media only screen and (max-width: 350px) {
+  #addtopurchase{
+    display: inline-block;
+    padding: 15px 25px;
+    border-top: 2px solid #ff7cb3;
+    border-radius: 6px;
+    background-color: #c52886;
+    font-family: Lato, sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+    width: 100%;
+    line-height:1.2;
+    }
+#nothanks{
+    margin-top:20px;
+    display: inline-block;
+    padding: 13px 17px;
+    border-radius: 6px;
+    background-color: gray;
+    font-family: Lato, sans-serif;
+    font-size: 0.8rem;
+    text-align: center;
+    color: white;
+    width: 100%;
+    line-height:1;
+}
+}
+
 .modal-content {
     position: relative;
     background-color: #fff;
