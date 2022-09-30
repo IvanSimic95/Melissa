@@ -77,7 +77,7 @@ if(mysqli_query($conn,$sql)){
 $lastRowInsert = mysqli_insert_id($conn);
 $submitStatus = "Success";
 $SuccessMessage = "Information saved, Redirecting you to Payment Page Now!";
-$redirectPayment = "https://melissapsy.pay.clickbank.net/?cbur=a&cbfid=52075&cbitems=".$babyPriority."&cbskin=39040&order_ID=".$lastRowInsert;
+$redirectPayment = "https://melissapsy.pay.clickbank.net/?cbur=a&cbfid=52316&cbitems=".$babyPriority."&cbskin=39040&order_ID=".$lastRowInsert;
 $returnData = [$submitStatus,$SuccessMessage,$redirectPayment];
 echo json_encode($returnData);
 } else {

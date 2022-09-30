@@ -114,7 +114,7 @@ $sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_nam
 
 if(mysqli_query($conn,$sql)){
     $lastRowInsert = mysqli_insert_id($conn);
-$redirectPayment = "https://melissapsy.pay.clickbank.net/?cbur=a&cbfid=52075&cbitems=".$personalIDcount."&cbskin=39040&order_ID=".$lastRowInsert."&main_ID=".$main_ID;
+$redirectPayment = "https://melissapsy.pay.clickbank.net/?cbur=a&cbfid=52316&cbitems=".$personalIDcount."&cbskin=39040&order_ID=".$lastRowInsert."&main_ID=".$main_ID;
 $submitStatus = "Success";
 $SuccessMessage = "Information saved, Redirecting you to Payment Page Now!";
 $returnData = [$submitStatus,$SuccessMessage,$redirectPayment];
