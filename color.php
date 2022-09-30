@@ -205,7 +205,7 @@ text-align:center;
 
         <div class="sides" style="position:relative;overflow:hidden;">
           <div class="price_box">
-          <font color = "#FF00FF"> <center> <h2> ONLY </font><font color = "#49ff00 ">  $13.99</font> </h2> </center> </font>
+          <font color = "#FF00FF"> <center> <h2> ONLY </font><font color = "#49ff00 ">  $17.99</font> </h2> </center> </font>
           </div>
           <div class="smallerText">Choose at least one option to Proceed!</div>
           <button id="addtopurchase" type="submit" name="submit" value="Add to my Purchase" style="width:100%; margin-top:20px; padding:15px; line-height:1.2;">Yes, Please Upgrade My Order</button>
