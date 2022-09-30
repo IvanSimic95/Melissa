@@ -233,7 +233,7 @@ text-align:center;
     border-radius: 6px;
     background-color: #c52886;
     font-family: Lato, sans-serif;
-    font-size: 2rem;
+    font-size: 1rem;
     text-align: center;
     color: white;
     width: 100%;
