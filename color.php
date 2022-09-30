@@ -209,7 +209,7 @@ text-align:center;
           </div>
           <div class="smallerText">Choose at least one option to Proceed!</div>
           <button id="addtopurchase" type="submit" name="submit" value="Add to my Purchase" style="width:100%; margin-top:20px; padding:15px; line-height:1.2;">Yes, Please Upgrade My Order</button>
-<h3 class="line-behind" lkey="or">or</h3>
+
         </div>
       </div>
       <button id="nothanks" class="nothanks" type="submit" name="submit" value="No Thanks">No Thanks! I don't want to see the color of my soulmate's eyes</button>
