@@ -46,7 +46,7 @@ echo "Starting complete-orders.php...<br><br>";
 			$periods = new \DatePeriod($start, $interval, $end);
 			$hours = iterator_count($periods);
 			$premium = $row["premium"];
-			
+			$color = $row["color"];
 			$trigger = 0;
 			#$trigger = 1;
 			$image_send = 0;
@@ -137,8 +137,13 @@ $logArray[] = "
 						$age_min = 20;
 						$age_max = 24;
 					}
+					if($color == 1){
+						$productSearch = "soulmatecolor";
+					}else{
+						$productSearch = "soulmate";
+					}
 
-					$sql_pick = "SELECT * FROM orders_image WHERE age < '$age_max' AND age > '$age_min' AND sex = '$orderSex' order by RAND() limit 1";
+					$sql_pick = "SELECT * FROM orders_image WHERE product = '$productSearch' AND age < '$age_max' AND age > '$age_min' AND sex = '$orderSex' order by RAND() limit 1";
 					$sql_pick_res = $conn->query($sql_pick);
 					if($sql_pick_res->num_rows == 0) {
 							 $image_name = "";
