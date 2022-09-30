@@ -260,7 +260,7 @@ text-align:center;
     display:none;
 }
 
-@media only screen and (max-width: 350px) {
+@media only screen and (max-width: 450px) {
   #addtopurchase{
     display: inline-block;
     padding: 15px 25px;
