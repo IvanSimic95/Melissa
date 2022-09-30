@@ -1,132 +1,79 @@
 <?php
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
-$fireIframe = 0;
-//Check if partner sex was manually picked by user
-$sex_picked = "";
-if(isset($_POST['pick_sex'])){
-  $pick_sex = $_POST['pick_sex'];
-  $sex_picked = "1";
-}
 
-if(isset($_GET['updateInfo'])){
-    $showPopup = "No";
+
+if(isset($_GET['main_ID'])){
+  $lastOrderID = $_SESSION['lastorder'];
+  $order_ID = $lastOrderID;
+  $sql = "SELECT * FROM `orders` WHERE `order_id` = '$lastOrderID' ORDER BY `order_id` DESC LIMIT 1";
+  $result = $conn->query($sql);
+  $count = $result->num_rows;
+  $row = $result->fetch_assoc();
+  
+  //If order is found input data from BG and update status to paid
+  if($result->num_rows != 0) {
+  
+    $affid = $row['affid'];
+    $s1 = $row['s1'];
+    $s2 = $row['s2'];
+  
+    $_SESSION['lastorder'] = $_GET['order_ID'];
+  $_SESSION['orderFName'] = $row['first_name'];
+  $_SESSION['orderLName'] = $row['last_name'];
+  $_SESSION['orderBirthday'] = $row['birthday'];
+  $_SESSION['orderAge'] = $row['user_age'];
+  $_SESSION['orderGender'] = $row['user_sex'];
+  $_SESSION['orderPartnerGender'] = $row['pick_sex'];
+  $_SESSION['BGEmail'] = $row['order_email'];
+  
+  $_SESSION['fbfirepixel'] = 1;
+  $_SESSION['fborderID'] = $_GET['order_ID'];
+  $_SESSION['fborderPrice'] = $row['order_price'];
+  $_SESSION['fbproduct'] = $row['order_product'];
+  
+    if($affid == 1){
+      $fireIframe = 1;
+    }
+  
+  }
   }else{
-    $showPopup = "Yes";
-  }
-
-if(isset($_GET['order_ID'])){
-  $order_ID = $_GET['order_ID'];
-
-
-}else{
-  $order_ID = "";
-  $showPopup = "No";
-}
-
-if(isset($_GET['email'])){
-  $FirePixel = 0;
-  header("Location: https://".$domain."/color.php?order_ID=".$order_ID);
-  die();
-}
-
-if(isset($_POST['form_submit'])){
-
-$newGender = $_POST['gender'];
-$newPGender = $_POST['pgender'];
-$genderAcc = "101";
-$orderPID = $_POST['order_ID'];
-
-
-$_SESSION['orderGender'] = $newGender;
-$_SESSION['orderPartnerGender'] = $newPGender;
-
-
-$sql2 = "UPDATE `orders` SET `user_sex`='$newGender',`pick_sex`='$newPGender',`genderAcc`='$genderAcc' WHERE `order_id`='$orderPID'";
-$result = $conn->query($sql2);
-}
-//If sex was picked manually by user update it in order info
-if ($sex_picked==1) {
-    $order_id = $_POST['cookie_id'];
-    $sql = "UPDATE `orders` SET `pick_sex`='$pick_sex' WHERE cookie_id='$order_id'";
-    $result = $conn->query($sql);
-
-    $_SESSION['orderPartnerGender'] = $pick_sex;
-}
-$_SESSION['fbfirepixel'] = 1;
-
-if(isset($_SESSION['lastorder'])){
-$lastOrderID = $_SESSION['lastorder'];
-$order_ID = $lastOrderID;
-$sql = "SELECT * FROM `orders` WHERE `order_id` = '$lastOrderID' ORDER BY `order_id` DESC LIMIT 1";
-$result = $conn->query($sql);
-$count = $result->num_rows;
-$row = $result->fetch_assoc();
-
-//If order is found input data from BG and update status to paid
-if($result->num_rows != 0) {
-
-  $affid = $row['affid'];
-  $s1 = $row['s1'];
-  $s2 = $row['s2'];
-
+    if(isset($_GET['main_ID'])){
+  $ord = $_GET['main_ID'];
+  $order_ID = $ord;
+  $sql = "SELECT * FROM `orders` WHERE `order_id` = '$ord' ORDER BY `order_id` DESC LIMIT 1";
+  $result = $conn->query($sql);
+  $count = $result->num_rows;
+  $row = $result->fetch_assoc();
+  
+  //If order is found input data from BG and update status to paid
+  if($result->num_rows != 0) {
+  
+    $affid = $row['affid'];
+    $s1 = $row['s1'];
+    $s2 = $row['s2'];
+  
   $_SESSION['lastorder'] = $_GET['order_ID'];
-$_SESSION['orderFName'] = $row['first_name'];
-$_SESSION['orderLName'] = $row['last_name'];
-$_SESSION['orderBirthday'] = $row['birthday'];
-$_SESSION['orderAge'] = $row['user_age'];
-$_SESSION['orderGender'] = $row['user_sex'];
-$_SESSION['orderPartnerGender'] = $row['pick_sex'];
-$_SESSION['BGEmail'] = $row['order_email'];
-
-$_SESSION['fbfirepixel'] = 1;
-$_SESSION['fborderID'] = $_GET['order_ID'];
-$_SESSION['fborderPrice'] = $row['order_price'];
-$_SESSION['fbproduct'] = $row['order_product'];
-
-  if($affid == 1){
-    $fireIframe = 1;
+  $_SESSION['orderFName'] = $row['first_name'];
+  $_SESSION['orderLName'] = $row['last_name'];
+  $_SESSION['orderBirthday'] = $row['birthday'];
+  $_SESSION['orderAge'] = $row['user_age'];
+  $_SESSION['orderGender'] = $row['user_sex'];
+  $_SESSION['orderPartnerGender'] = $row['pick_sex'];
+  $_SESSION['BGEmail'] = $row['order_email'];
+  
+  $_SESSION['fbfirepixel'] = 1;
+  $_SESSION['fborderID'] = $_GET['order_ID'];
+  $_SESSION['fborderPrice'] = $row['order_price'];
+  $_SESSION['fbproduct'] = $row['order_product'];
+  
+  
   }
-
-}
-}else{
-  if(isset($_GET['order_ID'])){
-$ord = $_GET['order_ID'];
-$sql = "SELECT * FROM `orders` WHERE `order_id` = '$ord' ORDER BY `order_id` DESC LIMIT 1";
-$result = $conn->query($sql);
-$count = $result->num_rows;
-$row = $result->fetch_assoc();
-
-//If order is found input data from BG and update status to paid
-if($result->num_rows != 0) {
-
-  $affid = $row['affid'];
-  $s1 = $row['s1'];
-  $s2 = $row['s2'];
-
-$_SESSION['lastorder'] = $_GET['order_ID'];
-$_SESSION['orderFName'] = $row['first_name'];
-$_SESSION['orderLName'] = $row['last_name'];
-$_SESSION['orderBirthday'] = $row['birthday'];
-$_SESSION['orderAge'] = $row['user_age'];
-$_SESSION['orderGender'] = $row['user_sex'];
-$_SESSION['orderPartnerGender'] = $row['pick_sex'];
-$_SESSION['BGEmail'] = $row['order_email'];
-
-$_SESSION['fbfirepixel'] = 1;
-$_SESSION['fborderID'] = $_GET['order_ID'];
-$_SESSION['fborderPrice'] = $row['order_price'];
-$_SESSION['fbproduct'] = $row['order_product'];
-  if($affid == 1){
-    $fireIframe = 1;
+  
+  
+  
+  
+    }
   }
-
-}
-
-
-
-
-  }
-}
 
 
 $title = "Color Upgrade | Melissa Psychic";
@@ -215,55 +162,6 @@ text-align:center;
   </div>
 </div>
 
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title" id="exampleModalLabel">Before Proceeding Please Select Your & Partners Gender!</h3>
-    
-      </div>
-      <div class="modal-body">
-
-
-      <form id="completeOrder" class="form-order needs-validation display-block text-start" name="completeOrder" action="?order_ID=<?php echo $order_ID; ?>&updateInfo=Yes" method="post">
-
-<div class="form_box" style="text-align:start">
-<label for="SelectGender" style="left: 0;">Your Gender</label>
-  <select class="form-select" id="SelectGender" aria-label="SelectGender" required="" name="gender">
-    <option <?php if($_SESSION['orderGender']=="male")echo 'selected=""'; ?> value="male"><span class="fa fa-user"></span> Male</option>
-    <option <?php if($_SESSION['orderGender']=="female")echo 'selected=""'; ?>value="female">Female</option>
-  </select>
-  
-  </div>
-
-  <div class="form_box" style="text-align:start">
-  <label for="SelectPGender" style="left: 0;">Preferred Partner Gender</label>
-  <select class="form-select" id="SelectPGender" aria-label="SelectPGender" required="" name="pgender">
-    <option <?php if($_SESSION['orderPartnerGender']=="male")echo 'selected=""'; ?> value="male"><span class="fa fa-user"></span> Male</option>
-    <option <?php if($_SESSION['orderPartnerGender']=="female")echo 'selected=""'; ?>value="female"><span class="fa fa-user"></span> Female</option>
-  </select>
-  
-  </div>
-
-<hr class="mb-3">
-<div class="error-container">
-</div>
-
-<input class="orderID" type="hidden" name="order_ID" value="<?php echo $_GET['order_ID']; ?>">
-
-<button style="margin-top:15px; padding:15px; width:100%; font-size:130%; font-weight:bold;" id="submitbtn" type="submit" name="form_submit" class="btn" value="Save Changes!"><i class="fa fa-square-check"></i> Save Changes!</button>
-<hr class="mb-3">
-
-</form>
-
-
-      </div>
-    </div>
-  </div>
-</div>
-
 <div class="general_section upsale_page">
   <div class="container">
     <div class="white-wrapper col-md-10 offset-md-2"> 
@@ -272,13 +170,7 @@ text-align:center;
 
 
         <center> <img src="/assets/img/done2.jpg" alt="upsell" style="border-radius:4px;"> </center>
-<?php if($showPopup == "Yes"){ ?>
-<script>
-    $( document ).ready(function() {
-      $('#exampleModal').modal('show')
-});
-</script>
-<?php } ?>
+
 
    
   

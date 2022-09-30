@@ -91,6 +91,7 @@ $_SESSION['fbproduct'] = $row['order_product'];
 }else{
   if(isset($_GET['order_ID'])){
 $ord = $_GET['order_ID'];
+$order_ID = $ord;
 $sql = "SELECT * FROM `orders` WHERE `order_id` = '$ord' ORDER BY `order_id` DESC LIMIT 1";
 $result = $conn->query($sql);
 $count = $result->num_rows;
@@ -128,7 +129,7 @@ $_SESSION['fbproduct'] = $row['order_product'];
   }
 }
 
-
+$main_ID = $_GET['main_ID'];
 $title = "Readings | Melissa Psychic";
 $description = "Readings";
 $menu_order="men_0_0";
@@ -337,6 +338,7 @@ text-align:center;
         <input class="usergender" type="hidden" id="usergender" name="usergender" value="<?php echo $_SESSION['orderGender']; ?>">
         <input class="partnergender" type="hidden" id="partnergender" name="partnergender" value="<?php echo $_SESSION['orderPartnerGender']; ?>">
         <input class="email" type="hidden" name="bgemail" value="<?php echo $_SESSION['BGEmail']; ?>">
+        <input class="mainID" type="hidden" name="main_ID" value="<?php echo $main_ID; ?>">
         <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['user_cookie_id2']; ?>">
         <input class="price" type="hidden" id="product_price" name="price" value="19.99">
         <input class="fbp" type="hidden" name="fbp" value="<?php echo $UserFBP; ?>">

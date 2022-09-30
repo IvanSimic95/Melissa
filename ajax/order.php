@@ -146,7 +146,7 @@ $subidfull5 = $lastRowInsert."|".$domain."|".$cookie_id."|".$cookie_id2."|".$coo
 $subid5 = base64_encode($subidfull5);
 $submitStatus = "Success";
 $SuccessMessage = "Information saved, Redirecting you to Payment Page Now!";
-$redirectPayment = "https://melissapsy.pay.clickbank.net/?cbskin=39040&cbtimer=1593&cbfid=52075&cbitems=".$cbproduct."&name=".$user_name."&email=".$user_email."&cookie_ID=".$cookie_id."&order_ID=".$lastRowInsert;
+$redirectPayment = "https://melissapsy.pay.clickbank.net/?cbskin=39040&cbtimer=1593&cbfid=52075&cbitems=".$cbproduct."&name=".$user_name."&email=".$user_email."&cookie_ID=".$cookie_id."&order_ID=".$lastRowInsert."&main_ID=".$lastRowInsert;
 $returnData = [$submitStatus,$SuccessMessage,$redirectPayment];
 
 $_SESSION['UserEmail'] = $user_email;

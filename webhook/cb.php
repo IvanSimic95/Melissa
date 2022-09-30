@@ -36,6 +36,7 @@ $order_price = $obj->totalOrderAmount;
 $order_buygoods = $obj->receipt;
 $cookie_id = $obj->vendorVariables->cookie_ID;
 $mOrderID = $obj->vendorVariables->order_ID;
+$mainOrderID = $obj->vendorVariables->main_ID;
 $cName = $obj->customer->billing->fullName;
 $productImage = "https://soulmate-artist.com/assets/img/14dk.jpg";
 $productFullTitle = $obj->lineItems[0]->productTitle;
@@ -55,6 +56,23 @@ $logaArray[] = $order_email;
 $logaArray[] = $productFullTitle;
 if($order_email) {
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
+
+if($obj->lineItems[0]->itemNo == "17"){
+
+  $sql = "UPDATE `orders` SET `color`='1' WHERE order_id='$mainOrderID'" ;
+
+  if ($conn->query($sql) === TRUE) {
+    //echo "Order Status updated to Paid succesfully!";
+    $logaArray[] = "Order Updated";
+    error_log("Color Order Updated");
+  } else {
+      $logaArray[] = "Error Updating: " . $sql . "<br>" . $conn->error;
+      error_log("Error Updating Color Order: $sql <br> $conn->error");
+    //echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+
+
+}else{
 
     $sql = "UPDATE `orders` SET `order_status`='paid',`cb_email`='$order_email',`premium`='$premiumReading',`buygoods_order_id`='$order_buygoods' WHERE order_id='$mOrderID'" ;
 
@@ -133,7 +151,7 @@ formLogNewAgain($logaArray);
 
 error_log("------------------------------");
 }
-
+}
 }
 
 ?>
