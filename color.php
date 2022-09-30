@@ -2,7 +2,7 @@
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
 
-if(isset($_GET['main_ID'])){
+if(isset($_SESSION['lastorder'])){
   $lastOrderID = $_SESSION['lastorder'];
   $order_ID = $lastOrderID;
   $sql = "SELECT * FROM `orders` WHERE `order_id` = '$lastOrderID' ORDER BY `order_id` DESC LIMIT 1";
