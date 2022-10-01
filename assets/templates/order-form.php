@@ -54,11 +54,13 @@
   
   <div class="form_box">
     <label for="form_name">Your First and Last Name*</label>
-    <input class="customer_name" type="text" id="fullname" name="form_name" value="" required>
+    <input class="customer_name" type="text" id="fullname" name="form_name" pattern="[a-zA-Z]+" required="" title="No numbers or special characters allowed!">
   </div>
+ 
+  
   <div class="form_box">
 <label for="form_email">Your Email*</label>
-<input class="customer_email" type="email" id="email" name="form_email" value="" required="">
+<input class="customer_email" type="email" id="email" name="form_email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required="" title="Please enter correct email">
 </div>
   <div class="form_box">
     <span>Your Birth Date*</span>
