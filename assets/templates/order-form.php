@@ -54,7 +54,7 @@
   
   <div class="form_box">
     <label for="form_name">Your First and Last Name*</label>
-    <input class="customer_name" type="text" id="fullname" name="form_name" pattern="[a-zA-Z]+" required="" title="No numbers or special characters allowed!">
+    <input class="customer_name" type="text" id="fullname" name="form_name" pattern="[a-zA-Z']+" required="" title="No numbers or special characters allowed!">
   </div>
  
   
