@@ -7,12 +7,6 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'TheIconic\\NameParser\\' => array($vendorDir . '/theiconic/name-parser/src', $vendorDir . '/theiconic/name-parser/tests'),
-    'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src', $vendorDir . '/psr/http-factory/src'),
-    'Psr\\Http\\Client\\' => array($vendorDir . '/psr/http-client/src'),
     'Melbahja\\Seo\\' => array($vendorDir . '/melbahja/seo/src'),
-    'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
-    'GuzzleHttp\\Promise\\' => array($vendorDir . '/guzzlehttp/promises/src'),
-    'GuzzleHttp\\' => array($vendorDir . '/guzzlehttp/guzzle/src'),
     'GenderDetector\\' => array($vendorDir . '/tuqqu/gender-detector/src'),
-    'FacebookAds\\' => array($vendorDir . '/facebook/php-business-sdk/src/FacebookAds'),
 );
