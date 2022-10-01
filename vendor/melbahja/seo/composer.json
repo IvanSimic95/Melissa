@@ -6,7 +6,6 @@
 		"seo", 
 		"search engine optimization", 
 		"php7",
-		"php7.1",
 		"schema.org",
 		"sitemaps", 
 		"sitemap.xml", 
@@ -25,9 +24,10 @@
 		}
 	],
 	"require":  {
-		"php": ">=7.1",
+		"php": ">=7.2",
 		"ext-xml": "*",
-		"ext-curl": "*"
+		"ext-curl": "*",
+		"ext-json": "*"
 	},
 	"autoload": {
 		"psr-4": {

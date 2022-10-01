@@ -60,10 +60,11 @@ class SitemapBuilder implements SitemapBuilderInterface
 	/**
 	 * Sitemap options
 	 */
-	, $options = 
+	, $options =
 	[
 		'images' => false,
 		'videos' => false,
+		'localized' => false,
 	];
 
 
@@ -86,7 +87,11 @@ class SitemapBuilder implements SitemapBuilderInterface
 		}
 
 		if ($this->options['videos']) {
-			$urlset .= ' xmlns:video="'. static::VIDEO_NS .'"';	
+			$urlset .= ' xmlns:video="'. static::VIDEO_NS .'"';
+		}
+
+		if ($this->options['localized']) {
+			$urlset .= 'xmlns:xhtml="'. static::XHTML_NS .'"';
 		}
 
 		$this->doc = new SimpleXMLElement('<?xml version="1.0" encoding="UTF-8" ?>' . $urlset . "{$ns}/>");
@@ -124,6 +129,23 @@ class SitemapBuilder implements SitemapBuilderInterface
 	}
 
 	/**
+	 * Set alternative language url for multi lang support.
+	 *
+	 * @param  string $url
+	 * @param  string $lang   ISO 639-1 or ISO 3166-1 alpha-2
+	 * @return SitemapBuilderInterface
+	 */
+	public function alternate(string $path, string $lang)
+	{
+		if ($path[0] !== '/') {
+			$path = "/{$path}";
+		}
+
+		$this->url['alternate'][] = [Helper::escapeUrl($this->domain . $path), $lang];
+		return $this;
+	}
+
+	/**
 	 * Append url
 	 *
 	 * @return SitemapBuilderInterface
@@ -151,7 +173,7 @@ class SitemapBuilder implements SitemapBuilderInterface
 					}
 
 					continue;
-				
+
 				} elseif ($n === 'news') {
 
 					$child = $url->addChild('news:news', null, static::NEWS_NS);
@@ -164,6 +186,19 @@ class SitemapBuilder implements SitemapBuilderInterface
 					foreach ($v as $k => $p)
 					{
 						$child->addChild("{$n}:{$k}", $p);
+					}
+
+					continue;
+
+				} elseif ($n === 'alternate') {
+
+
+					foreach ($v as $k => $alt)
+					{
+						$child = $url->addChild('xhtml:link', null, static::XHTML_NS);
+						$child->addAttribute('rel', 'alternate');
+						$child->addAttribute('href', $alt[0]);
+						$child->addAttribute('hreflang', $alt[1]);
 					}
 
 					continue;
@@ -186,13 +221,15 @@ class SitemapBuilder implements SitemapBuilderInterface
 	 */
 	public function lastMod($date): SitemapBuilderInterface
 	{
-		return $this->lastMode($date);
+		$this->url['lastmod'] = $this->pasreDate($date);
+
+		return $this;
 	}
 
 	/**
 	 * Set image
 	 *
-	 * @todo  Validate image options 
+	 * @todo  Validate image options
 	 * @param  string  $imageUrl
 	 * @param  array  $options
 	 * @return SitemapBuilderInterface
@@ -316,12 +353,12 @@ class SitemapBuilder implements SitemapBuilderInterface
 			return $temp;
 		}
 
-		throw new SitemapException("Saving {$this->name} to temp failed");	
+		throw new SitemapException("Saving {$this->name} to temp failed");
 	}
 
 	/**
 	 * Get XML object
-	 * 
+	 *
 	 * @return SimpleXMLElement
 	 */
 	public function getDoc(): SimpleXMLElement
@@ -335,7 +372,7 @@ class SitemapBuilder implements SitemapBuilderInterface
 	 * @param  string $url
 	 * @return string
 	 */
-	protected function getByRelativeUrl(string $url): string 
+	protected function getByRelativeUrl(string $url): string
 	{
 		if (strpos($url, '://') === false) {
 			$url = $this->domain . ($url[0] !== '/' ? "{$url}/" : $url);
@@ -355,7 +392,7 @@ class SitemapBuilder implements SitemapBuilderInterface
 		if (is_int($date) === false) {
 			$date = strtotime($date);
 		}
-		
+
 		return date('c', $date);
 	}
 

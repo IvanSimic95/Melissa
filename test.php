@@ -1,43 +1,62 @@
 <?php
-$token = "aj2zskw799ncm7rh2x2f6vs7k6ezud";
-$utoken = "u24izth113b2jc8jwt4g68vvzppk12";
-$order_email = $obj->customer->billing->email;
-$order_price = $obj->totalOrderAmount;
-$order_buygoods = $obj->receipt;
-$cookie_id = $obj->vendorVariables->cookie_ID;
-$mOrderID = $obj->vendorVariables->order_ID;
-$cName = $obj->customer->billing->fullName;
-$productImage = "https://soulmate-artist.com/assets/img/14dk.jpg";
-$productFullTitle = $obj->lineItems[0]->productTitle;
+/**
+ * Copyright (c) 2015-present, Facebook, Inc. All rights reserved.
+ *
+ * You are hereby granted a non-exclusive, worldwide, royalty-free license to
+ * use, copy, modify, and distribute this software in source code or binary
+ * form for use in connection with the web services and APIs provided by
+ * Facebook.
+ *
+ * As with any software that integrates with the Facebook platform, your use
+ * of this software is subject to the Facebook Developer Principles and
+ * Policies [http://developers.facebook.com/policy/]. This copyright notice
+ * shall be included in all copies or substantial portions of the software.
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+ * THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ * FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
+ * DEALINGS IN THE SOFTWARE.
+ *
+ */
 
-$title = "New Order: #".$mOrderID." - ".$order_price;
-$message = "Name: ".$cName." | Email: ".$order_email." | Product: ".$productFullTitle;
+require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 
-//First create TalkJS User with same ID as conversation
-$ch = curl_init();
-$data = [
-"token" => $token,
-"user" => $token,
-"title" => $title,
-"message" => $message
-];
-$data1 = json_encode($data);
-curl_setopt($ch, CURLOPT_URL, 'https://api.pushover.net/1/messages.json');
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
-curl_setopt($ch, CURLOPT_POSTFIELDS, $data1);
-    
-$headers = array();
-$headers[] = 'Content-Type: application/json';
-curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-    
-$result = curl_exec($ch);
-if (curl_errno($ch)) {
-echo 'Error:' . curl_error($ch);
-}
-curl_close($ch);
-echo $result;
+use FacebookAds\Object\AdAccount;
+use FacebookAds\Object\AdsInsights;
+use FacebookAds\Api;
+use FacebookAds\Logger\CurlLogger;
 
+$access_token = 'EAALRlefvBlEBAExSoV5iim8fa0C6lZCGnpSyp3twSmJnNoXxxDSsl2ZAElIo6qJled9UMKYlMunPthlZBKJ8LtSDrH1ynz2KG8zhXuB63DwgdRPjOFZBaidKH3bbYm22BfgdZBON08EHQdqhn2hCMFIV4XY8YFmExRUNZBY5wJggAGebbV2KmeGCjihBgJTDQZD';
+$ad_account_id = 'act_803525254130959';
+$app_secret = '9dcc63f5f495b0f9aed8ea569a227eaa';
+$app_id = '793391724955217';
 
+$api = Api::init($app_id, $app_secret, $access_token);
+$api->setLogger(new CurlLogger());
 
-        ?>
+$fields = array(
+  'spend',
+  'cost_per_result',
+  'cpm',
+  'unique_actions:link_click',
+  'website_ctr:link_click',
+  'cpc',
+  'results',
+  'result_rate',
+  'frequency',
+  'quality_score_organic',
+);
+$params = array(
+  'time_range' => array('since' => '2022-09-02','until' => '2022-10-02'),
+  'filtering' => array(),
+  'level' => 'campaign',
+  'breakdowns' => array(),
+);
+echo json_encode((new AdAccount($ad_account_id))->getInsights(
+  $fields,
+  $params
+)->getResponse()->getContent(), JSON_PRETTY_PRINT);
+

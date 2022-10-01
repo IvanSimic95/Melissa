@@ -6,10 +6,22 @@ namespace Composer\Autoload;
 
 class ComposerStaticInit046eae1731df9b99ad3fa5f323585bb2
 {
+    public static $files = array (
+        '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
+        'c964ee0ededf28c96ebd9db5099ef910' => __DIR__ . '/..' . '/guzzlehttp/promises/src/functions_include.php',
+        '6e3fae29631ef280660b3cdad06f25a8' => __DIR__ . '/..' . '/symfony/deprecation-contracts/function.php',
+        '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'T' => 
         array (
             'TheIconic\\NameParser\\' => 21,
+        ),
+        'P' => 
+        array (
+            'Psr\\Http\\Message\\' => 17,
+            'Psr\\Http\\Client\\' => 16,
         ),
         'M' => 
         array (
@@ -17,7 +29,14 @@ class ComposerStaticInit046eae1731df9b99ad3fa5f323585bb2
         ),
         'G' => 
         array (
+            'GuzzleHttp\\Psr7\\' => 16,
+            'GuzzleHttp\\Promise\\' => 19,
+            'GuzzleHttp\\' => 11,
             'GenderDetector\\' => 15,
+        ),
+        'F' => 
+        array (
+            'FacebookAds\\' => 12,
         ),
     );
 
@@ -27,82 +46,43 @@ class ComposerStaticInit046eae1731df9b99ad3fa5f323585bb2
             0 => __DIR__ . '/..' . '/theiconic/name-parser/src',
             1 => __DIR__ . '/..' . '/theiconic/name-parser/tests',
         ),
+        'Psr\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+            1 => __DIR__ . '/..' . '/psr/http-factory/src',
+        ),
+        'Psr\\Http\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-client/src',
+        ),
         'Melbahja\\Seo\\' => 
         array (
             0 => __DIR__ . '/..' . '/melbahja/seo/src',
+        ),
+        'GuzzleHttp\\Psr7\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/psr7/src',
+        ),
+        'GuzzleHttp\\Promise\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/promises/src',
+        ),
+        'GuzzleHttp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/guzzlehttp/guzzle/src',
         ),
         'GenderDetector\\' => 
         array (
             0 => __DIR__ . '/..' . '/tuqqu/gender-detector/src',
         ),
+        'FacebookAds\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/facebook/php-business-sdk/src/FacebookAds',
+        ),
     );
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'GenderDetector\\Country' => __DIR__ . '/..' . '/tuqqu/gender-detector/src/Country.php',
-        'GenderDetector\\Exception\\FileReadingException' => __DIR__ . '/..' . '/tuqqu/gender-detector/src/Exception/FileReadingException.php',
-        'GenderDetector\\Exception\\GenderDetectingException' => __DIR__ . '/..' . '/tuqqu/gender-detector/src/Exception/GenderDetectingException.php',
-        'GenderDetector\\File\\Format' => __DIR__ . '/..' . '/tuqqu/gender-detector/src/File/Format.php',
-        'GenderDetector\\File\\Reader' => __DIR__ . '/..' . '/tuqqu/gender-detector/src/File/Reader.php',
-        'GenderDetector\\Gender' => __DIR__ . '/..' . '/tuqqu/gender-detector/src/Gender.php',
-        'GenderDetector\\GenderDetector' => __DIR__ . '/..' . '/tuqqu/gender-detector/src/GenderDetector.php',
-        'Melbahja\\Seo\\Exceptions\\SeoException' => __DIR__ . '/..' . '/melbahja/seo/src/Exceptions/SeoException.php',
-        'Melbahja\\Seo\\Exceptions\\SitemapException' => __DIR__ . '/..' . '/melbahja/seo/src/Exceptions/SitemapException.php',
-        'Melbahja\\Seo\\Helper' => __DIR__ . '/..' . '/melbahja/seo/src/Helper.php',
-        'Melbahja\\Seo\\Indexing' => __DIR__ . '/..' . '/melbahja/seo/src/Indexing.php',
-        'Melbahja\\Seo\\Interfaces\\SchemaInterface' => __DIR__ . '/..' . '/melbahja/seo/src/Interfaces/SchemaInterface.php',
-        'Melbahja\\Seo\\Interfaces\\SeoInterface' => __DIR__ . '/..' . '/melbahja/seo/src/Interfaces/SeoInterface.php',
-        'Melbahja\\Seo\\Interfaces\\SitemapBuilderInterface' => __DIR__ . '/..' . '/melbahja/seo/src/Interfaces/SitemapBuilderInterface.php',
-        'Melbahja\\Seo\\Interfaces\\SitemapIndexInterface' => __DIR__ . '/..' . '/melbahja/seo/src/Interfaces/SitemapIndexInterface.php',
-        'Melbahja\\Seo\\Interfaces\\SitemapInterface' => __DIR__ . '/..' . '/melbahja/seo/src/Interfaces/SitemapInterface.php',
-        'Melbahja\\Seo\\MetaTags' => __DIR__ . '/..' . '/melbahja/seo/src/MetaTags.php',
-        'Melbahja\\Seo\\Ping' => __DIR__ . '/..' . '/melbahja/seo/src/Ping.php',
-        'Melbahja\\Seo\\Robots' => __DIR__ . '/..' . '/melbahja/seo/src/Robots.php',
-        'Melbahja\\Seo\\Schema' => __DIR__ . '/..' . '/melbahja/seo/src/Schema.php',
-        'Melbahja\\Seo\\Schema\\Thing' => __DIR__ . '/..' . '/melbahja/seo/src/Schema/Thing.php',
-        'Melbahja\\Seo\\Sitemap' => __DIR__ . '/..' . '/melbahja/seo/src/Sitemap.php',
-        'Melbahja\\Seo\\Sitemap\\LinksBuilder' => __DIR__ . '/..' . '/melbahja/seo/src/Sitemap/LinksBuilder.php',
-        'Melbahja\\Seo\\Sitemap\\NewsBuilder' => __DIR__ . '/..' . '/melbahja/seo/src/Sitemap/NewsBuilder.php',
-        'Melbahja\\Seo\\Sitemap\\SitemapBuilder' => __DIR__ . '/..' . '/melbahja/seo/src/Sitemap/SitemapBuilder.php',
-        'Melbahja\\Seo\\Sitemap\\SitemapIndex' => __DIR__ . '/..' . '/melbahja/seo/src/Sitemap/SitemapIndex.php',
-        'TheIconic\\NameParser\\GermanParserTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/GermanParserTest.php',
-        'TheIconic\\NameParser\\LanguageInterface' => __DIR__ . '/..' . '/theiconic/name-parser/src/LanguageInterface.php',
-        'TheIconic\\NameParser\\Language\\English' => __DIR__ . '/..' . '/theiconic/name-parser/src/Language/English.php',
-        'TheIconic\\NameParser\\Language\\German' => __DIR__ . '/..' . '/theiconic/name-parser/src/Language/German.php',
-        'TheIconic\\NameParser\\Mapper\\AbstractMapper' => __DIR__ . '/..' . '/theiconic/name-parser/src/Mapper/AbstractMapper.php',
-        'TheIconic\\NameParser\\Mapper\\AbstractMapperTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/Mapper/AbstractMapperTest.php',
-        'TheIconic\\NameParser\\Mapper\\FirstnameMapper' => __DIR__ . '/..' . '/theiconic/name-parser/src/Mapper/FirstnameMapper.php',
-        'TheIconic\\NameParser\\Mapper\\FirstnameMapperTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/Mapper/FirstnameMapperTest.php',
-        'TheIconic\\NameParser\\Mapper\\InitialMapper' => __DIR__ . '/..' . '/theiconic/name-parser/src/Mapper/InitialMapper.php',
-        'TheIconic\\NameParser\\Mapper\\InitialMapperTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/Mapper/InitialMapperTest.php',
-        'TheIconic\\NameParser\\Mapper\\LastnameMapper' => __DIR__ . '/..' . '/theiconic/name-parser/src/Mapper/LastnameMapper.php',
-        'TheIconic\\NameParser\\Mapper\\LastnameMapperTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/Mapper/LastnameMapperTest.php',
-        'TheIconic\\NameParser\\Mapper\\MiddlenameMapper' => __DIR__ . '/..' . '/theiconic/name-parser/src/Mapper/MiddlenameMapper.php',
-        'TheIconic\\NameParser\\Mapper\\MiddlenameMapperTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/Mapper/MiddlenameMapperTest.php',
-        'TheIconic\\NameParser\\Mapper\\NicknameMapper' => __DIR__ . '/..' . '/theiconic/name-parser/src/Mapper/NicknameMapper.php',
-        'TheIconic\\NameParser\\Mapper\\NicknameMapperTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/Mapper/NicknameMapperTest.php',
-        'TheIconic\\NameParser\\Mapper\\SalutationMapper' => __DIR__ . '/..' . '/theiconic/name-parser/src/Mapper/SalutationMapper.php',
-        'TheIconic\\NameParser\\Mapper\\SalutationMapperTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/Mapper/SalutationMapperTest.php',
-        'TheIconic\\NameParser\\Mapper\\SuffixMapper' => __DIR__ . '/..' . '/theiconic/name-parser/src/Mapper/SuffixMapper.php',
-        'TheIconic\\NameParser\\Mapper\\SuffixMapperTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/Mapper/SuffixMapperTest.php',
-        'TheIconic\\NameParser\\Name' => __DIR__ . '/..' . '/theiconic/name-parser/src/Name.php',
-        'TheIconic\\NameParser\\NameTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/NameTest.php',
-        'TheIconic\\NameParser\\Parser' => __DIR__ . '/..' . '/theiconic/name-parser/src/Parser.php',
-        'TheIconic\\NameParser\\ParserTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/ParserTest.php',
-        'TheIconic\\NameParser\\Part\\AbstractPart' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/AbstractPart.php',
-        'TheIconic\\NameParser\\Part\\AbstractPartTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/Part/AbstractPartTest.php',
-        'TheIconic\\NameParser\\Part\\Firstname' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/Firstname.php',
-        'TheIconic\\NameParser\\Part\\GivenNamePart' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/GivenNamePart.php',
-        'TheIconic\\NameParser\\Part\\Initial' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/Initial.php',
-        'TheIconic\\NameParser\\Part\\Lastname' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/Lastname.php',
-        'TheIconic\\NameParser\\Part\\LastnamePrefix' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/LastnamePrefix.php',
-        'TheIconic\\NameParser\\Part\\Middlename' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/Middlename.php',
-        'TheIconic\\NameParser\\Part\\NamePart' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/NamePart.php',
-        'TheIconic\\NameParser\\Part\\Nickname' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/Nickname.php',
-        'TheIconic\\NameParser\\Part\\NormalisationTest' => __DIR__ . '/..' . '/theiconic/name-parser/tests/Part/NormalisationTest.php',
-        'TheIconic\\NameParser\\Part\\PreNormalizedPart' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/PreNormalizedPart.php',
-        'TheIconic\\NameParser\\Part\\Salutation' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/Salutation.php',
-        'TheIconic\\NameParser\\Part\\Suffix' => __DIR__ . '/..' . '/theiconic/name-parser/src/Part/Suffix.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

@@ -381,7 +381,7 @@ $sitemap->links(['name' => 'posts.xml', 'videos' => true], function($map)
         // player_loc or content_loc one of them is required
         'player_loc' => 'https://example.com/embed/81287127'
 
-        // for all availabe options see References -> videos
+        // for all available options see References -> videos
     ]);
 
     $map->loc('posts/bla-bla');
@@ -525,7 +525,7 @@ $ping->send('https://example.com/sitemap_file.xml');
 
 ```
 
-## Indexing API
+### Indexing API
 
 This is the first PHP library to support the new search engines indexing API (aka indexnow.org).
 
@@ -546,7 +546,7 @@ $indexer->indexUrls(['https://www.example.com/page']);
 
 ```
 
-## Sponsors:
+## Sponsors
 
 Special thanks to friends who support this work financially:
 
@@ -557,10 +557,10 @@ Special thanks to friends who support this work financially:
 - [Sitemaps protocol (https://www.sitemaps.org/protocol.html)](https://www.sitemaps.org/protocol.html)
 - [Build Sitemaps (https://support.google.com/webmasters/answer/183668?hl=en)](https://support.google.com/webmasters/answer/183668?hl=en)
 - [News Sitemaps (https://support.google.com/webmasters/answer/74288)](https://support.google.com/webmasters/answer/74288)
-- [Image Sitempas (https://support.google.com/webmasters/answer/178636)](https://support.google.com/webmasters/answer/178636)
+- [Image Sitemaps (https://support.google.com/webmasters/answer/178636)](https://support.google.com/webmasters/answer/178636)
 - [Video Sitemaps (https://support.google.com/webmasters/answer/80471)](https://support.google.com/webmasters/answer/80471)
 - [Mobile (https://developers.google.com/search/mobile-sites/mobile-seo/other-devices)](https://developers.google.com/search/mobile-sites/mobile-seo/other-devices)
 
 
-## License:
+## License
 [MIT](https://github.com/melbahja/seo/blob/master/LICENSE) Copyright (c) 2019-present Mohamed Elbahja
