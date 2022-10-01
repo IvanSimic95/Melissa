@@ -26,7 +26,7 @@ $user_age = $interval->y;
 
 
 $user_name = $_POST['form_name'];
-$user_name = htmlspecialchars($user_name);
+$user_name = htmlspecialchars($user_name, ENT_QUOTES);
 $user_name = normalizeChars($user_name);
 $user_email = $_POST['form_email'];
 $order_product = $_POST['product'];
