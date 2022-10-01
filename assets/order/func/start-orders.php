@@ -232,6 +232,12 @@ $customer_emailaddress = $row["order_email"];
 $birthday = $row["birthday"];
 
 
+if($userSex == "male"){
+	$usersex1 = "m";
+}else{
+	$usersex1 = "f";
+}
+
 //Facebook API conversion
 if($orderProduct == "soulmate"){
    if($sendFBAPI == 1){
@@ -248,7 +254,7 @@ if($orderProduct == "soulmate"){
                     "ln" => hash('sha256', $Flast_name),
                     "em" => hash('sha256', $customer_emailaddress),
                     "db" => hash('sha256', $fixedBirthday),
-                    "ge" => hash('sha256', $userSex),
+                    "ge" => hash('sha256', $usersex1),
                     "external_id" => hash('sha256', $orderId),
                 ),
                 "contents" => array(
