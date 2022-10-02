@@ -9,11 +9,13 @@
 				   }
 
 				   require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
-
+				   $pass1 = "Adasu8oazst";
+				   $pass2 = "ete21435";
+				   $pass = $pass1.$pass2;
 // Create the Transport
 $transport = (new Swift_SmtpTransport('ssl://smtp.gmail.com', 465))
   ->setUsername('contact@melissa-psychic.com')
-  ->setPassword('Dadada123!')
+  ->setPassword($pass)
 ;
 
 // Create the Mailer using your created Transport
