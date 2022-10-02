@@ -7,20 +7,35 @@
 					echo "No arguments Provided!";
 					return false;
 				   }
-					
-				$name = $_POST['name'];
-				$email_address = $_POST['email'];
-				$phone = $_POST['phone'];
-				$subject = $_POST['subject'];
-				$message = $_POST['message'];
-					
-				// Create the email and send the message
-				$to = 'contact@melissa-psychic.com'; // Add your email address inbetween the '' replacing yourname@yourdomain.com - This is where the form will send a message to.
-				$email_subject = "$subject:  $name";
-				$email_body = "You have received a new message from your Melissa-psychic.com contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nPhone: $phone\n\nSubject: $subject\n\nMessage:\n$message";
-				$headers = "From: info@melissa-psychic.com\n"; // This is the email address the generated message will be from. We recommend using something like noreply@yourdomain.com.
-				$headers .= "Reply-To: $email_address";	
-				mail($to,$email_subject,$email_body,$headers);
-				return true;
 
+				   require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
+
+// Create the Transport
+$transport = (new Swift_SmtpTransport('ssl://smtp.gmail.com', 465))
+  ->setUsername('contact@melissa-psychic.com')
+  ->setPassword('Dadada123!')
+;
+
+// Create the Mailer using your created Transport
+$mailer = new Swift_Mailer($transport);
+
+$name = $_POST['name'];
+$email_address = $_POST['email'];
+$subject = $_POST['subject'];
+$message = $_POST['message'];
+
+$email_subject = "Order #".$subject.":  ".$name;
+$email_body = "You have received a new message from your melissa-psychic.com contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nSubject: $subject\n\nMessage:\n$message";
+
+// Create a message
+$message = (new Swift_Message($email_subject))
+  ->setFrom(['contact@melissa-psychic.com' => 'Melissa'])
+  ->setTo(['contact@melissa-psychic.com'])
+  ->setReplyTo([$email_address])
+  ->setBody($email_body)
+  ;
+
+// Send the message
+$result = $mailer->send($message);
+echo $result;
 ?>
