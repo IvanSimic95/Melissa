@@ -29,6 +29,9 @@ $t_about_content = "
 <br>
 <div style='color:#a700f5;'><div style='font-size:120%'><center>  <b>MAXIMUM DISCRETION: DIGITAL DELIVERY ONLY! </p> </center>
 <p>All orders are delivered to the provided email address and also can be accessed from the user dashboard. Nothing will be shipped to your home address! </b><br> Drawing will be sent as .png or .jpg image format and text will be delivered to email and user dashboard.</div>
+<br>
+<p><center><img src='/assets/img/mel2.jpg'> </center></p>
+<br>
 ";
 
 
