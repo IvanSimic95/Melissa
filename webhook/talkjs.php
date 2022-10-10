@@ -59,7 +59,7 @@ switch ($event->type) {
         }
 
 
-        if($senderID != "administrator" && $senderID != "soulmateAdminNew")
+        if($senderID != "administrator" && $senderID != "soulmateAdminNew"){
                 //Send CURL for message -> TalkJS
                 $ch = curl_init();
                 $data = [[
@@ -88,7 +88,7 @@ switch ($event->type) {
                 curl_close($ch);
 
 
-
+            }
 
         break;
 
