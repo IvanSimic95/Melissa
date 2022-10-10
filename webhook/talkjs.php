@@ -34,16 +34,25 @@ error_log("TalkJS Payload: $payload");
 
 // Parse the event payload JSON and handle it appropriately. Your custom code comes below.
 $event = json_decode($payload);
+$senderID = $event->data->sender->id;
+$conversationID = $event->data->conversation->id;
 switch ($event->type) {
     case "message.sent":
-        // save to the database etc.
+       
+        
+
+        if($conversationID <= 500000){ //Check if for Melissa
+            error_log("Conversation ID: $conversationID | Melissa Psychic");
+        }elseif($conversationID >= 500001){ //Check if for Isabella
+            error_log("Conversation ID: $conversationID | Isabella Psychic");
+        }else{
+            error_log("Conversation ID: $conversationID | Who to apply to?");
+        }
+
+
+
         break;
-    case "message.read":
-        // update the message as read in your CRM/internal db etc.
-        break;
-    case "notification.triggered":
-        // send a custom email somewhere
-        break;
+
     default:
         // other events that you don't need falls here
         // save it or ignore it, according to your needs.
