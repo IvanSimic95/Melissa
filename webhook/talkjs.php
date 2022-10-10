@@ -34,20 +34,59 @@ error_log("TalkJS Payload: $payload");
 
 // Parse the event payload JSON and handle it appropriately. Your custom code comes below.
 $event = json_decode($payload);
-$senderID = $event->data->sender->id;
-$conversationID = $event->data->conversation->id;
+
 switch ($event->type) {
     case "message.sent":
        
-        
+       
+  
+
+        $senderID = $event->data->message->senderId;
+        $conversationID = $event->data->conversation->id;
+
+        $melissaMSG = "Hello,\nI'm experiencing a higher unusual amount of messages and my replies might be delayed. If you have troubles finding your order, please make sure you first tried to login here https://melissa-psychic.com/dashboard.php using your email address (if you used multiple, try all). \nFor other inquiries, I’ll reply ASAP. \n\nThank you, Melissa";
+        $isabellaMSG = "Hello,\nI'm experiencing a higher unusual amount of messages and my replies might be delayed. If you have troubles finding your order, please make sure you first tried to login here https://soulmate-psychic.com/dashboard.php using your email address (if you used multiple, try all). \nFor other inquiries, I’ll reply ASAP. \n\nThank you, Isabella";
+       
 
         if($conversationID <= 500000){ //Check if for Melissa
             error_log("Conversation ID: $conversationID | Melissa Psychic");
+            $sendMSG = $melissaMSG;
         }elseif($conversationID >= 500001){ //Check if for Isabella
             error_log("Conversation ID: $conversationID | Isabella Psychic");
+            $sendMSG = $isabellaMSG;
         }else{
             error_log("Conversation ID: $conversationID | Who to apply to?");
         }
+
+
+        if($senderID != "administrator" && $senderID != "soulmateAdminNew")
+                //Send CURL for message -> TalkJS
+                $ch = curl_init();
+                $data = [[
+                    "sender"  => "administrator",
+                    "text" => $sendMSG,
+                    "type" => "UserMessage"
+                ]];
+                
+                $data1 = json_encode($data);
+
+                curl_setopt($ch, CURLOPT_URL, 'https://api.talkjs.com/v1/ArJWsup2/conversations/' . $conversationID . '/messages');
+                curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+                curl_setopt($ch, CURLOPT_CUSTOMREQUEST, 'POST');
+
+                curl_setopt($ch, CURLOPT_POSTFIELDS, $data1);
+
+                $headers = array();
+                $headers[] = 'Content-Type: application/json';
+                $headers[] = 'Authorization: Bearer sk_live_Ncow50B9RdRQFeXBsW45c5LFRVYLCm98';
+                curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+
+                $result = curl_exec($ch);
+                if (curl_errno($ch)) {
+                    echo 'Error:' . curl_error($ch);
+                }
+                curl_close($ch);
+
 
 
 
