@@ -6,7 +6,7 @@ $description = "I will draw your Higher Self with 100% accuracy";
 $menu_order="men_2_0"; 
 $bgproduct = "purification12";
 
-$price1 = "3.80";
+$price1 = "200.00";
 $price2 = "39.99";
 $price3 = "49.99";
 
