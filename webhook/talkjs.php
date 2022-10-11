@@ -35,8 +35,8 @@ error_log("TalkJS Payload: $payload");
 // Parse the event payload JSON and handle it appropriately. Your custom code comes below.
 $event = json_decode($payload);
 
-switch ($event->type) {
-    case "message.sent":
+if($event->type == "message.sent"){
+
        
        
   
@@ -90,10 +90,5 @@ switch ($event->type) {
 
             }
 
-        break;
 
-    default:
-        // other events that you don't need falls here
-        // save it or ignore it, according to your needs.
-        break;
 }
