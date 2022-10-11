@@ -30,7 +30,7 @@ if (!hash_equals($expectedSignature, $signature)) {
     die();
 }
 
-error_log("TalkJS Payload: $payload");
+//error_log("TalkJS Payload: $payload");
 
 // Parse the event payload JSON and handle it appropriately. Your custom code comes below.
 $event = json_decode($payload);
@@ -49,10 +49,10 @@ if($event->type == "message.sent"){
        
 
         if($conversationID <= 500000){ //Check if for Melissa
-            error_log("Conversation ID: $conversationID | Melissa Psychic");
+            //error_log("Conversation ID: $conversationID | Melissa Psychic");
             $sendMSG = $melissaMSG;
         }elseif($conversationID >= 500001){ //Check if for Isabella
-            error_log("Conversation ID: $conversationID | Isabella Psychic");
+           // error_log("Conversation ID: $conversationID | Isabella Psychic");
             $sendMSG = $isabellaMSG;
         }else{
             error_log("Conversation ID: $conversationID | Who to apply to?");
@@ -86,6 +86,7 @@ if($event->type == "message.sent"){
                     echo 'Error:' . curl_error($ch);
                 }
                 curl_close($ch);
+                error_log("CURL Response: $result | Conversation ID: $conversationID");
 
 
             }
