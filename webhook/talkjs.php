@@ -51,9 +51,11 @@ if($event->type == "message.sent"){
         if($conversationID <= 500000){ //Check if for Melissa
             //error_log("Conversation ID: $conversationID | Melissa Psychic");
             $sendMSG = $melissaMSG;
+            $adminSendMSG = "administrator";
         }elseif($conversationID >= 500001){ //Check if for Isabella
            // error_log("Conversation ID: $conversationID | Isabella Psychic");
             $sendMSG = $isabellaMSG;
+            $adminSendMSG = "soulmateAdminNew";
         }else{
             error_log("Conversation ID: $conversationID | Who to apply to?");
         }
@@ -63,7 +65,7 @@ if($event->type == "message.sent"){
                 //Send CURL for message -> TalkJS
                 $ch = curl_init();
                 $data = [[
-                    "sender"  => "administrator",
+                    "sender"  => $adminSendMSG,
                     "text" => $sendMSG,
                     "type" => "UserMessage"
                 ]];
