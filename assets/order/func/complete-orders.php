@@ -595,11 +595,11 @@ $logArray[] = "
                 $ch = curl_init();
                 $data = [[
                 "text" => $message,
-                "sender"  => "soulmateAdminNew",
+                "sender"  => "administrator",
                 "type" => "UserMessage"
 				],[
 				"attachmentToken" => $Atoken_key,
-				"sender"  => "soulmateAdminNew",
+				"sender"  => "administrator",
 				"type" => "UserMessage"
 				],[
 				"text" => $OrderCompleteMessage,
@@ -651,14 +651,14 @@ $logArray[] = "
 							$ch = curl_init();
 							$data = [[
 							"text" => $message,
-							"sender"  => "soulmateAdminNew",
+							"sender"  => "administrator",
 							"type" => "UserMessage"
 							]];
 						}else{
 					$ch = curl_init();
 					$data = [[
 					"text" => $message,
-					"sender"  => "soulmateAdminNew",
+					"sender"  => "administrator",
 					"type" => "UserMessage"
 					],[
 					"text" => $OrderCompleteMessage,
@@ -768,11 +768,11 @@ if($finishOrder == 1 && $missingTest == 0){
 $ch = curl_init();
 $data = [[
 "text" => $message,
-"sender"  => "soulmateAdminNew",
+"sender"  => "administrator",
 "type" => "UserMessage"
 ],[
 "attachmentToken" => $Atoken_key,
-"sender"  => "soulmateAdminNew",
+"sender"  => "administrator",
 "type" => "UserMessage"
 ],[
 "text" => $OrderCompleteMessage,
