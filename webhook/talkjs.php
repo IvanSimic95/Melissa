@@ -30,7 +30,7 @@ if (!hash_equals($expectedSignature, $signature)) {
     die();
 }
 
-//error_log("TalkJS Payload: $payload");
+error_log("TalkJS Payload: $payload");
 
 // Parse the event payload JSON and handle it appropriately. Your custom code comes below.
 $event = json_decode($payload);
