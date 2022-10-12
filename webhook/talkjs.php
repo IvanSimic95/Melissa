@@ -41,7 +41,7 @@ if($event->type == "message.sent"){
        
   
 
-        $senderID = $event->data->message->senderId;
+        $senderID = $event->data->sender->role;
         $conversationID = $event->data->conversation->id;
 
         $melissaMSG = "Hello,\nI'm experiencing a higher unusual amount of messages and my replies might be delayed. If you have troubles finding your order, please make sure you first tried to login here https://melissa-psychic.com/dashboard.php using your email address (if you used multiple, try all). \nFor other inquiries, I’ll reply ASAP. \n\nThank you, Melissa";
@@ -61,7 +61,7 @@ if($event->type == "message.sent"){
         }
 
 
-        if($senderID != "administrator" && $senderID != "soulmateAdminNew"){
+        if($senderID == "customer"){
                 //Send CURL for message -> TalkJS
                 $ch = curl_init();
                 $data = [[
@@ -91,6 +91,8 @@ if($event->type == "message.sent"){
                 error_log("CURL Response: $result | Conversation ID: $conversationID");
 
 
+            }else{
+                error_log("User Role: $senderID");
             }
 
 
