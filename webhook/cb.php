@@ -255,6 +255,9 @@ $msg_date = date('Y-m-d H:i:s');
     }
 
   }
+}elseif($type == "ABANDONED_ORDER"){
+  error_log("Abandoned Order: $mOrderID");
+
 }
 
 ?>
