@@ -74,7 +74,7 @@ if($order_email) {
 include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
 
-if($obj->lineItems[0]->itemNo == "17"){
+if($obj->lineItems[0]->itemNo == "14"){
 
   $sql = "UPDATE `orders` SET `color`='1' WHERE order_id='$mOrderID'" ;
 
