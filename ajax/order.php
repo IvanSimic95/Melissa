@@ -80,7 +80,26 @@ $_SESSION['orderGender'] = $userGender;
 $_SESSION['orderPartnerGender'] = $partnerGender;
 
 
+if($order_product == "futurespouse"){
 
+  switch ($order_priority){
+    case "48":
+      $cbproduct = "16";
+      $cbprice = "29.99";
+    break;
+  
+    case "24":
+      $cbproduct = "17";
+      $cbprice = "39.99";
+    break;
+  
+    case "12":
+      $cbproduct = "18";
+      $cbprice = "49.99";
+    break;
+  }
+
+}else{
 
 
 switch ($order_priority){
@@ -100,6 +119,7 @@ switch ($order_priority){
   break;
 }
 
+}
 $order_product_nice = "Soulmate Drawing";
 
 $order_product_test = ucwords($order_product);
