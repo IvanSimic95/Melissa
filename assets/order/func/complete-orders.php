@@ -406,6 +406,7 @@ $logArray[] = "
 				}elseif (strpos($orderProduct, 'general') !== false || strpos($orderProduct, 'love') !== false || strpos($orderProduct, 'career') !== false || strpos($orderProduct, 'health') !== false) {
 				$image_send = 0;
 				$email_text = "";
+				$text_send = "1";
 				$theader = $readingOrderHeader;
 				$tfooter = $readingOrderFooter;
 				$finishOrder = 1;
