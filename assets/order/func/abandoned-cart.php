@@ -10,7 +10,7 @@ echo "Starting abbandoned-carts.php...<br><br>";
 	$sqlpending = "SELECT * FROM `orders` WHERE (`order_status` = 'pending' AND `order_product` = 'soulmate' AND `abandoned_cart` = 'active') OR (`order_status` = 'pending' AND `order_product` = 'futurespouse' AND `abandoned_cart` = 'active')";
 	$resultpending = $conn->query($sqlpending);
 	if($resultpending->num_rows == 0) {
-	   echo "No Orders with STATUS = PENDING found in database.";
+	   echo "No Orders with pending cart abandon email to be sent";
 	}else{
         echo "Pending Orders: ".$resultpending->num_rows."<br><br>";
 
