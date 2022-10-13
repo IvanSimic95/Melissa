@@ -7,7 +7,7 @@ echo "Starting abbandoned-carts.php...<br><br>";
 
 // 1. Check and select paid orders.
 
-	$sqlpending = "SELECT * FROM `orders` WHERE (`order_status` = 'pending' AND `order_product` = 'soulmate') OR (`order_status` = 'pending' AND `order_product` = 'futurespouse')";
+	$sqlpending = "SELECT * FROM `orders` WHERE (`order_status` = 'pending' AND `order_product` = 'soulmate' AND `abandoned_cart` = 'active') OR (`order_status` = 'pending' AND `order_product` = 'futurespouse' AND `abandoned_cart` = 'active')";
 	$resultpending = $conn->query($sqlpending);
 	if($resultpending->num_rows == 0) {
 	   echo "No Orders with STATUS = PENDING found in database.";
