@@ -90,7 +90,7 @@ break;
 ";
 
 		 //	Update Order Status Processing
-			$sqlupdate = "UPDATE `orders` SET `order_status`='processing' WHERE order_id='$orderId'";
+			$sqlupdate = "UPDATE `orders` SET `order_status`='processing', `abandoned_cart`='paid' WHERE order_id='$orderId'";
 			if ($conn->query($sqlupdate) === TRUE) {
       		echo "Updated";
 

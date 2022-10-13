@@ -41,6 +41,12 @@ $cName = $obj->customer->billing->fullName;
 $productImage = "https://melissa-psychic.com/assets/img/14dk.jpg";
 $productFullTitle = $obj->lineItems[0]->productTitle;
 
+if(isset($obj->vendorVariables->email)){
+  $emailRecovery = "recovered";
+}else{
+  $emailRecovery = "";
+}
+
 $countPurchase = count($obj->lineItems);
 if($countPurchase == 1){
 
@@ -256,6 +262,9 @@ $msg_date = date('Y-m-d H:i:s');
 
   }
 }elseif($type == "ABANDONED_ORDER"){
+
+  $customerEmail = $obj->customer->shipping->email;
+
   error_log("Abandoned Order: $mOrderID");
 
 }

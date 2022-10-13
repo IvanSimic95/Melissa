@@ -65,6 +65,11 @@ $OrderCompleteMessage = "Your Order status is now set to *Complete*!";
 $ContinueConvoMsg = "If you want to chat with Melissa, simply reply to this conversation!";
 //END Order Messages
 
+
+//EMAIL TEXTS
+$AbandonSubject = "The Timer’s Going Off on Your Order!";
+$AbandonMessage = "Look's like you forgot to finish your order... But don't worry, we kept it safe for you! Click the button below to finish your purchase & get closer to your soulmate.";
+
 //Save to order log function
 function formLog($array) {
     $dataToLog = $array;

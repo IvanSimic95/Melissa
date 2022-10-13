@@ -3,6 +3,7 @@
         "melbahja/seo": "^2.0",
         "theiconic/name-parser": "^1.2",
         "tuqqu/gender-detector": "^0.3.0",
-        "swiftmailer/swiftmailer": "^6.0"
+        "swiftmailer/swiftmailer": "^6.0",
+        "sendgrid/sendgrid": "~7"
     }
 }

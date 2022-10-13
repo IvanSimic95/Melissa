@@ -1,37 +1,37 @@
 <?php
-
 require $_SERVER['DOCUMENT_ROOT'].'/vendor/autoload.php';
 
-$pass1 = "Adasu8oazst";
-$pass2 = "ete21435";
-$pass = $pass1.$pass2;
+use SendGrid\Mail\Mail;
 
-// Create the Transport
-$transport = (new Swift_SmtpTransport('smtp.gmail.com', 465, "ssl"))
-  ->setUsername('contact@melissa-psychic.com')
-  ->setPassword($pass)
-;
+$email = new Mail();
+$email->setFrom("contact@melissa-psychic.com", "Melissa Psychic");
+$email->setSubject("The Timer’s Going Off on Your Order!");
+$email->addTo(
+    "email@isimic.com",
+    "Ivan Simic",
+    [
+        "name" => "Ivan Simic",
+        "email" => "email@isimic.com",
+        "status" => "Pending Payment",
+        "product" => "Soulmate Drawing",
+        "orderid" => "123123",
+        "partner" => "Female",
+        "birthday" => "29.03.1995",
+        "price" => "29.99",
+        "restorelink" => "https://melissa-psychic.com",
+        "msg" => "Look's like you forgot to finish your order... But don't worry, we kept it safe for you! Click the button below to finish your purchase & get closer to your soulmate."
+    ]
+);
+$email->setTemplateId("d-864f0f07f9cd43a99ed7b43a9e82798a");
+$sendgrid = new \SendGrid('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');
+try {
+    $response = $sendgrid->send($email);
+    print $response->statusCode() . "\n";
+    print_r($response->headers());
+    print $response->body() . "\n";
+} catch (Exception $e) { 
+    echo 'Caught exception: '.  $e->getMessage(). "\n";
+}
 
-// Create the Mailer using your created Transport
-$mailer = new Swift_Mailer($transport);
 
-$name = "ivan";
-$email_address = "ivan.simic2903@gmail.com";
-$subject = "112233";
-$message = "test message";
-
-$email_subject = "Order #".$subject.":  ".$name;
-$email_body = "You have received a new message from your soulmate-psychic.com contact form.\n\n"."Here are the details:\n\nName: $name\n\nEmail: $email_address\n\nPhone: $phone\n\nSubject: $subject\n\nMessage:\n$message";
-
-// Create a message
-$message = (new Swift_Message($email_subject))
-  ->setFrom(['contact@melissa-psychic.com' => 'Ivan'])
-  ->setTo(['contact@melissa-psychic.com'])
-  ->setReplyTo([$email_address])
-  ->setBody($email_body)
-  ;
-
-// Send the message
-$result = $mailer->send($message);
-echo $result;
 ?>

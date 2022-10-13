@@ -168,6 +168,16 @@ $subid5 = base64_encode($subidfull5);
 $submitStatus = "Success";
 $SuccessMessage = "Information saved, Redirecting you to Payment Page Now!";
 $redirectPayment = "https://melissapsy.pay.clickbank.net/?cbskin=39040&cbtimer=1593&cbfid=52316&cbitems=".$cbproduct."&name=".$user_name."&email=".$user_email."&cookie_ID=".$cookie_id."&order_ID=".$lastRowInsert."&main_ID=".$lastRowInsert;
+
+$recoverPayment = "https://melissapsy.pay.clickbank.net/?cbskin=39040&cbtimer=1661&cbfid=52316&cbitems=".$cbproduct."&name=".$user_name."&email=".$user_email."&cookie_ID=".$cookie_id."&order_ID=".$lastRowInsert."&main_ID=".$lastRowInsert."&email=recovery&coupon=KM6CMMI";
+
+$sqlupdate = "UPDATE `orders` SET `cart_recover`='$recoverPayment' WHERE order_id='$lastRowInsert'";
+if ($conn->query($sqlupdate) === TRUE) {
+ 
+} 
+
+
+
 $returnData = [$submitStatus,$SuccessMessage,$redirectPayment];
 
 $_SESSION['UserEmail'] = $user_email;
