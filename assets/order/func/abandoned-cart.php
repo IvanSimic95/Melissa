@@ -129,7 +129,12 @@ switch ($order_product_test) {
 					try {
 						$response = $sendgrid->send($email);
 						print_r($response);
-						error_log('Email sent to '.$orderEmail);
+						error_log($orderEmail);
+
+						//Mark the cart abandon email as sent in DB
+						$sqlupdate = "UPDATE `orders` SET `abandoned_cart`='sent' WHERE order_id='$orderID'";
+						if ($conn->query($sqlupdate) === TRUE) {
+						}
 					} catch (Exception $e) { 
 						echo 'Caught exception: '.  $e->getMessage(). "\n";
 						error_log('$e->getMessage()');
@@ -139,10 +144,7 @@ switch ($order_product_test) {
 				}
 
 			
-			//Mark the cart abandon email as sent in DB
-			$sqlupdate = "UPDATE `orders` SET `abandoned_cart`='sent' WHERE order_id='$orderID'";
-			if ($conn->query($sqlupdate) === TRUE) {
-			}
+			
 		
 		}
 	}elseif($hours > 72){
