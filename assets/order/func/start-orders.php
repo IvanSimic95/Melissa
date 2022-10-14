@@ -261,7 +261,7 @@ if($orderProduct == "soulmate" OR $orderProduct == "futurespouse"){
 						"db" => hash('sha256', $fixedBirthday),
 						"ge" => hash('sha256', $usersex1),
 						"external_id" => hash('sha256', $orderId),
-						"fbc" => hash('sha256', $fbc),
+						"fbc" => $fbc,
 					),
 					"contents" => array(
 						array(
@@ -295,7 +295,7 @@ if($orderProduct == "soulmate" OR $orderProduct == "futurespouse"){
 						"db" => hash('sha256', $fixedBirthday),
 						"ge" => hash('sha256', $usersex1),
 						"external_id" => hash('sha256', $orderId),
-						"fbp" => hash('sha256', $fbp),
+						"fbp" => $fbp,
 					),
 					"contents" => array(
 						array(
@@ -330,8 +330,8 @@ if($orderProduct == "soulmate" OR $orderProduct == "futurespouse"){
 						"db" => hash('sha256', $fixedBirthday),
 						"ge" => hash('sha256', $usersex1),
 						"external_id" => hash('sha256', $orderId),
-						"fbc" => hash('sha256', $fbc),
-						"fbp" => hash('sha256', $fbp),
+						"fbc" => $fbc,
+						"fbp" => $fbp,
 					),
 					"contents" => array(
 						array(
