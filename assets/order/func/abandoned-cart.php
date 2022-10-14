@@ -102,7 +102,7 @@ switch ($order_product_test) {
 			$count = $result->num_rows;
 
 				if($count <= 1) {
-
+					$email = "";
 					$email = new Mail();
 					$email->setFrom("contact@melissa-psychic.com", "Melissa Psychic");
 					$email->setSubject($AbandonSubject);
@@ -127,7 +127,7 @@ switch ($order_product_test) {
 					try {
 						$response = $sendgrid->send($email);
 						print_r($response);
-						error_log('Message sent to $orderEmail');
+						error_log('Email sent to $orderEmail');
 					} catch (Exception $e) { 
 						echo 'Caught exception: '.  $e->getMessage(). "\n";
 						error_log('$e->getMessage()');
