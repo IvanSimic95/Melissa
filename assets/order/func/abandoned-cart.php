@@ -33,6 +33,7 @@ while($row = $resultpending->fetch_assoc()) {
 			$birthday = $row['birthday'];
 			$orderPrice = $row['order_price'];
 			$cartRecover = $row['cart_recover'];
+			$newPrice = $orderPrice / 2;
 		
 
             $date1 = $orderDate;
@@ -120,6 +121,7 @@ switch ($order_product_test) {
 							"partner" => $partner,
 							"birthday" => $birthday,
 							"price" => $orderPrice,
+							"newprice" => $newPrice,
 							"restorelink" => $cartRecover,
 							"msg" => $AbandonMessage
 						]
