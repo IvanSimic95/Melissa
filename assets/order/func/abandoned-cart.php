@@ -125,7 +125,7 @@ switch ($order_product_test) {
 						]
 					);
 					$email->setTemplateId("d-7ef6c271357e4b6092f423cc1a96ab5e");
-					$sendgrid = new \SendGrid($sendgrid);
+					$sendgrid = new \SendGrid($sendgridfull);
 					try {
 						$response = $sendgrid->send($email);
 						print_r($response);
