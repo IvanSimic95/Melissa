@@ -14,9 +14,9 @@ $FBPurchasePixel = "";
 $FBViewContent = "";
 $productMETA = "";
 
-$sendg1 = "SG.GTReAt8bSniyWRHOxlYwwQ.7";
-$sendg2 = "VoefN11Z5ee6UAgDAXjWEdQSn-9bg_0x3TcpXLyJiI";
-$sendgridfull = $sendg1.$sendg2;
+$sendg1 = "SG.IbkVjaCLQymTp7Esy9F";
+$sendg2 = "-uQ.WlamcbbyqJ5DZRqdWqC5ecAQPsudMsAjFBtgoVL1ttw";
+$sendg3 = $sendg1.$sendg2;
 
 //Data for FB Conversions API
 $accessToken1 = "EAAxkvwzdc3kBAM3YGxUaEygEr7cdXJ9bxE8hGZC2tfmkW9BXAWZA67HcZB0SyoDYrMLs9Afgp086Yqm55zDg";
