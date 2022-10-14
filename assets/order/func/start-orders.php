@@ -29,6 +29,7 @@ echo "Starting start-orders.php...<br><br>";
 			$orderProduct = $row["order_product"];
 			$orderPrice = $row["order_price"];
 			$orderPriority = $row["order_priority"];
+			$orderEmail = $row["order_email"];
 			$fbc = $row["fbc"];
 			$fbp = $row["fbp"];
 			$emailLink = $base_url ."/dashboard.php?check_email=" .$orderEmail;
