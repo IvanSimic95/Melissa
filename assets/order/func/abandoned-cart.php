@@ -102,7 +102,9 @@ switch ($order_product_test) {
 			$count = $result->num_rows;
 
 				if($count <= 1) {
-					
+					$email = NULL;
+					$sendgrid = NULL;
+					$response = NULL;
 					$email = new Mail();
 					$email->setFrom("contact@melissa-psychic.com", "Melissa Psychic");
 					$email->setSubject($AbandonSubject);
