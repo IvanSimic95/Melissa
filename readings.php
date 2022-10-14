@@ -233,7 +233,7 @@ text-align:center;
       <div class="modal-body">
 
 
-      <form id="completeOrder" class="form-order needs-validation display-block text-start" name="completeOrder" action="?order_ID=<?php echo $order_ID; ?>&main_ID=<?php echo $main_ID; ?>>&updateInfo=Yes" method="post">
+      <form id="completeOrder" class="form-order needs-validation display-block text-start" name="completeOrder" action="?order_ID=<?php echo $order_ID; ?>&main_ID=<?php echo $main_ID; ?>&updateInfo=Yes" method="post">
 
 <div class="form_box" style="text-align:start">
 <label for="SelectGender" style="left: 0;">Your Gender</label>

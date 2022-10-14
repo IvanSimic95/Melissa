@@ -29,7 +29,8 @@ echo "Starting start-orders.php...<br><br>";
 			$orderProduct = $row["order_product"];
 			$orderPrice = $row["order_price"];
 			$orderPriority = $row["order_priority"];
-			$orderEmail = $row["order_email"];
+			$fbc = $row["fbc"];
+			$fbp = $row["fbp"];
 			$emailLink = $base_url ."/dashboard.php?check_email=" .$orderEmail;
 			$message = $processingWelcome;
 			$order_product_nice = $row["order_product_nice"];
@@ -239,9 +240,116 @@ if($userSex == "male"){
 }
 
 //Facebook API conversion
-if($orderProduct == "soulmate"){
+if($orderProduct == "soulmate" OR $orderProduct == "futurespouse"){
    if($sendFBAPI == 1){
     $fixedBirthday = date("Ymd", strtotime($birthday));
+
+
+	if (!empty($fbc) AND empty($fbp)) {
+		$data = array( // main object
+			"data" => array( // data array
+				array(
+					
+					"event_name" => "Purchase",
+					"event_time" => time(),
+					"event_id" => $orderId,
+					"user_data" => array(
+						"fn" => hash('sha256', $Ffirst_name),
+						"ln" => hash('sha256', $Flast_name),
+						"em" => hash('sha256', $customer_emailaddress),
+						"db" => hash('sha256', $fixedBirthday),
+						"ge" => hash('sha256', $usersex1),
+						"external_id" => hash('sha256', $orderId),
+						"fbc" => hash('sha256', $fbc),
+					),
+					"contents" => array(
+						array(
+						"id" => $orderProduct,
+						"quantity" => 1
+						),
+					),
+					"custom_data" => array(
+						"currency" => "USD",
+						"value"    => $orderPrice,
+					),
+					"action_source" => "website",
+					"event_source_url"  => "https://".$domain."/readings.php",
+			   ),
+			),
+			   "access_token" => $fbAccessToken,
+			   
+			); 
+	}elseif(empty($fbp) AND !empty($fbc)){
+		$data = array( // main object
+			"data" => array( // data array
+				array(
+					
+					"event_name" => "Purchase",
+					"event_time" => time(),
+					"event_id" => $orderId,
+					"user_data" => array(
+						"fn" => hash('sha256', $Ffirst_name),
+						"ln" => hash('sha256', $Flast_name),
+						"em" => hash('sha256', $customer_emailaddress),
+						"db" => hash('sha256', $fixedBirthday),
+						"ge" => hash('sha256', $usersex1),
+						"external_id" => hash('sha256', $orderId),
+						"fbp" => hash('sha256', $fbp),
+					),
+					"contents" => array(
+						array(
+						"id" => $orderProduct,
+						"quantity" => 1
+						),
+					),
+					"custom_data" => array(
+						"currency" => "USD",
+						"value"    => $orderPrice,
+					),
+					"action_source" => "website",
+					"event_source_url"  => "https://".$domain."/readings.php",
+			   ),
+			),
+			   "access_token" => $fbAccessToken,
+			   
+			); 
+
+	}elseif(!empty($fbp) AND !empty($fbc)){
+		$data = array( // main object
+			"data" => array( // data array
+				array(
+					
+					"event_name" => "Purchase",
+					"event_time" => time(),
+					"event_id" => $orderId,
+					"user_data" => array(
+						"fn" => hash('sha256', $Ffirst_name),
+						"ln" => hash('sha256', $Flast_name),
+						"em" => hash('sha256', $customer_emailaddress),
+						"db" => hash('sha256', $fixedBirthday),
+						"ge" => hash('sha256', $usersex1),
+						"external_id" => hash('sha256', $orderId),
+						"fbc" => hash('sha256', $fbc),
+						"fbp" => hash('sha256', $fbp),
+					),
+					"contents" => array(
+						array(
+						"id" => $orderProduct,
+						"quantity" => 1
+						),
+					),
+					"custom_data" => array(
+						"currency" => "USD",
+						"value"    => $orderPrice,
+					),
+					"action_source" => "website",
+					"event_source_url"  => "https://".$domain."/readings.php",
+			   ),
+			),
+			   "access_token" => $fbAccessToken,
+			   
+			); 
+	}else{
     $data = array( // main object
         "data" => array( // data array
             array(
@@ -275,7 +383,7 @@ if($orderProduct == "soulmate"){
 		   
         );  
         
-        
+	}
         $dataString = json_encode($data);                                                                                                              
         $ch = curl_init('https://graph.facebook.com/v11.0/'.$FBPixel.'/events');                                                                      
         curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");                                                                     
