@@ -280,7 +280,7 @@ select:invalid { color: gray; }
 		 
                 $("#error").hide();
                 $("#submitbtn").html('<i class="fas fa-spinner fa-pulse"></i> Loading...');
-                $('#submitbtn"]').prop('disabled', true);
+                $("#submitbtn").prop('disabled', true);
 		 
                //First name required
                var name = $("input#fullname").val();
