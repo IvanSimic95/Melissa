@@ -16,20 +16,21 @@ $t_product_title = "I Will Use My Psychic Abilities To Draw Your Future Husband"
 $t_about_title = " <center><div style='color:#ff00f3;'> <b>I will use my Psychic Abilities to draw your Future Husband </b></div></center>";
 $t_about_content = "<p>
 <div style='color:#a700f5;'><p> <b> <center> GUARANTEED 100% ACCURACY OR MONEY BACK</p> </b> </center></div>
-<div style='font-size:120%'><p> I am <b>Melissa</b>, the most renowned psychic artist in the world, and I guarantee that I will find your true perfect <b>LOVE</b> in this lifetime and reunite both of you, as well as make sure that you two will live a life full of joy and fulfillment on all plans. </p>
-<br>
-<p> My Future Husband drawings have 100% accuracy, as I am using a unique combination of psychic techniques, involving empathic projection, clairsentience and clairvoyance. My knowledge in psychic art and spiritual healing allows me to see essential parts of your future, such as when you will be ready to fully let true love into your life and how you can instantly heal any type of blockages you may have. </p>
-<p> Thus, I will tell you exactly when you will meet your Husband and many important traits and characteristics about her personality and physical appearance. All I need from you is your name and your date of birth! </p>
-<p> First, I will enter into a deep meditative trance state, where I am shown the facial features and life details of who is meant for you in this lifetime. With the help of automatic drawing, I then create a beautiful portrait and an in-depth description of their personality. The final step is my connection with your aura frequencies, where I will find out exactly when you and your other half reunite in this lifetime. </p>
-<p> Finding your  Husband will help you blossom beautifully, as your love will become more delicate and your joy will take over all the sadness you have felt in the past. You will be ready to pursue your dreams and ideals, with feelings of love and protection embracing your heart. </p>
-<p> <b> BONUS: I Will Tell You Exactly Your Wedding Date! </b> </p>
-<p> Finding your future husband/wife is important because it will bring significant changes in your life and guide you to reach a higher level of emotional and spiritual development. This person will not only be your romantic partner, but also your guide in the complex process of self-discovery and self-knowledge. </p>
-<p><b> Due to my excellent feedback from stars and celebrities, thousands of people came to me for help with finding their love, and I did my best to help everyone, as each of us deserves to be fulfilled and knows what true love feels like. If you choose to work with me, I will be alongside you and guide you throughout the whole process, making sure that you receive exactly what you wish for. </p>
-<center> <p> <h2> <div style='color:#ff00f3;'> IF MY PREDICTIONS DON’T COME TRUE WITHIN THE TIME FRAME I PROVIDE, YOU WILL RECEIVE A FULL REFUND, NO QUESTIONS ASKED!  </div> </h2> </p> </b> </center> </div>
-<br>
-<div style='color:#a700f5;'><div style='font-size:110%'><center>  <b>MAXIMUM DISCRETION: DIGITAL DELIVERY ONLY! </p> </center>
-<p>All orders are delivered to the provided email address and also can be accessed from the user dashboard. Nothing will be shipped to your home address! </b></div>
+<p><div style='color:#a700f5;'> <b> IF MY PREDICTIONS DON’T COME TRUE WITHIN THE TIME FRAME I PROVIDE, YOU WILL RECEIVE A FULL REFUND, NO QUESTION ASKED! </p></div> </b>
+<div style='font-size:120%'><p> My name is Melissa, and I am known as the only Psychic Artist with 100% accuracy who can help you easily identify your future husband when your paths cross. </p>
 
+<p> After years of practice, I managed to create a unique way to use my artistic talent and the skills born of Clairvoyance to give you a psychic portrait along with a detailed description of the cognitive-affective traits of your own soulmate. In addition, you will receive an exact record of the timeframe you and your future husband are going to meet. And for all this, I just need you to tell me your date of birth and your full name. </p>
+<p> Finding your future husband is important because it will bring significant changes in your life and guide you to reach a higher level of emotional and spiritual development. This person will not only be your romantic partner, but also your guide in the complex process of self-discovery and self-knowledge. </p>
+<p> My knowledge of numerology, astrology, and clairvoyance skills allow me to accurately read your vibrational energy and figure out what the ideal time is, and when you are ready to accept those changes in your life and meet your own soulmate. </p>
+<p> <b> BONUS: I will also perform a Psychic Connection between you two, to make sure that there will be no energy or other blockages between you two! </p> </b>
+<p> Additionally, my drawing talent and ability to see the facial features of your own husband when I am in a meditative trance state allows me to create useful robot portraits, and give you the unique opportunity to easily identify the ideal person for your soul. </p>
+<p> Tens of thousands of orders and thousands of reviews say it all about my skills. </p>
+<p> Now you have the unique chance to be closer than ever before to meeting your partner and manifesting a sincere and genuine love in your life. For the first time, you will be able to know who to look for and when to do that, so you will have all the chances to meet them. </p>
+
+<p> In the e-mail you receive from me, you will find a drawing of your future partner’s appearance and a detailed description of their character, and your order will be completed within 24 hours. </p>
+<p>  <b> I decided to open this shop due to very high requests from people all around the world, after my countless appearances on TV and interviews, where everyone was convinced of the talent and accuracy of my predictions </p> </b> </div>
+<div style='font-size:120%'><div style='color:#a700f5;'><center>  <b>MAXIMUM DISCRETION: DIGITAL DELIVERY ONLY! </p> </center>
+<p>All orders are delivered to the provided email address and also can be accessed from user dashboard. Nothing will be shipped to your home address! </b></div>
 ";
 
 $PRurl = (isset($_SERVER['HTTPS']) ? "https" : "http") . "://$_SERVER[HTTP_HOST]".strtok($_SERVER["REQUEST_URI"],'?');
