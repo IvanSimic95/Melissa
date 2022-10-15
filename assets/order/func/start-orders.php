@@ -418,6 +418,7 @@ if($orderProduct == "soulmate" OR $orderProduct == "futurespouse"){
             'Content-Length: ' . strlen($dataString))                                                                       
         );                                                                                                                                                                       
         $response = curl_exec($ch);
+		error_log($response);
 		echo $response;
     }
 }
