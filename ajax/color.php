@@ -24,7 +24,7 @@ $order_ID = $_POST['order_id'];
     }else{
 
 
-$redirectPayment = "https://melissapsy.pay.clickbank.net/?cbur=a&cbfid=52260&cbitems=14&cbskin=39040&order_ID=".$order_ID."&main_ID=".$order_ID;
+$redirectPayment = "https://gabeaff_melissapsy.pay.clickbank.net/?cbur=a&cbfid=52260&cbitems=14&cbskin=39040&order_ID=".$order_ID."&main_ID=".$order_ID;
 $submitStatus = "Success";
 $SuccessMessage = "Redirecting you to Payment Page Now!";
 $returnData = [$submitStatus,$SuccessMessage,$redirectPayment];
