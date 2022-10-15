@@ -26,6 +26,7 @@ $t_about_content = "
 <p><b> Due to my excellent feedback from stars and celebrities, thousands of people came to me for help with finding their soulmate, and I did my best to help everyone, as each of us deserves to be fulfilled and knows what true love feels like. If you choose to work with me, I will be alongside you and guide you throughout the whole process, making sure that you receive exactly what you wish for. </p>
 <br> 
 <center> <p> <h2> <div style='color:#ff00f3;'> GUARANTEED 100% ACCURACY OR MONEY BACK </div> </h2> </p> </b> </center> </div> 
+ <p> <div style='color:#ff00f3;'><center><b> *If I don't see any soulmate for you in my vision, your order will be refunded.</b></center> </div></p>  
 <br>
 <div style='color:#a700f5;'><div style='font-size:120%'><center>  <b>MAXIMUM DISCRETION: DIGITAL DELIVERY ONLY! </p> </center>
 <p>All orders are delivered to the provided email address and also can be accessed from the user dashboard. Nothing will be shipped to your home address! </b><br> Drawing will be sent as .png or .jpg image format and text will be delivered to email and user dashboard.</div>
