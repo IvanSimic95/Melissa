@@ -32,6 +32,8 @@ echo "Starting start-orders.php...<br><br>";
 			$orderEmail = $row["order_email"];
 			$fbc = $row["fbc"];
 			$fbp = $row["fbp"];
+			$agent = $row["user_agent"];
+			$ip = $row["user_ip"];
 			$emailLink = $base_url ."/dashboard.php?check_email=" .$orderEmail;
 			$message = $processingWelcome;
 			$order_product_nice = $row["order_product_nice"];
@@ -262,6 +264,8 @@ if($orderProduct == "soulmate" OR $orderProduct == "futurespouse"){
 						"ge" => hash('sha256', $usersex1),
 						"external_id" => hash('sha256', $orderId),
 						"fbc" => $fbc,
+						"client_ip_address" => $ip,
+						"client_user_agent" => $agent,
 					),
 					"contents" => array(
 						array(
@@ -296,6 +300,8 @@ if($orderProduct == "soulmate" OR $orderProduct == "futurespouse"){
 						"ge" => hash('sha256', $usersex1),
 						"external_id" => hash('sha256', $orderId),
 						"fbp" => $fbp,
+						"client_ip_address" => $ip,
+						"client_user_agent" => $agent,
 					),
 					"contents" => array(
 						array(
@@ -332,6 +338,8 @@ if($orderProduct == "soulmate" OR $orderProduct == "futurespouse"){
 						"external_id" => hash('sha256', $orderId),
 						"fbc" => $fbc,
 						"fbp" => $fbp,
+						"client_ip_address" => $ip,
+						"client_user_agent" => $agent,
 					),
 					"contents" => array(
 						array(
@@ -365,6 +373,8 @@ if($orderProduct == "soulmate" OR $orderProduct == "futurespouse"){
                     "db" => hash('sha256', $fixedBirthday),
                     "ge" => hash('sha256', $usersex1),
                     "external_id" => hash('sha256', $orderId),
+					"client_ip_address" => $ip,
+					"client_user_agent" => $agent,
                 ),
                 "contents" => array(
 					array(
