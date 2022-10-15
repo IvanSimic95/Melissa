@@ -179,6 +179,9 @@
   <input class="subid" type="hidden" name="s1" value="<?php echo $s1; ?>">
   <input class="affid" type="hidden" name="s2" value="<?php echo $s2; ?>">
 
+  <input class="useragent" type="hidden" name="user_agent" value="<?php echo $userAgent; ?>">
+  <input class="userip" type="hidden" name="user_ip" value="<?php echo $userip; ?>">
+
 
   <div id="show_message" class="alert alert-success" style="display: none">Loading..</div>
    <div id="error" class="alert alert-danger" style="display: none"></div>
