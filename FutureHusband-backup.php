@@ -16,9 +16,10 @@ $t_product_title = "I Will Use My Psychic Abilities To Draw Your Future Husband"
 $t_about_title = " <center><div style='color:#ff00f3;'> <b>I will use my Psychic Abilities to draw your Future Husband </b></div></center>";
 $t_about_content = "<p>
 <div style='color:#a700f5;'><p> <b> <center> GUARANTEED 100% ACCURACY OR MONEY BACK</p> </b> </center></div>
-<p><div style='color:#a700f5;'> <b> IF MY PREDICTIONS DON’T COME TRUE WITHIN THE TIME FRAME I PROVIDE, YOU WILL RECEIVE A FULL REFUND, NO QUESTION ASKED! </p></div> </b>
-<div style='font-size:120%'><p> My name is Melissa, and I am known as the only Psychic Artist with 100% accuracy who can help you easily identify your future husband when your paths cross. </p>
-
+<p><div style='color:#a700f5;'> <b> IF MY PREDICTIONS DON’T COME TRUE WITHIN THE TIME FRAME I PROVIDE, YOU WILL RECEIVE A FULL REFUND, NO QUESTIONS ASKED! </p></div> </b>
+<p><div style='color:#a700f5;'> <b> *If I don't see any Future Husband for you in my vision, your order will be refunded</p></div> </b>
+<div style='font-size:120%'><p> My name is Melissa, a powerful Certified Psychic Artist who can help you easily find your future husband.  </p>
+<p> <b>Christmas is coming and you don't want to be alone AGAIN or even worse: with the wrong person. And that's why I'm here, to help you find your true love in this world.  </b> </p>
 <p> After years of practice, I managed to create a unique way to use my artistic talent and the skills born of Clairvoyance to give you a psychic portrait along with a detailed description of the cognitive-affective traits of your own soulmate. In addition, you will receive an exact record of the timeframe you and your future husband are going to meet. And for all this, I just need you to tell me your date of birth and your full name. </p>
 <p> Finding your future husband is important because it will bring significant changes in your life and guide you to reach a higher level of emotional and spiritual development. This person will not only be your romantic partner, but also your guide in the complex process of self-discovery and self-knowledge. </p>
 <p> My knowledge of numerology, astrology, and clairvoyance skills allow me to accurately read your vibrational energy and figure out what the ideal time is, and when you are ready to accept those changes in your life and meet your own soulmate. </p>
@@ -27,7 +28,7 @@ $t_about_content = "<p>
 <p> Tens of thousands of orders and thousands of reviews say it all about my skills. </p>
 <p> Now you have the unique chance to be closer than ever before to meeting your partner and manifesting a sincere and genuine love in your life. For the first time, you will be able to know who to look for and when to do that, so you will have all the chances to meet them. </p>
 
-<p> In the e-mail you receive from me, you will find a drawing of your future partner’s appearance and a detailed description of their character, and your order will be completed within 24 hours. </p>
+<p> In the e-mail you receive from me, you will find a drawing of your future partner’s appearance and a detailed description of their character, and your order will be completed within just 12 hours. </p>
 <p>  <b> I decided to open this shop due to very high requests from people all around the world, after my countless appearances on TV and interviews, where everyone was convinced of the talent and accuracy of my predictions </p> </b> </div>
 <div style='font-size:120%'><div style='color:#a700f5;'><center>  <b>MAXIMUM DISCRETION: DIGITAL DELIVERY ONLY! </p> </center>
 <p>All orders are delivered to the provided email address and also can be accessed from user dashboard. Nothing will be shipped to your home address! </b></div>
