@@ -16,7 +16,8 @@ $t_product_title = "I Will Use My Psychic Abilities To Draw Your Soulmate";
 $t_about_title =  "<center><div style='color:#ff00f3;'> <b>I WILL USE MY PSYCHIC ABILITIES TO DRAW YOUR SOULMATE  WITH 100% ACCURACY</b></div></center>";
 $t_about_content = "
 <div style='font-size:130%'><p> I am <b>Melissa</b>, the most renowned psychic artist in the world, and I guarantee that I will find your true soulmate in this lifetime and reunite both of you, as well as make sure that you two will live a life full of joy and fulfillment on all plans. </p>
-<br>
+<p> <b>Christmas is coming and you don't want to be alone AGAIN or even worse: with the wrong person. And that's why I'm here, to help you find your true love in this world.  </b> </p>
+
 <p> My soulmate drawings have 100% accuracy, as I am using a unique combination of psychic techniques, involving empathic projection, clairsentience and clairvoyance. My knowledge in psychic art and spiritual healing allows me to see essential parts of your future, such as when you will be ready to fully let true love into your life and how you can instantly heal any type of blockages you may have. </p>
 <p> Thus, I will tell you exactly when you will meet your soulmate and many important traits and characteristics about their personality and physical appearance. All I need from you is your name and your date of birth, and I will take care of everything else. </p>
 <p> First, I will enter into a deep meditative trance state, where I am shown the facial features and life details of who is meant for you in this lifetime. With the help of automatic drawing, I then create a beautiful portrait and an in-depth description of their personality. The final step is my connection with your aura frequencies, where I will find out exactly when you and your other half reunite in this lifetime. </p>
