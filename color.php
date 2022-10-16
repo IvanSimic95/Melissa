@@ -3,6 +3,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 
 
 if(isset($_SESSION['lastorder'])){
+  $startpixel = 0;
   $lastOrderID = $_SESSION['lastorder'];
   $order_ID = $lastOrderID;
   $sql = "SELECT * FROM `orders` WHERE `order_id` = '$lastOrderID' ORDER BY `order_id` DESC LIMIT 1";
@@ -37,6 +38,7 @@ if(isset($_SESSION['lastorder'])){
   
   }
   }else{
+    $startpixel = 0;
     if(isset($_GET['main_ID'])){
   $ord = $_GET['main_ID'];
   $order_ID = $ord;

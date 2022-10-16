@@ -4,6 +4,7 @@ include_once $_SERVER['DOCUMENT_ROOT'].'/config/vars.php';
 $showError = 0;
 $succesStatus = 0;
 $showSuccess = 1;
+$startpixel = 0;
 
 
 
