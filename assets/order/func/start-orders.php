@@ -93,10 +93,6 @@ break;
 
 
 			  $logArray[] = $orderId." | ". $orderEmail." | ".$product." | ".$orderPriority." | ";
-			  $logArray[] = "
-".$message."
-			  
-";
 
 		 //	Update Order Status Processing
 			$sqlupdate = "UPDATE `orders` SET `order_status`='processing', `abandoned_cart`='paid' WHERE order_id='$orderId'";
@@ -192,7 +188,6 @@ $logArray[] = $result2;
 	  echo 'Error:' . curl_error($ch);
   }
   curl_close($ch);
-  $logArray[] = $result;
 
 			// curl implementation
 $ch = curl_init();
@@ -217,7 +212,6 @@ if (curl_errno($ch)) {
     echo 'Error:' . curl_error($ch);
 }
 curl_close($ch);
-$logArray[] = $result;
 //Change chat order status
 
 
@@ -248,7 +242,7 @@ if($userSex == "male"){
 }
 
 //Facebook API conversion
-if($orderProduct == "soulmate" OR $orderProduct == "futurespouse"){
+if($orderProduct == "soulmate" OR $orderProduct == "futurespouse" OR $orderProduct == "twinflame"){
    if($sendFBAPI == 1){
     $fixedBirthday = date("Ymd", strtotime($birthday));
 

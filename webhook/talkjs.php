@@ -30,7 +30,6 @@ if (!hash_equals($expectedSignature, $signature)) {
     die();
 }
 
-error_log("TalkJS Payload: $payload");
 
 // Parse the event payload JSON and handle it appropriately. Your custom code comes below.
 $event = json_decode($payload);
@@ -61,7 +60,7 @@ if($event->type == "message.sent"){
         }
 
 
-        if($senderID == "customer"){
+        if($senderID == "customer" OR $senderID == "Scustomer"){
                 //Send CURL for message -> TalkJS
                 $ch = curl_init();
                 $data = [[
@@ -88,11 +87,11 @@ if($event->type == "message.sent"){
                     echo 'Error:' . curl_error($ch);
                 }
                 curl_close($ch);
-                error_log("CURL Response: $result | Conversation ID: $conversationID");
+              
 
 
             }else{
-                error_log("User Role: $senderID");
+                
             }
 
 

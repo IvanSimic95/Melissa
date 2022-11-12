@@ -6,6 +6,18 @@ $secretKey = "ASFASFASF124"; // secret key from your ClickBank account
 // get JSON from raw body...
 $message = json_decode(file_get_contents('php://input'));
  
+//Save to order log function
+function f($array) {
+  $dataToLog = $array;
+  $data = $dataToLog;
+  $data .= PHP_EOL;
+  $pathToFile = $_SERVER['DOCUMENT_ROOT']."/logs/cb.log";
+  $success = file_put_contents($pathToFile, $data, FILE_APPEND);
+  if ($success === TRUE){
+    echo "log saved";
+  }
+}
+
 // Pull out the encrypted notification and the initialization vector for
 // AES/CBC/PKCS5Padding decryption
 $encrypted = $message->{'notification'};
@@ -37,6 +49,7 @@ $order_email = $obj->customer->billing->email;
 $order_price = $obj->totalOrderAmount;
 $order_buygoods = $obj->receipt;
 $mOrderID = $obj->vendorVariables->order_ID;
+$edata = $obj->vendorVariables->encdata;
 $cName = $obj->customer->billing->fullName;
 $productImage = "https://melissa-psychic.com/assets/img/14dk.jpg";
 $productFullTitle = $obj->lineItems[0]->productTitle;
@@ -48,6 +61,17 @@ if(isset($obj->vendorVariables->email)){
   $emailRecovery = "recovered";
 }else{
   $emailRecovery = "";
+}
+
+$edata = base64_decode($edata);
+
+if (str_contains($edata, '|')) { 
+  $clean = explode("|", $edata);
+  $orderID  = $clean[0];
+  $domain   = $clean[1];
+  $c1       = $clean[2];
+  $c2       = $clean[3];
+  $c3       = $clean[4];
 }
 
 $countPurchase = count($obj->lineItems);
@@ -73,9 +97,6 @@ if($countPurchase == 1){
 
 }
 
-error_log("Order ID: $mOrderID");
-error_log("Order Email: $order_email");
-error_log("CB order ID: $order_buygoods");
 $logaArray[] = "Order #".$mOrderID;
 $logaArray[] = $order_email;
 $logaArray[] = $productFullTitle;
@@ -105,10 +126,8 @@ if($obj->lineItems[0]->itemNo == "14"){
     if ($conn->query($sql) === TRUE) {
       //echo "Order Status updated to Paid succesfully!";
       $logaArray[] = "Order Updated";
-      error_log("Order Updated to Paid");
     } else {
         $logaArray[] = "Error Updating: " . $sql . "<br>" . $conn->error;
-        error_log("Error Updating: $sql <br> $conn->error");
       //echo "Error: " . $sql . "<br>" . $conn->error;
     }
 
@@ -137,7 +156,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
     
 $result = curl_exec($ch);
 if (curl_errno($ch)) {
-echo 'Error:' . curl_error($ch);
+$result = 'Error:' . curl_error($ch);
 }
 curl_close($ch);
 echo $result;
@@ -166,7 +185,7 @@ curl_setopt($ch2, CURLOPT_HTTPHEADER, $headers);
 
 $result2 = curl_exec($ch2);
 if (curl_errno($ch2)) {
-    echo 'Error:' . curl_error($ch2);
+  $result2 =  'Error:' . curl_error($ch2);
 }
 curl_close($ch2);
 echo $result2;

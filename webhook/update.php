@@ -86,6 +86,34 @@ if($action == "neworder" && $error == ""){
       $Forder_product_nice = $row['order_product_nice'];
       $Fstatus = $row['order_status'];
 
+      $partnerGender = $row["pick_sex"];
+
+$orderName = $row["user_name"];
+$ex = explode(" ",$orderName);
+$customerName =  $ex["0"];
+$orderId = $row["order_id"];
+$orderProduct = $row["order_product"];
+$orderPriority = $row["order_priority"];
+
+$emailLink = $base_url ."/dashboard.php?check_email=" .$orderEmail;
+$message = $processingWelcome;
+$order_product_nice = $row["order_product_nice"];
+
+$userSex = $row["user_sex"];
+$Ffirst_name = $row["first_name"];
+$Flast_name = $row["last_name"];
+$customer_emailaddress = $row["order_email"];
+$birthday = $row["birthday"];
+
+
+if($userSex == "male"){
+	$usersex1 = "m";
+}else{
+	$usersex1 = "f";
+}
+
+$fixedBirthday = date("Ymd", strtotime($birthday));
+
       if($Fstatus == "pending"){
       $sql = "UPDATE `orders` SET `order_email`='$customer_emailaddress', `order_price`='$price', `buygoods_order_id`='$bgOrderID', `order_status`='paid' WHERE order_id='$ForderID'";
       $result = $conn->query($sql);
@@ -104,39 +132,165 @@ if($action == "neworder" && $error == ""){
     $fbc = $subid3;
     $fbp = $subid4;
     $fixedBirthday = date("Ymd", strtotime($birthday));
+   if (!empty($fbc) AND empty($fbp)) {
+		$data = array( // main object
+			"data" => array( // data array
+				array(
+					
+					"event_name" => "Purchase",
+					"event_time" => time(),
+					"event_id" => $orderId,
+					"user_data" => array(
+            "fn" => hash('sha256', $Ffirst_name),
+            "ln" => hash('sha256', $Flast_name),
+            "em" => hash('sha256', $customer_emailaddress),
+            "ph" => hash('sha256', $cleanPhone),
+            "db" => hash('sha256', $fixedBirthday),
+            "ge" => hash('sha256', $Fsex),
+						"external_id" => hash('sha256', $orderId),
+						"fbc" => $fbc,
+						"client_ip_address" => $ip,
+						"client_user_agent" => $agent,
+						"zp" => hash('sha256', $zip),
+						"country" => hash('sha256', $country),
+					),
+					"contents" => array(
+						array(
+						"id" => $orderProduct,
+						"quantity" => 1
+						),
+					),
+					"custom_data" => array(
+						"currency" => "USD",
+						"value"    => $orderPrice,
+					),
+					"action_source" => "website",
+					"event_source_url"  => "https://".$domain."/readings.php",
+			   ),
+			),
+			   "access_token" => $fbAccessToken,
+			   
+			); 
+	}elseif(empty($fbp) AND !empty($fbc)){
+		$data = array( // main object
+			"data" => array( // data array
+				array(
+					
+					"event_name" => "Purchase",
+					"event_time" => time(),
+					"event_id" => $orderId,
+					"user_data" => array(
+            "fn" => hash('sha256', $Ffirst_name),
+            "ln" => hash('sha256', $Flast_name),
+            "em" => hash('sha256', $customer_emailaddress),
+            "ph" => hash('sha256', $cleanPhone),
+            "db" => hash('sha256', $fixedBirthday),
+            "ge" => hash('sha256', $Fsex),
+						"external_id" => hash('sha256', $orderId),
+						"fbp" => $fbp,
+						"client_ip_address" => $ip,
+						"client_user_agent" => $agent,
+						"zp" => hash('sha256', $zip),
+						"country" => hash('sha256', $country),
+					),
+					"contents" => array(
+						array(
+						"id" => $orderProduct,
+						"quantity" => 1
+						),
+					),
+					"custom_data" => array(
+						"currency" => "USD",
+						"value"    => $orderPrice,
+					),
+					"action_source" => "website",
+					"event_source_url"  => "https://".$domain."/readings.php",
+			   ),
+			),
+			   "access_token" => $fbAccessToken,
+			   
+			); 
+
+	}elseif(!empty($fbp) AND !empty($fbc)){
+		$data = array( // main object
+			"data" => array( // data array
+				array(
+					
+					"event_name" => "Purchase",
+					"event_time" => time(),
+					"event_id" => $orderId,
+					"user_data" => array(
+            "fn" => hash('sha256', $Ffirst_name),
+            "ln" => hash('sha256', $Flast_name),
+            "em" => hash('sha256', $customer_emailaddress),
+            "ph" => hash('sha256', $cleanPhone),
+            "db" => hash('sha256', $fixedBirthday),
+            "ge" => hash('sha256', $Fsex),
+						"external_id" => hash('sha256', $orderId),
+						"fbc" => $fbc,
+						"fbp" => $fbp,
+						"client_ip_address" => $ip,
+						"client_user_agent" => $agent,
+						"zp" => hash('sha256', $zip),
+						"country" => hash('sha256', $country),
+					),
+					"contents" => array(
+						array(
+						"id" => $orderProduct,
+						"quantity" => 1
+						),
+					),
+					"custom_data" => array(
+						"currency" => "USD",
+						"value"    => $orderPrice,
+					),
+					"action_source" => "website",
+					"event_source_url"  => "https://".$domain."/readings.php",
+			   ),
+			),
+			   "access_token" => $fbAccessToken,
+			   
+			); 
+	}else{
     $data = array( // main object
         "data" => array( // data array
             array(
+				
                 "event_name" => "Purchase",
                 "event_time" => time(),
-                "event_id" => $ForderID,
+                "event_id" => $orderId,
                 "user_data" => array(
-                    "client_ip_address" => $ip,
-                    "client_user_agent" => $agent,
-                    "fn" => hash('sha256', $Ffirst_name),
-                    "ln" => hash('sha256', $Flast_name),
-                    "em" => hash('sha256', $customer_emailaddress),
-                    "ph" => hash('sha256', $cleanPhone),
-                    "db" => hash('sha256', $fixedBirthday),
-                    "ge" => hash('sha256', $Fsex),
-                    "fbc" => $fbc,
-                    "fbp" => $fbp,
-                    "external_id" => hash('sha256', $ForderID),
+                  "fn" => hash('sha256', $Ffirst_name),
+                  "ln" => hash('sha256', $Flast_name),
+                  "em" => hash('sha256', $customer_emailaddress),
+                  "ph" => hash('sha256', $cleanPhone),
+                  "db" => hash('sha256', $fixedBirthday),
+                  "ge" => hash('sha256', $Fsex),
+                    "external_id" => hash('sha256', $orderId),
+					"client_ip_address" => $ip,
+					"client_user_agent" => $agent,
+					"zp" => hash('sha256', $zip),
+					"country" => hash('sha256', $country),
                 ),
                 "contents" => array(
-                    "id" => $Fproduct,
+					array(
+                    "id" => $orderProduct,
                     "quantity" => 1
+					),
                 ),
                 "custom_data" => array(
                     "currency" => "USD",
-                    "value"    => $price,
+                    "value"    => $orderPrice,
                 ),
                 "action_source" => "website",
-                "event_source_url"  => $domain,
+                "event_source_url"  => "https://".$domain."/readings.php",
            ),
         ),
-           "access_token" => $fbAccessToken
+           "access_token" => $fbAccessToken,
+		   
         );  
+        
+	}
         
         
         $dataString = json_encode($data);                                                                                                              
