@@ -161,7 +161,6 @@ $result = 'Error:' . curl_error($ch);
 curl_close($ch);
 echo $result;
 
-$logaArray[] = $result;
 //Now create new conversation
 $ch2 = curl_init();
 $data2 = [
@@ -189,8 +188,6 @@ if (curl_errno($ch2)) {
 }
 curl_close($ch2);
 echo $result2;
-
-$logaArray[] = $result2;
 
 formLogNewAgain($logaArray);
 

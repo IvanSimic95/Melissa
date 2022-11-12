@@ -128,7 +128,6 @@ echo 'Error:' . curl_error($ch);
 }
 curl_close($ch);
 echo $result;
-$logArray[] = $result;
 
 
 //Now create new conversation
@@ -155,8 +154,7 @@ if (curl_errno($ch2)) {
     echo 'Error:' . curl_error($ch2);
 }
 curl_close($ch2);
-echo $result2;		
-$logArray[] = $result2;	  
+echo $result2;
 
   //Send CURL for message -> TalkJS
   $ch = curl_init();
@@ -412,7 +410,7 @@ if($orderProduct == "soulmate" OR $orderProduct == "futurespouse" OR $orderProdu
             'Content-Length: ' . strlen($dataString))                                                                       
         );                                                                                                                                                                       
         $response = curl_exec($ch);
-		error_log($response);
+		$logArray[] = $response;
 		echo $response;
     }
 }
