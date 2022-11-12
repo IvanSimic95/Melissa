@@ -342,6 +342,10 @@ text-align:center;
         <input class="mainID" type="hidden" name="main_ID" value="<?php echo $main_ID; ?>">
         <input class="cookie" type="hidden" name="cookie_id" value="<?php echo $_SESSION['user_cookie_id2']; ?>">
         <input class="price" type="hidden" id="product_price" name="price" value="19.99">
+
+        <input class="useragent" type="hidden" name="user_agent" value="<?php echo $userAgent; ?>">
+  <input class="userip" type="hidden" name="user_ip" value="<?php echo $userip; ?>">
+  
         <input class="fbp" type="hidden" name="fbp" value="<?php echo $UserFBP; ?>">
         <input class="fbc" type="hidden" name="fbc" value="<?php echo $UserFBC; ?>">
         <input class="submitbtnselect" type="hidden" name="submitbtnselect" id="submitbtnselect" value="submit">

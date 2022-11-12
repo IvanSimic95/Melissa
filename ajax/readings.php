@@ -30,6 +30,10 @@ $user_name = normalizeChars($user_name);
 $fName = normalizeChars($fName);
 $lName = normalizeChars($lName);
 
+$user_agent = $_POST['user_agent'];
+$user_ip = $_POST['user_ip'];
+
+
 $pricenow = $_POST['price'];
 $main_ID = $_POST['main_ID'];
 
