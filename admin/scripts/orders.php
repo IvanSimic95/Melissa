@@ -1,5 +1,5 @@
 <?php
-$sql = "SELECT * FROM orders WHERE order_status = 'processing' OR order_status = 'shipped' OR order_status = 'paid' ORDER BY order_id DESC LIMIT 10000";
+$sql = "SELECT * FROM orders WHERE order_status = 'processing' OR order_status = 'shipped' OR order_status = 'paid' ORDER BY order_id DESC LIMIT 1000";
                         $result = $conn->query($sql);
                         if ($result->num_rows == 0) {
                         } else {
