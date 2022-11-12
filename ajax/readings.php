@@ -34,6 +34,10 @@ $user_agent = $_POST['user_agent'];
 $user_ip = $_POST['user_ip'];
 
 
+$fbCampaign = $_SESSION['fbCampaign'];
+$fbAdset = $_SESSION['fbAdset'];
+$fbAd = $_SESSION['fbAd'];
+
 $pricenow = $_POST['price'];
 $main_ID = $_POST['main_ID'];
 
@@ -113,8 +117,8 @@ switch ($ReadingsCounter) {
 }
 
 
-$sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, birthday, order_status, order_date, order_email, order_product, order_product_nice, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, user_agent, user_ip, fbc, fbp) VALUES 
-('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', '$user_birthday', '$oStatus', '$order_date', '$bgemail', '$order_product', '$order_product_nice', '$order_priority', '$pricenow', '', '$userGender', '$userGenderAcc', '$partnerGender', '$user_agent', '$user_ip', '$uFBC', '$uFBP')";
+$sql = "INSERT INTO orders (cookie_id, user_age, first_name, last_name, user_name, birthday, order_status, order_date, order_email, order_product, order_product_nice, order_priority, order_price, buygoods_order_id, user_sex, genderAcc, pick_sex, user_agent, user_ip, fbc, fbp, fbCampaign, fbAdset, fbAd) VALUES 
+('$cookie_id', '$user_age', '$fName', '$lName', '$user_name', '$user_birthday', '$oStatus', '$order_date', '$bgemail', '$order_product', '$order_product_nice', '$order_priority', '$pricenow', '', '$userGender', '$userGenderAcc', '$partnerGender', '$user_agent', '$user_ip', '$uFBC', '$uFBP', '$fbCampaign', '$fbAdset', '$fbAd',)";
 
 if(mysqli_query($conn,$sql)){
     $lastRowInsert = mysqli_insert_id($conn);
