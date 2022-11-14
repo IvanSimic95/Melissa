@@ -33,6 +33,7 @@ echo "Starting start-orders.php...<br><br>";
 			$fbc = $row["fbc"];
 			$fbp = $row["fbp"];
 			$agent = $row["user_agent"];
+			$checkpixel = $row["pixel"];
 			$ip = $row["user_ip"];
 			$emailLink = $base_url ."/dashboard.php?check_email=" .$orderEmail;
 			$message = $processingWelcome;
@@ -40,6 +41,12 @@ echo "Starting start-orders.php...<br><br>";
 
 			$zip = $row["zip"];
 			$country = strtolower($row["country"]);
+
+			if($checkpixel == 1){
+				$fbAccessToken = $fbAccessToken;
+			}else{
+				$fbAccessToken = $sfbAccessToken;
+			}
 
 
 

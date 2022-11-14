@@ -47,6 +47,10 @@
   }else{
     $s2 = "0";
   }
+
+  if(!isset($pixelNumber)){
+    $pixelNumber = 1;
+  }
   ?>
 
 
@@ -181,6 +185,8 @@
 
   <input class="useragent" type="hidden" name="user_agent" value="<?php echo $userAgent; ?>">
   <input class="userip" type="hidden" name="user_ip" value="<?php echo $userip; ?>">
+
+  <input class="pixelnumber" type="hidden" name="pixel_number" value="<?php echo $pixelNumber; ?>">
 
 
   <div id="show_message" class="alert alert-success" style="display: none">Loading..</div>

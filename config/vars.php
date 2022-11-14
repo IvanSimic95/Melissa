@@ -5,11 +5,10 @@ error_reporting(E_ALL);
 ini_set('display_errors', '1');
 
 $startpixel  = 1;
-$startpixel2 = 1;
-$startpixel3 = 1;
+
 $FBPixel  = "3290293207717814";
-$FBPixel2 = "849174466483788";
-$FBPixel3 = "792407324843664";
+$FBPixel2 = "478846387559798";
+
 $FBPurchasePixel = "";
 $FBViewContent = "";
 $productMETA = "";
@@ -22,6 +21,11 @@ $sendg3 = $sendg1.$sendg2;
 $accessToken1 = "EAAxkvwzdc3kBAM3YGxUaEygEr7cdXJ9bxE8hGZC2tfmkW9BXAWZA67HcZB0SyoDYrMLs9Afgp086Yqm55zDg";
 $accessToken2 = "DZAdoLErhsa7kHwFJVZA7C6HBMqdIsERWoJ8zXZAeaQtDqFgAMCTa8K0kVMdp3EPZBYGhnOjPjTOg9KkjPelq9Mu1qmvU9iTZBrm";
 $fbAccessToken = $accessToken1.$accessToken2;
+
+$saccessToken1 = "EAAxkvwzdc3kBAIvvgoZABpvbTN46utbt6lItTSl7BLRJRSfZAk5BoZBnzk6X6ZB8beFD9nIUjZBKZB7Xf";
+$saccessToken2 = "puADsSevecDUs63SUTIZBHalcWG5iUXCPsZA3qv5qpJNA5K6iNPyj05yKho68TZAPnqvKCDfgzondZBXksQxVKhMbYG2y8F5JQ7Mrm8a6";
+$sfbAccessToken = $saccessToken1.$saccessToken2;
+
 $sendFBAPI = 1; #Set to 1 to send data via api
 
 

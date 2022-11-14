@@ -80,9 +80,11 @@ $_SESSION['orderPartnerGender'] = $row['pick_sex'];
 $_SESSION['BGEmail'] = $row['order_email'];
 
 $_SESSION['fbfirepixel'] = 1;
-$_SESSION['fborderID'] = $_GET['order_ID'];
+$_SESSION['fborderID'] = $lastOrderID;
 $_SESSION['fborderPrice'] = $row['order_price'];
 $_SESSION['fbproduct'] = $row['order_product'];
+
+$pixelcheck = $row['pixel'];
 
   if($affid == 1){
     $fireIframe = 1;
@@ -118,6 +120,8 @@ $_SESSION['fbfirepixel'] = 1;
 $_SESSION['fborderID'] = $_GET['order_ID'];
 $_SESSION['fborderPrice'] = $row['order_price'];
 $_SESSION['fbproduct'] = $row['order_product'];
+
+$pixelcheck = $row['pixel'];
   if($affid == 1){
     $fireIframe = 1;
   }
@@ -488,6 +492,10 @@ if($FirePixel == 1){
   $orderID = $_SESSION['fborderID'];
   $orderPrice = $_SESSION['fborderPrice'];
   $product = $_SESSION['fbproduct'];
+
+if($pixelcheck == 2){
+  $FBPixel = $FBPixel2;
+}
 
 $FBPurchasePixel = <<<EOT
 
