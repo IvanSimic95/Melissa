@@ -60,4 +60,4 @@ EOT;
 
 include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/header.php';
 include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/product_template.php';
-include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer.php';
+include_once $_SERVER['DOCUMENT_ROOT'].'/assets/templates/footer_promo.php';

@@ -58,6 +58,7 @@ echo "Starting start-orders.php...<br><br>";
 			echo $orderEmail." | ";
 			echo $orderProduct." | ";
 			echo $orderPriority." | ";
+			echo "Pixel: ".$checkpixel." | ";
 			
 
 			switch ($orderProduct) {
