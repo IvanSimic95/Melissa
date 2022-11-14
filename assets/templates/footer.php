@@ -58,7 +58,7 @@ src="https://www.facebook.com/tr?id=<?php echo $FBPixel; ?>&ev=PageView&noscript
 <!-- End Meta Pixel Code -->
 <?php }} ?>
 
-<?php echo $FBPurchasePixel; ?>
+<?php #echo $FBPurchasePixel; ?>
 
 <?php echo $FBViewContent; ?>
 
