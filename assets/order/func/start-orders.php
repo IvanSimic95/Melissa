@@ -419,7 +419,7 @@ if($orderProduct == "soulmate" OR $orderProduct == "futurespouse" OR $orderProdu
         );                                                                                                                                                                       
         $response = curl_exec($ch);
 		$logArray[] = $response;
-		print_r($dataString);
+		echo "Sent to Pixel ID: ".$FBPixel;
 		echo $response;
     }
 }
