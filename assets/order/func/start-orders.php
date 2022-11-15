@@ -44,8 +44,10 @@ echo "Starting start-orders.php...<br><br>";
 
 			if($checkpixel == 1){
 				$fbAccessToken = $fbAccessToken;
+				$FBPixel = $FBPixel;
 			}else{
 				$fbAccessToken = $sfbAccessToken;
+				$FBPixel = $FBPixel2;
 			}
 
 
@@ -289,7 +291,6 @@ if($orderProduct == "soulmate" OR $orderProduct == "futurespouse" OR $orderProdu
 			   ),
 			),
 			   "access_token" => $fbAccessToken,
-			   "test_event_code" => "TEST90683",
 			   
 			); 
 	}elseif(empty($fbp) AND !empty($fbc)){
@@ -328,7 +329,6 @@ if($orderProduct == "soulmate" OR $orderProduct == "futurespouse" OR $orderProdu
 			   ),
 			),
 			   "access_token" => $fbAccessToken,
-			   "test_event_code" => "TEST90683",
 			   
 			); 
 
@@ -369,7 +369,6 @@ if($orderProduct == "soulmate" OR $orderProduct == "futurespouse" OR $orderProdu
 			   ),
 			),
 			   "access_token" => $fbAccessToken,
-			   "test_event_code" => "TEST90683",
 			   
 			); 
 	}else{
@@ -407,7 +406,6 @@ if($orderProduct == "soulmate" OR $orderProduct == "futurespouse" OR $orderProdu
            ),
         ),
            "access_token" => $fbAccessToken,
-		   "test_event_code" => "TEST90683",
 		   
         );  
         
