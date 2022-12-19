@@ -461,8 +461,8 @@ $logArray[] = "
 					missingLog($logError);
 				}elseif($countText > 1000) {
 					$missingTest = 1;
-					echo "Text Too Long";
-					$logError[] = "Text Too Long";
+					echo "Text Too Long: ".$countText;
+					$logError[] = "Text Too Long: ".$countText;
 					$logError[] = $orderID;
 					$logError[] = $orderEmail;
 					missingLog($logError);
