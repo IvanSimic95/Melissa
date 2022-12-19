@@ -451,13 +451,22 @@ $logArray[] = "
 						}
 					}
 				}
+				$countText = strlen($email_text);
 				if($email_text == ""){
 					$missingTest = 1;
 					$logError[] = "Missing Text";
 					$logError[] = $orderID;
 					$logError[] = $orderEmail;
 					missingLog($logError);
+				}elseif($countText > 1000) {
+					$missingTest = 1;
+					echo "Text Too Long";
+					$logError[] = "Text Too Long";
+					$logError[] = $orderID;
+					$logError[] = $orderEmail;
+					missingLog($logError);
 				}
+
 				
 				$message = $theader.$email_text.$tfooter;
 
