@@ -27,6 +27,7 @@ echo "Starting complete-orders.php...<br><br>";
 			$logError = array();
 			$message = "";
 			$missingTest = 0;
+			$updateOrder = 0;
 			$orderDate = $row["order_date"];
 			$orderName = $row["user_name"];
 			$ex = explode(" ",$orderName);
