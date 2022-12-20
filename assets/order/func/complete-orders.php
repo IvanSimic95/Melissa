@@ -452,7 +452,8 @@ $logArray[] = "
 						}
 					}
 				}
-				$countText = strlen($email_text);
+				$message = $theader.$email_text.$tfooter;
+				$countText = strlen($message);
 				if($email_text == ""){
 					$missingTest = 1;
 					$logError[] = "Missing Text";
@@ -469,7 +470,7 @@ $logArray[] = "
 				}
 
 				
-				$message = $theader.$email_text.$tfooter;
+				
 
 			}elseif ($orderProduct == "past") {
 				$image_send = 1;
